@@ -2,11 +2,16 @@ name: Generar fichas
 
 on:
   schedule:
-    - cron: "*/15 * * * *"   # toutes les 15 min (GitHub peut décaler de quelques minutes)
-  workflow_dispatch:          # bouton « Run workflow » pour lancer à la main
+    - cron: "*/15 * * * *"   # cherche les nouveaux cours toutes les 15 min
+  workflow_dispatch:          # bouton « Run workflow »
+  push:                       # republie le site quand tu (ou Cowork) envoies des fiches
+    branches: [main]
+    paths: ["fichas/**", "data/**", "index.html"]
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: fichas
@@ -16,12 +21,15 @@ jobs:
   generar:
     runs-on: ubuntu-latest
     timeout-minutes: 30
+    outputs:
+      changed: ${{ steps.publier.outputs.changed }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
       - name: Générer les fiches en attente
+        if: github.event_name != 'push'
         env:
           NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -29,9 +37,48 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           MODEL: ${{ vars.MODEL }}
         run: node scripts/generar.mjs
-      - name: Publier
+      - name: Enregistrer les nouvelles fiches
+        id: publier
         run: |
           git config user.name "fichas-bot"
           git config user.email "fichas-bot@users.noreply.github.com"
           git add fichas data
-          git diff --cached --quiet || (git commit -m "Nouvelles fiches" && git push)
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "Nouvelles fiches"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  deploy:
+    needs: generar
+    # publie seulement s'il y a du nouveau (ou si tu lances à la main / envoies des fichiers)
+    if: needs.generar.outputs.changed == 'true' || github.event_name != 'schedule'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.essai2.outputs.page_url || steps.essai1.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - name: Publier (essai 1)
+        id: essai1
+        uses: actions/deploy-pages@v4
+        continue-on-error: true
+        with:
+          timeout: 240000
+      - name: Pause avant 2e essai
+        if: steps.essai1.outcome == 'failure'
+        run: sleep 45
+      - name: Publier (essai 2)
+        id: essai2
+        if: steps.essai1.outcome == 'failure'
+        uses: actions/deploy-pages@v4
+        with:
+          timeout: 480000
