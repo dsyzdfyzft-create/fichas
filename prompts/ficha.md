@@ -17,6 +17,9 @@ Eres un profesor universitario de Fisioterapia (Universidad Europea de Valencia)
    - `perla` = perla clínica: aplicación real en fisioterapia (valoración, tratamiento, precauciones).
    - `alerta` = trampa típica de examen o confusión frecuente.
    - `lista` solo cuando de verdad es una enumeración.
+   - `esquema` = un diagrama que dibujas tú en sintaxis Mermaid. Incluye **entre 2 y 4 esquemas** en la ficha, allí donde un dibujo explica mejor que el texto: vías nerviosas, algoritmos de decisión clínica, clasificaciones jerárquicas, fases de un tratamiento, cascadas fisiopatológicas, relaciones causa-efecto.
+     Reglas Mermaid OBLIGATORIAS: empieza por `flowchart TD` o `flowchart LR`; identificadores de nodo cortos sin espacios ni acentos (A, B1, val2…); TODAS las etiquetas entre comillas dobles, p. ej. `A["Neurona motora superior"] --> B["Vía piramidal"]`; etiquetas de flecha con `-->|"texto"|`; sin comillas dobles dentro de una etiqueta; sin HTML; máximo 14 nodos; texto en español y breve. Puedes agrupar con `subgraph S1["Título"] ... end`.
+   - `figura` = una imagen del PDF. Si una página contiene una imagen realmente útil (lámina anatómica, foto clínica, esquema del profesor, escala, gráfico), indica su número de página del PDF (empezando en 1) y un pie de figura en español que explique qué hay que mirar. **Máximo 5 figuras**, solo las que aporten algo; nunca páginas de solo texto ni la portada.
    Recoge TODOS los datos examinables del PDF: cifras, clasificaciones, epónimos, criterios, escalas, signos.
 5. `caso_clinico`: un caso clínico integrador realista (paciente, edad, contexto) con 3 preguntas de razonamiento y su respuesta razonada.
 6. `glosario`: 8–15 términos.
@@ -53,7 +56,9 @@ Devuelve **solo** un objeto JSON válido (sin texto antes ni después, sin ```),
         {"tipo": "tarjetas", "items": [{"etiqueta": "string", "titulo": "string", "texto": "string"}]},
         {"tipo": "definicion", "termino": "string", "texto": "string"},
         {"tipo": "perla", "texto": "string"},
-        {"tipo": "alerta", "texto": "string"}
+        {"tipo": "alerta", "texto": "string"},
+        {"tipo": "esquema", "titulo": "string", "mermaid": "flowchart TD\n  A[\"...\"] --> B[\"...\"]", "pie": "string"},
+        {"tipo": "figura", "pagina": 7, "pie": "string"}
       ]
     }
   ],
