@@ -30,6 +30,36 @@
     "secciones": 9
   },
   {
+    "slug": "biologia-celular-y-tisular-t4-tema-4-citoesqueleto",
+    "titulo": "Tema 4. Citoesqueleto",
+    "subtitulo": "Red dinámica de polímeros proteicos (microtúbulos, filamentos intermedios y microfilamentos) que da forma a la célula, organiza su interior, transporta orgánulos y genera movimiento y contracción.",
+    "curso": "Biología celular y tisular",
+    "tema": 4,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 9
+  },
+  {
+    "slug": "biologia-celular-y-tisular-t5-tema-5-organulos-celulares",
+    "titulo": "Tema 5. Orgánulos celulares",
+    "subtitulo": "Sistema de endomembranas, mitocondrias y ribosomas: cómo la célula fabrica, modifica, distribuye, digiere y obtiene energía.",
+    "curso": "Biología celular y tisular",
+    "tema": 5,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 7
+  },
+  {
+    "slug": "biologia-celular-y-tisular-t6-tema-6-nucleo-celular",
+    "titulo": "Tema 6. Núcleo celular",
+    "subtitulo": "Estructura del núcleo interfásico (envoltura, poro, lámina, carioplasma, nucléolo y cromatina), empaquetamiento del ADN desde el nucleosoma hasta el cromosoma mitótico y bases del cariotipo.",
+    "curso": "Biología celular y tisular",
+    "tema": 6,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 8
+  },
+  {
     "slug": "fisioterapia-neurologica-t9-tema-9-fundamentos-basicos-del-concepto-bobath",
     "titulo": "Tema 9. Fundamentos básicos del Concepto Bobath",
     "subtitulo": "Enfoque de resolución de problemas para evaluar y tratar el trastorno de la función, el movimiento y el control postural tras una lesión del SNC, basado en el tono postural, los puntos clave y la facilitación de movimiento normal funcional.",
