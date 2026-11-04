@@ -1,5 +1,35 @@
 [
   {
+    "slug": "biologia-celular-y-tisular-t1-tema-1-teoria-celular",
+    "titulo": "Tema 1. Teoría celular",
+    "subtitulo": "La célula es la unidad de origen, estructural y funcional de todo ser vivo: qué define la vida, cómo surgió, cómo se clasifica y por qué los virus quedan fuera.",
+    "curso": "Biología celular y tisular",
+    "tema": 1,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 7
+  },
+  {
+    "slug": "biologia-celular-y-tisular-t2-tema-2-membrana-celular",
+    "titulo": "Tema 2. Membrana celular",
+    "subtitulo": "Bicapa lipídica asimétrica y fluida (mosaico fluido) que delimita la célula, controla el transporte de sustancias y forma especializaciones apicales, laterales y basales en los epitelios.",
+    "curso": "Biología celular y tisular",
+    "tema": 2,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 8
+  },
+  {
+    "slug": "biologia-celular-y-tisular-t3-tema-3-matriz-extracelular",
+    "titulo": "Tema 3. Matriz extracelular",
+    "subtitulo": "La matriz extracelular combina fibras que resisten la tracción y un gel hidratado que resiste la presión. Además, sus componentes anclan las células y participan en la comunicación celular mediante moléculas señal y receptores.",
+    "curso": "Biología celular y tisular",
+    "tema": 3,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 9
+  },
+  {
     "slug": "fisioterapia-neurologica-t9-tema-9-fundamentos-basicos-del-concepto-bobath",
     "titulo": "Tema 9. Fundamentos básicos del Concepto Bobath",
     "subtitulo": "Enfoque de resolución de problemas para evaluar y tratar el trastorno de la función, el movimiento y el control postural tras una lesión del SNC, basado en el tono postural, los puntos clave y la facilitación de movimiento normal funcional.",
