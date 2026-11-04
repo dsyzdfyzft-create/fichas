@@ -60,6 +60,26 @@
     "secciones": 8
   },
   {
+    "slug": "biologia-celular-y-tisular-t7-tema-7-ciclo-celular",
+    "titulo": "Tema 7. Ciclo celular",
+    "subtitulo": "Cómo una célula crece, verifica su ADN y se divide por mitosis o meiosis, y cómo los fallos de los puntos de control y de la muerte celular rompen el equilibrio tisular.",
+    "curso": "Biología celular y tisular",
+    "tema": 7,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 7
+  },
+  {
+    "slug": "biologia-celular-y-tisular-t8-tema-8-replicacion-del-adn",
+    "titulo": "Tema 8. Replicación del ADN",
+    "subtitulo": "Cómo la célula copia su ADN antes de dividirse: proceso semiconservativo, bidireccional y semidiscontinuo, catalizado por el replisoma, con diferencias entre procariotas, eucariotas y mitocondrias.",
+    "curso": "Biología celular y tisular",
+    "tema": 8,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 7
+  },
+  {
     "slug": "fisioterapia-neurologica-t9-tema-9-fundamentos-basicos-del-concepto-bobath",
     "titulo": "Tema 9. Fundamentos básicos del Concepto Bobath",
     "subtitulo": "Enfoque de resolución de problemas para evaluar y tratar el trastorno de la función, el movimiento y el control postural tras una lesión del SNC, basado en el tono postural, los puntos clave y la facilitación de movimiento normal funcional.",
