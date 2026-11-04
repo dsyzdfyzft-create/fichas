@@ -80,6 +80,14 @@ tbody tr:nth-child(odd){background:color-mix(in srgb,var(--papel) 50%,transparen
 .nota .t{font:700 .78rem var(--serif);display:block;margin-bottom:2px}
 .perla{background:var(--verde-suave)} .perla::before{content:"🩺"} .perla .t{color:var(--verde)}
 .alerta{background:var(--rojo-suave)} .alerta::before{content:"⚠️"} .alerta .t{color:var(--rojo)}
+/* figuras y esquemas */
+figure{margin:8px 0 26px;background:var(--hoja);border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:20px 16px 8px;overflow-x:auto;text-align:center}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq .lienzo pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap;text-align:left}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{font-family:var(--serif);color:var(--tinta)}
 /* caso clínico */
 .caso{background:var(--tinta);color:var(--papel);border-radius:18px;padding:30px 30px 18px}
 .caso h2{color:var(--papel)}
@@ -127,6 +135,7 @@ footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
 </style>
 </head>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
 <script id="datos" type="application/json">%%DATOS%%</script>
 <div id="app"></div>
 <script>
@@ -146,32 +155,45 @@ function bloque(b){
     case 'definicion': return `<div class="def"><b>${md(b.termino)}</b> — ${md(b.texto)}</div>`;
     case 'perla': return `<div class="nota perla"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
     case 'alerta': return `<div class="nota alerta"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${md(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
     default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
   }
 }
 
-const nav = secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`).join('') + (F.caso_clinico?'<a href="#caso">Caso clínico</a>':'') + (F.glosario?.length?'<a href="#glosario">Glosario</a>':'') + '<a class="qcm" href="#qcm">QCM · 15</a>';
+const nav = secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`).join('') + (F.caso_clinico?'<a href="#caso">Caso clínico</a>':'') + (F.glosario?.length?'<a href="#glosario">Glosario</a>':'') + `<a class="qcm" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`;
 
 document.getElementById('app').innerHTML = `
 <header class="portada"><div class="envoltura">
   <div class="etiquetas">${F.asignatura?`<span class="etiqueta">${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="etiqueta o">Tema ${esc(F.tema)}</span>`:''}</div>
   <h1>${esc(F.titulo)}</h1>
   ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
-  <div class="meta"><div><b>${secs.length}</b><span>secciones</span></div><div><b>${(F.ideas_clave||[]).length}</b><span>ideas clave</span></div><div><b>${(F.qcm||[]).length}</b><span>preguntas</span></div><div id="ultimo"></div></div>
+  <div class="meta">${F.tipo==='grand-qcm'?`<div><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div><b>${secs.length}</b><span>secciones</span></div><div><b>${(F.ideas_clave||[]).length}</b><span>ideas clave</span></div>`}<div><b>${(F.qcm||[]).length}</b><span>preguntas</span></div><div id="ultimo"></div></div>
 </div></header>
 <nav class="indice" aria-label="Índice"><div class="envoltura">${nav}</div></nav>
 <main class="envoltura">
-  <div class="dos">
+  ${(F.objetivos||[]).length?`<div class="dos">
     <div class="caja"><h3>Objetivos</h3><ul>${(F.objetivos||[]).map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>
     <div class="caja"><h3>Lo que hay que saber</h3><ol class="claves">${(F.ideas_clave||[]).map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>
-  </div>
+  </div>`:''}
+  ${F.tipo==='grand-qcm'&&(F.fichas||[]).length?`<div class="caja" style="margin-top:40px"><h3>Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
   ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="num">${String(i+1).padStart(2,'0')}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
   ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="num">Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
   ${F.glosario?.length?`<section id="glosario"><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd>`).join('')}</dl></section>`:''}
-  <section id="qcm"><h2>QCM</h2><p>15 preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  <section id="qcm"><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
   ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
 </main>
 <footer class="envoltura">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* ---------- esquemas ---------- */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:oscuro?'dark':'neutral',fontFamily:'Spectral, Georgia, serif',flowchart:{htmlLabels:true,curve:'basis'}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
 
 /* ---------- QCM ---------- */
 const Q = F.qcm || [];
@@ -187,7 +209,7 @@ function pintar(){
   const k = orden[pos], q = Q[k], hecho = resp[k] != null;
   marco.innerHTML = `
     <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${(pos)/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
-    <p class="pregunta">${md(q.pregunta)}</p>
+    ${q.tema?`<span class="etiqueta o" style="display:inline-block;margin-bottom:12px">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
     <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
     <div class="explic">${md(q.explicacion)}</div>
     <div class="acciones"><button class="btn sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="btn" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente'}</button></div>`;
