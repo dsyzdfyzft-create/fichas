@@ -80,6 +80,36 @@
     "secciones": 7
   },
   {
+    "slug": "fisioterapia-neurologica-t1-tema-1-neuroanatomia-funcional-aplicada-sistemas-de-control-",
+    "titulo": "Tema 1. Neuroanatomía funcional aplicada: sistemas de control motor y reflejos medulares",
+    "subtitulo": "El movimiento surge de la integración sensitivo-motora del SN. Se organiza en niveles jerárquicos (médula, tronco, corteza) con el control en paralelo de ganglios basales y cerebelo. La médula, nivel más bajo, genera reflejos y automatismos gracias al huso muscular y al órgano tendinoso de Golgi.",
+    "curso": "Fisioterapia neurológica",
+    "tema": 1,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
+    "slug": "fisioterapia-neurologica-t2-tema-2-introduccion-a-la-fisioterapia-neurologica",
+    "titulo": "Tema 2. Introducción a la Fisioterapia Neurológica",
+    "subtitulo": "Qué es la fisioterapia neurológica, qué objetivos persigue, qué técnicas utiliza, cómo se adapta el tratamiento al estado del paciente y qué consecuencias tiene lesionar cada estructura encefálica, con nociones básicas de exploración del trofismo y de los reflejos.",
+    "curso": "Fisioterapia neurológica",
+    "tema": 2,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 9
+  },
+  {
+    "slug": "fisioterapia-neurologica-t3-tema-3-valoracion-de-la-marcha-y-tipos-de-marcha-patologica",
+    "titulo": "Tema 3. Valoración de la marcha y tipos de marcha patológica",
+    "subtitulo": "Del ciclo normal de la marcha (fases, parámetros y mecanismos de ahorro energético) al reconocimiento clínico de las marchas patológicas neurológicas y la elección de ayudas técnicas.",
+    "curso": "Fisioterapia neurológica",
+    "tema": 3,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 8
+  },
+  {
     "slug": "fisioterapia-neurologica-t9-tema-9-fundamentos-basicos-del-concepto-bobath",
     "titulo": "Tema 9. Fundamentos básicos del Concepto Bobath",
     "subtitulo": "Enfoque de resolución de problemas para evaluar y tratar el trastorno de la función, el movimiento y el control postural tras una lesión del SNC, basado en el tono postural, los puntos clave y la facilitación de movimiento normal funcional.",
