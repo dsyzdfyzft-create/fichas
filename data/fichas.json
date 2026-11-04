@@ -110,6 +110,26 @@
     "secciones": 8
   },
   {
+    "slug": "fisioterapia-neurologica-t4-tema-4-patologias-neurologicas-introduccion-acv-tce-y-enferm",
+    "titulo": "Tema 4. Patologías neurológicas: introducción, ACV, TCE y enfermedad de Parkinson",
+    "subtitulo": "Qué son las patologías neurológicas, por qué importa diagnosticarlas pronto y cómo se presentan, se valoran y se tratan en fisioterapia el ictus, el traumatismo craneoencefálico y la enfermedad de Parkinson.",
+    "curso": "Fisioterapia neurológica",
+    "tema": 4,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 9
+  },
+  {
+    "slug": "fisioterapia-neurologica-t5-tema-5-kabat-facilitacion-neuromuscular-propioceptiva-fnp",
+    "titulo": "Tema 5. Kabat: Facilitación Neuromuscular Propioceptiva (FNP)",
+    "subtitulo": "Método creado por Herman Kabat en 1940 que usa un bombardeo sensorial exteroceptivo y propioceptivo, aplicado mediante patrones globales en diagonal y espiral, para excitar el SNC y obtener una respuesta motora funcional.",
+    "curso": "Fisioterapia neurológica",
+    "tema": 5,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 5
+  },
+  {
     "slug": "fisioterapia-neurologica-t6-tema-6-control-motor-en-el-paciente-neurologico",
     "titulo": "Tema 6. Control motor en el paciente neurológico",
     "subtitulo": "La neuroplasticidad es la base de la recuperación tras una lesión del SNC. Hay que potenciar su vertiente adaptativa, frenar la maladaptativa (espasticidad, dolor neuropático) y elegir el abordaje según la teoría de control motor que mejor explique cada déficit.",
