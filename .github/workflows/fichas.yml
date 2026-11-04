@@ -6,7 +6,7 @@ on:
   workflow_dispatch:          # bouton « Run workflow »
   push:                       # republie le site quand tu (ou Cowork) envoies des fiches
     branches: [main]
-    paths: ["fichas/**", "data/**", "index.html"]
+    paths: ["fichas/**", "data/**", "qcm/**", "index.html", "templates/**"]
 
 permissions:
   contents: write
@@ -28,6 +28,9 @@ jobs:
       - uses: actions/setup-node@v5
         with:
           node-version: 22
+      - name: Outils PDF (images des cours)
+        if: github.event_name != 'push'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
       - name: Générer les fiches en attente
         if: github.event_name != 'push'
         env:
@@ -42,7 +45,7 @@ jobs:
         run: |
           git config user.name "fichas-bot"
           git config user.email "fichas-bot@users.noreply.github.com"
-          git add fichas data
+          git add fichas data $( [ -d qcm ] && echo qcm )
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
