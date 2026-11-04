@@ -120,6 +120,26 @@
     "secciones": 8
   },
   {
+    "slug": "fisioterapia-neurologica-t7-tema-7-envejecimiento-y-ejercicio-fisico",
+    "titulo": "Tema 7: Envejecimiento y ejercicio físico",
+    "subtitulo": "Deterioros por sistemas en el envejecimiento, adaptación del ejercicio terapéutico en grupo y valoración del riesgo de caídas con la escala de Tinetti.",
+    "curso": "Fisioterapia neurológica",
+    "tema": 7,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 10
+  },
+  {
+    "slug": "fisioterapia-neurologica-t8-tema-8-escalas-de-equilibrio-y-marcha",
+    "titulo": "Tema 8 · Escalas de equilibrio y marcha",
+    "subtitulo": "Medir para decidir: elegir la escala según el nivel del paciente, pasarla como está escrita e interpretar el número sabiendo qué mide y qué no mide.",
+    "curso": "Fisioterapia neurológica",
+    "tema": 8,
+    "fecha": "2026-11-04",
+    "preguntas": 15,
+    "secciones": 8
+  },
+  {
     "slug": "fisioterapia-neurologica-t9-tema-9-fundamentos-basicos-del-concepto-bobath",
     "titulo": "Tema 9. Fundamentos básicos del Concepto Bobath",
     "subtitulo": "Enfoque de resolución de problemas para evaluar y tratar el trastorno de la función, el movimiento y el control postural tras una lesión del SNC, basado en el tono postural, los puntos clave y la facilitación de movimiento normal funcional.",
