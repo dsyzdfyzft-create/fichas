@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Musique</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--fond:#ffffff;--encre:#0f1115;--doux:#6b7280;--ligne:#e7e8eb;--piste:#f1f2f4;--accent:#fa2d48;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fond:#191919;--encre:#e8eaee;--doux:#9aa0a6;--ligne:#2f3236;--piste:#25272b;color-scheme:dark}}
+:root[data-theme="dark"]{--fond:#191919;--encre:#e8eaee;--doux:#9aa0a6;--ligne:#2f3236;--piste:#25272b;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--fond);color:var(--encre);font:400 13px/1.4 "Inter",-apple-system,system-ui,sans-serif;display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+.barre{display:flex;gap:6px;padding:8px 8px 6px;overflow-x:auto;scrollbar-width:none;flex:none;align-items:center}
+.barre::-webkit-scrollbar{display:none}
+.onglet{display:flex;align-items:center;gap:6px;border:1px solid var(--ligne);background:var(--fond);color:var(--encre);border-radius:999px;padding:5px 10px 5px 6px;font:500 12px inherit;font-family:inherit;white-space:nowrap;cursor:pointer}
+.onglet[aria-pressed="true"]{background:var(--encre);color:var(--fond);border-color:var(--encre)}
+.onglet .ic{width:18px;height:18px;border-radius:5px;display:grid;place-items:center;background:var(--piste);font-size:11px}
+.onglet[aria-pressed="true"] .ic{background:rgba(255,255,255,.18)}
+.onglet .x{margin-left:2px;opacity:.5;font-size:11px;display:none}
+body.edit .onglet .x{display:inline}
+.outil{border:0;background:var(--piste);color:var(--encre);border-radius:999px;width:28px;height:28px;flex:none;cursor:pointer;font-size:14px}
+.ajout{display:none;gap:6px;padding:0 8px 8px;flex:none}
+body.edit .ajout{display:flex}
+.ajout input{flex:1;min-width:0;border:1px solid var(--ligne);border-radius:8px;padding:7px 9px;background:var(--fond);color:var(--encre);font:inherit}
+.ajout button,.lien{border:0;background:var(--accent);color:#fff;border-radius:8px;padding:7px 12px;font:600 12px inherit;font-family:inherit;cursor:pointer;text-decoration:none;white-space:nowrap}
+.lien{background:var(--piste);color:var(--encre);display:inline-flex;align-items:center}
+.lecteur{flex:1;min-height:0;padding:0 8px 8px}
+.lecteur iframe{width:100%;height:100%;min-height:150px;border:0;border-radius:12px;background:var(--piste)}
+.msg{font-size:11.5px;color:var(--doux);padding:0 10px 6px;flex:none}
+</style>
+</head>
+<body>
+<div class="barre" id="barre"></div>
+<div class="ajout"><input id="url" placeholder="Colle un lien Apple Music (playlist ou album)…" aria-label="Lien Apple Music"><button id="ok">Ajouter</button><a class="lien" href="https://music.apple.com/library/recently-added" target="_blank" rel="noopener">Bibliothèque ↗</a></div>
+<div class="msg" id="msg" hidden></div>
+<div class="lecteur"><iframe id="player" allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"></iframe></div>
+<script>
+(function(){
+  const DEF=[
+    {t:'Travailler',u:'https://music.apple.com/fr/playlist/travailler/pl.u-DdAN8PauapgDAzb'},
+    {t:'Dans la légende',u:'https://music.apple.com/fr/album/dans-la-l%C3%A9gende/1663880916'},
+    {t:'Daisy',u:'https://music.apple.com/fr/album/daisy/1810078231'},
+    {t:'En cours de création',u:'https://music.apple.com/fr/playlist/en-cours-de-cr%C3%A9ation/pl.u-9N9LL2LTxRoKDLb'},
+    {t:'USA',u:'https://music.apple.com/fr/playlist/usa/pl.u-38oWXP3tPRqr1K7'},
+    {t:'Lofi Girl',u:'https://music.apple.com/es/playlist/lofi-girl-beats-to-relax-study-to/pl.bf7a3cbca49644d8a33f09c1285aef5c'}
+  ];
+  const K='musique:liste', KS='musique:actif';
+  let liste=DEF, actif=0;
+  try{const s=JSON.parse(localStorage.getItem(K)||'null');if(Array.isArray(s)&&s.length)liste=s;actif=+localStorage.getItem(KS)||0}catch(e){}
+  if(actif>=liste.length)actif=0;
+  const $=id=>document.getElementById(id);
+  const save=()=>{try{localStorage.setItem(K,JSON.stringify(liste));localStorage.setItem(KS,actif)}catch(e){}};
+  const embed=u=>u.replace('://music.apple.com/','://embed.music.apple.com/');
+  const titre=u=>{try{const p=new URL(u).pathname.split('/').filter(Boolean);return decodeURIComponent(p[2]||'Playlist').replace(/-/g,' ').replace(/^./,c=>c.toUpperCase())}catch(e){return 'Playlist'}};
+  const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  function msg(t){const m=$('msg');m.textContent=t;m.hidden=!t;if(t)setTimeout(()=>m.hidden=true,3500)}
+  function rendre(){
+    $('barre').innerHTML=liste.map((x,i)=>`<button class="onglet" data-i="${i}" aria-pressed="${i===actif}"><span class="ic">${x.u.includes('/album/')?'💿':'🎵'}</span>${esc(x.t)}<span class="x" data-del="${i}" title="Retirer">✕</span></button>`).join('')+`<button class="outil" id="edit" title="Ajouter ou retirer">＋</button>`;
+    $('barre').querySelectorAll('.onglet').forEach(b=>b.onclick=e=>{
+      if(e.target.dataset.del!=null){liste.splice(+e.target.dataset.del,1);if(actif>=liste.length)actif=0;save();rendre();jouer();return}
+      actif=+b.dataset.i;save();rendre();jouer();
+    });
+    $('edit').onclick=()=>{document.body.classList.toggle('edit');if(document.body.classList.contains('edit'))$('url').focus()};
+  }
+  function jouer(){const x=liste[actif];$('player').src=x?embed(x.u):'about:blank'}
+  $('ok').onclick=()=>{
+    const u=$('url').value.trim();
+    if(!/^https:\/\/music\.apple\.com\/[a-z]{2}\/(playlist|album|station)\//.test(u)){msg('Colle un lien music.apple.com de playlist ou d’album (Partager → Copier le lien).');return}
+    liste.push({t:titre(u),u});actif=liste.length-1;$('url').value='';save();rendre();jouer();msg('Ajouté.');
+  };
+  $('url').addEventListener('keydown',e=>{if(e.key==='Enter')$('ok').click()});
+  rendre();jouer();
+})();
+</script>
+</body>
+</html>
