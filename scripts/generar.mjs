@@ -241,12 +241,54 @@ async function grandesQCM() {
   }
 }
 
+// Redibuja todas las fichas y grandes QCM con la plantilla actual (sin coste),
+// y completa con « resumen » + « preguntate » las fichas antiguas que no los tienen (llamada barata, sin PDF).
+const MAX_COMPLETAR = Number(process.env.MAX_COMPLETAR || 20);
+async function rerenderTodo() {
+  const tpl = await readFile(path.join(ROOT, 'templates/ficha.html'), 'utf8');
+  const pinta = (d, titulo) => tpl.replace('%%TITULO%%', titulo.replace(/[<&]/g, '')).replace('%%DATOS%%', JSON.stringify(d).replace(/</g, '\\u003c'));
+  const idxPath = path.join(ROOT, 'data/fichas.json');
+  const idx = existsSync(idxPath) ? JSON.parse(await readFile(idxPath, 'utf8')) : [];
+  let completadas = 0, total = 0;
+  const sistema = existsSync(path.join(ROOT, 'prompts/completar.md')) ? await readFile(path.join(ROOT, 'prompts/completar.md'), 'utf8') : null;
+  for (const it of idx) {
+    const file = path.join(ROOT, 'fichas', `${it.slug}.html`);
+    if (!existsSync(file)) continue;
+    let f;
+    try { f = await leerFicha(it.slug); } catch { continue; }
+    if (sistema && ANTHROPIC_API_KEY && completadas < MAX_COMPLETAR && (!(f.resumen || []).length || !(f.preguntate || []).length)) {
+      try {
+        const extra = await llamar(sistema, [{ type: 'text', text: `${textoFicha(f)}\n\n# Preguntas del QCM (no repetir)\n${(f.qcm || []).map(q => '- ' + q.pregunta).join('\n')}\n\nDevuelve solo el JSON.` }]);
+        if (Array.isArray(extra.resumen) && extra.resumen.length) f.resumen = extra.resumen.slice(0, 5);
+        if (Array.isArray(extra.preguntate) && extra.preguntate.length) f.preguntate = extra.preguntate.slice(0, 10);
+        completadas++; console.log('＋ completada', it.slug);
+      } catch (e) { console.error('Completar', it.slug, e.message); }
+    }
+    const html = pinta(f, `${f.titulo} · Ficha`);
+    if (html !== await readFile(file, 'utf8')) { await writeFile(file, html); total++; }
+  }
+  const qdir = path.join(ROOT, 'qcm');
+  if (existsSync(qdir)) {
+    const { readdir } = await import('node:fs/promises');
+    for (const n of (await readdir(qdir)).filter(x => x.endsWith('.html'))) {
+      const file = path.join(qdir, n), html0 = await readFile(file, 'utf8');
+      const m = html0.match(/<script id="datos" type="application\/json">([\s\S]*?)<\/script>/);
+      if (!m) continue;
+      const d = JSON.parse(m[1].replace(/\\u003c/g, '<'));
+      const html = pinta(d, d.titulo || 'Gran QCM');
+      if (html !== html0) { await writeFile(file, html); total++; }
+    }
+  }
+  console.log(`Plantilla aplicada: ${total} página(s) actualizada(s), ${completadas} ficha(s) completada(s).`);
+}
+
 async function main() {
   if (DEMO) {
     const f = validar(JSON.parse(await readFile(path.join(ROOT, 'data/demo.json'), 'utf8')));
     console.log('Demo →', await publicar(f, { curso: f.asignatura || 'Demo', tema: f.tema ?? 0, fecha: new Date().toISOString().slice(0, 10) }));
     return;
   }
+  if (process.argv.includes('--rerender')) { await rerenderTodo(); return; }
   for (const v of ['NOTION_TOKEN', 'ANTHROPIC_API_KEY', 'NOTION_DB_ID']) if (!process.env[v]) throw new Error(`Falta la variable ${v}`);
   const lista = await pendientes();
   console.log(`${lista.length} cours en attente`);
@@ -270,6 +312,7 @@ async function main() {
     }
   }
   await grandesQCM();
+  await rerenderTodo();
 }
 
 main().catch(e => { console.error(e); process.exit(1); });
