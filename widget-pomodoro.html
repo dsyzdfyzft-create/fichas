@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pomodoro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--fond:#ffffff;--encre:#0f1115;--doux:#6b7280;--ligne:#e7e8eb;--piste:#eceef0;--accent:#1d2538;--lime:#c6ef5c;--pause:#3faa6f;--longue:#3b5fe0;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--sans:"Inter",-apple-system,system-ui,sans-serif;color-scheme:light}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fond:#191919;--encre:#e8eaee;--doux:#9aa0a6;--ligne:#2f3236;--piste:#2a2d31;--accent:#c6ef5c;color-scheme:dark}}
+:root[data-theme="dark"]{--fond:#191919;--encre:#e8eaee;--doux:#9aa0a6;--ligne:#2f3236;--piste:#2a2d31;--accent:#c6ef5c;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{background:var(--fond);color:var(--encre);font:400 14px/1.4 var(--sans);display:flex;align-items:center;justify-content:center;-webkit-font-smoothing:antialiased}
+.w{width:100%;max-width:420px;padding:18px 20px;display:flex;flex-direction:column;align-items:center;gap:14px}
+.modes{display:flex;gap:4px;background:var(--piste);padding:3px;border-radius:8px}
+.modes button{border:0;background:transparent;color:var(--doux);font:500 12px var(--sans);padding:6px 12px;border-radius:6px;cursor:pointer}
+.modes button[aria-pressed="true"]{background:var(--fond);color:var(--encre);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.cadran{position:relative;width:170px;height:170px}
+.cadran svg{width:100%;height:100%;transform:rotate(-90deg)}
+.cadran circle{fill:none;stroke-width:8}
+.fond-c{stroke:var(--piste)}
+.prog{stroke:var(--couleur,var(--accent));stroke-linecap:round;transition:stroke-dashoffset .9s linear}
+.temps{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.temps b{font:600 38px var(--mono);letter-spacing:-.03em}
+.temps span{font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--doux);margin-top:2px}
+.cmd{display:flex;gap:8px}
+.cmd button{border:1px solid var(--ligne);background:var(--fond);color:var(--encre);font:600 13px var(--sans);padding:8px 16px;border-radius:7px;cursor:pointer;min-width:44px}
+.cmd button.go{background:var(--encre);color:var(--fond);border-color:var(--encre);min-width:110px}
+.points{display:flex;gap:6px;align-items:center;font:500 11px var(--mono);color:var(--doux)}
+.points i{width:9px;height:9px;border-radius:3px;background:var(--piste);display:block}
+.points i.on{background:var(--couleur,var(--accent))}
+@media (max-height:260px){.cadran{width:120px;height:120px}.temps b{font-size:28px}.w{gap:8px;padding:10px}}
+</style>
+</head>
+<body>
+<div class="w">
+  <div class="modes" role="group" aria-label="Mode">
+    <button data-m="focus" aria-pressed="true">Focus</button>
+    <button data-m="pause" aria-pressed="false">Pause</button>
+    <button data-m="longue" aria-pressed="false">Longue pause</button>
+  </div>
+  <div class="cadran">
+    <svg viewBox="0 0 100 100" aria-hidden="true"><circle class="fond-c" cx="50" cy="50" r="44"/><circle class="prog" id="prog" cx="50" cy="50" r="44"/></svg>
+    <div class="temps"><b id="t">25:00</b><span id="lab">Focus</span></div>
+  </div>
+  <div class="cmd">
+    <button class="go" id="go">Démarrer</button>
+    <button id="raz" aria-label="Recommencer">↺</button>
+    <button id="skip" aria-label="Passer">⏭</button>
+  </div>
+  <div class="points" id="points"></div>
+</div>
+<script>
+(function(){
+  const q=new URLSearchParams(location.search);
+  const DUREES={focus:(+q.get('focus')||25)*60,pause:(+q.get('pause')||5)*60,longue:(+q.get('longue')||15)*60};
+  const COUL={focus:'',pause:'var(--pause)',longue:'var(--longue)'};
+  const LAB={focus:'Focus',pause:'Pause',longue:'Longue pause'};
+  const C=2*Math.PI*44, prog=document.getElementById('prog');
+  prog.style.strokeDasharray=C;
+  let mode='focus', reste=DUREES.focus, fin=null, timer=null;
+  const cle='pomodoro:'+new Date().toISOString().slice(0,10);
+  let faits=0; try{faits=+localStorage.getItem(cle)||0}catch(e){}
+  const $=id=>document.getElementById(id);
+  function fmt(s){s=Math.max(0,Math.round(s));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+  function points(){
+    const n=faits%4, html=[...Array(4)].map((_,i)=>`<i class="${i<n?'on':''}"></i>`).join('');
+    $('points').innerHTML=html+`<span style="margin-left:6px">${faits} aujourd’hui</span>`;
+  }
+  function dessiner(){
+    $('t').textContent=fmt(reste);$('lab').textContent=LAB[mode];
+    document.documentElement.style.setProperty('--couleur',COUL[mode]||'var(--accent)');
+    prog.style.strokeDashoffset=C*(1-reste/DUREES[mode]);
+    document.title=(timer?fmt(reste)+' · ':'')+LAB[mode];
+    document.querySelectorAll('.modes button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.m===mode));
+    $('go').textContent=timer?'Pause':(reste<DUREES[mode]?'Reprendre':'Démarrer');
+  }
+  function bip(){
+    try{const a=new (window.AudioContext||window.webkitAudioContext)();[0,.25,.5].forEach((t,i)=>{const o=a.createOscillator(),g=a.createGain();o.frequency.value=i===2?1046:784;o.connect(g);g.connect(a.destination);g.gain.setValueAtTime(.0001,a.currentTime+t);g.gain.exponentialRampToValueAtTime(.25,a.currentTime+t+.02);g.gain.exponentialRampToValueAtTime(.0001,a.currentTime+t+.22);o.start(a.currentTime+t);o.stop(a.currentTime+t+.25)})}catch(e){}
+  }
+  function stop(){clearInterval(timer);timer=null}
+  function changer(m,auto){stop();mode=m;reste=DUREES[m];dessiner();if(auto)lancer()}
+  function suivant(auto){
+    if(mode==='focus'){faits++;try{localStorage.setItem(cle,faits)}catch(e){}points();changer(faits%4===0?'longue':'pause',auto)}
+    else changer('focus',false);
+  }
+  function tick(){reste=(fin-Date.now())/1000;if(reste<=0){reste=0;dessiner();bip();suivant(true);return}dessiner()}
+  function lancer(){fin=Date.now()+reste*1000;timer=setInterval(tick,250);dessiner()}
+  $('go').onclick=()=>{if(timer){stop();dessiner()}else lancer()};
+  $('raz').onclick=()=>changer(mode,false);
+  $('skip').onclick=()=>suivant(false);
+  document.querySelectorAll('.modes button').forEach(b=>b.onclick=()=>changer(b.dataset.m,false));
+  points();dessiner();
+})();
+</script>
+</body>
+</html>
