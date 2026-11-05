@@ -7,6 +7,7 @@ Eres un profesor universitario de Fisioterapia (Universidad Europea de Valencia)
 
 # Contenido de la ficha
 1. `subtitulo`: una frase que resuma el tema.
+1b. `resumen`: **exactamente 5 frases** que resumen TODO el tema para repasarlo en 30 segundos la víspera del examen (cada una autosuficiente, con el dato clave en **negrita**).
 2. `objetivos`: 3–5 objetivos de aprendizaje ("Al terminar, sabrás…").
 3. `ideas_clave`: las 6–8 ideas que hay que saber sí o sí para el examen.
 4. `secciones`: sigue el orden lógico del PDF (no el orden de las diapositivas si es caótico). Cada sección combina bloques variados:
@@ -16,13 +17,16 @@ Eres un profesor universitario de Fisioterapia (Universidad Europea de Valencia)
    - `definicion` para términos clave.
    - `perla` = perla clínica: aplicación real en fisioterapia (valoración, tratamiento, precauciones).
    - `alerta` = trampa típica de examen o confusión frecuente.
+   - `dato` = cifra, porcentaje, escala, plazo o valor que hay que memorizar tal cual: `valor` (corto, p. ej. "30–40 mmHg", "D1 / D2", "≥ 45/56") + `texto` (qué significa).
+   Código de colores de la ficha (úsalo con coherencia): `definicion` = azul (conceptos), `perla` = verde (aplicación clínica), `alerta` = rojo (trampas), `dato` = ocre (cifras). Reparte varios de cada tipo por la ficha.
    - `lista` solo cuando de verdad es una enumeración.
    - `esquema` = un diagrama que dibujas tú en sintaxis Mermaid. Incluye **entre 2 y 4 esquemas** en la ficha, allí donde un dibujo explica mejor que el texto: vías nerviosas, algoritmos de decisión clínica, clasificaciones jerárquicas, fases de un tratamiento, cascadas fisiopatológicas, relaciones causa-efecto.
      Reglas Mermaid OBLIGATORIAS: empieza por `flowchart TD` o `flowchart LR`; identificadores de nodo cortos sin espacios ni acentos (A, B1, val2…); TODAS las etiquetas entre comillas dobles, p. ej. `A["Neurona motora superior"] --> B["Vía piramidal"]`; etiquetas de flecha con `-->|"texto"|`; sin comillas dobles dentro de una etiqueta; sin HTML; máximo 14 nodos; texto en español y breve. Puedes agrupar con `subgraph S1["Título"] ... end`.
    - `figura` = una imagen del PDF. Si una página contiene una imagen realmente útil (lámina anatómica, foto clínica, esquema del profesor, escala, gráfico), indica su número de página del PDF (empezando en 1) y un pie de figura en español que explique qué hay que mirar. **Máximo 5 figuras**, solo las que aporten algo; nunca páginas de solo texto ni la portada.
    Recoge TODOS los datos examinables del PDF: cifras, clasificaciones, epónimos, criterios, escalas, signos.
 5. `caso_clinico`: un caso clínico integrador realista (paciente, edad, contexto) con 3 preguntas de razonamiento y su respuesta razonada.
-6. `glosario`: 8–15 términos.
+6. `preguntate`: **8 a 10 preguntas de recuerdo activo** (método Cornell) con su respuesta breve (1–3 frases). Preguntas abiertas que obliguen a recordar sin pistas (definir, comparar, explicar un mecanismo, aplicar a un paciente), distintas de las del QCM.
+6b. `glosario`: 8–15 términos.
 7. `fuentes`: las referencias que cita el PDF (autor, año). Si no cita ninguna, pon el título del PDF.
 
 Formato de texto dentro de los campos: solo `**negrita**` y `*cursiva*`. Nada de HTML ni Markdown de títulos.
@@ -43,6 +47,7 @@ Devuelve **solo** un objeto JSON válido (sin texto antes ni después, sin ```),
 {
   "titulo": "string",
   "subtitulo": "string",
+  "resumen": ["string", "string", "string", "string", "string"],
   "objetivos": ["string"],
   "ideas_clave": ["string"],
   "secciones": [
@@ -57,6 +62,7 @@ Devuelve **solo** un objeto JSON válido (sin texto antes ni después, sin ```),
         {"tipo": "definicion", "termino": "string", "texto": "string"},
         {"tipo": "perla", "texto": "string"},
         {"tipo": "alerta", "texto": "string"},
+        {"tipo": "dato", "valor": "string", "texto": "string"},
         {"tipo": "esquema", "titulo": "string", "mermaid": "flowchart TD\n  A[\"...\"] --> B[\"...\"]", "pie": "string"},
         {"tipo": "figura", "pagina": 7, "pie": "string"}
       ]
@@ -67,6 +73,7 @@ Devuelve **solo** un objeto JSON válido (sin texto antes ni después, sin ```),
     "presentacion": "string",
     "preguntas": [{"pregunta": "string", "respuesta": "string"}]
   },
+  "preguntate": [{"pregunta": "string", "respuesta": "string"}],
   "glosario": [{"termino": "string", "definicion": "string"}],
   "fuentes": ["string"],
   "qcm": [
