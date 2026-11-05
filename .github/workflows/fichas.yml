@@ -6,7 +6,7 @@ on:
   workflow_dispatch:          # bouton « Run workflow »
   push:                       # republie le site quand tu (ou Cowork) envoies des fiches
     branches: [main]
-    paths: ["fichas/**", "data/**", "qcm/**", "index.html", "templates/**"]
+    paths: ["fichas/**", "data/**", "qcm/**", "index.html", "templates/**", "prompts/**", "widget-*.html"]
 
 permissions:
   contents: write
@@ -40,6 +40,12 @@ jobs:
           SITE_URL: ${{ vars.SITE_URL }}
           MODEL: ${{ vars.MODEL }}
         run: node scripts/generar.mjs
+      - name: Appliquer le design aux fiches existantes
+        if: github.event_name == 'push'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          MODEL: ${{ vars.MODEL }}
+        run: node scripts/generar.mjs --rerender
       - name: Enregistrer les nouvelles fiches
         id: publier
         run: |
