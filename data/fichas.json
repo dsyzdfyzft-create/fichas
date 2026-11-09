@@ -398,5 +398,25 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 5
+  },
+  {
+    "slug": "patologia-quirurgica-i-t5-tema-5-fracturas-en-adultos",
+    "titulo": "Tema 5: Fracturas en adultos",
+    "subtitulo": "Clínica y biomecánica de la fractura, clasificación (etiología, mecanismo, patrón, partes blandas, estabilidad), radiología, fases de la reparación, complicaciones (rigidez, pseudoartrosis, Sudeck), factores de consolidación y tratamiento (las 3 R, yesos, tracción, osteosíntesis).",
+    "curso": "Patología quirúrgica I",
+    "tema": 5,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 7
+  },
+  {
+    "slug": "patologia-quirurgica-i-t6-tema-6-fracturas-infantiles",
+    "titulo": "Tema 6: Fracturas infantiles",
+    "subtitulo": "Características del hueso infantil (fisis, periostio, composición, epífisis no osificadas), respuesta a la fractura, epidemiología y maltrato, fracturas especiales (tallo verde, torus, deformidad plástica, epifisiólisis de Salter-Harris) y tratamiento.",
+    "curso": "Patología quirúrgica I",
+    "tema": 6,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 6
   }
 ]
