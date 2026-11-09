@@ -278,5 +278,15 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 5
+  },
+  {
+    "slug": "ortesis-t4-tema-4-patologia-degenerativa-osteoarticular-artrosis-artrit",
+    "titulo": "Tema 4: Patología degenerativa osteoarticular – artrosis, artritis reumatoide y osteoporosis",
+    "subtitulo": "Patogenia, clínica, clasificación, diagnóstico y tratamiento de la artrosis, diferencias con la artritis reumatoide, fisiología ósea y osteoporosis, y órtesis indicadas.",
+    "curso": "Ortesis",
+    "tema": 4,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 7
   }
 ]
