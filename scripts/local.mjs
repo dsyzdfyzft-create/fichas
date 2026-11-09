@@ -78,19 +78,26 @@ async function nuevo(ruta, cursoBuscado, tema) {
   const c = cs.results.find(p => norm(plain(Object.values(p.properties).find(x => x.type === 'title')?.title)).includes(norm(cursoBuscado)));
   if (!c) throw new Error(`Cours introuvable : « ${cursoBuscado} »`);
   const curso = plain(Object.values(c.properties).find(x => x.type === 'title')?.title);
-  // envoi du PDF dans Notion (File Upload API, ≤ 20 Mo)
+  // envoi du PDF dans Notion si possible (le forfait gratuit de Notion limite à 5 Mo) ;
+  // au-delà, le PDF reste seulement sur le Mac : la fiche se fait quand même.
   const H = { 'Authorization': `Bearer ${process.env.NOTION_TOKEN}`, 'Notion-Version': '2022-06-28' };
-  const up = await (await fetch('https://api.notion.com/v1/file_uploads', { method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: 'single_part', filename: nombre, content_type: 'application/pdf' }) })).json();
-  if (!up.id) throw new Error('Envoi du PDF vers Notion refusé : ' + JSON.stringify(up));
-  const fd = new FormData(); fd.append('file', new Blob([buf], { type: 'application/pdf' }), nombre);
-  const r = await fetch(`https://api.notion.com/v1/file_uploads/${up.id}/send`, { method: 'POST', headers: H, body: fd });
-  if (!r.ok) throw new Error('Envoi du PDF échoué : ' + await r.text());
+  let fichier = null, aviso = '';
+  try {
+    if (buf.length > 5 * 1024 * 1024) throw new Error('PDF de plus de 5 Mo');
+    const up = await (await fetch('https://api.notion.com/v1/file_uploads', { method: 'POST', headers: { ...H, 'Content-Type': 'application/json' }, body: JSON.stringify({ mode: 'single_part', filename: nombre, content_type: 'application/pdf' }) })).json();
+    if (!up.id) throw new Error(up.message || 'envoi refusé');
+    const fd = new FormData(); fd.append('file', new Blob([buf], { type: 'application/pdf' }), nombre);
+    const r = await fetch(`https://api.notion.com/v1/file_uploads/${up.id}/send`, { method: 'POST', headers: H, body: fd });
+    if (!r.ok) throw new Error(await r.text());
+    fichier = up.id;
+  } catch (e) { aviso = `PDF non joint dans Notion (${e.message}) : traité depuis le Mac.`; console.log('ℹ️', aviso); }
   const page = await notion('POST', '/pages', { parent: { database_id: NOTION_DB_ID }, properties: {
     'Cours déposé': { title: [{ text: { content: nombre.replace(/\.pdf$/i, '') } }] },
     'Cours': { relation: [{ id: c.id }] },
     ...(tema ? { 'Tema': { number: Number(tema) } } : {}),
     'Statut': { status: { name: 'Fiche en cours' } },
-    'Fichier': { files: [{ type: 'file_upload', file_upload: { id: up.id }, name: nombre }] },
+    ...(fichier ? { 'Fichier': { files: [{ type: 'file_upload', file_upload: { id: fichier }, name: nombre }] } } : {}),
+    ...(aviso ? { 'Message': { rich_text: [{ text: { content: aviso } }] } } : {}),
   } });
   const id = page.id.replace(/-/g, '');
   await writeFile(path.join(ENT, `${id}.pdf`), buf);
