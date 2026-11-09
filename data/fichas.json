@@ -438,5 +438,25 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 5
+  },
+  {
+    "slug": "patologia-quirurgica-i-t9-tema-9-tendinopatias",
+    "titulo": "Tema 9: Tendinopatías",
+    "subtitulo": "Estructura, irrigación, inervación y función del tendón; epidemiología y factores de riesgo; mecanismos; clasificación (tendinitis, paratendinitis, tendinosis, tenosinovitis); modelo continuum de Cook; respuesta a la carga y tratamiento (isométricos, protocolos excéntricos de Curwin-Stanish y Alfredson).",
+    "curso": "Patología quirúrgica I",
+    "tema": 9,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
+    "slug": "patologia-quirurgica-i-t10-tema-10-rodilla-y-deporte",
+    "titulo": "Tema 10: Rodilla y deporte",
+    "subtitulo": "Síndrome de la cintilla iliotibial, hiperpresión rotuliana, tendinopatía rotuliana, lesiones meniscales, pata de ganso, fracturas por sobrecarga, ligamentos laterales (LLI y LLE), tendinopatía poplítea, plica sinovial y lesión del LCP.",
+    "curso": "Patología quirúrgica I",
+    "tema": 10,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 7
   }
 ]
