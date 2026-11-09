@@ -268,5 +268,15 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 4
+  },
+  {
+    "slug": "ortesis-t2-tema-2-alteraciones-del-eje-de-la-columna-y-sus-ortesis",
+    "titulo": "Tema 2: Alteraciones del eje de la columna y sus órtesis",
+    "subtitulo": "Ejes y planos, escoliosis, hipercifosis, hiperlordosis y rectificaciones; tratamiento conservador y quirúrgico, y órtesis para la escoliosis idiopática y la cifosis de Scheuermann.",
+    "curso": "Ortesis",
+    "tema": 2,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
   }
 ]

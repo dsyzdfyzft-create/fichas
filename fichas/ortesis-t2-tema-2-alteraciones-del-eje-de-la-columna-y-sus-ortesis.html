@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tema 2: Alteraciones del eje de la columna y sus órtesis · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 2: Alteraciones del eje de la columna y sus órtesis","subtitulo":"Ejes y planos, escoliosis, hipercifosis, hiperlordosis y rectificaciones; tratamiento conservador y quirúrgico, y órtesis para la escoliosis idiopática y la cifosis de Scheuermann.","resumen":["La columna (**33 vértebras**: 7 C, 12 D, 5 L, 5 S, 4 Co) da **soporte** y **protege la médula**; sus alteraciones más comunes son **escoliosis, hipercifosis, hiperlordosis y rectificaciones**.","La **escoliosis** es la **desviación tridimensional** más frecuente; la **idiopática (80 %)** afecta al **2 %** de la población y es **5 veces más frecuente en mujeres**; se cribea con **test de Adams + escoliómetro de Bunnell (≥ 10° → traumatólogo)** y se mide con el **ángulo de Cobb** (leve \u003c 20°, moderada 20–40°, severa > 40°).","La **hipercifosis** aparece sobre todo entre **12 y 16 años en varones**; la **hiperlordosis lumbar** (> **68°**, frente a hipolordosis \u003c **23°**) suele asociar **anteversión pélvica**; las rectificaciones son zonas aplanadas y menos móviles.","El tratamiento combina **control postural, estiramiento, fortalecimiento** y consejos deportivos; la **cirugía** se indica en curvas **> 40°** o fracaso del corsé (**varillas extensibles** o **fusión**).","En la escoliosis idiopática del adolescente se pauta órtesis con **Risser ≤ 2 y 25–45°**; el **Boston** (18–23 h/día, ápex ≤ **D7**) iguala al **Milwaukee (1946)**, y **Charleston/Providence** son nocturnas (**8–10 h**); en la **cifosis de Scheuermann** (**≥ 5° de acuñamiento en 3 vértebras**) se usa **Milwaukee (50–70°)** o **TLSO** dorsolumbar."],"objetivos":["Describir ejes y planos anatómicos y su relación con los movimientos.","Definir y diferenciar escoliosis, hipercifosis, hiperlordosis y rectificaciones.","Valorar la escoliosis con test de Adams, escoliómetro, ángulo de Cobb y Risser.","Planificar el tratamiento conservador y conocer las indicaciones quirúrgicas.","Elegir la órtesis adecuada en escoliosis idiopática y cifosis de Scheuermann."],"ideas_clave":["Eje **longitudinal** → rotación; **transversal** → flexo-extensión; **sagital** → abd-add.","Escoliosis: curva **> 10°**; gibosidad en el lado **convexo**, espinosa desviada al **cóncavo**.","Escoliómetro **≥ 10°** ≈ **15–20° de Cobb** → derivar y telerradiografía.","Idiopática del **adolescente = 89 %** de las idiopáticas (infantil \u003c 3 años, juvenil 3–10, adolescente > 10).","Juvenil con ápex en **D8–D10**: **80 %** de probabilidad de artrodesis hacia los 15 años.","Órtesis inmediata si **Risser 0 y premenarquia con > 25°**, o **Risser ≤ 2 con 30–45°**; > **45–50°** no se estabilizan con órtesis.","**Boston = Milwaukee** en eficacia; Boston y Wilmington para ápex en **D7 o por debajo**.","Scheuermann: deformidad **rígida**, **nódulos de Schmorl**, “osteocondrosis juvenil”."],"secciones":[{"id":"anatomia","titulo":"Introducción anatómica: ejes y planos","bloques":[{"tipo":"dato","valor":"33 vértebras","texto":"7 cervicales, 12 torácicas, 5 lumbares, 5 sacras y 4 coccígeas."},{"tipo":"parrafo","texto":"Funciones principales de la columna: **soporte estructural** y **protección de la médula espinal**. La **posición anatómica** de referencia: bipedestación, cabeza y ojos al frente, pies apoyados hacia delante, brazos a los costados con las palmas al frente."},{"tipo":"tabla","titulo":"Ejes anatómicos (Kapandji)","columnas":["Eje","Orientación","Movimiento"],"filas":[["Longitudinal o vertical (Y)","Cráneo-caudal, perpendicular al suelo","**Rotación**"],["Transversal (X)","Horizontal, paralelo al suelo","**Flexión-extensión**"],["Sagital o anteroposterior (Z)","Anteroposterior","**Abducción-aducción**"]]},{"tipo":"tabla","titulo":"Planos anatómicos","columnas":["Plano","Divide en","Contiene los ejes"],"filas":[["Frontal o coronal","Anterior y posterior","Longitudinal y sagital"],["Sagital","Derecha e izquierda","Transversal y longitudinal"],["Transversal, horizontal o axial","Superior e inferior","Transversal y sagital"]]},{"tipo":"figura","pagina":10,"pie":"Plano sagital con eje transversal (flexo-extensión), plano coronal con eje sagital (abd-add) y plano transversal con eje vertical (rotación).","src":"img/ortesis-t2-tema-2-alteraciones-del-eje-de-la-columna-y-sus-ortesis-p10.jpg"},{"tipo":"alerta","texto":"La flexo-extensión ocurre en el **plano sagital** alrededor del **eje transversal**; no confundas el nombre del plano con el del eje."}]},{"id":"alteraciones","titulo":"Alteraciones vertebrales","bloques":[{"tipo":"definicion","termino":"Alteración vertebral","texto":"**Anormalidad en la alineación** de la columna. Factores: sobre todo la **edad** (degenerativo), origen frecuentemente **idiopático**, y ciertos **deportes**. Pueden ser dolorosas y afectan a medio-largo plazo la **movilidad y estabilidad** vertebral."},{"tipo":"definicion","termino":"Escoliosis","texto":"**Desviación tridimensional** más frecuente de la columna. La **rotación vertebral** produce una **gibosidad** torácica en el lado **convexo**; la **espinosa** se desvía hacia el lado **cóncavo**."},{"tipo":"tabla","titulo":"Etiología de la escoliosis","columnas":["Tipo","Origen"],"filas":[["De adaptación","Compensación"],["Por malformación","Congénita; fuerza al raquis a adaptarse"],["Neurológica","Trastornos neuromusculares"],["Antiálgica","Dolor lumbar o sacroilíaco"],["Idiopática","Causa desconocida; la más frecuente (**80 %**)"]]},{"tipo":"dato","valor":"2 % · ×5 en mujeres","texto":"Prevalencia de la escoliosis idiopática y predominio femenino."},{"tipo":"figura","pagina":17,"pie":"Test de Adams (flexión anterior que revela la giba) y escoliómetro de Bunnell que mide la inclinación del tronco.","src":"img/ortesis-t2-tema-2-alteraciones-del-eje-de-la-columna-y-sus-ortesis-p17.jpg"},{"tipo":"parrafo","texto":"Para hablar de escoliosis la curva debe superar **10°**. Con el **escoliómetro de Bunnell**, una inclinación **≥ 10°** obliga a remitir al traumatólogo y pedir **telerradiografía**; equivale aproximadamente a **15–20° de Cobb**."},{"tipo":"definicion","termino":"Ángulo de Cobb","texto":"Ángulo formado por las líneas trazadas sobre la plataforma superior de la vértebra más inclinada superior y la plataforma inferior de la más inclinada inferior de la curva (o por sus perpendiculares)."},{"tipo":"figura","pagina":19,"pie":"Medición del ángulo de Cobb: vértebras límite más inclinadas, ápice de la curva y perpendiculares que forman el ángulo.","src":"img/ortesis-t2-tema-2-alteraciones-del-eje-de-la-columna-y-sus-ortesis-p19.jpg"},{"tipo":"tabla","titulo":"Gravedad según Cobb (Miralles)","columnas":["Gravedad","Cobb"],"filas":[["Leve","\u003c 20°"],["Moderada","20–40°"],["Severa","> 40° (suele requerir cirugía)"]]},{"tipo":"tarjetas","items":[{"etiqueta":"Dorsal","titulo":"Hipercifosis","texto":"Aumento de la **concavidad anterior** dorsal (“chepa”), con curva sagital de **35–40°** según el tema, compensada por la lumbar. Sobre todo **12–16 años, varones**. Tipos: **congénita, adquirida** (osteomielitis, osteoporosis, trauma) y **postural**. Teorías vertebral, mental y muscular."},{"etiqueta":"Lumbar/cervical","titulo":"Hiperlordosis","texto":"Aumento de la **concavidad posterior**. Lumbar: **\u003c 23° = hipolordosis**, **> 68° = hiperlordosis**; la dorsal retrocede, hombros en retracción y **anteversión pélvica**. Cervical: si aumenta, el peso recae en los **arcos posteriores** (artrosis precoz)."},{"etiqueta":"Aplanamiento","titulo":"Rectificaciones","texto":"**Disminución** de la curva fisiológica (referencias del tema: cervical 20–40°, dorsal 20–50°). Tramos planos, **menos móviles**, adaptación a otras disfunciones. Cervical rectificada: el peso recae en los **discos** (protrusión, hernia)."}]},{"tipo":"alerta","texto":"Cervical: **rectificación → sobrecarga discal** (protrusión, hernia); **hiperlordosis → sobrecarga de arcos posteriores** (artrosis precoz). Pregunta clásica de inversión."}]},{"id":"tratamiento","titulo":"Tratamiento conservador y quirúrgico","bloques":[{"tipo":"parrafo","texto":"Objetivos: **corrección postural y de la pelvis** y **fortalecimiento de la faja abdominal y lumbar**."},{"tipo":"lista","items":["**Control postural**: autoelongación y **retroversión pélvica** para corregir la lordosis en supino, sedestación y bipedestación.","**Ejercicios respiratorios**.","**Estiramiento** de la musculatura acortada (flexores de cadera, paravertebrales).","**Fortalecimiento**: abdominales, erectores lumbares, glúteos y pelvitrocantéreos.","**Fisioterapia antiálgica** si hay dolor (masoterapia, termoterapia).","Integración en las **AVD** y consejos ergonómicos.","Deportes **contraindicados**: **gimnasia rítmica, patinaje, natación estilo mariposa**."]},{"tipo":"alerta","texto":"En la hiperlordosis no se refuerzan los flexores de cadera: se **estiran** (junto a paravertebrales) y se refuerzan **abdominales y glúteos** para llevar la pelvis a retroversión."},{"tipo":"tabla","titulo":"Tratamiento quirúrgico","columnas":["Indicación","Técnica"],"filas":[["Curvas **> 40°**","**Varilla extensible**: dos varillas que se alargan cada **3–6 meses**, en progresión rápida y pacientes jóvenes (p. ej., técnica de **Shilla**)"],["Fracaso del tratamiento conservador y progresión pese al corsé","**Fusión espinal**: unir dos o más vértebras con varillas, ganchos, tornillos o cables"]]}]},{"id":"escoliosis-idiopatica","titulo":"Órtesis en la escoliosis idiopática","bloques":[{"tipo":"parrafo","texto":"Escoliosis **funcional**: por defectos de postura, contracturas antálgicas, dismetría (sin alteración estructural). **Estructural**: vértebras, ligamentos y músculos alterados; idiopática (preadolescentes) o patológica (polio, parálisis cerebral)."},{"tipo":"tabla","titulo":"Clasificación por edad de comienzo","columnas":["Tipo","Edad","% de casos"],"filas":[["Infantil","\u003c 3 años","0,5–5 %"],["Juvenil","3–10 años","7–10,5 %"],["Del adolescente","> 10 años","**89 %**"],["Del adulto","Tras la madurez","—"]]},{"tipo":"parrafo","texto":"Según la relación crecimiento–progresión se distingue **comienzo precoz** y **tardío**. La madurez esquelética se valora con el **test de Risser** (osificación de la cresta ilíaca)."},{"tipo":"figura","pagina":41,"pie":"Grados de Risser: 0 sin osificación de la cresta ilíaca; 1 cuarto anterior; 2 mitad; 3 tres cuartos; 4 osificación completa; 5 núcleo completamente fusionado.","src":"img/ortesis-t2-tema-2-alteraciones-del-eje-de-la-columna-y-sus-ortesis-p41.jpg"},{"tipo":"tabla","titulo":"Recomendaciones según la forma","columnas":["Forma","Recomendación"],"filas":[["Infantil","Tratamiento conservador **inmediato** si la curva progresa; la órtesis controla hasta poder estabilizar quirúrgicamente; **TLSO a medida o Milwaukee modificada a tiempo completo** en niño con curva flexible"],["Juvenil","Más progresión y peor respuesta a la órtesis; el factor pronóstico clave es la **altura de la vértebra más rotada en el ápex**; ápex en **D8–D10 → 80 %** de artrodesis hacia los 15 años; **yeso** con tracción ligera bajo anestesia"],["Adolescente","**Risser ≤ 2 con 30–45°** → órtesis en la primera visita; **Risser 0 y premenarquia con > 25°** → órtesis inmediata; la mayoría se tratan con órtesis si **\u003c 40°**; con **> 45–50°** no se estabilizan con órtesis"],["Adulto","Maduros con **> 50–55°** pueden progresar → **candidatos a cirugía**; observación continua"]]},{"tipo":"perla","texto":"Una órtesis es **eficaz** si evita la progresión en los de mayor riesgo (**25–45° con Risser 0–1**), logra una apariencia aceptable y reduce la necesidad de cirugía; el paciente debe estar **dispuesto a llevarla**."},{"tipo":"tabla","titulo":"Principales corsés","columnas":["Órtesis","Rasgos"],"filas":[["Milwaukee","Desarrollado en **1946 (Blount, Schmidt, Bidwell)**; buena reducción del Cobb; inconvenientes: **↓ tono muscular, limita el movimiento, puede afectar la función cardiopulmonar**; hoy menos usado por la imagen"],["Boston","**Igual de eficaz que Milwaukee**, de los más usados; **18–23 h/día** en adolescentes inmaduros con curvas progresivas; ápex proximal en **D7 o por debajo**"],["Wilmington","Molde positivo del tronco; **mismas indicaciones y limitaciones que Boston**"],["Charleston y Providence","**Nocturnos, tiempo parcial (8–10 h)**: desplazan la convexidad hacia la línea media en decúbito; **no se pueden usar de pie**"],["Otros","TLSO de Miami, Rosenberger, **SpineCor** (dinámico, Canadá), **Chêneau** (Europa)"]]},{"tipo":"figura","pagina":49,"pie":"Corsé de Milwaukee: cesta pélvica, barras verticales y anillo cervical con apoyos occipitales y submentonianos.","src":"img/ortesis-t2-tema-2-alteraciones-del-eje-de-la-columna-y-sus-ortesis-p49.jpg"},{"tipo":"dato","valor":"18–23 h/día","texto":"Uso diario del corsé de Boston en adolescentes inmaduros con curvas progresivas."},{"tipo":"alerta","texto":"Las **TLSO de perfil bajo** (Boston, Wilmington) solo sirven si el ápex está en **D7 o por debajo**; para ápex más altos se necesita una órtesis que suba más (tipo Milwaukee)."}]},{"id":"scheuermann","titulo":"Órtesis en la cifosis de Scheuermann","bloques":[{"tipo":"definicion","termino":"Cifosis de Scheuermann","texto":"Patología con **irregularidades y acuñamientos de los platillos vertebrales**; deformidad cifótica **rígida** que no se corrige con manipulación pasiva ni extensión activa. **Osteocondrosis juvenil**: acuñamiento anterior por trastorno del crecimiento de los platillos."},{"tipo":"lista","items":["**≥ 5° de acuñamiento anterior** en **3 cuerpos vertebrales consecutivos** en la punta de la cifosis.","Líneas apofisarias irregulares con aplanamiento y acuñamiento.","**Estrechamiento discal** y **nódulos de Schmorl**."]},{"tipo":"parrafo","texto":"La inmovilización se indica en **niños**; la cifosis grave puede **comprimir médula o raíces** y necesitar cirugía. La órtesis influye positivamente en la evolución: objetivos **disminuir el dolor, controlar la deformidad y reconstruir la altura vertebral anterior** con fuerzas de extensión, idealmente en **fases iniciales** con flexibilidad. Es un **reto mayor que la escoliosis**: suele requerir subir al tórax alto o anillo cervical, **mal tolerado**."},{"tipo":"esquema","titulo":"Los 3 puntos de fuerza del Milwaukee en Scheuermann","mermaid":"flowchart TD\n  M[\"Milwaukee en Scheuermann\"] --> P1[\"1 Cesta pelvica: punto mas bajo, reduce lordosis lumbar\"]\n  M --> P2[\"2 Almohadilla posterior: empuja hacia delante bajo las apicales\"]\n  M --> P3[\"3 Anillo cervical: fuerza hacia atras por respuesta activa\"]","pie":"Combina fuerzas pasivas (cesta y almohadilla) y activas (reacción al anillo cervical)."},{"tipo":"tabla","titulo":"Elección de la órtesis","columnas":["Situación","Órtesis","Mecanismo"],"filas":[["Curvas dorsales **50–70°**","**Milwaukee**","Fuerzas **activas y pasivas**; cesta pélvica ajustada sin comprimir crestas ilíacas"],["Cifosis **dorsales bajas o dorsolumbares**","**TLSO termoplástico** con prolongaciones esternales","**Corrección pasiva**; molde en supino con travesaño en la punta y caderas flexionadas; almohadillas en la cara posterior en y bajo el ápex"]]},{"tipo":"alerta","texto":"En el Milwaukee para Scheuermann, la tercera fuerza (hacia atrás) depende de la **respuesta activa** del paciente al **anillo cervical**, no de una presión pasiva."}]}],"caso_clinico":{"titulo":"Adolescente con giba en el test de Adams","presentacion":"Chica de 12 años, premenárquica, derivada por asimetría de hombros. El escoliómetro de Bunnell marca 11° a nivel dorsal. La telerradiografía muestra una curva dorsal derecha de 28° de Cobb con ápex en D9 y Risser 0.","preguntas":[{"pregunta":"¿Estaba justificada la derivación y qué gravedad tiene la curva?","respuesta":"Sí: escoliómetro **≥ 10°** (≈ 15–20° de Cobb) obliga a derivar y pedir telerradiografía. Con **28°** es **moderada** (20–40°)."},{"pregunta":"¿Indicarías órtesis? ¿Por qué?","respuesta":"Sí, **inmediatamente**: paciente inmadura (**Risser 0 y premenarquia**) con curva **> 25°**, grupo de mayor riesgo de progresión (25–45° con Risser 0–1)."},{"pregunta":"¿Sirve un corsé de Boston?","respuesta":"Sí, porque el ápex está en **D9**, es decir **por debajo de D7**; se pautaría **18–23 h/día**. Además: ejercicios de control postural, respiratorios, estiramientos y fortalecimiento, y seguimiento del Cobb."}]},"preguntate":[{"pregunta":"¿Qué movimiento ocurre alrededor de cada eje?","respuesta":"Longitudinal: rotación; transversal: flexo-extensión; sagital: abducción-aducción."},{"pregunta":"¿Dónde aparece la giba en la escoliosis y hacia dónde se desvía la espinosa?","respuesta":"La giba en el lado convexo; la espinosa hacia el lado cóncavo."},{"pregunta":"¿Qué umbral del escoliómetro obliga a derivar y a cuánto Cobb equivale?","respuesta":"10° o más, equivalente aproximadamente a 15–20° de Cobb."},{"pregunta":"Clasifica la escoliosis por ángulo de Cobb.","respuesta":"Leve \u003c 20°, moderada 20–40°, severa > 40° (suele requerir cirugía)."},{"pregunta":"¿Qué diferencia una escoliosis funcional de una estructural?","respuesta":"La funcional se debe a postura, contracturas o dismetría sin alteración estructural; la estructural altera vértebras, ligamentos y músculos."},{"pregunta":"¿Qué deportes están contraindicados?","respuesta":"Gimnasia rítmica, patinaje y natación estilo mariposa."},{"pregunta":"¿Cuándo se pauta órtesis en la escoliosis idiopática del adolescente?","respuesta":"Risser ≤ 2 con 30–45° en la primera visita; Risser 0 y premenarquia con > 25° de inmediato; curvas > 45–50° no se estabilizan con órtesis."},{"pregunta":"¿Qué ventajas e inconvenientes tienen Charleston y Providence?","respuesta":"Solo se usan de noche (8–10 h), pero ejercen tanta fuerza que no pueden llevarse de pie."},{"pregunta":"Enumera los criterios radiológicos de Scheuermann.","respuesta":"≥ 5° de acuñamiento anterior en 3 vértebras consecutivas, líneas apofisarias irregulares, estrechamiento discal y nódulos de Schmorl."},{"pregunta":"¿Qué órtesis eliges en Scheuermann dorsal de 60° y en uno dorsolumbar?","respuesta":"Milwaukee para curvas dorsales de 50–70°; TLSO termoplástico con prolongaciones esternales para la dorsolumbar."}],"glosario":[{"termino":"Escoliosis","definicion":"Desviación tridimensional de la columna con rotación vertebral."},{"termino":"Gibosidad","definicion":"Prominencia costal en el lado convexo por la rotación vertebral."},{"termino":"Test de Adams","definicion":"Flexión anterior del tronco para evidenciar la giba."},{"termino":"Escoliómetro de Bunnell","definicion":"Inclinómetro que mide la rotación del tronco."},{"termino":"Ángulo de Cobb","definicion":"Medida radiológica de la magnitud de una curva."},{"termino":"Test de Risser","definicion":"Grado de osificación de la cresta ilíaca (0–5) para estimar la madurez."},{"termino":"TLSO","definicion":"Órtesis toraco-lumbo-sacra."},{"termino":"Hipercifosis","definicion":"Aumento de la concavidad anterior dorsal."},{"termino":"Hiperlordosis","definicion":"Aumento de la concavidad posterior lumbar o cervical."},{"termino":"Rectificación","definicion":"Disminución de la curvatura fisiológica."},{"termino":"Nódulo de Schmorl","definicion":"Herniación del disco en el platillo vertebral."},{"termino":"Artrodesis","definicion":"Fusión quirúrgica de vértebras."},{"termino":"Técnica de Shilla","definicion":"Cirugía con varillas que permiten el crecimiento."}],"fuentes":["Kapandji (2012). Fisiología articular.","Álvarez García de Quesada, L. I., & Núñez Giralda, A. (2011). Escoliosis idiopática. Pediatría Atención Primaria, 13(49), 135-146.","Lenke, L. G. (2005). Lenke classification system of adolescent idiopathic scoliosis. Instr Course Lect, 54, 537-542.","Miralles (2019); Kuznia et al. (2020); Horne et al. (2014); Pan et al. (2019).","Bueno Sánchez, A. M. et al. (2016); Brito-Hernández (2018); Torre (2021); Campos (2017).","Cunin, V. (2015); Negrini et al. (2018); Weiss et al. (2021).","Pantoja, T. S., & Chamorro, L. M. (2015). Escoliosis en niños y adolescentes. Rev Méd Clín Las Condes, 26(1), 99-108.","Kaelin, A. J. (2020)."],"qcm":[{"pregunta":"¿Alrededor de qué eje se produce la flexo-extensión?","opciones":["Transversal","Vertical","Longitudinal","Sagital"],"correcta":0,"explicacion":"El eje transversal (X), horizontal y paralelo al suelo, permite la flexo-extensión; el longitudinal la rotación y el sagital la abd-add.","por_opcion":["✅ Flexo-extensión.","❌ Sinónimo de longitudinal (rotación).","❌ Permite la rotación.","❌ Permite abducción-aducción."]},{"pregunta":"En una escoliosis torácica, ¿dónde aparece la gibosidad?","opciones":["En el lado cóncavo","En la línea media","Solo en la región lumbar","En el lado convexo"],"correcta":3,"explicacion":"La rotación vertebral produce la giba en el lado convexo; la espinosa se desvía hacia el cóncavo.","por_opcion":["❌ Hacia el cóncavo se desvía la espinosa.","❌ No.","❌ Se describe a nivel torácico.","✅ Literal."]},{"pregunta":"Una inclinación de 10° en el escoliómetro de Bunnell equivale aproximadamente a:","opciones":["> 40° de Cobb","5–10° de Cobb","15–20° de Cobb","30–35° de Cobb"],"correcta":2,"explicacion":"Más de 10° con el escoliómetro supone una curva de aproximadamente 15–20° de Cobb y obliga a derivar.","por_opcion":["❌ Severa; no es la equivalencia.","❌ Inferior al dato.","✅ Literal.","❌ Superior al dato."]},{"pregunta":"Una escoliosis de 32° de Cobb se clasifica como:","opciones":["No es escoliosis","Leve","Severa","Moderada"],"correcta":3,"explicacion":"Leve \u003c 20°, moderada 20–40°, severa > 40°.","por_opcion":["❌ Supera los 10°.","❌ \u003c 20°.","❌ > 40°.","✅ 20–40°."]},{"pregunta":"¿Qué porcentaje de las escoliosis idiopáticas corresponde a la forma del adolescente?","opciones":["7–10,5 %","89 %","80 %","0,5–5 %"],"correcta":1,"explicacion":"Infantil 0,5–5 %, juvenil 7–10,5 %, adolescente 89 %. El 80 % es la proporción de escoliosis que son idiopáticas.","por_opcion":["❌ Juvenil.","✅ Adolescente.","❌ Es el % de idiopáticas sobre el total de escoliosis.","❌ Infantil."]},{"pregunta":"Un ángulo lordótico lumbar superior a 68° se denomina:","opciones":["Lordosis fisiológica","Hiperlordosis","Rectificación lumbar","Hipolordosis"],"correcta":1,"explicacion":"Por debajo de 23° es hipolordosis y por encima de 68° hiperlordosis (Brito-Hernández).","por_opcion":["❌ Estaría entre ambos límites.","✅ Literal.","❌ Es una disminución de curva.","❌ \u003c 23°."]},{"pregunta":"En la columna cervical, la rectificación de la lordosis favorece con el tiempo:","opciones":["Artrosis precoz de los arcos posteriores","Hipercifosis compensadora lumbar","Patología discal (protrusión, hernia)","Anteversión pélvica"],"correcta":2,"explicacion":"Con rectificación el peso de la cabeza recae en los discos; con hiperlordosis, en los arcos posteriores (artrosis).","por_opcion":["❌ Es consecuencia de la hiperlordosis cervical.","❌ No se describe.","✅ Literal.","❌ Asociada a hiperlordosis lumbar."]},{"pregunta":"¿Qué deporte se considera contraindicado en estas alteraciones según el tema?","opciones":["Ciclismo","Natación estilo mariposa","Natación estilo crol","Marcha nórdica"],"correcta":1,"explicacion":"Se citan como contraindicados la gimnasia rítmica, el patinaje y la natación estilo mariposa.","por_opcion":["❌ No se cita.","✅ Literal.","❌ No se cita.","❌ No se cita."]},{"pregunta":"¿Cuál es una indicación quirúrgica según el tema?","opciones":["Curvas superiores a 40° o fracaso del corsé con progresión","Cualquier hipercifosis postural","Curvas de 20–30° en adultos","Rectificación cervical dolorosa"],"correcta":0,"explicacion":"La cirugía está indicada en curvas > 40° y cuando falla el tratamiento conservador y la deformidad progresa pese al corsé.","por_opcion":["✅ Literal.","❌ Se trata con corrección postural.","❌ No cumple criterios.","❌ No es indicación quirúrgica."]},{"pregunta":"En la escoliosis idiopática juvenil, ¿qué localización del ápex implica un 80 % de probabilidad de artrodesis hacia los 15 años?","opciones":["D8–D10","C7–D1","D4–D6","L3–L5"],"correcta":0,"explicacion":"Los pacientes con la punta de la curva en D8, D9 o D10 tienen un 80 % de posibilidades de requerir artrodesis hacia los 15 años.","por_opcion":["✅ Literal.","❌ No se cita.","❌ No se cita.","❌ No se cita."]},{"pregunta":"Chica Risser 0, premenárquica, curva de 27°. Según el tema:","opciones":["Cirugía de fusión","Solo ejercicios, ya que la curva es leve","Observación y nueva radiografía en 6 meses","Colocar ortesis inmediatamente"],"correcta":3,"explicacion":"En pacientes inmaduros (Risser 0 y premenarquia) con curva de más de 25° se debe colocar la órtesis inmediatamente.","por_opcion":["❌ No indicada a 27°.","❌ 27° es moderada, no leve.","❌ Contradice la recomendación.","✅ Literal."]},{"pregunta":"¿Qué afirmación sobre el corsé de Boston es correcta?","opciones":["Sirve para ápex por encima de D7","Es menos eficaz que el Milwaukee","Controla la progresión igual que el Milwaukee y se usa 18–23 h/día en inmaduros","Se usa 8–10 h nocturnas"],"correcta":2,"explicacion":"El Boston controla la progresión con la misma eficacia que el Milwaukee, es de los más usados y en adolescentes inmaduros con curvas progresivas se lleva 18–23 h/día; para ápex en D7 o por debajo.","por_opcion":["❌ Solo D7 o por debajo.","❌ Misma eficacia.","✅ Literal.","❌ Pauta de Charleston/Providence."]},{"pregunta":"¿Por qué los corsés de Charleston y Providence no pueden usarse de pie?","opciones":["Porque incluyen anillo cervical","Porque solo actúan sobre la cifosis","Porque son de material rígido sin cesta pélvica","Por la gran fuerza que ejercen hacia el lado de la inclinación de la curva"],"correcta":3,"explicacion":"Aprovechan el decúbito nocturno para hipercorregir la convexidad; ejercen tanta fuerza en el lado de la inclinación que no pueden usarse de pie.","por_opcion":["❌ El anillo cervical es del Milwaukee.","❌ Son para escoliosis.","❌ No es el motivo.","✅ Literal."]},{"pregunta":"Criterio radiológico de la cifosis de Scheuermann:","opciones":["≥ 5° de acuñamiento anterior en 3 vértebras consecutivas","Cobb lumbar > 68°","Ausencia de nódulos de Schmorl","≥ 10° de rotación en 2 vértebras"],"correcta":0,"explicacion":"Más de 5° de acuñamiento anterior de tres cuerpos consecutivos en la punta de la cifosis, con apófisis irregulares, estrechamiento discal y nódulos de Schmorl.","por_opcion":["✅ Literal.","❌ Es el umbral de hiperlordosis.","❌ Los nódulos de Schmorl están presentes.","❌ Criterio inventado."]},{"pregunta":"En el corsé de Milwaukee para Scheuermann, la fuerza dirigida hacia atrás procede de:","opciones":["La cesta pélvica","La almohadilla posterior bajo el ápex","Las prolongaciones esternales","La respuesta activa del paciente al anillo cervical"],"correcta":3,"explicacion":"El tercer punto de fuerza (hacia atrás) depende de la respuesta activa del paciente al anillo cervical, más que de una presión pasiva.","por_opcion":["❌ Es el punto de presión más bajo.","❌ Empuja hacia delante bajo las apicales.","❌ Pertenecen a la TLSO termoplástica.","✅ Literal."]}],"asignatura":"Ortesis","tema":2,"fecha":"2026-11-09"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips">${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  if(n===Q.length) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado! Marca el tema como « Maîtrisé » en Notion.':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>
