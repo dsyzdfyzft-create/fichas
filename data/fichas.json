@@ -288,5 +288,15 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 7
+  },
+  {
+    "slug": "ortesis-t6-tema-6-ortesis-de-miembro-superior",
+    "titulo": "Tema 6: Órtesis de miembro superior",
+    "subtitulo": "Lesiones más comunes del miembro superior, indicaciones y complicaciones de las órtesis, tipos (estáticas, dinámicas, semidinámicas) y órtesis de mano, muñeca, codo y hombro.",
+    "curso": "Ortesis",
+    "tema": 6,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
   }
 ]
