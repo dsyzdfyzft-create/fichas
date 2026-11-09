@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tema 4: Edemas (I) – linfodinámicos, linfedemas y flebolinfedemas · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 4: Edemas (I) – linfodinámicos, linfedemas y flebolinfedemas","subtitulo":"Clasificación de los edemas, diagnóstico diferencial (cardiaco, venoso, renal, hepático, traumático, gravídico), linfedema primario y secundario, estadios, signos, complicaciones y tratamiento.","resumen":["Los edemas se dividen en **linfodinámicos** (aumento de carga linfática con sistema linfático sano: cardiacos, venosos, renales, hepáticos, traumáticos, gravídicos), **linfostáticos** (fallo linfático: **linfedema y flebolinfedema**) y **lipedemas**.","El DLM está **contraindicado** en el edema **cardiaco** y en la **trombosis venosa** (superficial o profunda), suele estarlo en el **renal y hepático**, y está **indicado** en el **síndrome postrombótico, la IVC, el edema traumático y el gravídico** (desde el **3.er mes**, nunca sobre el abdomen).","El **linfedema** es un aumento de líquido **rico en proteínas** por fallo del transporte linfático, **crónico y evolutivo**; puede ser **primario** (congénito, **precoz 1–35 años: 77–94 %**, tardío > 35 años: 11 %) o **secundario** (cirugía, radioterapia, trauma, filariasis…).","Estadios: **0 subclínico**, **I reversible** (fóvea +, cede al elevar), **II espontáneamente irreversible** (fóvea +, no cede al elevar), **III** fibrosis cutánea inicial (fóvea ±) y **IV elefantiasis** (fóvea −); el **signo de Stemmer** es **patognomónico del linfedema primario**.","El tratamiento es **sintomático** (reducir volumen, síntomas y progresión), en fases **intensiva, mantenimiento y seguimiento**, escalando según la diferencia de perímetro (**0 / ≤ 2 / 2–5 / > 5 cm**); la complicación más grave es el **síndrome de Stewart-Treves** (linfangiosarcoma)."],"objetivos":["Clasificar los edemas según su mecanismo y su relación con el sistema linfático.","Diferenciar clínicamente el edema cardiaco, renal y hepático y decidir cuándo el DLM está contraindicado.","Describir la trombosis venosa, el síndrome postrombótico y la insuficiencia venosa crónica.","Clasificar el linfedema (primario/secundario), reconocer sus estadios y signos diagnósticos.","Planificar el tratamiento del linfedema y del flebolinfedema y reconocer sus complicaciones."],"ideas_clave":["Edema **cardiaco** (IC derecha): MMII, **simétrico**, cianótico, fóvea +, **vespertino**: **DLM contraindicado**.","TVS y TVP: **no se realiza DLM**; la TVP puede causar **embolia pulmonar** y **síndrome postrombótico**.","Edema **renal**: **matutino, periorbitario/cara**, no depende de la posición; **hepático**: ascitis y piernas; ambos por **↓ presión oncótica**.","Edema venoso de la IVC: **distal (maléolos), no engloba los dedos**, mejora con declive; el **linfedema sí engloba dedos y dorso del pie**.","Linfedema primario precoz: **1–35 años, 77–94 %**, más en **mujeres, pubertad y MMII**; evoluciona de **distal a proximal**; el secundario de **proximal a distal**.","**Stemmer +**: no se puede pinzar la piel dorsal de la **1.ª falange del 2.º dedo**; patognomónico del primario, inconstante en el secundario.","Estadio **II = espontáneamente irreversible** (no mejora al elevar) pero mejora con **DLM/TFD**; estadio **IV** sin fóvea.","Flebolinfedema: la patología venosa crónica **puede** acabar en linfática, pero la linfática **no** produce venosa."],"secciones":[{"id":"clasificacion","titulo":"Definición y clasificación de los edemas","bloques":[{"tipo":"definicion","termino":"Edema","texto":"Acumulación de líquido en los tejidos por **desequilibrio entre la filtración capilar y el drenaje** de ese líquido."},{"tipo":"tabla","titulo":"Tipos de edema","columnas":["Tipo","Mecanismo","Ejemplos"],"filas":[["Linfodinámicos (dinámicos)","**Aumento de la carga linfática** por trastornos circulatorios; el linfático está sano pero desbordado","Cardiacos, venosos (fleboedemas), renales, hepáticos, traumáticos, gravídicos"],["Linfostáticos","**Fallo del sistema linfático**","Linfedema, flebolinfedema"],["Ajenos al sistema linfático y sanguíneo","Aunque están implicados","Lipedema"]]},{"tipo":"esquema","titulo":"Árbol de clasificación","mermaid":"flowchart TD\n  E[\"Edemas\"] --> D[\"Linfodinamicos\"]\n  E --> S[\"Linfostaticos\"]\n  E --> L[\"Lipedema\"]\n  D --> D1[\"Cardiaco\"]\n  D --> D2[\"Venoso\"]\n  D --> D3[\"Renal y hepatico\"]\n  D --> D4[\"Traumatico y gravidico\"]\n  S --> S1[\"Linfedema primario\"]\n  S --> S2[\"Linfedema secundario\"]\n  S --> S3[\"Flebolinfedema\"]","pie":"Linfodinámico = carga excesiva; linfostático = transporte insuficiente."}]},{"id":"linfodinamicos","titulo":"Edemas linfodinámicos: cardiaco, renal, hepático, traumático y gravídico","bloques":[{"tipo":"tabla","titulo":"Diagnóstico diferencial","columnas":["Rasgo","Cardiaco","Renal","Hepático"],"filas":[["Fisiopatología","↑ P hidrostática capilar","↓ P oncótica (proteinuria)","↓ P oncótica (↓ albúmina)"],["Localización y evolución","**Vespertino**, obedece a la gravedad; tobillos, bimaleolar, asciende; anasarca","**Matutino**, no obedece a la gravedad; **biparpebral**, tejido laxo de cara y labios","Tras proceso hepático grave; **ascitis** y desciende a MMII"],["Coloración","Cianótica","Normal o pálido sucio","Normal o ictericia"],["Consistencia","Dura o normal","Blanda","Blanda al inicio, dura a los 2 meses"],["Temperatura","Fría","Ligeramente fría o normal","Normal"],["Dolor","Indoloro","Indoloro","Indoloro"],["Piel","Dura, seca, descamación","Fina y brillante, descamada, amarronada o roja","Seca, descamada, alopecia, amarronada"],["DLM","**Contraindicado**","Suele estar contraindicado (solo con control médico)","Suele estar contraindicado"]]},{"tipo":"alerta","texto":"**Cardiaco = vespertino** (empeora con la bipedestación, mejora en decúbito); **renal = matutino** y **no** relacionado con la posición. Una pregunta clásica es distinguirlos por el horario."},{"tipo":"parrafo","texto":"El **edema traumático** se debe a la rotura de vasos sanguíneos y linfáticos que vierten su contenido al intersticio (hematomas y edema). El DLM favorece la **reabsorción del edema y del hematoma**, la **cicatrización**, reduce el **dolor** y adelanta la **recuperación funcional**."},{"tipo":"parrafo","texto":"El **edema gravídico** resulta de la retención hídrica, el aumento de la permeabilidad y del flujo sanguíneo y la disminución de la presión oncótica capilar; ojo con la **preeclampsia** (HTA e hiperproteinuria). Aparece en el **último trimestre**, es **blando (fóvea +)**, en el **1/3 inferior de la pierna y dorso del pie**, aumenta con sedestación y bipedestación prolongadas y disminuye en decúbito supino."},{"tipo":"perla","texto":"En la embarazada, el DLM está **indicado a partir del tercer mes** y es **contraindicación absoluta trabajar sobre el abdomen**. Se combina con postura en declive, caminar y nadar, cinesiterapia, medias de compresión y baños de contraste."}]},{"id":"venosos","titulo":"Edemas venosos: trombosis, síndrome postrombótico e IVC","bloques":[{"tipo":"definicion","termino":"Insuficiencia venosa","texto":"Incapacidad del sistema venoso para mantener una **presión intraluminal adecuada**; más relevante en las piernas. Puede ser **aguda** (trombosis superficial o profunda) o **crónica**."},{"tipo":"tabla","titulo":"Trombosis venosa","columnas":["Rasgo","Superficial (TVS / tromboflebitis)","Profunda (TVP)"],"filas":[["Definición","Inflamación de una vena superficial por un trombo","Trombo en el sistema venoso profundo; **principal causa de destrucción valvular**"],["Contexto","Vena sana con predisposición a coagular (tumor, hematológica, autoinmune) o **varices** (flujo lento)","Generalmente **idiopática**, asociada a factores de riesgo"],["Factores","Obesidad, cirugía reciente, embarazo, reposo prolongado, cardiopatía, tratamiento hormonal","Igual"],["Clínica","Dolor, enrojecimiento, hinchazón, calor, **vena endurecida**","Casi siempre **unilateral**: enrojecimiento, dolor, edema, piel caliente"],["Tratamiento","Analgésicos/AINE, **heparina** s.c., medias; cirugía si varicosa","Anticoagulantes y medias"],["DLM","**No**","**No**"]]},{"tipo":"alerta","texto":"Complicaciones de la TVP: **embolia pulmonar** (disnea brusca, dolor torácico, mareo, taquicardia, hemoptisis) y **síndrome postrombótico**. Cualquier sospecha de TVP = **no DLM** y derivación urgente."},{"tipo":"definicion","termino":"Síndrome postrombótico","texto":"Síntomas venosos crónicos secundarios a una TVP y sus secuelas valvulares, tras **recanalización parcial** del trombo; conduce a **IVC**. Diagnóstico por clínica y antecedente documentado de TVP."},{"tipo":"parrafo","texto":"Clínica postrombótica: edema, varices secundarias, trastornos tróficos (**dermitis ocre, lipodermatoesclerosis, úlceras**), dolor, calambres, pesadez, prurito y parestesias. Aquí el **DLM sí está indicado** (edema, pesadez, dolor, prurito, fibrosis y trastornos tróficos) junto a compresión, declive, cinesiterapia, medidas higiénicas, venoactivos y cirugía."},{"tipo":"definicion","termino":"Insuficiencia venosa crónica (IVC)","texto":"Enfermedad venosa crónica avanzada con edema, cambios cutáneos o úlceras; evolución de **varices** o del **síndrome postrombótico**. La alteración de la pared produce **fallo valvular, estasis e hipertensión venosa distal**."},{"tipo":"lista","items":["**Síntomas**: poco específicos, **empeoran al final del día**, más en **primavera y verano**, dependen del ciclo día-noche y la actividad, **no responden a analgésicos ni AINE**.","**Factores agravantes**: edad, antecedentes familiares, enfermedad circulatoria previa, estados hormonales (embarazo, menopausia), **pie plano** (menos bomba muscular), sedentarismo.","**Signos**: telangiectasias, varices reticulares, varices tronculares, edema, trastornos tróficos, úlceras venosas.","**Edema venoso**: poco acentuado, **distal (maléolos), no engloba los dedos**, sensación de tensión, progresivo durante el día, mejora con declive y decúbito, uni o bilateral, **fóvea +**.","**Tratamiento conservador**: DLM, presoterapia, vendajes, medias, cinesiterapia, medidas posturales, flebofármacos."]},{"tipo":"figura","pagina":28,"pie":"Trastornos tróficos de la IVC: dermatitis ocre, eczema, lipodermatoesclerosis y atrofia blanca.","src":"img/drenaje-linfatico-t4-tema-4-edemas-i-linfodinamicos-linfedemas-y-flebolinfedemas-p28.jpg"}]},{"id":"linfedema","titulo":"Linfedema: concepto, clasificación y estadios","bloques":[{"tipo":"definicion","termino":"Linfedema","texto":"Aumento anormal de **líquido rico en proteínas** en el intersticio por **alteración de la capacidad de transporte** del sistema linfático. Enfermedad **crónica y evolutiva**."},{"tipo":"tabla","titulo":"Linfedema primario","columnas":["Forma","Edad","Rasgos"],"filas":[["Congénito","Al nacer o primer año","Genético o idiopático"],["Precoz","**1–35 años**","La mayoría idiopáticos; **77–94 %** de los primarios; más en **mujeres, pubertad, MMII**"],["Tardío","**> 35 años**","**11 %**; el sistema compensó hasta ese momento pese a la alteración"]]},{"tipo":"parrafo","texto":"El **primario** se debe a una alteración del desarrollo de vasos o ganglios: **hipoplasia, aplasia, ectasia o hiperplasia ganglionar**. En el **secundario** los vasos están sanos pero se lesionan: **postraumático, posquirúrgico, posirradiación, inflamatorio (filariasis) o por estasis linfática**."},{"tipo":"lista","items":["**Factores de riesgo del secundario**: cirugía con **vaciamiento ganglionar** (axilar, inguinal), **radioterapia** en cadenas ganglionares y radiodermitis, infecciones recurrentes o complicaciones de la herida, afecciones crónicas de la piel, IVC, tumores compresivos, **obesidad**, predisposición genética, HTA, malnutrición, inmovilización prolongada, viajes en avión."]},{"tipo":"tabla","titulo":"Estadios del linfedema","columnas":["Estadio","Rasgos","Fóvea","Elevación"],"filas":[["0 – Subclínico","Sin edema aparente; puede durar meses o años","—","—"],["I – Reversible","Reciente, sin cambios estructurales, edema blando","**+**","**Desaparece**"],["II – Espontáneamente irreversible","Se endurece con el tiempo; **mejora con DLM/TFD**","**+**","**No mejora**"],["III","Fibroblastos y colágeno en la piel; pequeñas alteraciones cutáneas","**±**","No"],["IV – Elefantiasis","Fibrosis/esclerosis, pata de elefante, **déficit inmunitario**, dolor por compresión nerviosa, alteraciones cutáneas graves, tejido graso","**−**","No"]]},{"tipo":"alerta","texto":"Clave del estadio: **I** cede al **elevar**; **II** ya **no** cede al elevar pero sigue con **fóvea +**; en **IV** la fóvea es **negativa** por la fibrosis."}]},{"id":"diagnostico","titulo":"Diagnóstico y complicaciones del linfedema","bloques":[{"tipo":"definicion","termino":"Signo de Stemmer-Kaposi","texto":"Positivo cuando **no se puede pinzar** la piel de la cara dorsal de la **1.ª falange del 2.º dedo**. **Patognomónico del linfedema primario**; **inconstante** en el secundario."},{"tipo":"figura","pagina":55,"pie":"Signo de Stemmer: a la izquierda se pinza el pliegue (negativo); a la derecha la piel engrosada no se deja pinzar (positivo).","src":"img/drenaje-linfatico-t4-tema-4-edemas-i-linfodinamicos-linfedemas-y-flebolinfedemas-p55.jpg"},{"tipo":"lista","items":["**Signo de Godet o fóvea**: presión digital sobre un **relieve óseo**; si queda hundimiento hay líquido. Positivo en los primeros estadios (edema blando).","Dorso del pie en **“cristal de gafa” o esfera de reloj**.","**Hundimiento de los surcos transversales** de los dedos (pliegues cutáneos).","**Almohadillas retromaleolares**.","El edema **engloba dedos y dorso del pie**.","Infecciones frecuentes (**erisipela, linfangitis**).","**Primario: distal → proximal** (empieza en el pie); **secundario: proximal → distal**.","Uni o bilateral."]},{"tipo":"figura","pagina":57,"pie":"Dorso del pie abombado en “cristal de gafa” y hundimiento de los surcos transversales de los dedos.","src":"img/drenaje-linfatico-t4-tema-4-edemas-i-linfodinamicos-linfedemas-y-flebolinfedemas-p57.jpg"},{"tipo":"parrafo","texto":"Pruebas complementarias: **RM** y **TC** (bloqueos), **ecografía Doppler** (obstrucciones) y **linfogammagrafía** (trazador radiactivo), la prueba que visualiza el drenaje linfático."},{"tipo":"tabla","titulo":"Complicaciones","columnas":["Complicación","Descripción"],"filas":[["Linfangitis","Inflamación de los canales linfáticos por infección bacteriana que entra por una herida"],["Erisipela","Infección bacteriana aguda (estreptococos), inflamación cutánea de la parte **más superficial**"],["Celulitis","Infección de las capas **más profundas** de la dermis"],["Micosis","Infección fúngica"],["Linfocele","Acumulación de linfa por lesión de vasos (cirugía, golpe…); suele reabsorberse"],["Quistes linfáticos","Linfangioma"],["Adenitis","Inflamación de un ganglio, sobre todo vírica"],["Síndrome de Stewart-Treves","**Linfangiosarcoma** sobre linfedema de larga evolución, años tras **mastectomía y radioterapia**"]]},{"tipo":"alerta","texto":"Erisipela = parte **superficial** de la dermis; celulitis = capas **profundas**. Ambas son infecciones agudas: **contraindicación absoluta** de DLM mientras estén activas."}]},{"id":"tratamiento","titulo":"Tratamiento del linfedema y flebolinfedema","bloques":[{"tipo":"parrafo","texto":"El linfedema es **crónico** y su tratamiento es **sintomático**: no existe tratamiento curativo una vez establecido. Objetivos: **disminuir el volumen, reducir síntomas y evitar progresión y complicaciones**."},{"tipo":"tabla","titulo":"Tratamiento según la diferencia de perímetro","columnas":["Grado","Diferencia","Tratamiento"],"filas":[["I","Ninguna","Medidas higiénico-dietéticas"],["II","**Hasta 2 cm**","Higiénico-dietéticas + **DLM**"],["III","**2–5 cm**","+ DLM + presoterapia + **vendaje multicapa** + media de contención"],["IV","**> 5 cm**","Igual que el III"]]},{"tipo":"esquema","titulo":"Fases del tratamiento","mermaid":"flowchart LR\n  I[\"Fase intensiva\"] --> M[\"Fase de mantenimiento\"]\n  M --> S[\"Fase de seguimiento\"]\n  I --- I1[\"DLM, vendaje multicapa, presoterapia, ejercicios, apoyo psicologico, cirugia si precisa\"]\n  M --- M1[\"DLM y vendaje, presoterapia, manguito, ejercicios, prevencion\"]\n  S --- S1[\"Contacto, adhesion, ejercicios, prevencion\"]","pie":"De reducir volumen a mantenerlo y asegurar la adherencia."},{"tipo":"definicion","termino":"Flebolinfedema","texto":"Resultado de una **patología venosa de larga evolución** que agota la capacidad del linfático. La venosa crónica **puede** producir linfática, pero la linfática de larga duración **no** produce venosa."},{"tipo":"parrafo","texto":"Clínica: paciente con IVC conocida y edema crónico que **no cede con el reposo nocturno**, aumenta durante el día y **afecta a pies y dedos**, con signos venosos y linfáticos: episodios de enrojecimiento, consistencia **leñosa**, lesiones verrugosas, erosiones o úlceras y sobreinfección. Tratamiento: DLM, vendaje, media de compresión, ejercicio, hábitos saludables (dieta, hidratación) y cuidados de la piel; comorbilidades (IC congestiva, cirrosis, nefropatía) dificultan el drenaje."},{"tipo":"perla","texto":"Para distinguir IVC pura de flebolinfedema: en la IVC el edema **mejora con el reposo nocturno y respeta los dedos**; en el flebolinfedema **no cede de noche y engloba los dedos**."}]}],"caso_clinico":{"titulo":"Edema bilateral de piernas en una paciente de 62 años","presentacion":"Mujer de 62 años con varices desde hace 20 años y antecedente de TVP izquierda hace 6 años. Presenta edema en ambas piernas que ya no mejora por la noche, afecta a dedos y dorso del pie, piel con dermitis ocre y zonas de consistencia leñosa. Stemmer positivo en el pie izquierdo. Niega disnea; no hay dolor agudo ni calor.","preguntas":[{"pregunta":"¿Qué diagnóstico funcional sugiere el cuadro?","respuesta":"**Flebolinfedema**: IVC de larga evolución (varices + **síndrome postrombótico**) que ha superado la capacidad linfática; el edema no cede de noche, engloba los dedos, hay consistencia leñosa y Stemmer +."},{"pregunta":"¿Puedes aplicar DLM? ¿Qué debes descartar antes?","respuesta":"Sí, el DLM está indicado en el síndrome postrombótico y flebolinfedema, pero hay que **descartar una TVP activa** (dolor, calor, edema unilateral brusco) y signos de **erisipela/celulitis**; y descartar edema cardiaco (sin disnea, sin cianosis)."},{"pregunta":"¿Qué plan terapéutico propones?","respuesta":"DLM + **vendaje multicapa** en fase intensiva, después **media de compresión**, ejercicio (bomba muscular), cuidados de la piel, dieta e hidratación, declive; seguimiento para mantener adherencia."}]},"preguntate":[{"pregunta":"Diferencia edema linfodinámico y linfostático.","respuesta":"Linfodinámico: aumento de la carga linfática con linfático sano; linfostático: fallo del transporte linfático (linfedema)."},{"pregunta":"¿Cómo distingues un edema cardiaco de uno renal?","respuesta":"Cardiaco: vespertino, MMII simétrico, cianótico, depende de la gravedad. Renal: matutino, periorbitario, no depende de la posición."},{"pregunta":"¿Qué es el síndrome postrombótico y se trata con DLM?","respuesta":"Clínica venosa crónica tras una TVP por recanalización parcial y daño valvular; sí, el DLM está indicado (edema, pesadez, fibrosis, trastornos tróficos)."},{"pregunta":"Describe el edema de la IVC.","respuesta":"Poco acentuado, distal en maléolos sin englobar los dedos, progresivo durante el día, mejora con declive, fóvea +."},{"pregunta":"¿Cuándo y cómo se aplica DLM en la embarazada?","respuesta":"A partir del tercer mes, nunca sobre el abdomen (contraindicación absoluta)."},{"pregunta":"Clasifica el linfedema primario por edad.","respuesta":"Congénito (nacimiento–1 año), precoz (1–35 años, 77–94 %) y tardío (> 35 años, 11 %)."},{"pregunta":"¿Qué distingue el estadio I del II?","respuesta":"En el I el edema desaparece al elevar el miembro; en el II es espontáneamente irreversible, aunque mejora con DLM/TFD."},{"pregunta":"Explica el signo de Stemmer.","respuesta":"Imposibilidad de pinzar la piel dorsal de la primera falange del segundo dedo; patognomónico del linfedema primario."},{"pregunta":"¿Qué es el síndrome de Stewart-Treves?","respuesta":"Un linfangiosarcoma sobre linfedema de larga evolución, típicamente años después de mastectomía y radioterapia."},{"pregunta":"¿Qué tratamiento corresponde a una diferencia de 3 cm?","respuesta":"Grado III: medidas higiénico-dietéticas, DLM, presoterapia, vendaje multicapa y media de contención."}],"glosario":[{"termino":"Edema linfodinámico","definicion":"Edema por exceso de carga con sistema linfático sano."},{"termino":"Edema linfostático","definicion":"Edema por fallo del transporte linfático."},{"termino":"Tromboflebitis","definicion":"Trombosis venosa superficial con inflamación de la vena."},{"termino":"Síndrome postrombótico","definicion":"Secuelas venosas crónicas de una TVP."},{"termino":"IVC","definicion":"Insuficiencia venosa crónica con fallo valvular e hipertensión venosa distal."},{"termino":"Lipodermatoesclerosis","definicion":"Endurecimiento fibroso de piel y tejido subcutáneo por IVC."},{"termino":"Dermitis ocre","definicion":"Pigmentación parda por depósito de hemosiderina en la IVC."},{"termino":"Signo de Godet","definicion":"Signo de la fóvea: hundimiento tras presión digital."},{"termino":"Signo de Stemmer","definicion":"No poder pinzar la piel dorsal del segundo dedo del pie."},{"termino":"Linfogammagrafía","definicion":"Imagen del drenaje linfático con un trazador radiactivo."},{"termino":"Erisipela","definicion":"Infección estreptocócica de la dermis superficial."},{"termino":"Linfocele","definicion":"Colección de linfa por lesión de vasos linfáticos."},{"termino":"Stewart-Treves","definicion":"Linfangiosarcoma sobre linfedema crónico."},{"termino":"Flebolinfedema","definicion":"Linfedema secundario a patología venosa crónica."}],"fuentes":["Guía de linfedema, 2.ª edición (2017). Misión Compresión.","T4- Edemas (I) (Universidad Europea)."],"qcm":[{"pregunta":"Un edema bilateral de MMII, simétrico, cianótico, con fóvea positiva y que empeora por la tarde sugiere un origen:","opciones":["Gravídico, indicado desde el tercer mes","Renal, y el DLM puede hacerse con control médico","Hepático, por hipoalbuminemia","Cardiaco, y el DLM está contraindicado"],"correcta":3,"explicacion":"El edema de la insuficiencia cardiaca derecha es de MMII, simétrico, cianótico, fóvea +, vespertino y mejora en decúbito; el DLM está contraindicado.","por_opcion":["❌ El gravídico no es cianótico y requiere embarazo.","❌ El renal es matutino, periorbitario y no depende de la posición.","❌ El hepático asocia ascitis y no se relaciona con la posición.","✅ Cuadro típico de IC derecha."]},{"pregunta":"¿Qué característica es propia del edema renal?","opciones":["Comienza en el abdomen con ascitis","Es vespertino y obedece a la gravedad","Es matutino y predomina en párpados y cara","Es cianótico y frío"],"correcta":2,"explicacion":"El edema renal, por pérdida de proteínas en orina, es más intenso por la mañana, no depende de la posición y predomina en tejido laxo de cara y párpados.","por_opcion":["❌ Propio del hepático.","❌ Propio del cardiaco.","✅ Literal del tema.","❌ Propio del cardiaco."]},{"pregunta":"En una tromboflebitis superficial de una vena no varicosa, el fisioterapeuta:","opciones":["Aplica DLM suave para reducir el edema","Aplica DLM solo distal al trombo","Aplica DLM tras 48 h de heparina","No realiza DLM"],"correcta":3,"explicacion":"En la trombosis venosa superficial el tratamiento es analgésico, antiinflamatorio, heparina y medias; el tema indica expresamente que no se realiza DLM.","por_opcion":["❌ Contraindicado.","❌ No se contempla ninguna variante.","❌ No se contempla.","✅ Literal del tema."]},{"pregunta":"¿En cuál de estas situaciones venosas SÍ está indicado el DLM?","opciones":["Tromboflebitis superficial","Síndrome postrombótico con edema y lipodermatoesclerosis","Trombosis venosa profunda aguda","Sospecha de embolia pulmonar"],"correcta":1,"explicacion":"En el síndrome postrombótico el DLM alivia edema, pesadez, dolor y prurito y favorece la curación de trastornos tróficos.","por_opcion":["❌ No se realiza DLM en la TVS.","✅ Indicación explícita.","❌ No se realiza DLM en la TVP.","❌ Urgencia médica, nunca DLM."]},{"pregunta":"¿Qué rasgo diferencia el edema de la IVC del linfedema?","opciones":["El edema venoso tiene fóvea negativa","El edema venoso suele no englobar los dedos","El edema venoso es siempre unilateral","El edema venoso no mejora con el declive"],"correcta":1,"explicacion":"El edema de la IVC es distal, en maléolos, normalmente sin englobar los dedos y mejora con declive; el linfedema engloba dedos y dorso del pie.","por_opcion":["❌ En la IVC la fóvea es positiva.","✅ Rasgo diferencial.","❌ Puede ser uni o bilateral.","❌ Suele mejorar con declive y decúbito."]},{"pregunta":"¿Cuál NO es un rasgo de los síntomas de la IVC según el tema?","opciones":["Responden bien a analgésicos y AINE","Son más severos en primavera y verano","Empeoran al final del día","Dependen de la actividad realizada"],"correcta":0,"explicacion":"Los síntomas de la IVC no responden a analgésicos ni a AINE.","por_opcion":["✅ Es lo contrario de lo que dice el tema.","❌ Es un rasgo descrito.","❌ Es un rasgo descrito.","❌ Es un rasgo descrito."]},{"pregunta":"En la embarazada, el DLM:","opciones":["Está contraindicado durante todo el embarazo","Está indicado solo en el último trimestre, incluido el abdomen","Está indicado desde el tercer mes, sin maniobras sobre el abdomen","Está indicado solo si hay preeclampsia"],"correcta":2,"explicacion":"Está indicado a partir del tercer mes y es contraindicación absoluta realizar maniobras sobre el abdomen.","por_opcion":["❌ El embarazo es relativa; en el edema gravídico está indicado.","❌ El abdomen está prohibido.","✅ Literal del tema.","❌ La preeclampsia no es una indicación."]},{"pregunta":"El linfedema primario precoz:","opciones":["Predomina en varones y en miembros superiores","Aparece al nacer y siempre es genético","Aparece entre 1 y 35 años y supone el 77–94 % de los primarios","Aparece después de los 35 años y supone el 11 %"],"correcta":2,"explicacion":"El precoz aparece entre 1 y 35 años, es mayoritariamente idiopático (77–94 %) y más frecuente en mujeres, en la pubertad y en MMII.","por_opcion":["❌ Predomina en mujeres y MMII.","❌ Describe el congénito (genético o idiopático).","✅ Literal.","❌ Describe el tardío."]},{"pregunta":"Un linfedema blando, con fóvea positiva, que ya no mejora al elevar el miembro pero sí con DLM, corresponde al estadio:","opciones":["II","0","I","IV"],"correcta":0,"explicacion":"El estadio II es espontáneamente irreversible: no mejora con la elevación, pero sí con DLM/TFD, y mantiene la fóvea.","por_opcion":["✅ Definición del estadio II.","❌ El 0 es subclínico.","❌ En el I el edema desaparece al elevar.","❌ En el IV la fóvea es negativa (fibrosis)."]},{"pregunta":"¿En qué estadio el signo de la fóvea puede estar presente o no?","opciones":["Estadio III","Estadio I","Estadio IV","Estadio II"],"correcta":0,"explicacion":"En el III empiezan cambios tisulares (fibroblastos, colágeno) y la fóvea puede estar presente o no; en el IV no está presente.","por_opcion":["✅ Literal.","❌ Fóvea positiva.","❌ Fóvea ausente.","❌ Fóvea positiva."]},{"pregunta":"El signo de Stemmer positivo consiste en:","opciones":["Imposibilidad de pinzar la piel dorsal de la primera falange del segundo dedo","Dorso del pie en forma de cristal de gafa","Hundimiento persistente tras presionar sobre un relieve óseo","Formación de almohadillas retromaleolares"],"correcta":0,"explicacion":"Stemmer-Kaposi: imposibilidad de pinzar la cara dorsal de la primera falange del segundo dedo; patognomónico del primario.","por_opcion":["✅ Definición literal.","❌ Otro signo de linfedema.","❌ Es el signo de Godet o fóvea.","❌ Otro signo de linfedema."]},{"pregunta":"Respecto a la evolución del linfedema:","opciones":["Ambos progresan siempre desde la raíz del miembro","El secundario progresa de distal a proximal","El primario progresa de proximal a distal","El primario suele iniciarse en el pie y progresar en sentido proximal"],"correcta":3,"explicacion":"En el primario la evolución suele ser de distal a proximal, iniciándose en el pie; en el secundario, de proximal a distal.","por_opcion":["❌ Solo el secundario parte de proximal.","❌ Es al revés.","❌ Es al revés.","✅ Literal."]},{"pregunta":"Diferencia de perímetro de 4 cm entre ambos brazos. Según el tema, el tratamiento incluye:","opciones":["Higiénico-dietéticas + DLM + presoterapia + vendaje multicapa + media","Higiénico-dietéticas + DLM","Solo cirugía","Solo medidas higiénico-dietéticas"],"correcta":0,"explicacion":"Entre 2 y 5 cm es grado III: medidas higiénico-dietéticas, DLM, presoterapia, vendaje multicapa y media de contención.","por_opcion":["✅ Grado III.","❌ Corresponde al grado II (hasta 2 cm).","❌ No es la pauta del tema.","❌ Corresponde al grado I (sin diferencia)."]},{"pregunta":"Infección bacteriana aguda estreptocócica de la parte más superficial de la dermis:","opciones":["Celulitis","Erisipela","Linfangitis","Adenitis"],"correcta":1,"explicacion":"La erisipela afecta a la parte más superficial; la celulitis a capas más profundas de la dermis.","por_opcion":["❌ Afecta capas más profundas.","✅ Definición.","❌ Inflamación de los canales linfáticos.","❌ Inflamación de un ganglio."]},{"pregunta":"¿Qué afirmación sobre el flebolinfedema es correcta?","opciones":["El edema cede con el reposo nocturno y respeta los dedos","No requiere compresión","Una patología linfática de larga duración acaba produciendo patología venosa","La patología venosa crónica puede acabar ocasionando patología linfática"],"correcta":3,"explicacion":"Las patologías venosas crónicas pueden terminar ocasionando patología linfática, pero no al revés; el edema no cede con el reposo nocturno y afecta a pies y dedos.","por_opcion":["❌ Describe el edema venoso puro.","❌ Vendaje y media forman parte del tratamiento.","❌ El tema lo niega expresamente.","✅ Literal."]}],"asignatura":"Drenaje linfático","tema":4,"fecha":"2026-11-09"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips">${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  if(n===Q.length) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado! Marca el tema como « Maîtrisé » en Notion.':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tema 2: Anatomía del sistema linfático (I) · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 2: Anatomía del sistema linfático (I)","subtitulo":"Del sistema sanguíneo al linfático: organización, componentes (capilares, colectores, troncos, conductos), ganglios y órganos linfáticos.","resumen":["La sangre se **filtra en el capilar arterial** y se **reabsorbe en el capilar venoso**; lo que no se reabsorbe lo recoge el **sistema linfático**, que nace en el intersticio y termina en el **ángulo venoso yugulo-subclavio (terminus)**.","El sistema venoso **profundo (subaponeurótico)** asume el **80 %** del retorno y el **superficial (supraponeurótico)** solo el **20 %**, comunicados por venas **comunicantes** (mismo plano) y **perforantes** (distinto plano).","El sistema linfático cumple tres funciones: **homeostasis** (vía accesoria para macromoléculas), **inmunidad** (ganglios y órganos linfoides) y **absorción de grasas** (quilomicrones por los quilíferos).","La linfa recorre **canales prelinfáticos → capilares** (sin válvulas, con filamentos de anclaje) → **precolectores** (aparecen válvulas) → **colectores** (linfangión contráctil) → **troncos → conductos**.","Los **600–700 ganglios** filtran, **reabsorben el 40–50 % de la linfa**, sensibilizan linfocitos y almacenan sustancias no excretables; los órganos linfáticos son **bazo, timo, médula ósea roja y amígdalas (anillo de Waldeyer)**."],"objetivos":["Describir la estructura del sistema arterial y venoso y la organización venosa profunda, superficial y anastomótica.","Explicar el intercambio capilar (filtración/reabsorción) y el papel del sistema linfático.","Enumerar los componentes del sistema linfático y las características estructurales de cada uno.","Identificar los troncos y conductos linfáticos y sus territorios de drenaje.","Conocer estructura y funciones de ganglios y órganos linfáticos."],"ideas_clave":["Capilar arterial = **filtración**; capilar venoso = **reabsorción**.","Venas profundas: **subaponeuróticas, 80 % del retorno, dobles salvo femoral y poplítea**. Superficiales: **supraponeuróticas, 20 %, sin arteria homóloga, menos válvulas**.","**Terminus** = anastomosis linfo-venosa en el ángulo yugular interna–subclavia.","Capilares linfáticos: **dedo de guante, sin válvulas, filamentos de anclaje, membrana basal discontinua**.","**Linfangión** = segmento de colector entre dos válvulas; es su parte contráctil (músculo liso solo entre válvulas).","Conducto torácico: nace en la **cisterna de Pecquet (D12–L2)** y desemboca en el ángulo venoso **izquierdo**; drena todo excepto el territorio de la **gran vena linfática derecha**.","Gran vena linfática derecha = troncos **subclavio, yugular y broncomediastínico derechos**, por delante del **escaleno anterior derecho**.","Ganglios: **600–700**, en forma de judía, **2–2,5 mm**; reabsorben el **40–50 %** de la linfa."],"secciones":[{"id":"sistema-sanguineo","titulo":"Sistema sanguíneo: arterial y venoso","bloques":[{"tipo":"parrafo","texto":"Las **arterias** llevan sangre con O2 y nutrientes del corazón a los tejidos. Tienen **capa interna (endotelio)**, **media con fibras musculares** y **externa o adventicia** (colágeno y elastina). Al alejarse del corazón disminuyen de calibre: **arteriolas** (los vasos más pequeños del sistema arterial) → **metarteriolas** (transición hacia los capilares) → **capilares arteriales** (intercambio de O2, nutrientes y productos metabólicos)."},{"tipo":"parrafo","texto":"Las **venas** recogen los residuos y devuelven la sangre al corazón. Su **capa media posee válvulas**. Aumentan de calibre al acercarse al corazón: capilares venosos → vénulas postcapilares → venas de mediano calibre → venas de gran calibre."},{"tipo":"tabla","titulo":"Sistema venoso profundo vs superficial","columnas":["Rasgo","Profundo","Superficial"],"filas":[["Plano","Subaponeurótico","Supraponeurótico"],["Retorno venoso","**80 %**","**20 %** (aunque la red es más abundante)"],["Arteria homóloga","Sí (venas de transporte con nombre arterial)","No"],["Válvulas","Más (las de drenaje muscular, muy valvularizadas)","Menos"],["Particularidad","Dobles excepto **femoral y poplítea**","Red más abundante en cantidad"]]},{"tipo":"parrafo","texto":"El profundo incluye **venas de drenaje muscular** (homólogas al músculo que drenan; en el miembro inferior forman reservorios: **suela venosa plantar, venas surales y gemelares, venas crurales**) y **venas de transporte** (con el nombre de la arteria que acompañan)."},{"tipo":"tarjetas","items":[{"etiqueta":"Mismo plano","titulo":"Sistema comunicante","texto":"Relaciona venas de un mismo plano: **arcada dorsal del pie, vena de Giacomini, vena de Cruveilhier**."},{"etiqueta":"Distinto plano","titulo":"Sistema perforante","texto":"Atraviesa la aponeurosis uniendo superficial y profunda. Papel **muy limitado en el miembro superior**. Antes epónimos (**Hunter, Cockett, Boyd**), hoy denominación **topográfica**."}]},{"tipo":"alerta","texto":"Trampa: la red superficial es **más abundante** pero solo aporta el **20 %** del retorno venoso. Y **comunicante** = mismo plano; **perforante** = distinto plano."},{"tipo":"figura","pagina":22,"pie":"Intercambio capilar: filtración en el extremo arterial, reabsorción venosa y absorción linfática del excedente en el intersticio.","src":"img/drenaje-linfatico-t2-tema-2-anatomia-del-sistema-linfatico-i-p22.jpg"}]},{"id":"sistema-linfatico-funciones","titulo":"Sistema linfático: inicio, terminación y funciones","bloques":[{"tipo":"parrafo","texto":"El sistema linfático **se inicia en el espacio intersticial con los capilares linfáticos** y termina uniéndose al sistema sanguíneo en el **ángulo venoso** formado por las venas **yugular interna y subclavia**, a través del **conducto linfático izquierdo (torácico)** y de la **gran vena linfática derecha**."},{"tipo":"definicion","termino":"Terminus","texto":"Anastomosis linfo-venosa en el ángulo yugulo-subclavio donde la linfa vuelve a la sangre."},{"tipo":"tabla","titulo":"Terminus derecho e izquierdo","columnas":["Terminus","Formado por","Recoge la linfa de"],"filas":[["Derecho","V. yugular interna D, v. subclavia D, gran vena linfática derecha","Miembro superior derecho, mitad derecha del tórax, de la cabeza y del cuello"],["Izquierdo","V. yugular interna I, v. subclavia I, conducto torácico","Mitad inferior del cuerpo, miembro superior izquierdo, mitad izquierda de cabeza, cuello y tórax, parte del corazón y pulmones"]]},{"tipo":"tarjetas","items":[{"etiqueta":"1","titulo":"Homeostasis","texto":"Vía accesoria de drenaje junto al venoso; absorbe sustancias que el sistema venoso no puede transportar por su **tamaño molecular**."},{"etiqueta":"2","titulo":"Función inmunitaria","texto":"A través de los **ganglios** y de los **órganos linfoides** (bazo, timo, médula roja, amígdalas)."},{"etiqueta":"3","titulo":"Absorción de grasas","texto":"Las grasas de cadena larga se envuelven en proteínas formando **quilomicrones**, que pasan a los **quilíferos intestinales** y al conducto torácico."}]},{"tipo":"perla","texto":"La linfa transporta las **proteínas** y macromoléculas que el capilar venoso no puede reabsorber: si el sistema linfático falla, el edema resultante es **rico en proteínas** (base del linfedema)."}]},{"id":"organizacion","titulo":"Organización del sistema linfático","bloques":[{"tipo":"tabla","titulo":"Tres subsistemas","columnas":["Sistema","Localización","Características"],"filas":[["Profundo","Subaponeurótico","Drena músculos, huesos, articulaciones y ligamentos; **menos numerosos pero de mayor diámetro**; siguen arterias y venas profundas; desembocan en los grandes troncos"],["Superficial","Epifascial (entre piel y aponeurosis superficial)","Drena el líquido intersticial de la piel"],["Anastomótico","Entre sistemas","Linfo-linfáticas (**comunicantes y perforantes**) y linfo-venosas (**terminus**)"]]},{"tipo":"figura","pagina":49,"pie":"Capas de la piel con la red de colectores iniciales, precolectores, colectores superficiales (sobre la aponeurosis) y profundos, y anastomosis entre territorios linfáticos.","src":"img/drenaje-linfatico-t2-tema-2-anatomia-del-sistema-linfatico-i-p49.jpg"},{"tipo":"perla","texto":"El DLM actúa sobre el **sistema superficial epifascial**: por eso sus presiones son suaves y desplazan la piel, no la musculatura."}]},{"id":"componentes","titulo":"Componentes: de los prelinfáticos a los conductos","bloques":[{"tipo":"esquema","titulo":"Recorrido de la linfa","mermaid":"flowchart LR\n  A[\"Intersticio\"] --> B[\"Canales prelinfaticos\"]\n  B --> C[\"Capilares linfaticos\"]\n  C --> D[\"Precolectores\"]\n  D --> E[\"Colectores\"]\n  E -->|\"al menos un ganglio\"| F[\"Troncos\"]\n  F --> G[\"Conductos\"]\n  G --> H[\"Terminus: angulo venoso\"]\n  subgraph S1[\"Captacion\"]\n  B\n  C\n  end\n  subgraph S2[\"Evacuacion\"]\n  D\n  E\n  end","pie":"Sistema de captación (capilares) y de evacuación (precolectores y colectores)."},{"tipo":"definicion","termino":"Canales prelinfáticos","texto":"Canales **abiertos, de recorrido muy corto**, que discurren por todo el intersticio y conducen la carga linfática hacia los capilares."},{"tipo":"dato","valor":"5 excepciones","texto":"Hay vasos linfáticos en todo el cuerpo **excepto cartílago, córnea y cristalino, cortical ósea, retina y SNC**."},{"tipo":"tabla","titulo":"Vasos linfáticos","columnas":["Vaso","Función","Rasgos"],"filas":[["Capilar","**Captación** de la carga linfática","Dedo de guante; **sin válvulas**; **filamentos de anclaje**; endotelio simple; **membrana basal discontinua**; uniones abiertas, cerradas o superpuestas"],["Precolector","Unión capilar–colector; **evacuación**","**Empiezan a aparecer válvulas**"],["Colector","Transporte (**evacuación**)","Pasan al menos por un ganglio (aferentes/eferentes); 3 capas; **linfangión**"],["Tronco","Drena regiones amplias","Misma estructura que colectores, **más válvulas**"],["Conducto","Devuelve la linfa a la sangre","Los más voluminosos; **capa muscular más fuerte y válvulas más separadas**; raramente ganglios"]]},{"tipo":"figura","pagina":41,"pie":"Capilar linfático: células endoteliales con aperturas entre ellas, filamentos de anclaje al tejido y entrada del líquido intersticial.","src":"img/drenaje-linfatico-t2-tema-2-anatomia-del-sistema-linfatico-i-p41.jpg"},{"tipo":"tabla","titulo":"Capas del colector","columnas":["Capa","Composición"],"filas":[["Íntima","**Membrana basal continua**; endotelio plano simple; forma las **válvulas**"],["Media","Células musculares lisas **solo entre válvula proximal y distal**; las válvulas carecen de músculo"],["Externa / adventicia","Sostén: tejido conjuntivo laxo, células, terminaciones nerviosas, **vasa vasorum**, fibroblastos"]]},{"tipo":"definicion","termino":"Linfangión","texto":"Sección de un colector **comprendida entre dos válvulas**; es la **parte contráctil** del colector."},{"tipo":"alerta","texto":"Membrana basal: **discontinua en el capilar**, **continua en el colector**. Válvulas: **ausentes en el capilar**, aparecen en el **precolector**."}]},{"id":"troncos-conductos","titulo":"Troncos y conductos linfáticos","bloques":[{"tipo":"tabla","titulo":"Troncos linfáticos","columnas":["Grupo","Troncos"],"filas":[["Abdominales","Lumbar derecho, lumbar izquierdo, intestinal"],["Torácicos","Broncomediastínico derecho, broncomediastínico izquierdo, mediastínico posterior"],["Yugulares","Yugular derecho, yugular izquierdo"],["Subclavios","Subclavio derecho, subclavio izquierdo"]]},{"tipo":"tarjetas","items":[{"etiqueta":"Derecha","titulo":"Gran vena linfática derecha","texto":"Convergencia de troncos **subclavio, yugular y broncomediastínico derechos**; **por delante del escaleno anterior derecho**. Drena miembro superior D, mitad derecha de cabeza-cuello y de tórax."},{"etiqueta":"Izquierda","titulo":"Conducto torácico","texto":"Nace en la **cisterna de Pecquet (del quilo)**, que recibe troncos **lumbares D e I e intestinal**, a nivel **D12–L2**; termina en el ángulo **yugular interna izquierda–subclavia izquierda**. Drena **todo el resto**."}]},{"tipo":"dato","valor":"D12–L2","texto":"Nivel de inicio del conducto torácico (cisterna de Pecquet)."},{"tipo":"figura","pagina":60,"pie":"Territorios: amarillo = conducto torácico; negro = conducto linfático derecho (cuadrante superior derecho). Desembocadura en las venas subclavias.","src":"img/drenaje-linfatico-t2-tema-2-anatomia-del-sistema-linfatico-i-p60.jpg"},{"tipo":"alerta","texto":"El miembro inferior **derecho** drena al **conducto torácico** (izquierdo), no a la gran vena linfática derecha: esta solo recoge el cuadrante supradiafragmático derecho."}]},{"id":"ganglios","titulo":"Ganglios linfáticos","bloques":[{"tipo":"dato","valor":"600–700 · 2–2,5 mm","texto":"Número aproximado de ganglios y diámetro habitual (forma de judía)."},{"tipo":"parrafo","texto":"Funcionan como **estaciones de filtración entre colectores**. Cada región tiene sus **ganglios regionales**: cabeza, cuello, abdomen, axila y región inguinocrural. Se componen de **cápsula** (conectivo denso irregular), **senos** y **parénquima**: **corteza externa o nodular (linfocitos B)**, **corteza interna o profunda (linfocitos T)** y **médula** (circula la linfa; macrófagos, células plasmáticas y linfocitos maduros)."},{"tipo":"figura","pagina":63,"pie":"Estructura del ganglio: cápsula, trabéculas, folículos con centro germinal, senos subcapsular y medular, vasos aferentes y eferente en el hilio.","src":"img/drenaje-linfatico-t2-tema-2-anatomia-del-sistema-linfatico-i-p63.jpg"},{"tipo":"tabla","titulo":"Funciones del ganglio","columnas":["Función","Detalle"],"filas":[["Filtro biológico","Neutraliza polvo, metales, restos celulares, bacterias, **células malignas**"],["Espesamiento de la linfa","Reabsorbe el **40–50 %** de la linfa (agua y micromoléculas) por la **presión coloidosmótica** de los capilares sanguíneos"],["Inmunidad específica","Sensibilización de linfocitos; **centros germinativos** forman nuevos linfocitos"],["Depósito","Sustancias no excretables: **carbonilla, polvo de vidrio, hollín**"]]},{"tipo":"alerta","texto":"Ojo: el tema sitúa los **linfocitos B en la corteza externa** y **T en la paracorteza (corteza interna)** al describir la estructura, pero en “inmunidad específica” dice **zonas corticales = T** y **medulares = B**. Si preguntan por la estructura, responde **corteza externa = B, interna = T**."},{"tipo":"perla","texto":"Como el ganglio reabsorbe casi la mitad del agua de la linfa, una linfadenectomía elimina también esa capacidad de concentración: más volumen que evacuar en el cuadrante afectado (complemento)."}]},{"id":"organos","titulo":"Órganos linfáticos","bloques":[{"tipo":"tabla","titulo":"Órganos linfáticos","columnas":["Órgano","Localización y rasgos","Funciones"],"filas":[["Bazo","Intraperitoneal, hipocondrio izquierdo (entre estómago, páncreas y riñón izquierdo); ~**12 cm, 150 g**; disminuye con la edad, aumenta en la digestión","Produce linfocitos y sustancias de defensa; destruye hematíes envejecidos; reservorio de sangre; eritropoyesis"],["Timo","Mediastino anterior, tras el esternón; **bilobulado**; máximo en la **pubertad**, luego involuciona (grasa)","Diferencia **linfocitos T**; controla otros órganos linfoides; influye en glándulas sexuales y crecimiento"],["Médula ósea roja","En el feto y niño en todos los huesos; en el adulto en **epífisis** y huesos cortos, planos e irregulares","**Hematopoyesis**; diferencia **linfocitos B**"],["Amígdalas","**Anillo de Waldeyer**: palatina, tubáricas (dos) y faríngea (adenoides)","Defensa rápida frente a patógenos de nariz y boca"]]},{"tipo":"esquema","titulo":"Diferenciación de linfocitos","mermaid":"flowchart TD\n  M[\"Medula osea roja\"] -->|\"hematopoyesis\"| P[\"Precursores\"]\n  P -->|\"en medula\"| B[\"Linfocitos B\"]\n  P -->|\"en timo\"| T[\"Linfocitos T\"]\n  B --> G[\"Ganglios: sensibilizacion\"]\n  T --> G","pie":"B se diferencian en la médula ósea; T en el timo."},{"tipo":"alerta","texto":"**Timo → T; médula → B.** El timo alcanza su máximo en la **pubertad**, no en el nacimiento."}]}],"caso_clinico":{"titulo":"Edema tras linfadenectomía inguinal","presentacion":"Hombre de 60 años con linfadenectomía inguinal derecha por melanoma, tratamiento finalizado. Consulta por pesadez y edema blando del miembro inferior derecho. Pregunta por qué su “pierna derecha” no drena al “lado derecho del cuello”.","preguntas":[{"pregunta":"¿Por qué conducto vuelve la linfa de su pierna derecha a la sangre?","respuesta":"Por el **conducto torácico**: los troncos lumbares (incluido el derecho) llegan a la **cisterna de Pecquet** y la linfa desemboca en el ángulo venoso **izquierdo**. La gran vena linfática derecha solo drena el cuadrante superior derecho."},{"pregunta":"¿Qué función ganglionar ha perdido en esa zona y qué implica?","respuesta":"La filtración y el **espesamiento de la linfa** (reabsorción del 40–50 % del agua): llega más volumen y más proteínas sin concentrar, favoreciendo un edema rico en proteínas."},{"pregunta":"¿Sobre qué subsistema linfático actuará prioritariamente el DLM?","respuesta":"Sobre el **sistema superficial epifascial** (entre piel y aponeurosis superficial) y sus **anastomosis linfo-linfáticas** hacia cuadrantes sanos."}]},"preguntate":[{"pregunta":"¿Dónde ocurre la filtración y dónde la reabsorción capilar?","respuesta":"Filtración en el capilar arterial; reabsorción en el capilar venoso; el excedente lo recoge el linfático."},{"pregunta":"Compara el sistema venoso profundo y superficial.","respuesta":"Profundo subaponeurótico, 80 % del retorno, con arteria homóloga y dobles salvo femoral y poplítea; superficial supraponeurótico, 20 %, sin arteria homóloga y con menos válvulas."},{"pregunta":"¿Qué es el terminus?","respuesta":"La anastomosis linfo-venosa en el ángulo yugular interna–subclavia, donde la linfa vuelve a la sangre."},{"pregunta":"Describe un capilar linfático.","respuesta":"En dedo de guante, sin válvulas, endotelio simple con membrana basal discontinua, uniones abiertas/cerradas/superpuestas y filamentos de anclaje."},{"pregunta":"¿Qué es el linfangión y dónde está su musculatura?","respuesta":"El segmento de colector entre dos válvulas; su músculo liso está solo en la zona media entre válvula proximal y distal."},{"pregunta":"¿Qué troncos forman la gran vena linfática derecha?","respuesta":"Subclavio, yugular y broncomediastínico derechos."},{"pregunta":"¿Dónde nace y dónde termina el conducto torácico?","respuesta":"En la cisterna de Pecquet (D12–L2), y termina en el ángulo yugular interna izquierda–subclavia izquierda."},{"pregunta":"¿Cómo espesa el ganglio la linfa?","respuesta":"Reabsorbe el 40–50 % (agua y micromoléculas) gracias a la presión coloidosmótica de sus capilares sanguíneos."},{"pregunta":"¿Qué amígdalas forman el anillo de Waldeyer?","respuesta":"Palatina, las dos tubáricas y la faríngea (adenoides)."},{"pregunta":"¿Qué tejidos carecen de vasos linfáticos?","respuesta":"Cartílago, córnea y cristalino, cortical ósea, retina y SNC."}],"glosario":[{"termino":"Metarteriola","definicion":"Vaso de transición entre arteriola y capilar arterial."},{"termino":"Vena perforante","definicion":"Comunica venas de distinto plano atravesando la aponeurosis."},{"termino":"Vena comunicante","definicion":"Comunica venas del mismo plano (p. ej., Giacomini)."},{"termino":"Terminus","definicion":"Anastomosis linfo-venosa del ángulo yugulo-subclavio."},{"termino":"Quilomicrón","definicion":"Gota de grasa de cadena larga envuelta en proteínas, absorbida por los quilíferos."},{"termino":"Quilíferos","definicion":"Vasos linfáticos de la mucosa intestinal."},{"termino":"Filamentos de anclaje","definicion":"Fibras que unen el capilar linfático al tejido y abren sus uniones."},{"termino":"Linfangión","definicion":"Segmento contráctil del colector entre dos válvulas."},{"termino":"Colector aferente/eferente","definicion":"Colector que entra en el ganglio / que sale de él."},{"termino":"Cisterna de Pecquet","definicion":"Origen dilatado del conducto torácico (D12–L2)."},{"termino":"Vasa vasorum","definicion":"Red de pequeños vasos que irrigan la pared de vasos mayores."},{"termino":"Anillo de Waldeyer","definicion":"Anillo de tejido linfoide faríngeo formado por las amígdalas."},{"termino":"Hematopoyesis","definicion":"Formación de células sanguíneas en la médula ósea roja."}],"fuentes":["Gómez, C., Jiménez, H., & Ulloa, J. H. Nomenclatura de las venas de los miembros inferiores y términos en flebología: los consensos internacionales.","T2- Anatomía del Sistema Linfático (I) (Universidad Europea)."],"qcm":[{"pregunta":"¿Qué porcentaje del retorno venoso corresponde al sistema venoso superficial según el tema?","opciones":["El 40 %, a través de las perforantes","El 20 %, aunque su red sea más abundante","El 80 %, por ser la red más abundante","El 50 %, repartido con el profundo"],"correcta":1,"explicacion":"La red superficial es más abundante en cantidad, pero fisiológicamente solo supone el 20 % del retorno; el profundo, el 80 %.","por_opcion":["❌ Cifra inventada; las perforantes solo comunican planos.","✅ Literal del tema.","❌ El 80 % corresponde al sistema profundo.","❌ No hay reparto equitativo."]},{"pregunta":"¿Cuáles son las únicas venas profundas que NO son dobles?","opciones":["Tibial posterior y peronea","Safena mayor y safena menor","Gemelares y surales","Femoral y poplítea"],"correcta":3,"explicacion":"Las venas profundas son dobles excepto la femoral y la poplítea.","por_opcion":["❌ Son venas profundas dobles.","❌ Son superficiales, no profundas.","❌ Son venas de drenaje muscular, reservorios del miembro inferior.","✅ Excepción citada."]},{"pregunta":"La vena de Giacomini es un ejemplo de:","opciones":["Sistema anastomótico perforante","Vena de drenaje muscular","Vena de transporte profunda","Sistema anastomótico comunicante"],"correcta":3,"explicacion":"El sistema comunicante une venas del mismo plano; ejemplos: arcada dorsal del pie, Giacomini, Cruveilhier.","por_opcion":["❌ Las perforantes unen planos distintos (antes Hunter, Cockett, Boyd).","❌ Las de drenaje muscular son homólogas al músculo.","❌ Las venas de transporte llevan nombre arterial.","✅ Ejemplo del tema."]},{"pregunta":"¿Qué característica corresponde al capilar linfático y NO al colector?","opciones":["Membrana basal continua","Ausencia de válvulas","Capa media de músculo liso","Presencia de linfangiones"],"correcta":1,"explicacion":"El capilar linfático no tiene válvulas y su membrana basal es discontinua; las válvulas aparecen en el precolector.","por_opcion":["❌ La membrana basal continua es del colector.","✅ Rasgo exclusivo del capilar.","❌ El músculo liso está en la capa media del colector.","❌ El linfangión es el segmento contráctil del colector."]},{"pregunta":"¿En qué estructura empiezan a manifestarse las válvulas?","opciones":["Canales prelinfáticos","Capilares linfáticos","Precolectores","Troncos linfáticos"],"correcta":2,"explicacion":"Los precolectores unen capilares y colectores; en ellos se empiezan a manifestar válvulas y forman parte del sistema de evacuación.","por_opcion":["❌ Son canales abiertos sin válvulas.","❌ No tienen válvulas.","✅ Literal del tema.","❌ Los troncos tienen más válvulas, pero no es donde empiezan."]},{"pregunta":"Respecto a la capa media del colector linfático:","opciones":["Las válvulas contienen fibras musculares","El músculo liso se sitúa solo entre la válvula proximal y la distal","Está formada por tejido conjuntivo laxo y vasa vasorum","Contiene fibras estriadas que impulsan la linfa"],"correcta":1,"explicacion":"Las células musculares lisas están solo en la parte media entre válvulas; las válvulas carecen de músculo.","por_opcion":["❌ Las válvulas están desprovistas de músculo.","✅ Literal del tema.","❌ Eso describe la capa externa o adventicia.","❌ El músculo es liso, no estriado."]},{"pregunta":"¿Qué troncos convergen para formar la gran vena linfática derecha?","opciones":["Subclavio, yugular y broncomediastínico derechos","Broncomediastínico derecho, lumbar derecho y yugular derecho","Lumbar derecho, intestinal y subclavio derecho","Yugular derecho, mediastínico posterior y subclavio derecho"],"correcta":0,"explicacion":"La gran vena linfática derecha resulta de los troncos subclavio, yugular y broncomediastínico derechos, por delante del escaleno anterior derecho.","por_opcion":["✅ Composición literal.","❌ El lumbar derecho drena al conducto torácico.","❌ Los lumbares e intestinal van a la cisterna de Pecquet.","❌ El mediastínico posterior no se incluye."]},{"pregunta":"El conducto torácico se inicia a nivel de:","opciones":["D12–L2","L4–S1","C7–D1","D4–D6"],"correcta":0,"explicacion":"Se inicia en la cisterna de Pecquet a nivel D12–L2 y termina en el ángulo venoso izquierdo.","por_opcion":["✅ Dato literal del tema.","❌ Demasiado caudal.","❌ Ahí está su terminación aproximada, no su inicio.","❌ Nivel intermedio de su trayecto."]},{"pregunta":"Un paciente con edema del miembro inferior derecho. ¿Dónde desemboca la linfa de ese miembro?","opciones":["Directamente en la vena femoral por anastomosis linfo-venosa","En la vena cava inferior a nivel lumbar","En el ángulo venoso izquierdo por el conducto torácico","En el ángulo venoso derecho por la gran vena linfática"],"correcta":2,"explicacion":"El conducto torácico recoge la linfa de todo el cuerpo salvo el territorio de la gran vena linfática derecha (cuadrante superior derecho), incluidos ambos miembros inferiores.","por_opcion":["❌ La anastomosis linfo-venosa fisiológica es el terminus.","❌ No se describe esa desembocadura.","✅ Territorio del conducto torácico.","❌ La gran vena linfática derecha solo drena miembro superior D, mitad D de cabeza, cuello y tórax."]},{"pregunta":"¿Qué porcentaje de la linfa se reabsorbe en el ganglio linfático?","opciones":["40–50 %","25–30 %","10–20 %","70–80 %"],"correcta":0,"explicacion":"En el ganglio se reabsorbe el 40–50 % de la linfa, sobre todo agua y micromoléculas, por la presión coloidosmótica de los capilares sanguíneos.","por_opcion":["✅ Dato literal.","❌ Cifra inferior a la del tema.","❌ Cifra inferior a la del tema.","❌ Cifra superior a la del tema."]},{"pregunta":"El mecanismo del espesamiento de la linfa en el ganglio se debe a:","opciones":["La contracción de la cápsula ganglionar","La presión hidrostática de los colectores eferentes","La presión coloidosmótica de los capilares sanguíneos ganglionares","La filtración activa por los macrófagos medulares"],"correcta":2,"explicacion":"Las proteínas están más concentradas en los capilares sanguíneos que en la linfa de los senos: esa diferencia coloidosmótica atrae agua hacia la sangre.","por_opcion":["❌ La cápsula no se contrae para ello.","❌ No es un fenómeno hidrostático de los eferentes.","✅ Mecanismo descrito.","❌ Los macrófagos fagocitan, no reabsorben agua."]},{"pregunta":"Según la descripción estructural del ganglio, la corteza externa o nodular contiene sobre todo:","opciones":["Linfocitos T","Células plasmáticas maduras","Macrófagos y precursores","Linfocitos B"],"correcta":3,"explicacion":"Corteza externa o nodular: linfocitos B; corteza interna o profunda: linfocitos T; médula: macrófagos, células plasmáticas y linfocitos maduros.","por_opcion":["❌ Los T están en la corteza interna o profunda.","❌ Las plasmáticas están en la médula.","❌ Los macrófagos están en la médula.","✅ Descripción estructural del tema."]},{"pregunta":"¿Cuál de los siguientes tejidos SÍ contiene vasos linfáticos?","opciones":["Cortical ósea","Retina","Cartílago","Dermis"],"correcta":3,"explicacion":"Hay vasos linfáticos en todo el cuerpo excepto cartílago, córnea y cristalino, cortical ósea, retina y SNC.","por_opcion":["❌ La cortical ósea carece de linfáticos.","❌ La retina carece de linfáticos.","❌ El cartílago carece de linfáticos.","✅ La piel está ricamente drenada (sistema superficial)."]},{"pregunta":"¿Qué afirmación sobre el timo es correcta?","opciones":["Es bilobulado y alcanza su máximo en la pubertad","Alcanza su máximo desarrollo al nacer","Se sitúa en el mediastino posterior","Diferencia los linfocitos en linfocitos B"],"correcta":0,"explicacion":"El timo, bilobulado, en el mediastino anterior tras el esternón, alcanza su máximo en la pubertad y luego involuciona; diferencia linfocitos T.","por_opcion":["✅ Correcto según el tema.","❌ El máximo es en la pubertad.","❌ Está en el mediastino anterior.","❌ Diferencia linfocitos T; la médula ósea diferencia los B."]},{"pregunta":"¿Cuál NO es una función del bazo descrita en el tema?","opciones":["Diferenciar linfocitos T","Producir linfocitos y sustancias de defensa","Destruir hematíes envejecidos","Actuar como reservorio de sangre"],"correcta":0,"explicacion":"La diferenciación de linfocitos T es función del timo; el bazo destruye hematíes viejos, es reservorio, produce linfocitos y participa en la eritropoyesis.","por_opcion":["✅ Es función del timo.","❌ Es función del bazo.","❌ Es función del bazo.","❌ Es función del bazo."]}],"asignatura":"Drenaje linfático","tema":2,"fecha":"2026-11-09"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips">${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  if(n===Q.length) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado! Marca el tema como « Maîtrisé » en Notion.':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>

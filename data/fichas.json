@@ -90,6 +90,86 @@
     "secciones": 8
   },
   {
+    "slug": "drenaje-linfatico-t1-tema-1-introduccion-al-drenaje-linfatico-manual",
+    "titulo": "Tema 1: Introducción al drenaje linfático manual",
+    "subtitulo": "Historia, escuelas, principios técnicos, efectos, indicaciones y contraindicaciones del DLM, y el mapa de líneas divisorias, cuadrantes y anastomosis linfáticas.",
+    "curso": "Drenaje linfático",
+    "tema": 1,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 8
+  },
+  {
+    "slug": "drenaje-linfatico-t2-tema-2-anatomia-del-sistema-linfatico-i",
+    "titulo": "Tema 2: Anatomía del sistema linfático (I)",
+    "subtitulo": "Del sistema sanguíneo al linfático: organización, componentes (capilares, colectores, troncos, conductos), ganglios y órganos linfáticos.",
+    "curso": "Drenaje linfático",
+    "tema": 2,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 7
+  },
+  {
+    "slug": "drenaje-linfatico-t2.2-tema-2-2-anatomia-del-sistema-linfatico-ii-grupos-ganglionar",
+    "titulo": "Tema 2.2: Anatomía del sistema linfático (II) – grupos ganglionares y corrientes",
+    "subtitulo": "Mapa topográfico de los ganglios de cabeza y cuello, miembro superior, miembro inferior, tórax, pelvis y abdomen, con sus aferencias, eferencias y corrientes linfáticas.",
+    "curso": "Drenaje linfático",
+    "tema": 2.2,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
+  },
+  {
+    "slug": "drenaje-linfatico-t3-tema-3-fisiologia-y-fisiopatologia-del-sistema-linfatico",
+    "titulo": "Tema 3: Fisiología y fisiopatología del sistema linfático",
+    "subtitulo": "Formación de la linfa, transportes a través del capilar, fuerzas de Starling, captación y evacuación linfática, y origen de los edemas.",
+    "curso": "Drenaje linfático",
+    "tema": 3,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
+  },
+  {
+    "slug": "drenaje-linfatico-t4-tema-4-edemas-i-linfodinamicos-linfedemas-y-flebolinfedemas",
+    "titulo": "Tema 4: Edemas (I) – linfodinámicos, linfedemas y flebolinfedemas",
+    "subtitulo": "Clasificación de los edemas, diagnóstico diferencial (cardiaco, venoso, renal, hepático, traumático, gravídico), linfedema primario y secundario, estadios, signos, complicaciones y tratamiento.",
+    "curso": "Drenaje linfático",
+    "tema": 4,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
+    "slug": "drenaje-linfatico-t4.2-tema-4-2-edemas-ii-linfedemas-especiales",
+    "titulo": "Tema 4.2: Edemas (II) – linfedemas especiales",
+    "subtitulo": "Linfedema genital, de mama, de cabeza-cara-cuello y linfedema secundario maligno: clasificación, clínica y secuencia de tratamiento conservador.",
+    "curso": "Drenaje linfático",
+    "tema": 4.2,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 4
+  },
+  {
+    "slug": "drenaje-linfatico-t4.3-tema-4-3-edemas-iii-lipedema-otros-edemas-y-fisioterapia-der",
+    "titulo": "Tema 4.3: Edemas (III) – lipedema, otros edemas y fisioterapia dermatofuncional",
+    "subtitulo": "Lipedema (características, diagnóstico diferencial, tipos, estadios y tratamiento), retención de líquidos por mala circulación y fisioestética.",
+    "curso": "Drenaje linfático",
+    "tema": 4.3,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
+  },
+  {
+    "slug": "drenaje-linfatico-t5-tema-5-introduccion-a-la-fisioterapia-oncologica",
+    "titulo": "Tema 5: Introducción a la fisioterapia oncológica",
+    "subtitulo": "Qué es el cáncer, cómo se trata y qué efectos secundarios produce, y qué hace el fisioterapeuta antes, durante y después del tratamiento oncológico.",
+    "curso": "Drenaje linfático",
+    "tema": 5,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 4
+  },
+  {
     "slug": "fisioterapia-neurologica-t1-tema-1-neuroanatomia-funcional-aplicada-sistemas-de-control-",
     "titulo": "Tema 1. Neuroanatomía funcional aplicada: sistemas de control motor y reflejos medulares",
     "subtitulo": "El movimiento surge de la integración sensitivo-motora del SN. Se organiza en niveles jerárquicos (médula, tronco, corteza) con el control en paralelo de ganglios basales y cerebelo. La médula, nivel más bajo, genera reflejos y automatismos gracias al huso muscular y al órgano tendinoso de Golgi.",
@@ -178,5 +258,15 @@
     "fecha": "2026-11-04",
     "preguntas": 15,
     "secciones": 8
+  },
+  {
+    "slug": "ortesis-t1-tema-1-ortesis-y-protesis-historia-y-generalidades",
+    "titulo": "Tema 1: Ortesis y prótesis – historia y generalidades",
+    "subtitulo": "Conceptos, funciones y clasificación de prótesis y órtesis, reacciones adversas y evolución histórica desde el Antiguo Egipto hasta la biónica.",
+    "curso": "Ortesis",
+    "tema": 1,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 4
   }
 ]

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tema 1: Ortesis y prótesis – historia y generalidades · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 1: Ortesis y prótesis – historia y generalidades","subtitulo":"Conceptos, funciones y clasificación de prótesis y órtesis, reacciones adversas y evolución histórica desde el Antiguo Egipto hasta la biónica.","resumen":["Una **prótesis** es una **extensión artificial que reemplaza** una parte del cuerpo que **falta** (amputación o agenesia); una **órtesis** es un **apoyo externo** que **modifica los aspectos funcionales o estructurales** del sistema neuromusculoesquelético.","Las prótesis restauran la **función biomecánica**, facilitan la **rehabilitación funcional** y la **adaptación estética y psicológica**; se clasifican en **endoprótesis** (quirúrgicas) y **exoprótesis** (retirables: motoras o sensoriales), por material y por energía (**interna o externa**).","Las órtesis se clasifican por **tiempo** (temporales/definitivas), **segmento** (tronco, MS, MI) y **función**: **activas/dinámicas** (funcionales dinámicas y activas correctoras) y **estáticas/pasivas** (pasivas correctoras, estabilizadoras y protectoras).","Sus reacciones adversas son **alergias al material, restricción circulatoria, úlceras** y las **complicaciones de la inmovilización**.","La historia va de los **egipcios (3000–3500 a.C., dedos de Cairo y Greville Chester)** y la **pierna de Capua (300 a.C.)** a **Ambroise Paré** (padre de la amputación y prótesis modernas), **Verduyn, Potts (pierna de Anglesey), Syme, Hanger** y la era de **microprocesadores y robótica**."],"objetivos":["Diferenciar prótesis y órtesis y describir sus funciones.","Clasificar las prótesis (endo/exo, material, energía).","Clasificar las órtesis por tiempo, segmento y función.","Reconocer las reacciones adversas de las órtesis.","Situar los hitos históricos y sus protagonistas."],"ideas_clave":["Prótesis = **sustituye** lo que falta; órtesis = **modifica** la función o estructura de lo que existe.","Endoprótesis: **colocación quirúrgica**, diseño endoesquelético; exoprótesis: **retirables**, aparatos ortopédicos.","Energía **interna**: el propio paciente mueve la prótesis; **externa**: sistemas mecánicos, hidráulicos o eléctricos con motores y baterías.","**Activa correctora**: corrige mientras se lleva; al quitarla, el segmento **vuelve a su posición inicial**.","**Pasiva protectora**: descarga o alinea un miembro; **estabilizadora**: controla un segmento y un ángulo articular.","**Ambroise Paré**: amputación moderna (**1529**) y prótesis (**1536**); **Lorrain**: cuero, papel y pegamento en lugar de hierro.","**Verduyn (1696)**: primera prótesis por debajo de la rodilla sin bloqueo; **Potts (1800)**: pierna de Anglesey; **Syme (1843)**: amputación de tobillo.","**Desoutter (1912)**: primera prótesis de **aluminio**; **Péan (1893)**: primera prótesis de **hombro**."],"secciones":[{"id":"protesis","titulo":"Prótesis: concepto, funciones y clasificación","bloques":[{"tipo":"definicion","termino":"Prótesis","texto":"**Extensión artificial que reemplaza** o provee una parte del cuerpo que **falta** (amputación, agenesia), cumpliendo sus funciones. Algunas son **estrictamente estéticas** (oculares, mamarias)."},{"tipo":"tarjetas","items":[{"etiqueta":"1","titulo":"Restaurar la función biomecánica","texto":"Suplir funciones perdidas (caminar, agarrar), reproducir el movimiento articular, dar **soporte y estabilidad**."},{"etiqueta":"2","titulo":"Rehabilitación funcional","texto":"Reintegración a las AVD, independencia física y social, **prevenir deformidades posturales** por desbalance del **centro de gravedad**."},{"etiqueta":"3","titulo":"Adaptación estética y psicológica","texto":"Imitar forma, color y textura; mejorar la autoestima; ayudar a aceptar la pérdida."}]},{"tipo":"tabla","titulo":"Clasificación de las prótesis","columnas":["Criterio","Tipos"],"filas":[["Colocación","**Endoprótesis**: quirúrgicas, diseño endoesquelético (cadera, hombro invertido, válvula cardiaca, neuroprótesis). **Exoprótesis**: retirables, aparatos ortopédicos"],["Exoprótesis según función","**Motoras** (acción simple) y **sensoriales** (informan de la relación con el entorno y calculan la fuerza; p. ej., implante coclear, retina Argus II)"],["Material","Plástico, láminas de titanio, resina, metal"],["Energía","**Interna**: el propio individuo mueve la articulación protésica. **Externa**: sistemas mecánicos, hidráulicos o eléctricos con motores y baterías"]]},{"tipo":"alerta","texto":"Una **prótesis de cadera** es una **endoprótesis** (quirúrgica), no una órtesis. Un **implante coclear** es una prótesis **sensorial**."}]},{"id":"ortesis","titulo":"Órtesis: concepto, características y clasificación","bloques":[{"tipo":"definicion","termino":"Órtesis","texto":"**Apoyo u otro dispositivo externo** aplicado al cuerpo para **modificar los aspectos funcionales o estructurales** del sistema neuromusculoesquelético."},{"tipo":"lista","items":["Útiles como parte del manejo de **rehabilitación** en diversas enfermedades.","**A medida** del segmento o **prefabricadas** adaptadas.","Aportan **funcionalidad, confort y estética**.","Sirven para **mejorar una función, restringir o reforzar un movimiento**."]},{"tipo":"tabla","titulo":"Clasificación por tiempo y segmento","columnas":["Criterio","Tipos"],"filas":[["Tiempo","**Temporales** (trastornos limitados en el tiempo) / **definitivas** (déficit o discapacidad definitivos)"],["Segmento","Tronco, miembro superior, miembro inferior"]]},{"tipo":"esquema","titulo":"Clasificación funcional de las órtesis","mermaid":"flowchart TD\n  O[\"Ortesis segun funcion\"] --> A[\"Activas o dinamicas\"]\n  O --> P[\"Estaticas o pasivas\"]\n  A --> A1[\"Funcionales dinamicas: sustituyen funcion muscular\"]\n  A --> A2[\"Activas correctoras: corrigen mientras se llevan\"]\n  P --> P1[\"Pasivas correctoras: corrigen deformidad\"]\n  P --> P2[\"Estabilizadoras: controlan segmento y angulo\"]\n  P --> P3[\"Pasivas protectoras: descargan o alinean\"]","pie":"Activas sustituyen mecánicamente una función muscular o ligamentosa; pasivas mantienen un segmento que no se sostiene solo."},{"tipo":"figura","pagina":13,"pie":"Órtesis activas: órtesis dinámica de muñeca y mano (funcional dinámica) y estabilizador de tobillo.","src":"img/ortesis-t1-tema-1-ortesis-y-protesis-historia-y-generalidades-p13.jpg"},{"tipo":"alerta","texto":"**Activa correctora**: al quitarla, el segmento **vuelve a su posición inicial**. **Pasiva correctora** también corrige una deformidad, pero manteniendo pasivamente una posición. No confundir con la **pasiva protectora**, que **descarga o alinea**."},{"tipo":"tabla","titulo":"Reacciones adversas","columnas":["Reacción","Comentario"],"filas":[["Alergia al material","Revisar componentes en contacto con la piel"],["Restricción de la circulación periférica","Correas o bordes demasiado ajustados"],["Úlceras","Presión mantenida sobre prominencias"],["Complicaciones de la inmovilización","Rigidez, atrofia, etc. (complemento)"]]},{"tipo":"perla","texto":"Al entregar una órtesis, el fisioterapeuta revisa **piel, circulación distal y puntos de presión** y educa al paciente en tiempos de uso para evitar úlceras y los efectos de la inmovilización."}]},{"id":"historia-antigua","titulo":"Historia: de Egipto a la Edad Media","bloques":[{"tipo":"parrafo","texto":"Órtesis y prótesis han sido **indispensables para reintegrarse en la sociedad y en las AVD**; con el tiempo ganan **comodidad, beneficio funcional y seguridad**."},{"tipo":"tabla","titulo":"Antigüedad y Edad Media","columnas":["Época","Hito"],"filas":[["3000–3500 a.C.","**Egipcios**, pioneros: prótesis rudimentarias con fibras, más por la sensación de **“completitud”** que por función. Momia con **1.er dedo del pie protésico funcional** (**dedo de Cairo** y **Greville Chester**)"],["424 a.C.","**Heródoto**: vidente persa condenado a muerte que se corta el pie y huye con una **plantilla protésica de madera**"],["~300 a.C.","**Pierna de Capua** (desenterrada en Italia en **1858**): hierro y bronce con núcleo de madera, amputado **transtibial**"],["218–210 a.C.","**2.ª Guerra Púnica**: manos de hierro para soldados amputados"],["Alta Edad Media (476–1000)","Pocos avances: **gancho y pata de palo**, ocultar deformidades; poca funcionalidad; solo los ricos"]]},{"tipo":"figura","pagina":19,"pie":"Pierna de Capua (c. 300 a.C., bronce sobre núcleo de madera) y brazo protésico metálico.","src":"img/ortesis-t1-tema-1-ortesis-y-protesis-historia-y-generalidades-p19.jpg"}]},{"id":"historia-moderna","titulo":"Historia: del Renacimiento a la actualidad","bloques":[{"tipo":"tabla","titulo":"Renacimiento y siglos XVI–XIX","columnas":["Año","Protagonista","Aportación"],"filas":[["1508","Götz von Berlichingen","Par de **manos de hierro** con mecanismos de liberación y resortes, tras perder el brazo en Landshut"],["~1512","Cirujano italiano","Describe un amputado bilateral de MS funcional y el **brazo de plata** del almirante Barbarroja"],["1529 / 1536","**Ambroise Paré**","**Padre** de la cirugía de amputación y del diseño protésico moderno: amputaciones (1529) y prótesis (1536); rodilla flexible, bloqueo de rodilla, arnés ajustable"],["s. XVI","**Lorrain**","Cerrajero: usa **cuero, papel y pegamento** en vez de hierro"],["1696","**Pieter Verduyn**","Primera prótesis **por debajo de la rodilla sin bloqueo** (base de articulación y corsé actuales)"],["1800","**James Potts**","Encaje de madera, rodilla de acero, pie articulado con tendones de tripa de gato: **pierna de Anglesey** (Waterloo)"],["1839","William Selpho","Lleva la pierna a EE. UU.: **pierna Selpho**"],["1843","**James Syme**","Amputación de **tobillo** que evita la del muslo"],["1846","Benjamin Palmer","Mejora la Selpho: resorte anterior, aspecto suave, tendones ocultos"],["1858","Douglas Bly","Pierna anatómica Doctor Bly"],["1863","Dubois Parmelee","**Encaje de succión**, rodilla **policéntrica**, pie multiarticulado"],["1868","Gustav Hermann","Propone **aluminio** en vez de acero"],["1893","Jules Émile Péan","Primera **prótesis de hombro** (paciente de 37 años con tuberculosis)"],["1912","**Marcel Desoutter**","Aviador: primera prótesis de **aluminio**, con su hermano Charles"]]},{"tipo":"figura","pagina":26,"pie":"Ambroise Paré y sus diseños: pierna con rodilla articulada y mano mecánica con dedos móviles.","src":"img/ortesis-t1-tema-1-ortesis-y-protesis-historia-y-generalidades-p26.jpg"},{"tipo":"alerta","texto":"No confundir: **Hermann (1868) propone** el aluminio; **Desoutter (1912) fabrica** la primera prótesis de aluminio. **Potts** crea la pierna de **Anglesey**; **Selpho** la lleva a EE. UU."},{"tipo":"parrafo","texto":"La **Guerra Civil estadounidense** dispara las amputaciones: **James Hanger**, uno de los primeros amputados, patenta la **“Extremidad Hanger”** con duelas de barril. Tras la **2.ª Guerra Mundial** los veteranos exigen mejoras y el gobierno de EE. UU. pacta con empresas militares para mejorar la función protésica."},{"tipo":"parrafo","texto":"Hoy: dispositivos **más ligeros** (plástico, aluminio, composites), **microprocesadores, chips y robótica**, **fundas de silicona** que imitan la extremidad natural e impresión 3D."},{"tipo":"dato","valor":"1529 · 1536","texto":"Ambroise Paré introduce la amputación moderna y elabora sus prótesis."}]}],"caso_clinico":{"titulo":"Paciente con pie caído y amputación digital","presentacion":"Hombre de 58 años con parálisis del nervio peroneo que le impide la flexión dorsal del tobillo, y amputación traumática del índice derecho. El médico prescribe una órtesis antiequino para el tobillo y una epítesis de silicona para el dedo.","preguntas":[{"pregunta":"¿Cuál de los dos dispositivos es una prótesis y cuál una órtesis?","respuesta":"La **epítesis de silicona** del dedo es una **prótesis** (sustituye una parte que falta, con fin sobre todo estético). La **antiequino** es una **órtesis** (modifica la función de un segmento existente)."},{"pregunta":"¿Cómo clasificarías funcionalmente la antiequino?","respuesta":"Si con un resorte sustituye la función de los flexores dorsales, es **activa/dinámica funcional dinámica**; si solo mantiene el tobillo a 90°, es **estática/pasiva estabilizadora** (controla segmento y ángulo)."},{"pregunta":"¿Qué complicaciones vigilarás?","respuesta":"**Alergia al material**, **restricción circulatoria**, **úlceras** por presión (maléolos, dorso del pie) y complicaciones de la **inmovilización**."}]},"preguntate":[{"pregunta":"Diferencia prótesis y órtesis.","respuesta":"La prótesis reemplaza una parte que falta; la órtesis es un apoyo externo que modifica la función o estructura del sistema neuromusculoesquelético."},{"pregunta":"Enumera las tres funciones de la prótesis.","respuesta":"Restaurar la función biomecánica, la rehabilitación funcional y la adaptación estética y psicológica."},{"pregunta":"¿Qué distingue una endoprótesis de una exoprótesis?","respuesta":"La endoprótesis se coloca quirúrgicamente (diseño endoesquelético); la exoprótesis es retirable y se considera aparato ortopédico."},{"pregunta":"Explica la energía interna y externa de una prótesis.","respuesta":"Interna: el propio individuo mueve la articulación protésica; externa: sistemas mecánicos, hidráulicos o eléctricos con motores y baterías."},{"pregunta":"Diferencia órtesis funcional dinámica y activa correctora.","respuesta":"La funcional dinámica sustituye una función muscular; la activa correctora corrige una deformidad mientras se lleva y al quitarla el segmento vuelve a su posición."},{"pregunta":"¿Qué hace una órtesis pasiva protectora?","respuesta":"Descargar un miembro o alinearlo."},{"pregunta":"¿Por qué se considera a Ambroise Paré el padre de la prótesis moderna?","respuesta":"Introdujo la amputación moderna (1529), elaboró prótesis (1536) con rodilla flexible, bloqueo y arnés, y demostró comprender cómo debe funcionar una prótesis."},{"pregunta":"¿Qué es la pierna de Capua?","respuesta":"Una pierna artificial de c. 300 a.C., de hierro y bronce con núcleo de madera, para un amputado transtibial, desenterrada en 1858."},{"pregunta":"¿Qué aportó Syme en 1843?","respuesta":"Una amputación de tobillo que evitaba la del muslo y permitía caminar con prótesis de pie."}],"glosario":[{"termino":"Prótesis","definicion":"Dispositivo que reemplaza una parte del cuerpo ausente."},{"termino":"Órtesis","definicion":"Dispositivo externo que modifica la función o estructura neuromusculoesquelética."},{"termino":"Agenesia","definicion":"Ausencia congénita de una parte del cuerpo."},{"termino":"Endoprótesis","definicion":"Prótesis implantada quirúrgicamente."},{"termino":"Exoprótesis","definicion":"Prótesis externa y retirable."},{"termino":"Prótesis sensorial","definicion":"Exoprótesis que informa de la relación con el entorno y regula la fuerza."},{"termino":"Órtesis estabilizadora","definicion":"Órtesis pasiva que controla un segmento y un ángulo articular."},{"termino":"Órtesis activa correctora","definicion":"Corrige una deformidad solo mientras se lleva."},{"termino":"Transtibial","definicion":"Amputación por debajo de la rodilla, a través de la tibia."},{"termino":"Encaje de succión","definicion":"Encaje que se fija al muñón por vacío (Parmelee, 1863)."},{"termino":"Rodilla policéntrica","definicion":"Rodilla protésica con varios centros de rotación."},{"termino":"Epítesis","definicion":"Prótesis externa de silicona, sobre todo estética."}],"fuentes":["Thomas, T. (2023). Prosthetics through the ages. MedlinePlus Magazine.","Otte, A., & Hazubski, S. (2021). The Ancient Artificial Leg of Capua: First 3D Print after 2300 Years.","Gorino, C. (2020). A short history of prosthetics. Synergy DMEPOS Blog.","Valentinuzzi, M. E., & López Celani, N. M. (2019). Physical rehabilitation: A historical look. IEEE Pulse, 10(6), 13–16.","Norton, K. M. (2007). A brief history of prosthetics. In Motion, 17(7).","van den Brand, R. et al. (2015). Neuroprosthetic technologies… Ann Phys Rehabil Med, 58(4), 232–237.","Benito Pascual, A. M. (2017). Restauración de la función visual con el implante de retina Argus II."],"qcm":[{"pregunta":"Un dispositivo externo que modifica los aspectos funcionales o estructurales del sistema neuromusculoesquelético es:","opciones":["Una órtesis","Una prótesis","Una endoprótesis","Una epítesis"],"correcta":0,"explicacion":"La órtesis es un apoyo externo que modifica función o estructura; la prótesis reemplaza una parte ausente.","por_opcion":["✅ Definición literal.","❌ La prótesis sustituye una parte que falta.","❌ Es una prótesis quirúrgica.","❌ Es una prótesis estética externa."]},{"pregunta":"Una prótesis de cadera se clasifica como:","opciones":["Exoprótesis motora","Órtesis estabilizadora","Endoprótesis","Exoprótesis sensorial"],"correcta":2,"explicacion":"Las endoprótesis requieren cirugía para su colocación y tienen diseño endoesquelético (cadera, hombro, válvulas).","por_opcion":["❌ Las exoprótesis son retirables.","❌ No es una órtesis.","✅ Colocación quirúrgica.","❌ Las sensoriales son exoprótesis."]},{"pregunta":"Una exoprótesis que informa de la relación con el entorno y calcula automáticamente la fuerza a aplicar es:","opciones":["Motora","Sensorial","De energía interna","Endoesquelética"],"correcta":1,"explicacion":"Las exoprótesis sensoriales informan de la relación con el entorno y calculan la fuerza; las motoras ejecutan una acción simple.","por_opcion":["❌ Ejecutan una acción simple.","✅ Definición.","❌ Es un criterio de energía, no de función.","❌ Rasgo de las endoprótesis."]},{"pregunta":"En una prótesis de energía EXTERNA:","opciones":["La colocación es siempre quirúrgica","El propio paciente mueve la articulación con el resto del aparato locomotor","El material es exclusivamente titanio","Sistemas mecánicos, hidráulicos o eléctricos con motores y baterías la activan"],"correcta":3,"explicacion":"Externa: sistemas mecánicos, hidráulicos o eléctricos que actúan de forma indirecta, movidos por motores con baterías.","por_opcion":["❌ No tiene relación con la energía.","❌ Describe la energía interna.","❌ No tiene relación.","✅ Literal."]},{"pregunta":"¿Cuál NO es una función de la prótesis según el tema?","opciones":["Facilitar la rehabilitación funcional","Modificar la estructura de un segmento existente","Adaptación estética y psicológica","Restaurar la función biomecánica"],"correcta":1,"explicacion":"Modificar la estructura de un segmento existente es propio de la órtesis; las funciones de la prótesis son biomecánica, rehabilitación y estética/psicológica.","por_opcion":["❌ Sí es función.","✅ Corresponde a la órtesis.","❌ Sí es función.","❌ Sí es función."]},{"pregunta":"Órtesis que corrige una deformidad mientras se lleva puesta y, al quitarla, el segmento vuelve a su posición inicial:","opciones":["Estabilizadora","Pasiva protectora","Activa correctora","Pasiva correctora"],"correcta":2,"explicacion":"Las activas correctoras corrigen la deformidad mientras se llevan; al retirarlas, el segmento vuelve a su posición inicial.","por_opcion":["❌ Controla segmento y ángulo.","❌ Descarga o alinea.","✅ Definición literal.","❌ Es estática; corrige manteniendo una posición."]},{"pregunta":"Una órtesis cuya función es descargar un miembro o alinearlo es:","opciones":["Funcional dinámica","Estabilizadora","Activa correctora","Pasiva protectora"],"correcta":3,"explicacion":"Las pasivas protectoras descargan o alinean un miembro.","por_opcion":["❌ Sustituye una función muscular.","❌ Controla un segmento y un ángulo articular.","❌ Corrige mientras se lleva.","✅ Literal."]},{"pregunta":"Las órtesis activas o dinámicas se caracterizan por:","opciones":["Colocarse quirúrgicamente","Sustituir de forma mecánica una función muscular o ligamentosa","Mantener un segmento en una posición porque no puede sostenerse solo","Ser siempre definitivas"],"correcta":1,"explicacion":"Las activas/dinámicas sustituyen mecánicamente una función muscular o ligamentosa; las estáticas mantienen un segmento en posición.","por_opcion":["❌ Las órtesis son externas.","✅ Literal.","❌ Definición de las estáticas/pasivas.","❌ Pueden ser temporales o definitivas."]},{"pregunta":"¿Cuál NO figura entre las reacciones adversas de las órtesis?","opciones":["Rechazo inmunológico del implante","Restricción de la circulación periférica","Reacción alérgica al material","Desarrollo de úlceras"],"correcta":0,"explicacion":"Se citan alergias, restricción circulatoria, úlceras y complicaciones de la inmovilización; el rechazo de implante no se aplica a un dispositivo externo.","por_opcion":["✅ No figura.","❌ Sí figura.","❌ Sí figura.","❌ Sí figura."]},{"pregunta":"¿A quién se considera el padre de la cirugía de amputación y del diseño protésico moderno?","opciones":["Ambroise Paré","Pieter Verduyn","James Potts","James Syme"],"correcta":0,"explicacion":"Ambroise Paré, barbero y cirujano del ejército francés, introdujo la amputación moderna (1529) y elaboró prótesis (1536).","por_opcion":["✅ Literal.","❌ Primera prótesis bajo rodilla sin bloqueo (1696).","❌ Diseñó la pierna de Anglesey (1800).","❌ Amputación de tobillo (1843)."]},{"pregunta":"¿Qué aportó el cerrajero Lorrain, compañero de Paré?","opciones":["La primera prótesis de aluminio","La rodilla policéntrica","El encaje de succión","El uso de cuero, papel y pegamento en lugar de hierro"],"correcta":3,"explicacion":"Lorrain usó cuero, papel y pegamento en lugar de hierro pesado.","por_opcion":["❌ Desoutter (1912).","❌ Aportación de Parmelee (1863).","❌ Aportación de Parmelee (1863).","✅ Literal."]},{"pregunta":"La llamada pierna de Anglesey fue diseñada por:","opciones":["William Selpho","Benjamin Palmer","Douglas Bly","James Potts"],"correcta":3,"explicacion":"James Potts (1800) diseñó la pierna con encaje de madera, rodilla de acero y pie articulado; la usó el marqués de Anglesey tras Waterloo.","por_opcion":["❌ La llevó a EE. UU. (pierna Selpho).","❌ Mejoró la Selpho (1846).","❌ Pierna anatómica Doctor Bly (1858).","✅ Literal."]},{"pregunta":"¿Quién fabricó en 1912 la primera prótesis de aluminio?","opciones":["Marcel Desoutter","Gustav Hermann","Dubois Parmelee","James Hanger"],"correcta":0,"explicacion":"Hermann sugirió el aluminio en 1868, pero la primera prótesis de aluminio la hizo el aviador Marcel Desoutter en 1912 con su hermano Charles.","por_opcion":["✅ Literal.","❌ Solo propuso el aluminio (1868).","❌ Encaje de succión y rodilla policéntrica (1863).","❌ Extremidad Hanger con duelas de barril."]},{"pregunta":"La pierna de Capua:","opciones":["Es el dedo protésico de una momia egipcia","Era de aluminio con encaje de succión","Data de c. 300 a.C. y correspondía a un amputado transtibial","Fue diseñada por Paré en 1536"],"correcta":2,"explicacion":"Desenterrada en Italia en 1858, data de c. 300 a.C., de hierro y bronce con núcleo de madera, para un amputado transtibial.","por_opcion":["❌ Esos son los dedos de Cairo y Greville Chester.","❌ Materiales y técnica muy posteriores.","✅ Literal.","❌ No corresponde."]},{"pregunta":"En 1696, Pieter Verduyn desarrolló:","opciones":["Una mano de hierro con resortes","La amputación de tobillo","La primera prótesis de hombro","La primera prótesis por debajo de la rodilla sin mecanismo de bloqueo"],"correcta":3,"explicacion":"Verduyn desarrolló la primera prótesis por debajo de la rodilla sin bloqueo, base de los actuales dispositivos de articulación y corsé.","por_opcion":["❌ Götz von Berlichingen, 1508.","❌ Syme, 1843.","❌ Péan, 1893.","✅ Literal."]}],"asignatura":"Ortesis","tema":1,"fecha":"2026-11-09"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips">${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  if(n===Q.length) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado! Marca el tema como « Maîtrisé » en Notion.':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>
