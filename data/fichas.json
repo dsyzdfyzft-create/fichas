@@ -418,5 +418,25 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 6
+  },
+  {
+    "slug": "patologia-quirurgica-i-t7-tema-7-asepsia-antisepsia-e-instrumentacion-quirurgica",
+    "titulo": "Tema 7: Asepsia, antisepsia e instrumentación quirúrgica",
+    "subtitulo": "Historia de la asepsia, cadena epidemiológica, limpieza, desinfección (clasificación de Spaulding) y esterilización, antisépticos, lavado de manos, vestido y enguantado estéril, preparación de la piel, campos e instrumental quirúrgico.",
+    "curso": "Patología quirúrgica I",
+    "tema": 7,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
+    "slug": "patologia-quirurgica-i-t8-tema-8-sindrome-compartimental-y-aplastamiento",
+    "titulo": "Tema 8: Síndrome compartimental y aplastamiento",
+    "subtitulo": "Concepto, causas (aumento del contenido o disminución del continente), isquemia-reperfusión, fisiopatología, regla de las 6 P, diagnóstico, fasciotomía, síndrome por aplastamiento con rabdomiólisis y síndrome compartimental crónico del deportista.",
+    "curso": "Patología quirúrgica I",
+    "tema": 8,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
   }
 ]
