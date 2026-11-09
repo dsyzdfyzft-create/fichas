@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tema 3: Patología ortopédica infantil · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 3: Patología ortopédica infantil","subtitulo":"Deformidades craneales, tortícolis congénita, escoliosis infantil, espondilolistesis, espina bífida, rodillas valgas/varas, patología de cadera (Perthes, Meyer, sinovitis, resorte), Osgood-Schlatter, quiste de Baker, fibroma plantar y Sever, con sus órtesis.","resumen":["La **ortopedia infantil** trata trastornos musculoesqueléticos **hereditarios, congénitos o adquiridos** de niños y adolescentes; como el hueso está en **crecimiento** (Risser \u003c 4/5), el **diagnóstico precoz** es fundamental, sobre todo en las zonas de crecimiento (**entesis**).","Las deformidades craneales son **posicionales** (**plagiocefalia** asimétrica, **braquicefalia** simétrica) o por **craneosinostosis** (cierre prematuro de suturas, tratamiento **quirúrgico**); el **casco craneal** se usa **3–4 meses, 23 h/día**, si falla la fisioterapia postural.","La **tortícolis muscular congénita** (acortamiento del **ECOM**, sobre todo derecho; **0,4–1,9 %**) aparece a las **2–4 semanas** y se resuelve en **2–6 meses** con manipulación suave y estímulos desde el lado afectado.","La **espondilolistesis** es la causa más común de **lumbalgia a los 10–15 años**, suele venir precedida de **espondilólisis** y se trata con **TLSO antilordosis** o fusión in situ; la **espina bífida** se divide en **oculta, meningocele (operable) y mielomeningocele (incapacidad permanente)**.","En cadera: **Perthes** (osteocondrosis de la cabeza femoral, **órtesis en abducción**), **Meyer** (osificación irregular, órtesis en **RE y abducción**), **sinovitis transitoria** (3–10 años, cede en 1 semana) y **cadera en resorte**; **Osgood-Schlatter** (tuberosidad tibial, **órtesis antivibración**) y **Sever** (apofisitis del calcáneo, **alza de talón ≥ 5 mm**)."],"objetivos":["Definir la ortopedia infantil y la importancia del diagnóstico precoz.","Diferenciar deformidades craneales posicionales y craneosinostosis y su tratamiento.","Describir la tortícolis congénita, la escoliosis infantil, la espondilolistesis y la espina bífida.","Reconocer la patología de rodilla y cadera infantil y sus órtesis.","Diferenciar Osgood-Schlatter, Sever, quiste de Baker y fibroma plantar y su tratamiento."],"ideas_clave":["Plagiocefalia = **asimetría** por presión; braquicefalia = aplanamiento **simétrico** posterior; **no afectan** al desarrollo neurológico.","Craneosinostosis: **fusión sutural prematura**; diagnóstico clínico, la **TC 3D** es la imagen más precisa; tratamiento **quirúrgico**.","Casco craneal: **3–4 meses, 23 h/día**, adaptación **mensual**.","Tortícolis: bulto **indoloro** en el **tercio inferior** del ECOM; resolución espontánea en **2–6 meses**.","Escoliosis idiopática **infantil**: antes de los **3 años**, **\u003c 1 %** de las idiopáticas.","**Varo**: maléolos juntos, rodillas separadas; **valgo**: rodillas juntas, maléolos separados.","Osgood-Schlatter: **10–15 años (niños)**, **8–12 (niñas)**, 1 de cada 10 adolescentes deportistas; grados **1–3** (elevación, radiolucidez, fragmentación).","Sever: **8–15 años**, dolor en el **calcáneo** al comprimir el talón; **plantillas con alza ≥ 5 mm**."],"secciones":[{"id":"introduccion","titulo":"Introducción a la ortopedia infantil","bloques":[{"tipo":"parrafo","texto":"Los primeros aparatos datan del **200 d.C.** (madera y barras de hierro con ruedas sobre las piernas de niños), reaparecen a finales del **s. XV**, apenas cambian en 10 siglos y en el **s. XX** se simplifican hasta parecerse a los andadores actuales."},{"tipo":"definicion","termino":"Ortopedia infantil","texto":"Especialidad de la cirugía ortopédica y traumatología que trata las **lesiones y trastornos musculoesqueléticos de niños y adolescentes** (traumatología o cirugía ortopédica infantil). Problemas **hereditarios, congénitos o adquiridos**."},{"tipo":"parrafo","texto":"Ejemplos frecuentes: **deformidades de los pies** (plano, cavo), alteraciones de la **marcha** (dismetría), **displasia de cadera**, alteraciones **angulares** de MMII, **escoliosis idiopática** y **deformaciones craneales**."},{"tipo":"perla","texto":"En niños en crecimiento (**Risser \u003c 4/5**) el **diagnóstico precoz** permite mejor tratamiento y corrección más rápida. La exploración valora rangos articulares, dolor, derrame, estabilidad y, sobre todo, las **zonas de crecimiento** de los extremos óseos (**entesis**), las más vulnerables en los primeros 20 años."}]},{"id":"craneo-cuello","titulo":"Deformidades craneales y tortícolis congénita","bloques":[{"tipo":"tabla","titulo":"Deformidades craneales","columnas":["Tipo","Mecanismo","Rasgos","Tratamiento"],"filas":[["**Plagiocefalia** posicional","Presión constante de la superficie donde duerme","Aplanamiento o **asimetría** posterior, anterior o lateral; benigna; no afecta al neurodesarrollo","Cambios posturales, tiempo boca abajo supervisado, casco"],["**Braquicefalia**","Posición constante boca arriba (o fusión prematura en casos graves)","Aplanamiento **simétrico** posterior: cráneo más ancho y corto","Posturas, fisioterapia, casco; cirugía si es grave"],["**Craneosinostosis**","**Cierre prematuro** de una o más suturas","Forma anormal, posible **hipertensión intracraneal** y daño cerebral","**Quirúrgico**"]]},{"tipo":"figura","pagina":14,"pie":"Severidad de la plagiocefalia vista desde arriba: normal, leve, moderada y severa.","src":"img/ortesis-t3-tema-3-patologia-ortopedica-infantil-p14.jpg"},{"tipo":"parrafo","texto":"Etiología de la plagiocefalia posicional: **primer nacimiento, parto asistido, embarazo múltiple, lesiones de nacimiento, malformaciones congénitas y tortícolis muscular congénita**. Etiología de la craneosinostosis: factores **ambientales** (limitación intrauterina, posición anormal, **oligohidramnios**, **teratógenos** como talidomida, tabaco, antiepilépticos) y **genéticos (20 %)**; su prevalencia ha aumentado sin causa evidente."},{"tipo":"figura","pagina":21,"pie":"Clasificación de las formas craneales: trigonocefalia, escafocefalia, braquicefalia y plagiocefalia anterior y posterior frente a la normocefalia.","src":"img/ortesis-t3-tema-3-patologia-ortopedica-infantil-p21.jpg"},{"tipo":"parrafo","texto":"Diagnóstico **clínico** en el primer año; la **TC con reconstrucción 3D** es la imagen más completa; la **RX** es menos precisa pero rentable; la **RM** evalúa el cerebro."},{"tipo":"figura","pagina":24,"pie":"Órtesis craneal: casco a medida con perforaciones de ventilación, dos capas (copolímero y foam) y dinamismo que dirige el crecimiento.","src":"img/ortesis-t3-tema-3-patologia-ortopedica-infantil-p24.jpg"},{"tipo":"dato","valor":"3–4 meses · 23 h/día","texto":"Duración y uso diario del casco craneal, con adaptación cada mes."},{"tipo":"perla","texto":"La **fisioterapia** va primero: ejercicios de cuello y tronco superior, técnicas craneales y **estimulación en prono** para reducir la preferencia posicional; si no mejora, se pauta el **casco**."},{"tipo":"definicion","termino":"Tortícolis muscular congénita","texto":"**Acortamiento del ECOM** (más el **derecho**) en recién nacidos, visible entre las **2 y 4 semanas**, por malposición intrauterina o sobrepresión en el parto (**fibrosis**); asociada a plagiocefalia. Bulto **no doloroso** en el **tercio inferior**; incidencia **0,4–1,9 %**; se resuelve en **2–6 meses**."},{"tipo":"perla","texto":"Tratamiento: **manipulación suave y precoz** para distender la masa, y que **todos los estímulos lleguen desde el lado afectado**, implicando a los padres con juegos."}]},{"id":"columna","titulo":"Escoliosis infantil, espondilolistesis y espina bífida","bloques":[{"tipo":"parrafo","texto":"La **escoliosis idiopática infantil** se desarrolla **antes de los 3 años**, puede asociar malformaciones y supone **\u003c 1 %** de las idiopáticas. La escoliosis es la deformidad espinal pediátrica más común; complicaciones: dolor, disfunción respiratoria y alteración de la salud mental."},{"tipo":"tabla","titulo":"Clasificación por Cobb (este tema)","columnas":["Grado","Cobb"],"filas":[["Ligera","5–15°"],["Ligera a moderada","16–24°"],["Moderada","25–34°"],["Moderada a severa","35–44°"],["Severa","45–49°"],["Muy severa","> 60°"]]},{"tipo":"alerta","texto":"Esta escala (Matamoros Rodríguez) es **distinta** de la del tema 2 (leve \u003c 20°, moderada 20–40°, severa > 40°). Usa la del tema por el que te pregunten."},{"tipo":"parrafo","texto":"Tratamiento: **leve** → ejercicios (relajar lo contraído, fortalecer lo débil); **moderada** → ejercicios + **corsé** hasta el final del crecimiento; **grave** → **cirugía entre los 10 y 12 años** seguida de rehabilitación."},{"tipo":"definicion","termino":"Espondilolistesis","texto":"Desplazamiento de una vértebra respecto a la caudal; **causa más común de lumbalgia en niños de 10–15 años**, a menudo precedida de **espondilólisis**. Se atribuye a espina bífida, genética, hiperlordosis, posturas, actividad física, traumatismos."},{"tipo":"parrafo","texto":"Tratamiento **conservador (TLSO antilordosis)**: se le atribuyó eficacia de hasta el **80 %**, pero **ninguna órtesis** ha demostrado limitar el movimiento de **L4-L5** y no hay diferencias significativas con y sin corsé; la mejoría se debe a **restringir extensión y torsión** y al **curso benigno**. **Quirúrgico (fusión in situ)** si persisten los síntomas; condiciones ideales: **\u003c 20 años**, separación **\u003c 2 mm**, vértebra **L4**, sin displasia posterior, sin discopatía, listesis mínima."},{"tipo":"tabla","titulo":"Espina bífida","columnas":["Forma","Contenido","Pronóstico"],"filas":[["Oculta","Defecto óseo sin protrusión","Leve"],["**Meningocele**","LCR + meninges","**Operable**"],["**Mielomeningocele**","LCR + meninges + **médula espinal**","**Incapacidad permanente**"]]},{"tipo":"figura","pagina":37,"pie":"Espina bífida oculta, meningocele y mielomeningocele: en el último la médula protruye junto a meninges y LCR.","src":"img/ortesis-t3-tema-3-patologia-ortopedica-infantil-p37.jpg"},{"tipo":"perla","texto":"La espina bífida se produce en la gestación (**\u003c 26 días**) por déficit de cierre posterior; cursa con rigidez, **espasticidad** y desviaciones en MMII; una **órtesis adaptada mejora la marcha** y reduce fatiga y coste de oxígeno."}]},{"id":"mmii","titulo":"Rodilla y cadera infantil","bloques":[{"tipo":"tabla","titulo":"Rodillas varas y valgas","columnas":["Alteración","Rasgo"],"filas":[["**Varo**","**Maléolos se tocan**, rodillas separadas"],["**Valgo**","**Rodillas en contacto**, maléolos separados"]]},{"tipo":"figura","pagina":39,"pie":"Ejes de miembro inferior en valgo, normal y varo.","src":"img/ortesis-t3-tema-3-patologia-ortopedica-infantil-p39.jpg"},{"tipo":"parrafo","texto":"Ambas pueden llevar a **artrosis**. Se han usado órtesis para corregirlas, **sin mucho éxito** demostrado más allá de lo funcional o sintomático (Zeighami, 2020); la cirugía es la **osteotomía** (p. ej., de varización)."},{"tipo":"tabla","titulo":"Patología de cadera infantil","columnas":["Patología","Rasgos","Órtesis / tratamiento"],"filas":[["**Perthes** (osteocondritis deformante juvenil, coxa plana)","Osteocondrosis idiopática de la cabeza femoral por **falta de vascularización y osificación**; mejora con reposo, duele al ejercicio; rigidez y dolor en ingle, muslo o **rodilla**","Conservador; **órtesis en abducción**"],["**Meyer** (displasia epifisaria femoral)","Osificación irregular con varios núcleos, bloqueo en **rotación interna**; **asintomática**, hallazgo casual","Órtesis en **rotación externa y abducción forzada**"],["**Sinovitis transitoria**","Inflamación sinovial tras infecciones respiratorias/digestivas o traumatismo; **3–10 años**; dolor al cargar","Reposo y AINE: cede en **~1 semana**; posible órtesis en abducción"],["**Cadera en resorte** (coxa saltans)","Chasquido al rotar/levantar; **niñas adolescentes**, danza, saltos","Reposo, estiramiento, fortalecimiento, AINE, ejercicio acuático; cirugía mínimamente invasiva"]]},{"tipo":"figura","pagina":44,"pie":"Órtesis en abducción para la enfermedad de Perthes: mantiene la cabeza femoral contenida en el acetábulo.","src":""},{"tipo":"alerta","texto":"Cadera en resorte **externa** (banda iliotibial o glúteo mayor sobre el trocánter) es **inaudible**; **interna** (iliopsoas sobre la eminencia iliopectínea o la cabeza femoral) es **audible**. La **intraarticular** se debe a desgarros o cuerpos libres."},{"tipo":"perla","texto":"El dolor de cadera del niño (Perthes) puede **referirse a la rodilla**: explora siempre la cadera ante una gonalgia infantil."}]},{"id":"apofisitis","titulo":"Osgood-Schlatter, quiste de Baker, fibroma plantar y Sever","bloques":[{"tipo":"definicion","termino":"Osgood-Schlatter (Lannelongue)","texto":"Osteocondrosis apofisaria **más común de la rodilla**: la **tracción repetida del tendón rotuliano** inflama o arranca su inserción en la **tuberosidad tibial**."},{"tipo":"lista","items":["Dolor anterosuperior de la tibia, primero tras el ejercicio y luego permanente.","**1 de cada 10** adolescentes deportistas; **13,6 %** de las rodillas de futbolistas de 12–15 años.","Edad: **10–15 años en niños**, **8–12 en niñas**; razón hombres:mujeres **14:1** según el tema.","Factores: fase de crecimiento, **desequilibrio cuádriceps-isquiotibiales**, deportes explosivos con cambios de dirección.","Diagnóstico: **grado 1** ligera elevación, **2** radiolucidez, **3** fragmentación de la tuberosidad; **RX** y **prueba de Ely** (flexibilidad del recto femoral)."]},{"tipo":"perla","texto":"Tratamiento conservador: estiramientos, fortalecimiento (cuádriceps, isquiotibiales, gemelos), modificar la actividad, **órtesis antivibración en el tendón rotuliano**, frío y AINE; la **inmovilización con yeso** acorta los síntomas (**14,5 meses vs 29** sin inmovilizar). Cirugía solo si el dolor persiste."},{"tipo":"dato","valor":"14,5 vs 29 meses","texto":"Duración de los síntomas en casos avanzados con yeso frente a sin inmovilizar."},{"tipo":"tabla","titulo":"Otras patologías","columnas":["Patología","Rasgos","Tratamiento"],"filas":[["**Quiste de Baker** (poplíteo)","Distensión de la bursa **gastrocnemio-semimembranoso** comunicada con la rodilla; asociado a lesiones meniscales; a menudo asintomático, duele en flexión/extensión máxima","Suele **reabsorberse solo**; conservador (AINE, fisio, aspiración) con remisión en ~la mitad; recidiva quirúrgica **~40 %**"],["**Fibroma plantar del talón**","Nódulos subcutáneos **incoloros, bilaterales, simétricos, indoloros**, de **0,5–1 cm**, zona anterointerna del talón","**No requiere tratamiento**; biopsia y extirpación si hay síntomas"],["**Enfermedad de Sever** (apofisitis del calcáneo)","Inflamación del cartílago de crecimiento del talón (**entesis**); **8–15 años**; incidencia **3,7/1000**; el hueso crece más rápido que la unidad musculotendinosa","**Plantillas con alza de talón ≥ 5 mm**, menos deporte, crioterapia 15 min, estiramientos posteriores, kinesiotaping"]]},{"tipo":"alerta","texto":"**Osgood-Schlatter** = tuberosidad **tibial** (tendón rotuliano); **Sever** = **calcáneo** (tendón de Aquiles). Ambas son apofisitis por tracción en deportistas en crecimiento."},{"tipo":"esquema","titulo":"Mecanismo común de las apofisitis","mermaid":"flowchart LR\n  A[\"Crecimiento oseo acelerado\"] --> B[\"Unidad musculotendinosa relativamente corta\"]\n  B --> C[\"Traccion repetida sobre la apofisis\"]\n  D[\"Deporte explosivo o de impacto\"] --> C\n  C --> E[\"Inflamacion de la entesis\"]\n  E --> F[\"Osgood: tuberosidad tibial\"]\n  E --> G[\"Sever: calcaneo\"]","pie":"Por eso el tratamiento combina estiramiento, descarga y control de la actividad."}]}],"caso_clinico":{"titulo":"Futbolista de 12 años con dolor de rodilla","presentacion":"Niño de 12 años, juega al fútbol 4 días por semana. Refiere dolor en la parte anterosuperior de la tibia derecha, al principio solo tras entrenar y ahora casi constante. Bulto doloroso en la tuberosidad tibial; prueba de Ely con recto femoral acortado. RX: radiolucidez de la tuberosidad.","preguntas":[{"pregunta":"¿Cuál es el diagnóstico y el grado?","respuesta":"**Osgood-Schlatter** (osteocondrosis apofisaria de la tuberosidad tibial por tracción del tendón rotuliano), **grado 2** (radiolucidez)."},{"pregunta":"¿Qué factores de riesgo presenta?","respuesta":"Edad de crecimiento (**10–15 años**), sexo masculino, **deporte explosivo con cambios de dirección** (fútbol) y probable **desequilibrio cuádriceps-isquiotibiales** (recto femoral acortado)."},{"pregunta":"¿Qué tratamiento propones?","respuesta":"Modificar la actividad, **estiramientos** (recto femoral, isquiotibiales, gemelos), fortalecimiento, **órtesis antivibración** en el tendón rotuliano, frío y AINE; valorar inmovilización si es avanzado. Cirugía solo si no remite."}]},"preguntate":[{"pregunta":"¿Por qué es clave el diagnóstico precoz en ortopedia infantil?","respuesta":"Porque huesos y músculos están en crecimiento (Risser \u003c 4/5) y la corrección es más rápida y eficaz; las entesis son las zonas más vulnerables."},{"pregunta":"Diferencia plagiocefalia y braquicefalia.","respuesta":"Plagiocefalia: aplanamiento asimétrico; braquicefalia: aplanamiento simétrico posterior con cráneo ancho y corto."},{"pregunta":"¿Cómo se trata la craneosinostosis?","respuesta":"Quirúrgicamente, para dar espacio al cerebro y corregir la forma."},{"pregunta":"¿Cómo se pauta el casco craneal?","respuesta":"A medida, 3–4 meses, 23 h/día, con adaptación mensual, cuando falla la fisioterapia postural."},{"pregunta":"Describe la tortícolis muscular congénita.","respuesta":"Acortamiento del ECOM (más derecho) por fibrosis, bulto indoloro en el tercio inferior, aparece a las 2–4 semanas y se resuelve en 2–6 meses."},{"pregunta":"¿Qué condiciones ideales tiene la cirugía de espondilolistesis?","respuesta":"Menos de 20 años, separación \u003c 2 mm, vértebra L4, sin displasia posterior ni discopatía, listesis mínima."},{"pregunta":"Diferencia meningocele y mielomeningocele.","respuesta":"Meningocele: LCR y meninges, operable; mielomeningocele: además médula espinal, incapacidad permanente."},{"pregunta":"¿Qué órtesis se usa en Perthes y en Meyer?","respuesta":"Perthes: abducción; Meyer: rotación externa y abducción forzada."},{"pregunta":"¿Qué distingue la cadera en resorte interna de la externa?","respuesta":"La interna (iliopsoas) es audible; la externa (banda iliotibial o glúteo mayor sobre el trocánter) es inaudible."},{"pregunta":"¿Cómo se trata la enfermedad de Sever?","respuesta":"Plantillas con alza de talón de al menos 5 mm, menos actividad, crioterapia, estiramientos posteriores y kinesiotaping."}],"glosario":[{"termino":"Entesis","definicion":"Inserción del tendón en el hueso, zona vulnerable en crecimiento."},{"termino":"Plagiocefalia","definicion":"Aplanamiento craneal asimétrico."},{"termino":"Braquicefalia","definicion":"Aplanamiento craneal simétrico posterior."},{"termino":"Craneosinostosis","definicion":"Cierre prematuro de suturas craneales."},{"termino":"Oligohidramnios","definicion":"Baja cantidad de líquido amniótico."},{"termino":"Teratógeno","definicion":"Agente que causa malformaciones fetales."},{"termino":"Espondilólisis","definicion":"Defecto de la pars interarticularis que puede preceder a la listesis."},{"termino":"Mielomeningocele","definicion":"Espina bífida con protrusión de médula, meninges y LCR."},{"termino":"Coxa plana","definicion":"Otro nombre de la enfermedad de Perthes."},{"termino":"Coxa saltans","definicion":"Cadera en resorte o del bailarín."},{"termino":"Prueba de Ely","definicion":"Valora la flexibilidad del recto femoral."},{"termino":"Apofisitis","definicion":"Inflamación de una apófisis de crecimiento por tracción."},{"termino":"Quiste poplíteo","definicion":"Quiste de Baker de la bursa gastrocnemio-semimembranoso."}],"fuentes":["American Academy of Pediatrics (2006); Caballero et al. (2017); Grunstein-Bistre et al. (2019).","Schneider, M. G. (2013). Efectos teratogénicos de fármacos antiepilépticos.","Systma et al. (2016); Kuo et al. (2014).","Matamoros Rodríguez (2021).","Mora-de Sambricio et al. (2014).","Zeighami et al. (2020).","Calatayud (2022); Méndez et al. (2007); Nouri et al. (2014); Molina (2011).","Musick & Varacallo (2022); Walker et al. (2021).","Herrero-Morín et al. (2017); Nanduri et al. (2021)."],"qcm":[{"pregunta":"¿Qué deformidad craneal se caracteriza por un aplanamiento SIMÉTRICO de la parte posterior de la cabeza?","opciones":["Trigonocefalia","Plagiocefalia","Escafocefalia","Braquicefalia"],"correcta":3,"explicacion":"La braquicefalia aplana simétricamente la parte posterior, dando un cráneo más ancho y corto; la plagiocefalia es asimétrica.","por_opcion":["❌ Frente triangular (no descrita en detalle).","❌ Asimétrica.","❌ Cráneo alargado (no descrita en detalle).","✅ Literal."]},{"pregunta":"¿Cuál es el tratamiento principal de la craneosinostosis?","opciones":["Cirugía","Casco craneal 23 h/día","Cambios posturales","Estimulación en prono"],"correcta":0,"explicacion":"El tratamiento principal es quirúrgico para dar espacio al cerebro y corregir la forma del cráneo.","por_opcion":["✅ Literal.","❌ Para las deformidades posicionales.","❌ Para las posicionales.","❌ Fisioterapia de la plagiocefalia."]},{"pregunta":"¿Qué prueba de imagen se considera la más completa y precisa para las deformidades craneales?","opciones":["TC con reconstrucción 3D","Ecografía","Radiografía simple","Resonancia magnética"],"correcta":0,"explicacion":"La TC con reconstrucción tridimensional es la más completa; la RX es menos precisa pero rentable y la RM evalúa el cerebro.","por_opcion":["✅ Literal.","❌ No se cita.","❌ Menos precisa.","❌ Excelente para el cerebro, no la más precisa para suturas."]},{"pregunta":"¿Cuánto dura y cuántas horas al día se usa el casco craneal?","opciones":["2 semanas, 8 h/día","1 mes, 12 h/día","6–12 meses, solo de noche","3–4 meses, 23 h/día"],"correcta":3,"explicacion":"El casco se usa 3–4 meses, 23 h/día, con adaptación cada mes.","por_opcion":["❌ No.","❌ No.","❌ No.","✅ Literal."]},{"pregunta":"En la tortícolis muscular congénita, el abultamiento del ECOM es:","opciones":["Pulsátil en el tercio medio","Doloroso y bilateral","Doloroso en el tercio superior","No doloroso en el tercio inferior"],"correcta":3,"explicacion":"A la palpación se observa un abultamiento no doloroso en el tercio inferior.","por_opcion":["❌ No.","❌ Afecta sobre todo al derecho y no duele.","❌ No.","✅ Literal."]},{"pregunta":"¿En cuánto tiempo suele resolverse espontáneamente la tortícolis muscular congénita?","opciones":["1–2 años","No se resuelve sin cirugía","2–6 meses","2–4 semanas"],"correcta":2,"explicacion":"Aparece entre las 2 y 4 semanas y se resuelve espontáneamente en 2 a 6 meses.","por_opcion":["❌ No.","❌ Se trata con manipulación suave.","✅ Literal.","❌ Es la edad de aparición."]},{"pregunta":"La escoliosis idiopática infantil:","opciones":["Nunca asocia malformaciones","Aparece entre 3 y 10 años","Aparece antes de los 3 años y supone \u003c 1 % de las idiopáticas","Es la forma más frecuente"],"correcta":2,"explicacion":"Se desarrolla antes de los 3 años, puede asociar malformaciones y supone menos del 1 % de las idiopáticas.","por_opcion":["❌ Puede asociarlas.","❌ Es la juvenil.","✅ Literal.","❌ La más frecuente es la del adolescente."]},{"pregunta":"Según el tema, la escoliosis infantil grave suele operarse entre los:","opciones":["3 y 5 años","10 y 12 años","16 y 18 años","6 y 8 años"],"correcta":1,"explicacion":"La cirugía de la escoliosis infantil grave se realiza entre los 10 y 12 años, seguida de rehabilitación.","por_opcion":["❌ No.","✅ Literal.","❌ No.","❌ No."]},{"pregunta":"¿Cuál es la causa más común de dolor de espalda en niños de 10 a 15 años?","opciones":["Espondilolistesis","Espina bífida oculta","Escoliosis idiopática","Hipercifosis postural"],"correcta":0,"explicacion":"La espondilolistesis es la causa más común, a menudo precedida de espondilólisis.","por_opcion":["✅ Literal.","❌ No.","❌ No se cita así.","❌ No."]},{"pregunta":"Respecto a la órtesis en la espondilolistesis infantil:","opciones":["Ha demostrado bloquear eficazmente el movimiento de L4-L5","No hay diferencias significativas con y sin corsé; la mejoría se debe a restringir la actividad y al curso benigno","Es siempre superior a la cirugía","Está contraindicada"],"correcta":1,"explicacion":"Ninguna órtesis ha demostrado limitar el movimiento de L4-L5 y no hay diferencias significativas; la mejoría se debe a restringir extensión y torsión y al curso natural benigno.","por_opcion":["❌ El tema lo niega.","✅ Literal.","❌ No se afirma.","❌ Se usa TLSO antilordosis."]},{"pregunta":"Una espina bífida con protrusión de LCR, meninges y médula espinal es:","opciones":["Meningocele","Craneosinostosis","Espina bífida oculta","Mielomeningocele"],"correcta":3,"explicacion":"Mielomeningocele: LCR + meninges + médula, con incapacidad permanente; meningocele: LCR + meninges, operable.","por_opcion":["❌ No contiene médula.","❌ Es una deformidad craneal.","❌ Sin protrusión.","✅ Literal."]},{"pregunta":"Niño con maléolos en contacto y rodillas separadas:","opciones":["Genu recurvatum","Normal","Genu varo","Genu valgo"],"correcta":2,"explicacion":"Varo: maléolos se tocan, rodillas separadas; valgo: rodillas en contacto, maléolos separados.","por_opcion":["❌ No se describe.","❌ No.","✅ Literal.","❌ Rodillas juntas."]},{"pregunta":"¿Qué órtesis se indica en la displasia de Meyer?","opciones":["Rotación interna","Rotación externa y abducción forzada","TLSO antilordosis","Abducción simple"],"correcta":1,"explicacion":"La cadera se bloquea en rotación interna; la órtesis la lleva a rotación externa y abducción forzada.","por_opcion":["❌ Empeoraría el bloqueo.","✅ Literal.","❌ Para espondilolistesis.","❌ Es la de Perthes."]},{"pregunta":"La cadera en resorte de tipo interno (audible) se debe al deslizamiento de:","opciones":["Tendón del glúteo mayor","Banda iliotibial sobre el trocánter mayor","Cuerpos libres intraarticulares","Tendón del iliopsoas sobre la eminencia iliopectínea"],"correcta":3,"explicacion":"Interna (audible): iliopsoas sobre la eminencia iliopectínea o la cabeza femoral; externa (inaudible): banda iliotibial o glúteo mayor sobre el trocánter.","por_opcion":["❌ Externa.","❌ Externa.","❌ Intraarticular.","✅ Literal."]},{"pregunta":"La enfermedad de Sever se trata de forma conservadora con plantillas que incluyen un alza de talón de al menos:","opciones":["5 mm","2 mm","15 mm","10 mm"],"correcta":0,"explicacion":"Plantillas ortopédicas con pieza elevadora de talón en cada pie de 5 mm mínimo, junto a menos deporte, crioterapia y estiramientos.","por_opcion":["✅ Literal.","❌ No.","❌ No.","❌ No."]}],"asignatura":"Ortesis","tema":3,"fecha":"2026-11-09"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips">${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  if(n===Q.length) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado! Marca el tema como « Maîtrisé » en Notion.':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>

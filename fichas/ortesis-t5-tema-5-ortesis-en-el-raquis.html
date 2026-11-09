@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tema 5: Órtesis en el raquis · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 5: Órtesis en el raquis","subtitulo":"Indicaciones, funciones, mecanismos y complicaciones de las órtesis vertebrales; órtesis para el dolor lumbar y cervical (SIO, LSO, CO, CTO, halo), para deformidades (Milwaukee, Boston) y para osteoporosis (PTS, Spinomed, Jewett).","resumen":["Las órtesis de raquis se indican en **espondilólisis/listesis, escoliosis, alteraciones del eje, osteoporosis, reumatismos, fracturas, lesión neurológica o muscular y debilidad crónica**; sirven para **restringir movilidad, dar soporte, corregir, estabilizar, calentar tejidos y aportar propiocepción**.","Actúan por el **principio de tres puntos**, aumento de **inputs cutáneos**, calor y soporte; según rigidez son **blandas** (compresión, propiocepción), **semirrígidas** (descarga parcial) y **rígidas** (inmovilizan, favorecen la consolidación: + protección, − movimiento), y deben usarse de forma **intermitente** con ejercicios.","La **lumbalgia** es inespecífica en el **85–90 %** (modelo **biopsicosocial**); las **SIO** se usan en fracturas pélvicas **estables** y las **LSO** en lumbalgias, espondilolistesis, hernias y degenerativas; las lumbares pueden **↑ TA y FC**, reducir la **capacidad vital** y causar trastornos digestivos.","En cervical: **collarín blando** (limita flexo-extensión 5–15 %), **semirrígido Philadelphia** (20–25 %), **CO con control de cabeza / Minerva / SOMI** (~**60 %**, unión **C0–C2**), **CTO** (hasta **T1–T3**) y **halo-chaleco** (control occipito-C1, hasta T3; fracturas de **Jefferson, Hangman y odontoides**).","Para deformidades: **Milwaukee (CTLSO)** si el ápex está en **T8 o por encima**, curvas **20–40/45°** en inmaduros; **Boston (TLSO)** para ápex más bajo; para osteoporosis solo **PTS (peso ≤ 1 kg)** y **Spinomed** tienen respaldo, además de la **Jewett** de hiperextensión en tres puntos (mal tolerada)."],"objetivos":["Enumerar indicaciones, funciones, mecanismos y complicaciones de las órtesis vertebrales.","Clasificar las órtesis por rigidez y por región (CO, TO, LO, CTLSO, TLSO, LSO, SIO).","Elegir la órtesis lumbosacra o sacroilíaca adecuada y conocer sus contraindicaciones.","Diferenciar collarines, CO con control de cabeza, CTO y halo y relacionarlos con las fracturas cervicales.","Indicar las órtesis para escoliosis, Scheuermann y osteoporosis."],"ideas_clave":["Principio de **tres puntos** = base de la restricción del movimiento.","**Rígida** = + protección, − movimiento; **blanda** = compresión, propiocepción y confort térmico.","Usar de forma **intermitente** + ejercicio abdominal y reeducación postural para evitar **atrofia**.","Lumbalgia **inespecífica 85–90 %**; **10 %** con lesión demostrable.","Collarín **blando** 5–15 % de restricción; **Philadelphia** 20–25 %; **Minerva/SOMI** ~60 %.","**SOMI**: apoyo **mentoniano** (limita flexión) + **occipital** (limita extensión) + collar + barras.","**Halo**: buen control **occipito-C1**, pobre en cervical media; fracturas de **C1 (Jefferson)** y **C2 (Hangman, odontoides)**.","**Jewett**: fuerzas en **esternón, pubis** (anteriores) y **lumbar** (posterior); contraindicada en fracturas **inestables**."],"secciones":[{"id":"introduccion","titulo":"Introducción: indicaciones, funciones y mecanismos","bloques":[{"tipo":"tabla","titulo":"Indicaciones y funciones","columnas":["Indicaciones","Funciones"],"filas":[["Espondilólisis y espondilolistesis","Restricción de movilidad"],["Escoliosis y alteraciones del eje","Soporte"],["Osteoporosis, reumatismos","Corrección"],["Fracturas vertebrales","Estabilización"],["Lesión neurológica o enfermedad muscular","Calentar tejidos subyacentes"],["Debilidad muscular crónica","Propiocepción / feedback"]]},{"tipo":"lista","items":["**Restricción** del rango mediante el **principio de apoyo en tres puntos**.","**↑ propiocepción** por más inputs cutáneos.","**Relajación muscular** por aumento de temperatura.","**Control del edema** de los tejidos subyacentes.","**↑ soporte del tronco** y **mejora postural**."]},{"tipo":"tabla","titulo":"Órtesis según rigidez","columnas":["Tipo","Rigidez","Mecanismo","Efecto"],"filas":[["Blanda o flexible","Baja","Compresión elástica, ↑ presión intraabdominal","Estimula la musculatura, mejora la percepción postural, confort térmico"],["Semirrígida","Media","Refuerzos plásticos o metálicos, restringe parcialmente flexo-extensión","Descarga parcial y estabiliza sin inmovilizar; permite movilidad funcional"],["Rígida","Alta","Plástico termoformado o aluminio; inmoviliza segmentos toracolumbares","Limita casi totalmente el movimiento; favorece **consolidación ósea**"]]},{"tipo":"alerta","texto":"Complicaciones comunes: **lesión cutánea (úlceras)**, **inmovilización excesiva**, **atrofia muscular**, dolor y molestias, **restricción respiratoria**, problemas musculoesqueléticos y psicológicos. Por eso deben usarse de forma **intermitente** y con **ejercicios abdominales y reeducación postural**."},{"tipo":"parrafo","texto":"Tipos por objetivo (Vargas Negrín, 2017): para el **dolor vertebral**, para **deformidades**, para **osteoporosis** y para **traumatismos y posoperatorio**."}]},{"id":"lumbar","titulo":"Órtesis para el dolor lumbar y sacroilíaco","bloques":[{"tipo":"tabla","titulo":"Nomenclatura","columnas":["Sigla","Región"],"filas":[["CO","Cervical"],["TO","Torácica"],["LO","Lumbar"],["CTLSO","Cervical-torácica-lumbosacra"],["TLSO","Torácica-lumbosacra"],["LSO","Lumbosacra"],["SIO","Sacroilíaca"]]},{"tipo":"definicion","termino":"Lumbalgia","texto":"Síntoma **multifactorial** (mecánico, degenerativo, inflamatorio, neoplásico, infeccioso o visceral referido). En el **85–90 %** no hay causa específica (**inespecífica**); en el **10 %** hay lesión demostrable. Estrés, ansiedad, depresión e insatisfacción laboral modulan el dolor: **modelo biopsicosocial**."},{"tipo":"tabla","titulo":"SIO y LSO","columnas":["Órtesis","Indicadas","Contraindicadas"],"filas":[["**SIO** (sacroilíaca)","Fracturas de pelvis **estables**, distensión de la **sínfisis púbica**, control de movimiento y dolor","Fracturas **inestables**, afectación **lumbar**"],["**LSO** (lumbosacra)","Fracturas **estables**, **lumbalgias**, **espondilolistesis**, hernias o inestabilidad lumbar, degenerativas","Fracturas **inestables**, afectaciones **superiores** a la región lumbar"]]},{"tipo":"alerta","texto":"Complicaciones específicas de las **órtesis lumbares**: además de piel, atrofia y restricción respiratoria, **↑ tensión arterial y frecuencia cardiaca**, **↓ capacidad vital** y **trastornos gastrointestinales**."}]},{"id":"cervical","titulo":"Órtesis cervicales, CTO y halo","bloques":[{"tipo":"parrafo","texto":"La **OMS (2023)** sitúa la **cervicalgia** entre las principales causas de discapacidad musculoesquelética. Causas frecuentes: **discopatía degenerativa** (con o sin hernia) y **artrosis facetaria**; menos frecuentes: latigazo postraumático y actividad laboral repetitiva. También aquí rige el modelo biopsicosocial."},{"tipo":"tabla","titulo":"Collarines","columnas":["Tipo","Restricción","Comodidad","Indicaciones"],"filas":[["**Blando** (espuma)","Muy baja: flexo-extensión **5–15 %**, inclinación 5–10 %, rotación 10–17 %","Muy cómodo","Dolor leve, esguinces menores, soporte ligero"],["**Semirrígido** (Philadelphia)","Moderada: flexo-extensión **20–25 %**","Moderadamente cómodo","Esguinces moderados, patología crónica, posoperatorio leve"],["**Rígido** (Minerva)","Alta, casi total","Menos cómodo","**Fracturas, luxaciones**, posoperatorio mayor"]]},{"tipo":"definicion","termino":"Órtesis cervical (CO)","texto":"Dispositivo para **estabilizar, inmovilizar o limitar** el cuello en flexión, extensión, rotación y lateroflexión; reduce dolor, protege estructuras y favorece la cicatrización."},{"tipo":"figura","pagina":22,"pie":"CTO Minerva: collar con soporte craneal (apoyos occipital y mentoniano) que limita ~60 % todos los movimientos y controla la unión occipito-cervical.","src":"img/ortesis-t5-tema-5-ortesis-en-el-raquis-p22.jpg"},{"tipo":"parrafo","texto":"La **CO con control de la cabeza** une el collar a un soporte craneal mediante barras o apoyos **occipitales y mentonianos**; limita flexo-extensión, inclinación y rotación **~60 %**. Se usa en lesiones de la **unión occipito-cervical (C0–C2)**: inestabilidad **atlantoaxoidea** o **fractura de C2**. Ej.: **SOMI** (sterno-occipito-mandibular immobilizer): **apoyo mentoniano → limita flexión**, **apoyo occipital → limita extensión**, collar y barras laterales."},{"tipo":"definicion","termino":"Órtesis cervicotorácica (CTO)","texto":"Extensión de la CO desde la cabeza hasta **T1–T3**; mayor restricción en la cervical baja y la **unión cervicotorácica**. Uso más frecuente: **inmovilizar fracturas vertebrales tratables de forma conservadora** (Minerva, SOMI, Philadelphia con extensión torácica, **halo-vest**)."},{"tipo":"figura","pagina":26,"pie":"Halo-chaleco: anillo craneal fijado con pines y unido por 4 postes a un chaleco torácico.","src":"img/ortesis-t5-tema-5-ortesis-en-el-raquis-p26.jpg"},{"tipo":"tabla","titulo":"Halo y fracturas cervicales altas","columnas":["Elemento","Detalle"],"filas":[["Halo","**4 postes**; controla hasta **T3**; **buen control occipito-C1**, **pobre en la cervical media**"],["Fractura de **Jefferson**","**C1** (atlas)"],["Fractura del **ahorcado (Hangman)**","**C2** (istmo del axis) por **hiperextensión + distracción**; frecuente en tráfico; lesión neurológica **poco frecuente** (canal ancho)"],["Fractura en **lágrima (tear drop)**","Hiperextensión con avulsión del borde anterior; poco frecuente pero grave, con lesión neurológica"],["Fractura de **odontoides**","Muy frecuente; cizallamiento + compresión axial; posible desplazamiento y complicaciones neurológicas graves"]]},{"tipo":"dato","valor":"20 %","texto":"Proporción de fracturas vertebrales que afectan al axis (C2), frecuentes y de las más graves."},{"tipo":"perla","texto":"Caso real: el triatleta **Tim Don** sufrió una **fractura odontoidea tipo II (C2)** atropellado antes de Kona 2017 y fue tratado con **halo**."}]},{"id":"deformidades","titulo":"Órtesis para escoliosis y Scheuermann","bloques":[{"tipo":"tabla","titulo":"Milwaukee vs Boston","columnas":["Rasgo","Milwaukee (CTLSO)","Boston (TLSO)"],"filas":[["Estructura","Rígido de **pelvis a cuello** con **anillo cervical**, barras metálicas y almohadillas","TLSO rígido sin componente cervical"],["Ápex","**T8 o por encima** (regiones altas)","Más bajo (**> T8**)"],["Curvas","Inmaduros con **≈ 20–40° (hasta 45°)** en progresión","Moderadas"],["Ventaja","Fuerzas correctoras en sagital, coronal y rotación","**Menos visible**, mejor tolerado estéticamente"],["Objetivo","**Evitar la progresión** hasta niveles quirúrgicos, no curar","Igual"]]},{"tipo":"alerta","texto":"Matiz entre temas: aquí el Milwaukee se reserva para **ápex en T8 o más alto** y los TLSO para ápex **por debajo de T8**; en el tema 2 el Boston se indicaba para ápex en **D7 o por debajo**. La idea común: **ápex alto → Milwaukee**, **ápex bajo → Boston/TLSO**."}]},{"id":"osteoporosis","titulo":"Órtesis para osteoporosis","bloques":[{"tipo":"parrafo","texto":"Primero hay que distinguir **dolor agudo por una fractura osteoporótica nueva** (→ órtesis postraumáticas) de **dolor crónico**. Hay pocas recomendaciones; con respaldo científico solo dos: **órtesis dinámicas de entrenamiento postural (PTS)** y **Spinomed**; además se usa la **hiperextensión de tres puntos**."},{"tipo":"tarjetas","items":[{"etiqueta":"PTS / DHB","titulo":"Entrenamiento postural","texto":"“Cifoórtesis con peso suspendido” o **Dynamic Hyperextension Brace**: un peso de **máx. 1 kg** justo **por debajo de las escápulas**."},{"etiqueta":"TLSO sagital","titulo":"Spinomed","texto":"Órtesis **dinámica**: descarga activa en el plano sagital, **biofeedback** con correas que tensan al inclinarse hacia delante, activa extensores, fortalece dorsal y abdominal, reduce la **cifosis** y el dolor."},{"etiqueta":"3 puntos","titulo":"Jewett (hiperextensión)","texto":"Fuerzas en **esternón** y **pubis** (anteriores) y **lumbar** (posterior) → momento de extensión. **Mal tolerada** a largo plazo por presión esternal o púbica."}]},{"tipo":"figura","pagina":35,"pie":"Spinomed: placa dorsal moldeable con correas que generan biofeedback y activan la musculatura extensora.","src":"img/ortesis-t5-tema-5-ortesis-en-el-raquis-p35.jpg"},{"tipo":"tabla","titulo":"Jewett: indicaciones y contraindicaciones","columnas":["Indicaciones","Contraindicaciones"],"filas":[["Fracturas por **compresión** (T6–L1)","Fracturas **inestables** o con **compromiso neurológico**"],["Osteoporosis con colapso leve","Lesiones en la zona de apoyo **esternal o púbica**"],["Posoperatorio toracolumbar","**Obesidad extrema** o úlceras en zonas de contacto"],["Cifosis postraumática o degenerativa leve; espondilitis anquilosante temprana","**Problemas respiratorios severos** (limita la expansión torácica)"]]},{"tipo":"dato","valor":"≤ 1 kg","texto":"Peso máximo suspendido bajo las escápulas en la órtesis de entrenamiento postural."},{"tipo":"esquema","titulo":"Elección de órtesis en osteoporosis","mermaid":"flowchart TD\n  A[\"Paciente con osteoporosis vertebral\"] --> B{\"Dolor agudo por fractura nueva\"}\n  B -->|\"si, estable\"| J[\"Jewett o ortesis postraumatica\"]\n  B -->|\"no, dolor cronico o hipercifosis\"| C[\"Ortesis dinamicas\"]\n  C --> P[\"PTS con peso hasta 1 kg\"]\n  C --> S[\"Spinomed con biofeedback\"]","pie":"Las dinámicas son las que cuentan con respaldo científico en el manejo crónico."}]}],"caso_clinico":{"titulo":"Mujer de 72 años con hipercifosis y dolor dorsal","presentacion":"Mujer de 72 años con osteoporosis conocida, hipercifosis dorsal progresiva y dolor dorsal crónico de meses de evolución. Una RX reciente no muestra fracturas nuevas. Tiene EPOC moderada.","preguntas":[{"pregunta":"¿Qué debes aclarar antes de elegir la órtesis?","respuesta":"Si el dolor es **agudo por una fractura osteoporótica nueva** (órtesis postraumática) o **crónico**. Aquí es crónico, sin fractura nueva."},{"pregunta":"¿Qué órtesis propones?","respuesta":"Una órtesis **dinámica** con respaldo científico: **Spinomed** (biofeedback que activa los extensores y reduce la cifosis) o un **PTS** con peso **≤ 1 kg** bajo las escápulas, junto a ejercicio de extensores y abdominales."},{"pregunta":"¿Por qué evitarías una Jewett en esta paciente?","respuesta":"No hay fractura por compresión que la justifique, es **mal tolerada** a largo plazo y sus **problemas respiratorios** son una contraindicación porque limita la expansión torácica."}]},"preguntate":[{"pregunta":"¿Cuáles son las funciones de una órtesis de raquis?","respuesta":"Restringir la movilidad, dar soporte, corregir, estabilizar, calentar tejidos y aportar propiocepción."},{"pregunta":"¿En qué principio se basa la restricción del movimiento?","respuesta":"En el principio de apoyo en tres puntos."},{"pregunta":"Compara órtesis blandas, semirrígidas y rígidas.","respuesta":"Blandas: compresión y propiocepción; semirrígidas: descarga parcial sin inmovilizar; rígidas: inmovilizan y favorecen la consolidación."},{"pregunta":"¿Por qué deben usarse de forma intermitente?","respuesta":"Para evitar atrofia e inmovilización excesiva; asociadas a ejercicio abdominal y reeducación postural."},{"pregunta":"¿Qué complicaciones específicas tienen las órtesis lumbares?","respuesta":"Aumento de TA y FC, disminución de la capacidad vital, restricción respiratoria y trastornos gastrointestinales."},{"pregunta":"Indicaciones y contraindicaciones de la SIO.","respuesta":"Indicada en fracturas pélvicas estables y distensión de sínfisis; contraindicada en fracturas inestables y afectación lumbar."},{"pregunta":"¿Cuánto restringe cada collarín la flexo-extensión?","respuesta":"Blando 5–15 %, semirrígido Philadelphia 20–25 %, CO con control de cabeza (Minerva/SOMI) ~60 %."},{"pregunta":"Describe los componentes del SOMI.","respuesta":"Apoyo mentoniano (limita flexión), occipital (limita extensión), collar cervical y barras laterales."},{"pregunta":"¿Qué controla bien el halo y para qué fracturas se usa?","respuesta":"Controla bien occipito-C1 (pobre en cervical media); fracturas de Jefferson (C1), Hangman y odontoides (C2)."},{"pregunta":"Describe la órtesis de Jewett.","respuesta":"Hiperextensión en tres puntos: esternón y pubis anteriores y región lumbar posterior; limita la flexión, mal tolerada a largo plazo."}],"glosario":[{"termino":"Principio de tres puntos","definicion":"Tres fuerzas opuestas que generan un momento corrector."},{"termino":"LSO","definicion":"Órtesis lumbosacra."},{"termino":"SIO","definicion":"Órtesis sacroilíaca."},{"termino":"CTLSO","definicion":"Órtesis cervico-toraco-lumbosacra, p. ej., Milwaukee."},{"termino":"Philadelphia","definicion":"Collarín semirrígido."},{"termino":"Minerva","definicion":"Órtesis cervicotorácica con control de cabeza."},{"termino":"SOMI","definicion":"Inmovilizador esterno-occipito-mandibular."},{"termino":"Halo-vest","definicion":"Anillo craneal unido a chaleco por cuatro postes."},{"termino":"Fractura de Jefferson","definicion":"Fractura del atlas (C1)."},{"termino":"Fractura de Hangman","definicion":"Fractura del istmo del axis (C2) por hiperextensión-distracción."},{"termino":"PTS","definicion":"Sistema de entrenamiento postural con peso suspendido."},{"termino":"Spinomed","definicion":"TLSO dinámica de control sagital con biofeedback."},{"termino":"Jewett","definicion":"Órtesis de hiperextensión en tres puntos."}],"fuentes":["Vargas Negrín, F. (2017).","Hartvigsen, J., et al. (2018). What low back pain is and why we need to pay attention.","Hoy, D., et al. (2012). The global burden of low back pain.","Morrisette, D. C., et al. (2020). Sacroiliac joint dysfunction. JOSPT, 50(1), 21–30.","Cholewicki, J., & McGill, S. M. (1996). Mechanical stability of the in vivo lumbar spine. Clin Biomech, 11(1), 1–15.","World Health Organization (2023). Musculoskeletal conditions; Cohen, S. P. (2015); APTA Neck pain guidelines (2017).","AAOS (2020). Orthoses and spinal supports. Orthopaedic Knowledge Update: Spine 5; Hsu et al. (2008); Neumann (2022).","Kaelin AJ (2020); Stephens Richards B (2009); Yamaguchi KT (2014).","Shariatzadeh H, et al. (2017). Arch Bone Jt Surg, 5(3):181-185; Hosseinabadi (2020).","Bono, C. M., & Garfin, S. R. (2004). Spine orthoses. JAAOS, 12(6), 407–416."],"qcm":[{"pregunta":"¿En qué principio mecánico se basa la restricción del rango de movimiento de las órtesis de raquis?","opciones":["Palanca de primer grado","Apoyo en tres puntos","Principio de Pascal","Compresión radial uniforme"],"correcta":1,"explicacion":"La restricción del rango de movilidad se logra mediante el principio de apoyo en tres puntos.","por_opcion":["❌ No se menciona.","✅ Literal.","❌ No se menciona.","❌ No se menciona."]},{"pregunta":"Una órtesis que inmoviliza segmentos toracolumbares y favorece la consolidación ósea es:","opciones":["Blanda","Elástica de compresión","Semirrígida","Rígida"],"correcta":3,"explicacion":"Las rígidas (plástico termoformado o aluminio) limitan casi totalmente el movimiento y favorecen la consolidación.","por_opcion":["❌ Compresión y propiocepción.","❌ Es una blanda.","❌ Descarga parcial sin inmovilizar.","✅ Literal."]},{"pregunta":"¿Por qué las órtesis de raquis deben usarse de forma intermitente?","opciones":["Para evitar atrofia e inmovilización excesiva, combinándolas con ejercicio","Porque están contraindicadas por la noche","Porque pierden eficacia mecánica","Para reducir su coste"],"correcta":0,"explicacion":"Deben usarse de forma intermitente y asociadas a un programa de ejercicios abdominales y reeducación postural para evitar complicaciones como la atrofia.","por_opcion":["✅ Literal.","❌ No se afirma.","❌ No es el motivo.","❌ No es el motivo."]},{"pregunta":"¿Qué porcentaje de lumbalgias son inespecíficas?","opciones":["85–90 %","100 %","10 %","50 %"],"correcta":0,"explicacion":"En el 85–90 % no se identifica causa específica; en el 10 % hay lesión demostrable.","por_opcion":["✅ Literal.","❌ No.","❌ Son las específicas.","❌ No."]},{"pregunta":"Una LSO está CONTRAINDICADA en:","opciones":["Patología degenerativa lumbar","Espondilolistesis","Lumbalgia","Fractura lumbar inestable"],"correcta":3,"explicacion":"Las LSO se indican en fracturas estables, lumbalgias, espondilolistesis, hernias y degenerativas; se contraindican en fracturas inestables y afectaciones superiores a la región lumbar.","por_opcion":["❌ Indicada.","❌ Indicada.","❌ Indicada.","✅ Contraindicada."]},{"pregunta":"¿Qué complicación es específica de las órtesis lumbares según el tema?","opciones":["Plagiocefalia","Fractura de odontoides","Aumento de la tensión arterial y la frecuencia cardiaca","Parálisis del nervio radial"],"correcta":2,"explicacion":"Las lumbares pueden aumentar TA y FC, disminuir la capacidad vital y causar trastornos gastrointestinales.","por_opcion":["❌ No.","❌ No.","✅ Literal.","❌ No."]},{"pregunta":"Un collarín blando de espuma limita la flexo-extensión aproximadamente:","opciones":["Casi totalmente","60 %","20–25 %","5–15 %"],"correcta":3,"explicacion":"El collarín blando limita la flexo-extensión 5–15 %; el Philadelphia 20–25 %; con control de cabeza ~60 %.","por_opcion":["❌ Collarín rígido.","❌ Minerva/SOMI.","❌ Philadelphia.","✅ Literal."]},{"pregunta":"La CO con componente de control de la cabeza se usa principalmente en lesiones de:","opciones":["C5–C7","La unión occipito-cervical (C0–C2)","La unión toracolumbar","La región sacroilíaca"],"correcta":1,"explicacion":"Se usa cuando se requiere mayor restricción de la cabeza y la cervical alta, como en inestabilidad atlantoaxoidea o fractura de C2.","por_opcion":["❌ No es la indicación principal.","✅ Literal.","❌ No.","❌ No."]},{"pregunta":"En el SOMI, el apoyo mentoniano limita principalmente:","opciones":["La rotación","La inclinación lateral","La flexión","La extensión"],"correcta":2,"explicacion":"Apoyo mentoniano → limita flexión; apoyo occipital → restringe extensión.","por_opcion":["❌ No se atribuye al mentón.","❌ No se atribuye al mentón.","✅ Literal.","❌ La limita el apoyo occipital."]},{"pregunta":"Una CTO abarca desde la cabeza hasta:","opciones":["L1","T8","C7","T1–T3"],"correcta":3,"explicacion":"La CTO se extiende desde la cabeza hasta el segmento torácico superior (T1–T3).","por_opcion":["❌ No.","❌ No.","❌ Sería solo cervical.","✅ Literal."]},{"pregunta":"¿Qué región controla MAL el halo según el tema?","opciones":["Hasta T3","La cervical media","La unión cervicotorácica","Occipito-C1"],"correcta":1,"explicacion":"El halo tiene buen control occipito-C1 y hasta T3, pero pobre control en la región cervical media.","por_opcion":["❌ Controla hasta T3.","✅ Literal.","❌ No se describe como mal controlada.","❌ Buen control."]},{"pregunta":"La fractura del ahorcado (Hangman):","opciones":["Afecta al istmo de C2 por hiperextensión y distracción, con pocas lesiones neurológicas","Afecta al atlas por compresión axial","Es una avulsión del borde anterior siempre asintomática","Afecta a L1 por flexión"],"correcta":0,"explicacion":"Hangman: istmo del axis (C2), hiperextensión con distracción, frecuente en tráfico; lesiones neurológicas poco frecuentes por el canal ancho.","por_opcion":["✅ Literal.","❌ Jefferson (C1).","❌ La tear drop es grave y neurológica.","❌ No."]},{"pregunta":"El corsé de Milwaukee está indicado cuando el ápex de la curva está:","opciones":["Solo en la región lumbar","Por debajo de L3","En el sacro","En T8 o por encima"],"correcta":3,"explicacion":"Se indica cuando el ápice es T8 o superior o incluye regiones altas, donde los TLSO no actúan eficazmente.","por_opcion":["❌ Ahí bastan los TLSO.","❌ No.","❌ No.","✅ Literal."]},{"pregunta":"¿Qué órtesis para osteoporosis suspende un peso de máximo 1 kg bajo las escápulas?","opciones":["Jewett","Spinomed","Sistema de entrenamiento postural (PTS)","Boston"],"correcta":2,"explicacion":"La PTS o Dynamic Hyperextension Brace suspende un peso de máximo 1 kg inmediatamente por debajo de las escápulas.","por_opcion":["❌ Tres puntos de hiperextensión.","❌ Usa biofeedback con correas.","✅ Literal.","❌ Para escoliosis."]},{"pregunta":"La órtesis de Jewett está CONTRAINDICADA en:","opciones":["Pacientes con problemas respiratorios severos","Fracturas por compresión T6–L1","Osteoporosis con colapso leve","Posoperatorio toracolumbar"],"correcta":0,"explicacion":"Se contraindica en fracturas inestables, lesiones en las zonas de apoyo, obesidad extrema o úlceras y problemas respiratorios severos, porque limita la expansión torácica.","por_opcion":["✅ Contraindicación.","❌ Indicación.","❌ Indicación.","❌ Indicación."]}],"asignatura":"Ortesis","tema":5,"fecha":"2026-11-09"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips">${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  if(n===Q.length) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado! Marca el tema como « Maîtrisé » en Notion.':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>

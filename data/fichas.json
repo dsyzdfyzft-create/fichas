@@ -280,6 +280,16 @@
     "secciones": 5
   },
   {
+    "slug": "ortesis-t3-tema-3-patologia-ortopedica-infantil",
+    "titulo": "Tema 3: Patología ortopédica infantil",
+    "subtitulo": "Deformidades craneales, tortícolis congénita, escoliosis infantil, espondilolistesis, espina bífida, rodillas valgas/varas, patología de cadera (Perthes, Meyer, sinovitis, resorte), Osgood-Schlatter, quiste de Baker, fibroma plantar y Sever, con sus órtesis.",
+    "curso": "Ortesis",
+    "tema": 3,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
+  },
+  {
     "slug": "ortesis-t4-tema-4-patologia-degenerativa-osteoarticular-artrosis-artrit",
     "titulo": "Tema 4: Patología degenerativa osteoarticular – artrosis, artritis reumatoide y osteoporosis",
     "subtitulo": "Patogenia, clínica, clasificación, diagnóstico y tratamiento de la artrosis, diferencias con la artritis reumatoide, fisiología ósea y osteoporosis, y órtesis indicadas.",
@@ -288,6 +298,16 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 7
+  },
+  {
+    "slug": "ortesis-t5-tema-5-ortesis-en-el-raquis",
+    "titulo": "Tema 5: Órtesis en el raquis",
+    "subtitulo": "Indicaciones, funciones, mecanismos y complicaciones de las órtesis vertebrales; órtesis para el dolor lumbar y cervical (SIO, LSO, CO, CTO, halo), para deformidades (Milwaukee, Boston) y para osteoporosis (PTS, Spinomed, Jewett).",
+    "curso": "Ortesis",
+    "tema": 5,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
   },
   {
     "slug": "ortesis-t6-tema-6-ortesis-de-miembro-superior",
@@ -300,11 +320,41 @@
     "secciones": 5
   },
   {
+    "slug": "ortesis-t7-tema-7-ortesis-de-miembro-inferior-y-ayudas-a-la-marcha",
+    "titulo": "Tema 7: Órtesis de miembro inferior y ayudas a la marcha",
+    "subtitulo": "Funciones y nomenclatura (FO, AFO, KO, KAFO, HKAFO), órtesis de pie, tobillo, rodilla y cadera, grandes aparatos de marcha, y uso correcto de bastones, muletas y andador.",
+    "curso": "Ortesis",
+    "tema": 7,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
     "slug": "ortesis-t8-tema-8-ortesis-y-protesis-en-el-deporte",
     "titulo": "Tema 8: Órtesis y prótesis en el deporte",
     "subtitulo": "Juegos Paralímpicos y sistemas de clasificación (ejemplo de la natación), prótesis deportivas y el estudio Brüggemann, órtesis deportivas más frecuentes y ética del dopaje tecnológico.",
     "curso": "Ortesis",
     "tema": 8,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
+  },
+  {
+    "slug": "ortesis-t9-tema-9-amputaciones",
+    "titulo": "Tema 9: Amputaciones",
+    "subtitulo": "Concepto, etiología, escala MESS, técnicas de cierre, niveles de amputación de miembro superior e inferior, miembro fantasma y tratamiento fisioterapéutico pre, posoperatorio y protésico.",
+    "curso": "Ortesis",
+    "tema": 9,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
+  },
+  {
+    "slug": "ortesis-t10-tema-10-exoprotesis",
+    "titulo": "Tema 10: Exoprótesis",
+    "subtitulo": "Prótesis craneofaciales y musculoesqueléticas, clasificación K-levels, osteointegración, componentes de la prótesis de miembro inferior (liner, encaje, suspensión, rodilla, pie) y exoprótesis de miembro superior con sus escalas.",
+    "curso": "Ortesis",
+    "tema": 10,
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 5

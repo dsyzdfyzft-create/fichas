@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tema 10: Exoprótesis · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 10: Exoprótesis","subtitulo":"Prótesis craneofaciales y musculoesqueléticas, clasificación K-levels, osteointegración, componentes de la prótesis de miembro inferior (liner, encaje, suspensión, rodilla, pie) y exoprótesis de miembro superior con sus escalas.","resumen":["Las **prótesis craneofaciales** (nasal, ocular/orbitaria, auricular, labial-maxilofacial) restauran **estética, protección y función** tras trauma, cáncer o malformación, en **silicona médica o acrílico**, fijadas con **adhesivos o implantes osteointegrados**; las musculoesqueléticas son **endoprótesis** (articulares) o **exoprótesis** (externas: mecánicas, mioeléctricas o híbridas).","Los **K-levels (Medicare, 1995)** clasifican del **K0** (sin potencial de marcha) al **K4** (alto impacto: niños, activos, atletas), pasando por **K1** (doméstico, cadencia fija), **K2** (comunidad limitada, barreras bajas) y **K3** (comunitario, cadencia variable); se asignan con historia, **AMP** (21 ítems, 42 puntos), **TUG** y **6MWT**, valorando el **potencial**, y **no son estáticos**.","La **prótesis osteointegrada** une la prótesis al hueso mediante **fixture** intramedular de **titanio**, **abutment** transcutáneo y un **mecanismo de desacople de seguridad**; elimina el encaje, mejora el ROM de cadera, la marcha y la **osteopercepción**, pero se contraindica en **osteoporosis** o riesgo infeccioso.","La prótesis de MI tiene **calcetines/liner** (ajuste de volumen, piel, presión), **encaje** (de **contacto total** o **carga selectiva PTB**), **suspensión** (correa, **pin-lock**, **succión**, **vacío activo**), **rodilla** (eje **mono/policéntrico**, fricción **constante, variable, hidráulica o microprocesador**, ayuda a la extensión) y **pie** (**SACH**, eje simple, eje múltiple, **ESAR de carbono** = gold standard en activos).","En el **miembro superior** **no hay K-levels**: se clasifican en **pasivas/cosméticas**, **mecánicas por cables** (arnés, baratas y duraderas) y **mioeléctricas/biónicas** (EMG, caras), y se valoran con **SHAP** (6 objetos + 14 AVD), **ARAT** (19 ítems) y **DASH** (30 ítems) / **QuickDASH** (11)."],"objetivos":["Describir las prótesis craneofaciales y diferenciar endoprótesis y exoprótesis.","Asignar un K-level con los criterios y pruebas funcionales adecuadas.","Explicar la osteointegración, sus componentes, ventajas y contraindicaciones.","Describir los componentes de la prótesis de miembro inferior y elegirlos según el paciente.","Clasificar las exoprótesis de miembro superior y conocer sus escalas de valoración."],"ideas_clave":["Prótesis faciales: **silicona médica** (nariz, oreja, órbita), **acrílico** (ojo); fijación con **adhesivos o implantes osteointegrados**.","K-levels: **0** no marcha · **1** doméstico, cadencia fija · **2** comunidad limitada, bordillos · **3** cadencia variable · **4** alto impacto.","Los K-levels valoran el **potencial** tras rehabilitación y **pueden cambiar** (p. ej., K2 → K3 justifica rodilla con microprocesador).","**AMP**: 21 ítems, 42 puntos, sin prótesis (**AMPnoPRO**) o con ella (**AMPPRO**); **TUG**: levantarse, 3 m, volver; **6MWT**.","OI: **fixture + abutment + fail-safe**; **sin encaje**; contraindicada en **osteoporosis** o riesgo de infección.","Encaje **PTB** (patellar tendon bearing) = **carga selectiva** en prótesis transtibiales.","Rodilla **monocéntrica** = actividad baja; **policéntrica** = más fluida; fricción **hidráulica** = actividad alta; **microprocesador** = la más avanzada.","Pie **SACH** = el básico más usado (baja funcionalidad); **ESAR** = gold standard en activos, efecto **muelle** que imita gemelo-sóleo-Aquiles."],"secciones":[{"id":"craneofaciales","titulo":"Prótesis craneofaciales y musculoesqueléticas","bloques":[{"tipo":"definicion","termino":"Prótesis facial","texto":"Dispositivo externo que reemplaza una parte perdida o deformada del rostro tras **traumatismos, cirugía oncológica, malformaciones congénitas** o enfermedades destructivas. Objetivos: **estética, protección** de cavidades, **función** (respiración, fonación, alimentación) e **integración social**."},{"tipo":"tabla","titulo":"Prótesis craneofaciales","columnas":["Prótesis","Indicación","Material / fijación"],"filas":[["Nasal","Pérdida por trauma, **carcinoma**, infección, quemadura","Silicona pigmentada, acrílico o resina; adhesivos o implantes en hueso nasal/maxilar"],["Ocular","Tras **enucleación o evisceración**","**Acrílico**"],["Orbitaria","Tumores, trauma o infección; sustituye párpados, ceja, pómulo","**Silicona**; adhesivos o implantes de titanio en el reborde orbitario"],["Auricular","**Microtia** o pérdida traumática/quirúrgica","Silicona flexible; adhesivos o implantes en la **mastoides**"],["Labial/maxilofacial","Resección de labios, mejillas, maxilar; a veces con **obturadores** intraorales","Mejora fonación y deglución; combinadas con implantes, adhesivos o imanes"]]},{"tipo":"tarjetas","items":[{"etiqueta":"Internas","titulo":"Endoprótesis","texto":"**Prótesis articulares** (cadera, rodilla, hombro; titanio, acero, cerámica, polietileno) y **osteosíntesis** (clavos, placas, tornillos: sustitutos estructurales, no funcionales)."},{"etiqueta":"Externas","titulo":"Exoprótesis","texto":"Reemplazan o complementan una parte ausente **fuera del cuerpo**: recuperar función, estética y reintegración. **Mecánicas, mioeléctricas o híbridas**."}]}]},{"id":"k-levels","titulo":"Clasificación K-levels","bloques":[{"tipo":"definicion","termino":"K-levels (Medicare Functional Classification Level)","texto":"Sistema de **Medicare (EE. UU., 1995)**, hoy mundial, que predice la movilidad del amputado de **MMII** y la **necesidad y beneficio** de cada dispositivo; va de **0 a 4** y refleja lo que el paciente puede lograr **con una prótesis adecuada y tras la rehabilitación**."},{"tipo":"tabla","titulo":"Los cinco niveles","columnas":["Nivel","Capacidad","Perfil"],"filas":[["**K0**","Sin capacidad de deambular o trasladarse con seguridad; la prótesis no mejora calidad de vida ni movilidad","—"],["**K1**","Transferencias o marcha en **superficies planas** a **cadencia fija**","**Deambulador doméstico**"],["**K2**","Supera **barreras de bajo nivel**: bordillos, escaleras, superficies irregulares","**Comunidad limitada**"],["**K3**","**Cadencia variable**, casi todas las barreras; actividades laborales, terapéuticas o de ejercicio","**Comunitario**"],["**K4**","Supera la marcha básica con **alto impacto, estrés o energía**","**Niños, adultos activos, atletas**"]]},{"tipo":"figura","pagina":15,"pie":"Definiciones originales de los K-levels (Amputee Mobility Predictor, Gailey).","src":"img/ortesis-t10-tema-10-exoprotesis-p15.jpg"},{"tipo":"lista","items":["**Historia y estado físico**: fuerza proximal (core, cadera), equilibrio en bipedestación, visión, capacidad cardiorrespiratoria, estado del miembro **contralateral**.","**AMP (Amputee Mobility Predictor)**: **21 ítems, 42 puntos** (equilibrio, transferencias, levantarse, girar, obstáculos, escaleras); **AMPnoPRO** predice el potencial sin prótesis y **AMPPRO** mide el desempeño con ella.","**TUG**: tiempo para levantarse, caminar **3 m**, girar y sentarse.","**6MWT**: distancia recorrida en **6 minutos**.","**Entorno y demandas**: casa (K1), calle y bordillos (K2), vida activa y velocidades variables (K3/K4)."]},{"tipo":"alerta","texto":"Se asigna según el **potencial real** tras la fisioterapia y con un encaje óptimo, no por lo que hace en la primera semana. Los K-levels **no son estáticos**: pasar de K2 a K3 justifica actualizar componentes (p. ej., de **rodilla mecánica** a **microprocesador**)."}]},{"id":"osteointegracion","titulo":"Prótesis osteointegrada (OI)","bloques":[{"tipo":"definicion","termino":"Osteointegración (Direct Skeletal Fixation)","texto":"Implante colocado quirúrgicamente **dentro del hueso** que **atraviesa la piel** para acoplar la prótesis directamente al esqueleto. Posible por encima/debajo de rodilla y codo, uni o bilateral, en dedos y, menos a menudo, en escápula y pelvis."},{"tipo":"figura","pagina":22,"pie":"Componentes de la prótesis osteointegrada: fixture en el canal medular, abutment que atraviesa la piel y conexión externa.","src":"img/ortesis-t10-tema-10-exoprotesis-p22.jpg"},{"tipo":"tabla","titulo":"Componentes","columnas":["Componente","Función"],"filas":[["**Fixture**","Vástago intraóseo de **titanio** en el canal medular"],["**Abutment**","Pieza **transcutánea** que sale por el estoma"],["**Mecanismo de seguridad (fail-safe)**","Se desacopla ante un impacto o caída para **proteger el hueso de una fractura periprotésica**"]]},{"tipo":"lista","items":["**Sin encaje**: desaparecen presión, sudor, irritación y dolor del muñón.","**Mejor ROM de cadera** (el encaje ya no lo bloquea).","**Mejor velocidad y capacidad de marcha** (TUG, 6MWT).","Menos problemas musculoesqueléticos por mejor **alineación** hueso-prótesis.","**Osteopercepción**: la vibración transmitida al hueso da información táctil del entorno.","Mejor **calidad de vida** (LIFE-H, SF-36, Q-TFA)."]},{"tipo":"alerta","texto":"Indicada como 1.ª o 2.ª opción en **cambios volumétricos, dolor o lesiones cutáneas por el encaje**; **contraindicada en osteoporosis** o con riesgo de complicaciones **infecciosas/inflamatorias** (alto riesgo de rechazo)."}]},{"id":"componentes-mi","titulo":"Componentes de la prótesis de miembro inferior","bloques":[{"tipo":"esquema","titulo":"De proximal a distal","mermaid":"flowchart TD\n  A[\"Calcetines y liner\"] --> B[\"Encaje o socket\"]\n  B --> C[\"Sistema de suspension\"]\n  C --> D[\"Estructura o pylon\"]\n  D --> E[\"Articulacion: rodilla\"]\n  E --> F[\"Ensamblaje tobillo-pie\"]","pie":"Cada componente se elige según el K-level, el muñón y las demandas del paciente."},{"tipo":"parrafo","texto":"**Calcetines** (todos los usuarios salvo succión total o funda): **ajustan el volumen** del muñón, que cambia durante el día (añadir si queda flojo, quitar si aprieta), **protegen la piel**, dan confort térmico e higiénico y **reparten la presión**. El **liner** (silicona, gel o poliuretano) se coloca directamente sobre el muñón con los mismos fines pero es **caro**: al disminuir el muñón se añaden calcetines."},{"tipo":"tabla","titulo":"Encaje según contacto","columnas":["Tipo","Rasgos","Pros / contras"],"filas":[["**Contacto total**","Toda la superficie del muñón contacta con el encaje","Reparte cargas, evita presiones puntuales, mejor control; uso común en TT y TF modernas"],["**Carga selectiva**","Apoyo en zonas específicas (patelar, isquiática); ej. **PTB** en transtibiales","Protege zonas frágiles o cicatrices; menor contacto y control"]]},{"tipo":"tabla","titulo":"Sistemas de suspensión","columnas":["Sistema","Ventajas","Desventajas"],"filas":[["Cinturón o correa","Fácil de colocar","Menos estético y estable; para TT antiguas o poco activos"],["**Pin-lock** (liner con pin distal)","Buena suspensión, fácil","**Tracción distal** del muñón"],["**Succión** (vacío pasivo, válvulas)","Muy buena suspensión, sensación natural","Exige ajuste y sellado precisos"],["**Vacío activo** (bomba mecánica o electrónica)","Excelente ajuste, control y confort","Coste y mantenimiento"]]},{"tipo":"perla","texto":"Una buena **suspensión** mejora la transferencia de energía y el control y evita heridas; para elegirla se valoran el muñón y también la **fuerza, destreza manual, vista y equilibrio** del paciente."},{"tipo":"tabla","titulo":"Unidades de rodilla","columnas":["Característica","Opciones"],"filas":[["Eje","**Monocéntrico** (un eje, sencillo, baja actividad) · **policéntrico** (varios ejes, más fluido y parecido al biológico)"],["Fricción","**Constante** (actividad baja) · **variable** (moderada) · **hidráulica** (alta, se adapta a la velocidad) · **microprocesador** (la más fluida y cara)"],["Ayuda a la extensión","Asiste el retorno a la extensión en el balanceo"],["Estabilizador mecánico","Bloqueo o control de estabilidad"]]},{"tipo":"figura","pagina":36,"pie":"Rodilla protésica monocéntrica (un solo eje) frente a policéntrica (varios ejes de rotación).","src":"img/ortesis-t10-tema-10-exoprotesis-p36.jpg"},{"tipo":"tabla","titulo":"Pies protésicos","columnas":["Pie","Rasgos","Indicación"],"filas":[["**SACH** (no articulado)","Tobillo sólido con talón almohadillado, sin movilidad; ligero y duradero; el **más usado**","Baja funcionalidad, TF o TT, uni o bilateral, desarticulación de cadera o rodilla"],["Eje sencillo","Flexión dorsal y plantar; estabiliza la rodilla","Amputaciones **altas** que necesitan estabilidad; **no** recomendado bajo rodilla"],["Eje múltiple","Añade **inversión/eversión**, absorbe impactos","Terrenos irregulares; requiere más adaptación"],["**ESAR** (carbono)","Almacena energía en el apoyo y la libera en el despegue (**muelle**)","**Gold standard** en pacientes activos"]]},{"tipo":"alerta","texto":"El pie **ESAR** imita el trabajo **excéntrico-concéntrico** de **gemelo-sóleo y Aquiles**: reduce el coste metabólico, mejora la simetría y absorbe impactos; los diseños **split-toe** mejoran la adaptación a terrenos irregulares."}]},{"id":"mmss","titulo":"Exoprótesis de miembro superior","bloques":[{"tipo":"parrafo","texto":"Reemplazan total o parcialmente brazo, antebrazo o mano (dedos, mano, **transradial, transhumeral** o todo el miembro), con rol funcional, estético y psicológico; se eligen según **manipulación, agarre, destreza fina e interacción** con el entorno. **No existen K-levels para el MS**."},{"tipo":"tabla","titulo":"Tipos de prótesis de MS","columnas":["Tipo","Control","Ventajas","Desventajas"],"filas":[["**Pasiva/cosmética**","Sin movimiento activo","Ligera, realista, poco mantenimiento","Función limitada"],["**Mecánica** (cables)","Arnés y movimientos de hombro/escápula; gancho **split hook**","**Duradera, barata**, fuerza y control","Esfuerzo físico, poco estética"],["**Mioeléctrica**","Señales **EMG** del músculo residual (bebionic, MyoHand, i-Limb)","Movimientos naturales y precisos","**Cara**, sensible al sudor y a interferencias, baterías"],["Biónica avanzada","Multicanal, IA o interfaces neuronales (LUKE Arm, Hero Arm)","Dedos independientes, feedback sensorial","—"]]},{"tipo":"tabla","titulo":"Escalas de valoración del MS","columnas":["Escala","Contenido"],"filas":[["**SHAP**","Velocidad y tipos de agarre: **6 objetos abstractos + 14 AVD**, cronometrado por el propio paciente"],["**ARAT**","**19 ítems**: coordinación, destreza y función; estandarizado en ictus, lesión cerebral, EM y Parkinson"],["**DASH / QuickDASH**","Autoinformes de **30 / 11 ítems** sobre síntomas y función del MS"]]},{"tipo":"perla","texto":"La **mioeléctrica** es ideal en pacientes con **buena musculatura residual** y capacidad de entrenamiento; la **mecánica** en entornos laborales que exigen fuerza y resistencia."}]}],"caso_clinico":{"titulo":"Tres amputados, tres prótesis (casos del tema)","presentacion":"Ander, 68 años, diabético con EAP, transtibial derecha, muñón maduro pero sensible en zonas de apoyo y rigidez proximal de cadera. Ludovica, 42 años, ingeniera activa, transfemoral izquierda postraumática hace 8 meses, excelente core y gran motivación. Daniel, 50 años, carpintero, transfemoral de larga evolución con dolor, dermatitis, úlceras por cambios de volumen y limitación de flexión de cadera por el encaje.","preguntas":[{"pregunta":"¿Qué K-level y qué componentes propondrías para Ander?","respuesta":"Probablemente **K1–K2** (doméstico o comunidad limitada; reevaluable tras la rehabilitación). Encaje de **contacto total** o **PTB** para proteger zonas sensibles, **liner** y calcetines para cambios de volumen, y un pie sencillo y estable (**SACH**) (razonamiento propio a partir de los criterios del tema)."},{"pregunta":"¿Y para Ludovica?","respuesta":"**K3** (comunitaria con cadencia variable, vida laboral y ejercicio), con potencial K4. Rodilla **policéntrica** con fricción **hidráulica o microprocesador**, suspensión por **succión o vacío activo** y pie **ESAR**."},{"pregunta":"¿Qué alternativa plantearías a Daniel?","respuesta":"Una **prótesis osteointegrada**: elimina el encaje (dermatitis, úlceras, cambios volumétricos) y mejora el **ROM de cadera**, siempre que no tenga **osteoporosis** ni riesgo infeccioso."}]},"preguntate":[{"pregunta":"¿Qué objetivos tiene una prótesis facial?","respuesta":"Restaurar la estética, proteger estructuras subyacentes, mejorar la función e integrar social y emocionalmente al paciente."},{"pregunta":"Diferencia endoprótesis y exoprótesis.","respuesta":"La endoprótesis es interna (articular, osteosíntesis); la exoprótesis se coloca fuera del cuerpo para reemplazar una parte ausente."},{"pregunta":"Describe los cinco K-levels.","respuesta":"K0 sin marcha; K1 doméstico en llano a cadencia fija; K2 comunidad limitada con barreras bajas; K3 comunitario con cadencia variable; K4 alto impacto."},{"pregunta":"¿Qué pruebas se usan para asignar un K-level?","respuesta":"Historia y estado físico, AMP (21 ítems, 42 puntos), TUG, 6MWT y análisis del entorno y del potencial."},{"pregunta":"¿Qué componentes tiene una prótesis osteointegrada?","respuesta":"Fixture intramedular de titanio, abutment transcutáneo y mecanismo de desacople de seguridad."},{"pregunta":"¿Qué es la osteopercepción?","respuesta":"La percepción táctil del entorno gracias a la vibración de la prótesis transmitida al hueso."},{"pregunta":"¿Para qué sirven los calcetines protésicos?","respuesta":"Ajustar el volumen del muñón, proteger la piel, mejorar el confort térmico e higiénico y repartir la presión."},{"pregunta":"Compara encaje de contacto total y de carga selectiva.","respuesta":"Contacto total: toda la superficie contacta, mejor reparto y control; carga selectiva (PTB): apoyo en zonas concretas, protege zonas frágiles pero con menos control."},{"pregunta":"Ordena los mecanismos de fricción de rodilla por nivel de actividad.","respuesta":"Constante (baja), variable (moderada), hidráulica (alta) y microprocesador (la más avanzada)."},{"pregunta":"¿Por qué el pie ESAR es el gold standard en activos?","respuesta":"Porque almacena energía en el apoyo y la devuelve en el despegue, imitando gemelo-sóleo y Aquiles y reduciendo el coste metabólico."}],"glosario":[{"termino":"Exoprótesis","definicion":"Prótesis externa que reemplaza una parte ausente."},{"termino":"Microtia","definicion":"Ausencia o malformación congénita del pabellón auricular."},{"termino":"Enucleación","definicion":"Extirpación del globo ocular."},{"termino":"K-level","definicion":"Nivel funcional de Medicare para amputados de MMII."},{"termino":"AMP","definicion":"Amputee Mobility Predictor."},{"termino":"Osteointegración","definicion":"Fijación directa de la prótesis al hueso."},{"termino":"Abutment","definicion":"Conector transcutáneo de la prótesis osteointegrada."},{"termino":"Liner","definicion":"Funda de silicona, gel o poliuretano sobre el muñón."},{"termino":"PTB","definicion":"Encaje transtibial con apoyo en el tendón rotuliano."},{"termino":"Pin-lock","definicion":"Suspensión con pin distal que se bloquea en el encaje."},{"termino":"Rodilla policéntrica","definicion":"Rodilla protésica con varios ejes de rotación."},{"termino":"SACH","definicion":"Solid Ankle Cushion Heel, pie protésico básico."},{"termino":"ESAR","definicion":"Pie de almacenamiento y retorno de energía."},{"termino":"Prótesis mioeléctrica","definicion":"Prótesis movida por motores activados por señales EMG."}],"fuentes":["Gailey, R. S., et al. The Amputee Mobility Predictor: An Instrument to Assess Determinants of the Lower-Limb Amputee's Ability to Ambulate.","Medicare Functional Classification Level (1995).","Thomson, S., et al. (2019). Remodelación ósea proximal en amputados de extremidades inferiores reconstruidas con una prótesis osteointegrada. J Orthop Res.","SHAP; ARAT; DASH / QuickDASH.","TEMA 10 – Exoprótesis (Universidad Europea)."],"qcm":[{"pregunta":"¿Qué material se usa para la prótesis ocular según el tema?","opciones":["Titanio","Acrílico","Silicona médica","Poliuretano"],"correcta":1,"explicacion":"La prótesis ocular es de acrílico; la orbitaria de silicona médica.","por_opcion":["❌ Para los implantes de fijación.","✅ Literal.","❌ Para la orbitaria.","❌ No se cita para el ojo."]},{"pregunta":"Una prótesis auricular por microtia puede fijarse mediante implantes osteointegrados en:","opciones":["El reborde orbitario","El maxilar","El hueso nasal","La zona mastoidea"],"correcta":3,"explicacion":"La prótesis auricular se fija con adhesivos o implantes osteointegrados en la zona mastoidea.","por_opcion":["❌ Prótesis orbitaria.","❌ Nasal o maxilofacial.","❌ Prótesis nasal.","✅ Literal."]},{"pregunta":"Un amputado que supera bordillos, escaleras y superficies irregulares pero con deambulación comunitaria limitada es:","opciones":["K3","K1","K2","K4"],"correcta":2,"explicacion":"K2: supera barreras ambientales de bajo nivel; típico de la deambulación limitada en la comunidad.","por_opcion":["❌ Cadencia variable, comunitario.","❌ Superficies planas a cadencia fija.","✅ Literal.","❌ Alto impacto."]},{"pregunta":"Un K-level 4 corresponde típicamente a:","opciones":["Niños, adultos activos o atletas con alto impacto","Pacientes sin potencial de marcha","Deambuladores domésticos","Usuarios de silla de ruedas"],"correcta":0,"explicacion":"K4: deambulación que excede las habilidades básicas, con alto impacto, estrés o energía; niños, adultos activos o atletas.","por_opcion":["✅ Literal.","❌ K0.","❌ K1.","❌ No es un K-level."]},{"pregunta":"El AMP (Amputee Mobility Predictor) consta de:","opciones":["11 ítems y 22 puntos","30 ítems","21 ítems y 42 puntos","19 ítems"],"correcta":2,"explicacion":"El AMP es una escala de 21 ítems y 42 puntos, aplicable sin prótesis (AMPnoPRO) o con ella (AMPPRO).","por_opcion":["❌ QuickDASH tiene 11.","❌ Es el DASH.","✅ Literal.","❌ Es el ARAT."]},{"pregunta":"Respecto a los K-levels, es correcto que:","opciones":["No son estáticos y valoran el potencial tras la rehabilitación","Se aplican igual al miembro superior","Son definitivos una vez asignados","Se basan solo en lo que el paciente hace la primera semana"],"correcta":0,"explicacion":"Se valora el potencial real tras la fisioterapia y con un encaje óptimo; pueden evolucionar, justificando cambiar componentes.","por_opcion":["✅ Literal.","❌ No existen K-levels para el MS.","❌ El tema lo niega.","❌ El tema lo niega."]},{"pregunta":"¿Qué componente de la prótesis osteointegrada protege el hueso de una fractura periprotésica en una caída?","opciones":["Mecanismo de desacople de seguridad (fail-safe)","Abutment","Fixture","Liner"],"correcta":0,"explicacion":"El dispositivo fail-safe se rompe o suelta ante un impacto brusco, protegiendo el hueso.","por_opcion":["✅ Literal.","❌ Pieza transcutánea.","❌ Vástago intraóseo.","❌ No forma parte de la OI."]},{"pregunta":"La prótesis osteointegrada está contraindicada en:","opciones":["Cambios volumétricos del muñón","Osteoporosis o riesgo infeccioso","Amputación transfemoral","Lesiones cutáneas por el encaje"],"correcta":1,"explicacion":"Se contraindica en osteoporosis o riesgo de complicaciones infecciosas o inflamatorias; los cambios volumétricos y las lesiones por encaje son indicaciones.","por_opcion":["❌ Es una indicación.","✅ Literal.","❌ Es posible en TF.","❌ Es una indicación."]},{"pregunta":"La osteopercepción se debe a:","opciones":["La retroalimentación visual","La presión del encaje sobre la piel","Los sensores EMG de la prótesis","La vibración de la prótesis transmitida al hueso"],"correcta":3,"explicacion":"Gracias a la vibración de la prótesis en el hueso, los pacientes experimentan sensaciones táctiles a través del implante.","por_opcion":["❌ No.","❌ La OI no tiene encaje.","❌ Propio de mioeléctricas.","✅ Literal."]},{"pregunta":"Si a lo largo del día el encaje queda flojo porque el muñón disminuye de volumen, se debe:","opciones":["Añadir calcetines","Cambiar a pie SACH","Quitar calcetines","Retirar el liner"],"correcta":0,"explicacion":"Los calcetines ajustan el espacio: si el encaje queda flojo se añaden; si aprieta, se quitan.","por_opcion":["✅ Literal.","❌ No tiene relación.","❌ Al revés.","❌ No."]},{"pregunta":"El encaje PTB (Patellar Tendon Bearing) es un ejemplo de encaje:","opciones":["Con pin-lock","De carga selectiva","Con vacío activo","De contacto total"],"correcta":1,"explicacion":"El encaje de carga selectiva apoya el peso en áreas específicas (zona patelar o isquiática); ej. PTB en transtibiales.","por_opcion":["❌ Es un sistema de suspensión.","✅ Literal.","❌ Es un sistema de suspensión.","❌ Contacta toda la superficie."]},{"pregunta":"¿Qué desventaja tiene la suspensión pin-lock?","opciones":["Es difícil de colocar","Es poco estable","Requiere bomba electrónica","Puede generar tracción distal en el muñón"],"correcta":3,"explicacion":"El liner con pin distal ofrece buena suspensión y es fácil de colocar, pero puede generar tracción distal.","por_opcion":["❌ Es fácil.","❌ Es el cinturón.","❌ Vacío activo.","✅ Literal."]},{"pregunta":"¿Qué mecanismo de fricción de rodilla ajusta automáticamente la resistencia según la velocidad y es ideal para mayor actividad?","opciones":["Bisagra monocéntrica","Fricción constante","Hidráulico","Fricción variable"],"correcta":2,"explicacion":"Constante: actividad baja; variable: moderada; hidráulico: se ajusta a la velocidad, actividad alta; microprocesador: más avanzado.","por_opcion":["❌ Es un tipo de eje.","❌ Actividad baja.","✅ Literal.","❌ Actividad moderada."]},{"pregunta":"El pie SACH:","opciones":["Almacena y devuelve energía","Permite inversión y eversión","Es el gold standard para atletas","No tiene movilidad y está indicado en baja funcionalidad"],"correcta":3,"explicacion":"Tobillo sólido con talón almohadillado, sin movilidad (bloqueo a 90°), el más usado; para pacientes de baja funcionalidad.","por_opcion":["❌ Es el ESAR.","❌ Es el eje múltiple.","❌ El gold standard es el ESAR.","✅ Literal."]},{"pregunta":"¿Qué escala de miembro superior tiene 19 ítems y evalúa coordinación y destreza?","opciones":["DASH","SHAP","AMP","ARAT"],"correcta":3,"explicacion":"El ARAT tiene 19 ítems; SHAP: 6 objetos + 14 AVD; DASH: 30 ítems; AMP: miembro inferior.","por_opcion":["❌ 30 ítems autoinformados.","❌ 6 objetos + 14 AVD.","❌ Escala de MMII.","✅ Literal."]}],"asignatura":"Ortesis","tema":10,"fecha":"2026-11-09"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips">${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  if(n===Q.length) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado! Marca el tema como « Maîtrisé » en Notion.':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>
