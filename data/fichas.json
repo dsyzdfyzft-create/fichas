@@ -90,6 +90,16 @@
     "secciones": 8
   },
   {
+    "slug": "biologia-celular-y-tisular-t10-tema-10-traduccion",
+    "titulo": "Tema 10: Traducción",
+    "subtitulo": "Dogma central, genes y código genético, maquinaria y etapas de la traducción en procariotas y eucariotas, polirribosomas y modificaciones postraduccionales, y mutaciones (génicas, cromosómicas, genómicas) con el ejemplo de la distrofia de Duchenne.",
+    "curso": "Biología celular y tisular",
+    "tema": 10,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
+  },
+  {
     "slug": "drenaje-linfatico-t1-tema-1-introduccion-al-drenaje-linfatico-manual",
     "titulo": "Tema 1: Introducción al drenaje linfático manual",
     "subtitulo": "Historia, escuelas, principios técnicos, efectos, indicaciones y contraindicaciones del DLM, y el mapa de líneas divisorias, cuadrantes y anastomosis linfáticas.",
