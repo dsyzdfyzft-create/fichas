@@ -298,5 +298,15 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 5
+  },
+  {
+    "slug": "ortesis-t8-tema-8-ortesis-y-protesis-en-el-deporte",
+    "titulo": "Tema 8: Órtesis y prótesis en el deporte",
+    "subtitulo": "Juegos Paralímpicos y sistemas de clasificación (ejemplo de la natación), prótesis deportivas y el estudio Brüggemann, órtesis deportivas más frecuentes y ética del dopaje tecnológico.",
+    "curso": "Ortesis",
+    "tema": 8,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
   }
 ]
