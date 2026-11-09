@@ -251,13 +251,13 @@
   },
   {
     "slug": "fisioterapia-neurologica-t9-tema-9-fundamentos-basicos-del-concepto-bobath",
-    "titulo": "Tema 9. Fundamentos básicos del Concepto Bobath",
-    "subtitulo": "Enfoque de resolución de problemas para evaluar y tratar el trastorno de la función, el movimiento y el control postural tras una lesión del SNC, basado en el tono postural, los puntos clave y la facilitación de movimiento normal funcional.",
+    "titulo": "Tema 9: Fundamentos básicos del concepto Bobath",
+    "subtitulo": "Historia, principios y objetivos del concepto Bobath, tono postural, mecanismo de control postural, inervación recíproca, neuroplasticidad, aprendizaje motor y movimiento normal.",
     "curso": "Fisioterapia neurológica",
     "tema": 9,
-    "fecha": "2026-11-04",
+    "fecha": "2026-11-09",
     "preguntas": 15,
-    "secciones": 8
+    "secciones": 5
   },
   {
     "slug": "ortesis-t1-tema-1-ortesis-y-protesis-historia-y-generalidades",
@@ -358,5 +358,25 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 5
+  },
+  {
+    "slug": "patologia-quirurgica-i-t1-tema-1-introduccion-a-la-historia-clinica",
+    "titulo": "Tema 1: Introducción a la historia clínica",
+    "subtitulo": "Conceptos de salud y enfermedad, de la etiología al diagnóstico, escalas de valoración, comunicación clínica, anamnesis, apartados de la historia clínica, exploración, pruebas complementarias, diagnóstico y tratamiento.",
+    "curso": "Patología quirúrgica I",
+    "tema": 1,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
+    "slug": "patologia-quirurgica-i-t2-tema-2-infeccion-y-sistema-inmune",
+    "titulo": "Tema 2: Infección y sistema inmune",
+    "subtitulo": "Concepto de infección, postulados de Koch y sus limitaciones, agentes infecciosos (bacterias, hongos, virus, protozoos, metazoos), órganos y células inmunitarias, inmunidad innata y adaptativa, memoria e inmunidad activa/pasiva.",
+    "curso": "Patología quirúrgica I",
+    "tema": 2,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 4
   }
 ]
