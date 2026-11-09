@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tema 12: Inestabilidad glenohumeral aguda y crónica · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 12: Inestabilidad glenohumeral aguda y crónica","subtitulo":"Concepto y grados, epidemiología y recurrencia, estabilizadores estáticos y dinámicos, clasificaciones (Rockwood, Neer, Matsen TUBS/AMBRII), luxación anterior, posterior e inferior, exploración, lesiones asociadas (Bankart, Hill-Sachs, SLAP) y tratamiento agudo y crónico.","resumen":["La **inestabilidad glenohumeral** es la incapacidad de mantener la cabeza humeral **centrada en la glena** durante el movimiento, desde la **hiperlaxitud** a la **subluxación** (pérdida parcial) y la **luxación** (pérdida completa); el hombro es la articulación **más móvil** y la diartrosis **más luxable (45 %)**.","El **95 %** es **traumática**, y la **recurrencia depende de la edad**: **\u003c 20 años 90 %**, **20–40 años 60 %**, **> 40 años 10 %** (pero con más roturas del manguito); la estabilidad depende de **estáticos** (labrum, **ligamentos glenohumerales**, el **LGHI** el más importante, presión negativa) y **dinámicos** (manguito, periescapulares, bíceps).","Según Matsen hay dos cuadros típicos: **TUBS** (traumática, unidireccional, **Bankart**, **cirugía**) y **AMBRII** (atraumática, multidireccional, bilateral, **rehabilitación**, intervalo rotador, desplazamiento capsular inferior); la luxación **anterior** (85 %, **subcoracoidea**, ABD + extensión + RE, hombro en **charretera**) domina, la **posterior** (5 %, convulsiones, pasa desapercibida hasta el **50 %**, limita la **RE**) y la **inferior** (**luxatio erecta**) son raras.","La exploración usa **cajón** (> 25 % de la cabeza), **surco** (inferior/multidireccional), **aprehensión** (S 72 %, E 96 %), **recolocación** y **sorpresa** (la **más exacta**), **jerk** (posterior) y **Gagey** (> 105°); el diagnóstico es **clínico** y la **artro-RM** es el **patrón oro**; lesiones asociadas: **Bankart** (97 % de las lesiones del labrum), **Hill-Sachs**, **ALPSA, Perthes, GLAD, HAGL** y **SLAP**.","La luxación aguda se **reduce con urgencia** (anterior: **tracción simple en el eje** como mejor opción; posterior: **RI en aducción**), se inmoviliza **más tiempo cuanto más joven** (\u003c 20 años 3–4 semanas; > 40 años 3–5 días) y se rehabilita **limitando la RE 3–4 semanas**; la inestabilidad crónica se opera con **Bankart artroscópico**, **Latarjet** (gran defecto glenoideo), **remplissage** o **plicatura**, salvo la **multidireccional** (rehabilitación **3–6 meses**)."],"objetivos":["Definir la inestabilidad glenohumeral y sus grados.","Conocer la epidemiología y la recurrencia por edad.","Describir los estabilizadores estáticos y dinámicos.","Aplicar las clasificaciones de Rockwood, Neer y Matsen (TUBS, AMBRII) y reconocer la luxación anterior, posterior e inferior.","Explorar la inestabilidad, identificar las lesiones asociadas y planificar el tratamiento agudo y crónico."],"ideas_clave":["Hombro: articulación **más móvil** y diartrosis **más luxable (45 %)**.","**95 % traumática**; recurrencia **90 % (\u003c 20)**, **60 % (20–40)**, **10 % (> 40)**.","**LGHI** = estabilizador **más importante** (antero-inferior en ABD 90° + RE).","**TUBS** → cirugía; **AMBRII** → rehabilitación.","Luxación **anterior subcoracoidea**: ABD + extensión + RE; **posterior**: convulsiones, brazo en **ADD + RI**, limita la RE.","**Test de la sorpresa** = el más exacto; **aprehensión** muy específica (96 %).","**Bankart** = desinserción del labrum anteroinferior (97 %); **Hill-Sachs** = impactación posterolateral de la cabeza.","Inmovilización **inversamente proporcional a la edad**; **Latarjet** si hay **gran defecto óseo glenoideo**."],"secciones":[{"id":"concepto","titulo":"Concepto, grados y epidemiología","bloques":[{"tipo":"parrafo","texto":"El miembro superior es la “**prolongación del cerebro**” y el hombro su base: posiciona la mano en el espacio. Es la articulación **más móvil** del cuerpo y la diartrosis **más luxable (≈ 45 % de las luxaciones)**, causa frecuente de dolor e impotencia."},{"tipo":"definicion","termino":"Inestabilidad glenohumeral","texto":"Pérdida de la relación articular entre la cabeza humeral y la glena: **incapacidad para mantener el centro de la cabeza dentro de la cavidad glenoidea** durante el movimiento."},{"tipo":"tabla","titulo":"Grados","columnas":["Grado","Rasgo"],"filas":[["Hiperlaxitud","Aumento de la movilidad"],["Inestabilidad","Inicio de los síntomas"],["Aprehensión","Miedo por la facilidad para luxarse"],["**Subluxación**","Pérdida **parcial** de congruencia"],["**Luxación**","Pérdida **completa** de congruencia"]]},{"tipo":"tabla","titulo":"Recurrencia según la edad","columnas":["Edad","Recurrencia"],"filas":[["**\u003c 20 años**","**90 %**"],["20–40 años","**60 %**"],["**> 40 años**","**10 %** (pero altas tasas de **rotura del manguito**)"]]},{"tipo":"dato","valor":"95 % · 90 / 60 / 10 %","texto":"Inestabilidades traumáticas y recurrencia en menores de 20, de 20 a 40 y mayores de 40 años."}]},{"id":"anatomia","titulo":"Anatomía y estabilizadores","bloques":[{"tipo":"parrafo","texto":"La **cabeza humeral** es **1/3 de esfera** con un ángulo cérvico-diafisario de **130°**; con la glena forma dos superficies **poco congruentes**: gran movilidad pero gran inestabilidad. Rangos: flexión 0–180°, extensión 0–60°, ABD 0–180° (más de 90° exige RE y giro escapular), ADD 0–45°, RE con el brazo pegado 40–60°, RI 90°; con el brazo a 90° de ABD, RE y RI de unos 70°."},{"tipo":"tabla","titulo":"Estabilizadores","columnas":["Tipo","Estructura","Función"],"filas":[["Estático","**Labrum glenoideo**","Aumenta área y profundidad de la glena"],["Estático","**LGHS**","Principal estabilizador frente a la **traslación superior**"],["Estático","**LGHM**","Estabilizador **anterior** por debajo de 90°"],["Estático","**LGHI**","**El más importante**: estabiliza en **ABD 90°** y antero-inferior en **ABD + RE**"],["Estático","Cápsula posterior, intervalo rotador, **presión intraarticular negativa**, adhesión-cohesión","Como dos cristales con una gota de agua"],["**Dinámico**","**Manguito rotador**, periescapulares, **porción larga del bíceps**","**Compresión** de la articulación"]]},{"tipo":"alerta","texto":"El tema define el labrum como “cartílago hialino”, pero en el tema 11 (y anatómicamente) es **fibrocartílago** (complemento). Retén su función: **aumentar la profundidad y la superficie de contacto**."}]},{"id":"clasificacion","titulo":"Clasificaciones","bloques":[{"tipo":"parrafo","texto":"Se clasifica por **grado** (luxación, subluxación), **frecuencia** (aguda o crónica: recurrente o fija), **dirección** (uni, bi o multidireccional) y **etiología** (traumática, atraumática voluntaria o involuntaria, adquirida, congénita, neuromuscular). Traumáticas: **anteroinferior 95 %**, posterior; atraumáticas **5 %**, multidireccionales."},{"tipo":"tabla","titulo":"Rockwood (voluntad)","columnas":["Tipo","Descripción"],"filas":[["I","Subluxación traumática **sin** luxación previa"],["II","Subluxación traumática **con** luxación previa"],["IIIA","Subluxación **voluntaria** con problemas **psiquiátricos**"],["IIIB","Subluxación **voluntaria** sin problemas psiquiátricos"],["IV","Subluxación **atraumática involuntaria**"]]},{"tipo":"parrafo","texto":"**Gerber y Nyffeler**: estática (A), dinámica (B), voluntaria (C). **Neer** (dirección): anterior, posterior, inferior, multidireccional."},{"tipo":"tabla","titulo":"Matsen: TUBS vs AMBRII","columnas":["TUBS","AMBRII"],"filas":[["**T**raumática","**A**traumática"],["**U**nidireccional","**M**ultidireccional"],["Lesión de **B**ankart (labrum anteroinferior)","**B**ilateral"],["**S**urgery: tratamiento **quirúrgico**","**R**esponde a la **rehabilitación**; **I**ntervalo rotador; **I**nferior capsular shift"]]},{"tipo":"esquema","titulo":"Decisión según Matsen","mermaid":"flowchart TD\n  A[\"Hombro inestable\"] --> B{\"Origen traumatico y unidireccional\"}\n  B -->|\"si: TUBS\"| C[\"Lesion de Bankart\"]\n  C --> D[\"Cirugia\"]\n  B -->|\"no: AMBRII\"| E[\"Multidireccional y bilateral\"]\n  E --> F[\"Rehabilitacion 3-6 meses\"]\n  F -->|\"si fracasa\"| G[\"Desplazamiento capsular inferior e intervalo rotador\"]","pie":"Los dos extremos del espectro de la inestabilidad."}]},{"id":"tipos","titulo":"Luxación anterior, posterior e inferior","bloques":[{"tipo":"tabla","titulo":"Tipos de luxación","columnas":["Rasgo","Anterior","Posterior","Inferior"],"filas":[["Frecuencia","**Hasta 85 %**; la **subcoracoidea** es la más frecuente","**~5 %**","Rara"],["Mecanismo","**ABD + extensión + RE**, o microtraumatismos repetidos","**Convulsiones** (epilepsia, alcohol, electrocución), alta energía, microtraumas en deportistas","Hiperabducción"],["Clínica","Muy dolorosa; **hombro en charretera**; brazo en **leve ABD y RE**; impotencia para RI y ADD","**Pasa desapercibida hasta el 50 %**; brazo en **ADD y RI**; **limitación de la RE** activa y pasiva; prominencia posterior","**Luxatio erecta**: diáfisis hacia arriba, cabeza bajo la glena"],["Riesgos","Recurrencia; la causa más frecuente de recidiva es una **multidireccional no diagnosticada**","Cabeza subacromial (más frecuente), subglenoidea o subespinosa","Graves lesiones de **partes blandas**, fracturas humerales y **neurovasculares**"]]},{"tipo":"alerta","texto":"Sospecha una **luxación posterior** ante un hombro que **no rota externamente** tras una **convulsión** o electrocución, aunque no haya deformidad llamativa."}]},{"id":"exploracion","titulo":"Exploración y diagnóstico","bloques":[{"tipo":"tabla","titulo":"Pruebas de inestabilidad","columnas":["Prueba","Técnica / interpretación","S / E"],"filas":[["**Cajón** anterior y posterior","Desplazar la cabeza; positivo si **> 25 %** de su grosor","53 % / 85 %"],["**Surco**","Tracción inferior: surco bajo el acromion → inestabilidad **inferior o multidireccional**; si desaparece en RE, **intervalo rotador incompetente**","—"],["**Aprehensión**","ABD + extensión + RE: el paciente impide seguir por **miedo a luxarse**","**72 % / 96 %**"],["**Recolocación**","En la posición de aprehensión, presionar el húmero hacia atrás: **desaparece el miedo**","81 % / 92 %"],["**Sorpresa**","Soltar bruscamente la presión: **reaparece la aprehensión**","**La más exacta**"],["**Jerk test**","Desde antepulsión, empujar el codo atrás: chasquido → inestabilidad **posterior**","—"],["**Gagey** (hiperabducción)","ABD glenohumeral pasiva **> 105°** o **20° mayor** que el lado sano → incompetencia de los ligamentos inferiores","—"]]},{"tipo":"perla","texto":"Inspecciona la masa muscular: una **atrofia asimétrica del deltoides** sugiere lesión del **nervio circunflejo**."},{"tipo":"parrafo","texto":"El diagnóstico es **clínico**: las pruebas confirman y buscan lesiones asociadas. RX y TC; la **artro-RM** aumenta la sensibilidad y es el **patrón oro**; la ecografía es operador-dependiente y útil para el manguito."}]},{"id":"lesiones","titulo":"Lesiones asociadas","bloques":[{"tipo":"tabla","titulo":"Lesiones asociadas a la luxación","columnas":["Lesión","Descripción"],"filas":[["**Bankart**","Rotura o desinserción del **labrum anteroinferior** con desgarro del periostio: **97 %** de las lesiones del labrum; la cabeza “arranca” el rodete"],["**Bankart óseo**","Fractura-avulsión del **margen anteroinferior de la glena** con lesión del labrum"],["**Hill-Sachs**","Fractura por **impactación** del margen **posterolateral de la cabeza humeral** por el contacto repetido con la glena anterior"],["**ALPSA**","Avulsión anterior del labrum y periostio desplazada al cuello glenoideo; **alto riesgo de inestabilidad**"],["**Perthes**","Periostio levantado y desprendido medialmente con el labrum anterior"],["**GLAD**","Defecto osteocondral"],["**HAGL**","Avulsión **humeral** del ligamento glenohumeral"],["**SLAP**","Lesión del labrum **superior** anterior y posterior + LGHS y LGHM + **porción larga del bíceps**; inserción meniscoide vulnerable"]]},{"tipo":"dato","valor":"80 % · 65 %","texto":"Resecar el labrum anteroinferior reduce la altura de la glena un 80 % y la estabilidad un 65 %."},{"tipo":"alerta","texto":"El tema dice en una diapositiva que en el Bankart óseo el fragmento suele ser “de la cabeza del húmero”, pero lo define como avulsión del **margen anteroinferior de la glena**: quédate con **Bankart óseo = glena** y **Hill-Sachs = cabeza humeral**."},{"tipo":"parrafo","texto":"**SLAP**: no se reconoció hasta la artroscopia; prevalencia **3,9–6 %** de las artroscopias, edad media **38 años**, **91 % varones**; el **tipo II** (desinserción sin desgarro) es el más común. Lesiones del labrum **atraumáticas** (laxitud, tenis, natación, béisbol) o **traumáticas** (luxaciones recurrentes, caídas, traumatismo directo)."}]},{"id":"tratamiento","titulo":"Tratamiento","bloques":[{"tipo":"esquema","titulo":"Luxación aguda","mermaid":"flowchart LR\n  A[\"1 Reduccion urgente\"] --> B[\"2 Valorar lesiones asociadas\"]\n  B --> C[\"3 Inmovilizacion segun edad\"]\n  C --> D[\"4 Rehabilitacion\"]","pie":"La reducción es una urgencia ortopédica."},{"tipo":"parrafo","texto":"**Anterior**: paciente relajado, sedado y analgesiado; técnicas de Hipócrates, **Stimson**, Kocher, Saha, pero la **tracción simple en el eje** da los mejores resultados con menos complicaciones. **Posterior**: sedación y relajantes, maniobra de **rotación interna en aducción**."},{"tipo":"tabla","titulo":"Inmovilización en cabestrillo según la edad","columnas":["Edad","Duración"],"filas":[["**\u003c 20 años**","**3–4 semanas**"],["20–30 años","2–3 semanas"],["> 30 años","10 días – 2 semanas"],["**> 40 años**","**3–5 días**"]]},{"tipo":"alerta","texto":"Los **jóvenes** se inmovilizan **más tiempo** (mayor riesgo de recidiva) y los **mayores** menos (riesgo de **rigidez** y de rotura del manguito)."},{"tipo":"parrafo","texto":"**Rehabilitación**: 1.ª fase (**3–4 semanas**): movilidad pasiva y luego activa, termo y crioterapia, electroterapia, **limitando la rotación externa**; 2.ª fase (desde la **5.ª semana**): rotaciones pasivas y activas, ejercicios resistidos de la cintura escapular y **propiocepción**. Objetivos: fuerza, potencia, resistencia, propiocepción, movilidad completa, refuerzo del manguito, escapulares y deltoides (recuperar el **70–80 %** de la fuerza) y retorno sistemático a la actividad."},{"tipo":"tabla","titulo":"Inestabilidad crónica","columnas":["Opción","Indicación / técnica"],"filas":[["**Conservador**","Rehabilitación intensa de estabilizadores: **AMBRII**, atletas con mucha RE, **luxadores voluntarios**"],["**Bankart artroscópico**","La más realizada: anclajes en el borde glenoideo y suturas que reinsertan el **labrum y la cápsula**; menos disección y más movilidad que la abierta"],["**Latarjet**","Transferir la **coracoides** con sus tendones a través del subescapular a la glena anteroinferior: **gran defecto óseo glenoideo**"],["**Remplissage**","Rellenar el **Hill-Sachs** con cápsula posterior y tendón del manguito"],["**Plicatura capsular**","Reducir el diámetro capsular"],["**Multidireccional**","Rehabilitación **3–6 meses** antes de cirugía; cirugía si interfiere con las AVD (**plicatura pancapsular** ± cierre del intervalo); **contraindicada en luxadores voluntarios**"]]}]}],"caso_clinico":{"titulo":"Primera luxación en un jugador de balonmano","presentacion":"Jugador de balonmano de 18 años que, al lanzar con el brazo en abducción y rotación externa, nota que el hombro se sale. Llega con el hombro en charretera y el brazo en ligera abducción y rotación externa. Tras la reducción, la artro-RM muestra desinserción del labrum anteroinferior y una impactación posterolateral de la cabeza humeral.","preguntas":[{"pregunta":"¿Qué tipo de luxación y qué lesiones asociadas presenta?","respuesta":"Luxación **anterior** (subcoracoidea) por **ABD + RE**, con lesión de **Bankart** (labrum anteroinferior) y **Hill-Sachs** (impactación posterolateral de la cabeza)."},{"pregunta":"¿Cuál es su riesgo de recidiva y cómo se inmoviliza?","respuesta":"Muy alto: **≈ 90 %** en menores de 20 años; se inmoviliza **3–4 semanas** en cabestrillo y se rehabilita limitando la **rotación externa** las primeras 3–4 semanas."},{"pregunta":"Si se vuelve recidivante, ¿qué tratamiento corresponde?","respuesta":"Es un perfil **TUBS** (traumático, unidireccional, Bankart): **cirugía de Bankart artroscópica**; **Latarjet** si existe un gran defecto óseo glenoideo y **remplissage** para un Hill-Sachs significativo."}]},"preguntate":[{"pregunta":"Define inestabilidad glenohumeral y diferencia subluxación de luxación.","respuesta":"Incapacidad de mantener la cabeza centrada en la glena; subluxación es pérdida parcial de congruencia y luxación pérdida completa."},{"pregunta":"¿Cómo varía la recurrencia con la edad?","respuesta":"90 % en menores de 20 años, 60 % entre 20 y 40 y 10 % en mayores de 40 (con más roturas del manguito)."},{"pregunta":"¿Cuál es el estabilizador estático más importante?","respuesta":"El ligamento glenohumeral inferior, que estabiliza en abducción de 90° y rotación externa."},{"pregunta":"Explica las siglas TUBS y AMBRII.","respuesta":"TUBS: traumática, unidireccional, Bankart, cirugía; AMBRII: atraumática, multidireccional, bilateral, rehabilitación, intervalo rotador, desplazamiento capsular inferior."},{"pregunta":"Diferencia la clínica de la luxación anterior y posterior.","respuesta":"Anterior: charretera, brazo en ABD y RE; posterior: brazo en ADD y RI, limitación de la RE, a menudo desapercibida tras convulsiones."},{"pregunta":"¿Qué prueba es la más exacta para la inestabilidad?","respuesta":"El test de la sorpresa."},{"pregunta":"Diferencia Bankart y Hill-Sachs.","respuesta":"Bankart: desinserción del labrum anteroinferior (óseo si arrastra la glena); Hill-Sachs: impactación posterolateral de la cabeza humeral."},{"pregunta":"¿Qué es una lesión SLAP?","respuesta":"Lesión del labrum superior anterior y posterior con afectación de los LGH superior y medio y de la porción larga del bíceps."},{"pregunta":"¿Cuánto se inmoviliza una luxación según la edad?","respuesta":"Menos de 20 años 3–4 semanas; 20–30 años 2–3; más de 30 años 10 días a 2 semanas; más de 40 años 3–5 días."},{"pregunta":"¿Cuándo está indicado el Latarjet?","respuesta":"En la inestabilidad recidivante con gran defecto óseo glenoideo."}],"glosario":[{"termino":"Subluxación","definicion":"Pérdida parcial de la congruencia articular."},{"termino":"Labrum","definicion":"Rodete que profundiza la glena."},{"termino":"LGHI","definicion":"Ligamento glenohumeral inferior, principal estabilizador estático."},{"termino":"Intervalo rotador","definicion":"Espacio entre supraespinoso y subescapular con el LGHS y el coracohumeral."},{"termino":"TUBS","definicion":"Inestabilidad traumática unidireccional con Bankart tratada con cirugía."},{"termino":"AMBRII","definicion":"Inestabilidad atraumática multidireccional bilateral que responde a rehabilitación."},{"termino":"Luxatio erecta","definicion":"Luxación inferior con el brazo en elevación."},{"termino":"Bankart","definicion":"Desinserción del labrum anteroinferior."},{"termino":"Hill-Sachs","definicion":"Impactación posterolateral de la cabeza humeral."},{"termino":"SLAP","definicion":"Lesión del labrum superior anterior y posterior."},{"termino":"Latarjet","definicion":"Transferencia de la coracoides a la glena anteroinferior."},{"termino":"Remplissage","definicion":"Relleno del Hill-Sachs con cápsula y tendón posteriores."},{"termino":"Artro-RM","definicion":"Resonancia con contraste intraarticular, patrón oro."}],"fuentes":["Clasificaciones de Rockwood, Gerber y Nyffeler, Neer y Thomas y Matsen.","Tema 12. Inestabilidad Glenohumeral Aguda y Crónica, PQRI 2026-2027 (Universidad Europea)."],"qcm":[{"pregunta":"¿Qué porcentaje de las luxaciones corresponde al hombro según el tema?","opciones":["15 %","25 %","85 %","45 %"],"correcta":3,"explicacion":"El hombro es la diartrosis más luxable, con un 45 % de las luxaciones; 85 % es la proporción de luxaciones anteriores.","por_opcion":["❌ No.","❌ No.","❌ Es la proporción de anteriores.","✅ Literal."]},{"pregunta":"La tasa de recurrencia tras una luxación de hombro en menores de 20 años es:","opciones":["90 %","30 %","10 %","60 %"],"correcta":0,"explicacion":"\u003c 20 años 90 %, 20–40 años 60 %, > 40 años 10 %.","por_opcion":["✅ Literal.","❌ No.","❌ > 40 años.","❌ 20–40 años."]},{"pregunta":"¿Cuál es el estabilizador estático más importante del hombro?","opciones":["LGHS","LGHI","LGHM","Ligamento coracoacromial"],"correcta":1,"explicacion":"El LGHI estabiliza el brazo en ABD de 90° y antero-inferior en RE y ABD; es el más importante.","por_opcion":["❌ Traslación superior.","✅ Literal.","❌ Anterior \u003c 90°.","❌ Forma el arco."]},{"pregunta":"¿Cuál es un estabilizador DINÁMICO de la glenohumeral?","opciones":["Presión intraarticular negativa","Labrum","Cápsula posterior","Manguito rotador"],"correcta":3,"explicacion":"Dinámicos: manguito rotador, periescapulares y porción larga del bíceps, que comprimen la articulación.","por_opcion":["❌ Estático.","❌ Estático.","❌ Estático.","✅ Literal."]},{"pregunta":"Según Rockwood, una subluxación voluntaria en un paciente con problemas psiquiátricos es tipo:","opciones":["II","IIIA","IV","I"],"correcta":1,"explicacion":"IIIA: voluntaria con problemas psiquiátricos; IIIB: voluntaria sin ellos; IV: atraumática involuntaria.","por_opcion":["❌ Traumática con luxación previa.","✅ Literal.","❌ Atraumática involuntaria.","❌ Traumática sin luxación previa."]},{"pregunta":"El perfil TUBS de Matsen se trata con:","opciones":["Cirugía","Inmovilización 6 meses","Rehabilitación exclusiva","Infiltraciones"],"correcta":0,"explicacion":"TUBS: Traumatic, Unidirectional, Bankart, Surgery.","por_opcion":["✅ Literal.","❌ No.","❌ Es AMBRII.","❌ No."]},{"pregunta":"La luxación anterior subcoracoidea se produce típicamente por un mecanismo de:","opciones":["Hiperabducción pura","Aducción y rotación interna","Abducción, extensión y rotación externa","Flexión y aducción"],"correcta":2,"explicacion":"Mecanismo combinado de abducción, extensión y rotación externa.","por_opcion":["❌ Luxatio erecta.","❌ Posición de la luxación posterior.","✅ Literal.","❌ No."]},{"pregunta":"¿Qué signo hace sospechar una luxación posterior?","opciones":["Hombro en charretera","Diáfisis orientada hacia arriba","Brazo en abducción y rotación externa","Limitación de la rotación externa activa y pasiva"],"correcta":3,"explicacion":"Puede pasar desapercibida hasta en el 50 %; el signo de sospecha es la limitación de la RE con el brazo en ADD y RI.","por_opcion":["❌ Anterior.","❌ Luxatio erecta.","❌ Anterior.","✅ Literal."]},{"pregunta":"Las luxaciones posteriores se asocian a menudo a:","opciones":["Convulsiones y electrocución","Lanzamientos deportivos","Esquí","Caídas sobre la mano en niños"],"correcta":0,"explicacion":"Están causadas a menudo por la contracción muscular generalizada de las convulsiones (epilepsia, alcohol, shock eléctrico).","por_opcion":["✅ Literal.","❌ Más bien anteriores.","❌ No.","❌ No."]},{"pregunta":"¿Qué prueba se considera la más exacta para el diagnóstico de la inestabilidad?","opciones":["Jerk test","Prueba del surco","Test de la sorpresa","Cajón anterior"],"correcta":2,"explicacion":"El test de la sorpresa (soltar bruscamente la presión de recolocación) es la prueba más exacta.","por_opcion":["❌ Posterior.","❌ Inferior o multidireccional.","✅ Literal.","❌ S 53 %."]},{"pregunta":"Un surco subacromial a la tracción inferior que desaparece en rotación externa indica:","opciones":["Intervalo rotador incompetente","Rotura del supraespinoso","Lesión de Bankart","Luxación posterior"],"correcta":0,"explicacion":"La prueba del surco indica inestabilidad inferior o multidireccional; si desaparece en RE, el intervalo rotador es incompetente.","por_opcion":["✅ Literal.","❌ No.","❌ No.","❌ No."]},{"pregunta":"La lesión de Hill-Sachs consiste en:","opciones":["Lesión del labrum superior","Avulsión humeral del ligamento glenohumeral","Impactación del margen posterolateral de la cabeza humeral","Desinserción del labrum anteroinferior"],"correcta":2,"explicacion":"Hill-Sachs: fractura por compresión del margen posterolateral de la cabeza por el contacto repetido con la glena anterior.","por_opcion":["❌ SLAP.","❌ HAGL.","✅ Literal.","❌ Bankart."]},{"pregunta":"La lesión de Bankart supone aproximadamente qué porcentaje de las lesiones del labrum:","opciones":["47 %","17 %","77 %","97 %"],"correcta":3,"explicacion":"La lesión de Bankart representa el 97 % de las lesiones del labrum.","por_opcion":["❌ No.","❌ No.","❌ No.","✅ Literal."]},{"pregunta":"¿Cuánto tiempo se inmoviliza una luxación de hombro en un paciente de 45 años?","opciones":["3–5 días","10 días–2 semanas","2–3 semanas","3–4 semanas"],"correcta":0,"explicacion":"\u003c 20 años 3–4 semanas, 20–30 años 2–3, > 30 años 10 días–2 semanas, > 40 años 3–5 días.","por_opcion":["✅ Literal.","❌ > 30 años.","❌ 20–30 años.","❌ \u003c 20 años."]},{"pregunta":"La cirugía de Latarjet está indicada sobre todo en:","opciones":["Luxadores voluntarios","Inestabilidad recidivante con gran defecto óseo glenoideo","Inestabilidad multidireccional atraumática","Lesiones SLAP tipo II"],"correcta":1,"explicacion":"Latarjet transfiere la coracoides con sus tendones a la glena anteroinferior; se usa en casos con gran defecto óseo glenoideo.","por_opcion":["❌ Contraindicada la cirugía.","✅ Literal.","❌ Rehabilitación.","❌ No."]}],"asignatura":"Patología quirúrgica I","tema":12,"fecha":"2026-11-09"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips">${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  if(n===Q.length) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado! Marca el tema como « Maîtrisé » en Notion.':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>

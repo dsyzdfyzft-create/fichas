@@ -458,5 +458,25 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 7
+  },
+  {
+    "slug": "patologia-quirurgica-i-t11-tema-11-sindrome-subacromial-y-patologia-del-hombro",
+    "titulo": "Tema 11: Síndrome subacromial y patología del hombro",
+    "subtitulo": "Anatomía del hombro, síndrome de dolor subacromial, tendinopatía y rotura del manguito rotador, tendinitis calcificante, tendinopatía de la porción larga del bíceps, capsulitis adhesiva, luxación e inestabilidad glenohumeral.",
+    "curso": "Patología quirúrgica I",
+    "tema": 11,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
+    "slug": "patologia-quirurgica-i-t12-tema-12-inestabilidad-glenohumeral-aguda-y-cronica",
+    "titulo": "Tema 12: Inestabilidad glenohumeral aguda y crónica",
+    "subtitulo": "Concepto y grados, epidemiología y recurrencia, estabilizadores estáticos y dinámicos, clasificaciones (Rockwood, Neer, Matsen TUBS/AMBRII), luxación anterior, posterior e inferior, exploración, lesiones asociadas (Bankart, Hill-Sachs, SLAP) y tratamiento agudo y crónico.",
+    "curso": "Patología quirúrgica I",
+    "tema": 12,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 7
   }
 ]
