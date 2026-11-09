@@ -378,5 +378,25 @@
     "fecha": "2026-11-09",
     "preguntas": 15,
     "secciones": 4
+  },
+  {
+    "slug": "patologia-quirurgica-i-t3-tema-3-heridas-y-quemaduras",
+    "titulo": "Tema 3: Heridas y quemaduras",
+    "subtitulo": "Fisiología de la cicatrización, factores de riesgo, clasificación de heridas, cierre por intención, evaluación, protocolo de tratamiento y tipos de cicatriz; quemaduras: grados, fisiopatología, complicaciones, regla de los 9, gravedad y tratamiento.",
+    "curso": "Patología quirúrgica I",
+    "tema": 3,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
+    "slug": "patologia-quirurgica-i-t4-tema-4-fracturas-generalidades",
+    "titulo": "Tema 4: Fracturas – generalidades",
+    "subtitulo": "Tejido óseo, clasificación de las fracturas, consolidación primaria y secundaria, diagnóstico clínico y por imagen (regla del 2 de Apley) y complicaciones locales, regionales y generales.",
+    "curso": "Patología quirúrgica I",
+    "tema": 4,
+    "fecha": "2026-11-09",
+    "preguntas": 15,
+    "secciones": 5
   }
 ]

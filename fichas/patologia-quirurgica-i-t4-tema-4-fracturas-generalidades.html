@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tema 4: Fracturas – generalidades · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 4: Fracturas – generalidades","subtitulo":"Tejido óseo, clasificación de las fracturas, consolidación primaria y secundaria, diagnóstico clínico y por imagen (regla del 2 de Apley) y complicaciones locales, regionales y generales.","resumen":["El hueso es un **tejido conjuntivo** muy resistente (**206 huesos**) con funciones **mecánicas** (protección, estabilidad, movimiento) y **biológicas** (minerales, iones, hematopoyesis), formado por un **35 % orgánico** (colágeno, osteoblastos, osteocitos, osteoclastos) y un **65 % inorgánico**; el **esponjoso** soporta compresión y cizallamiento y el **cortical** (osteonas de Havers) el eje longitudinal.","Las fracturas se clasifican por **etiología** (traumáticas, **patológicas**, **por estrés**, infantiles), **mecanismo** (directo o indirecto: flexión, compresión, tracción, torsión, cizallamiento), relación con el exterior (**abierta**, clasificación de **Gustilo I–III**), desplazamiento, estabilidad, localización y **trazo** (incompletas: fisura, **tallo verde**, **torus**; completas: transversa, oblicua, espiroidea, conminuta…).","La consolidación **secundaria** (tratamiento conservador) forma **callo**: inflamación (1–2 semanas) → **callo blando (4–6 semanas)** → **callo duro (8–12 semanas)** → **remodelación (meses-años)**; la **primaria** (fijación rígida, osteosíntesis) une directamente **sin callo**.","El diagnóstico combina **anamnesis, exploración** (dolor a punta de dedo, deformidad, crepitación, movilidad anómala, estado **vasculonervioso distal**) y **radiología** con la **regla del 2 de Apley** (2 proyecciones, 2 articulaciones, 2 ocasiones, 2 miembros), más TC, RM, ecografía o **gammagrafía** (fracturas por estrés).","Las complicaciones son **locales** (infección, consolidación viciosa, rigidez, **Sudeck**, **pseudoartrosis**, **osteonecrosis** de cabeza femoral, astrágalo y escafoides), **regionales** (**síndrome compartimental**, lesión vascular y nerviosa, **miositis osificante**) y **generales** (**shock** —fémur 1,3–2 l, pelvis 1–2,5 l—, **embolia grasa \u003c 72 h**, **tromboembolismo**)."],"objetivos":["Describir la composición, estructura y funciones del tejido óseo.","Clasificar las fracturas según etiología, mecanismo, exposición, desplazamiento, estabilidad, localización y trazo.","Explicar las fases de la consolidación secundaria y la consolidación primaria.","Aplicar la anamnesis, la exploración y la regla del 2 de Apley en el diagnóstico.","Reconocer las complicaciones locales, regionales y generales de las fracturas."],"ideas_clave":["Hueso: **35 % orgánico**, **65 % inorgánico**; **206 huesos**.","Esponjoso = compresión y cizallamiento, gran actividad metabólica; cortical = **osteonas/sistema de Havers**, resistencia longitudinal.","**Gustilo**: I herida **\u003c 1 cm** limpia; II **> 1 cm** sin gran daño; III daño **extenso** de partes blandas.","Incompletas: **aplastamiento, fisura, tallo verde, torus**.","Consolidación **secundaria** = callo (conservador); **primaria** = sin callo, fijación rígida (quirúrgico).","Callo blando **4–6 semanas**; callo duro completo **8–12 semanas**; remodelación **meses-años**.","**Regla del 2 de Apley**: 2 proyecciones, 2 articulaciones, 2 ocasiones, 2 miembros.","Embolia grasa: **\u003c 72 h**, taquicardia, disnea, hipoxia, confusión y **petequias**."],"secciones":[{"id":"hueso","titulo":"Tejido óseo","bloques":[{"tipo":"parrafo","texto":"El hueso es un **tejido conjuntivo de gran resistencia**; hay **206 huesos** entre el eje axial y las extremidades. Funciones **mecánicas**: protección, estabilidad, movimiento; **biológicas**: almacenamiento de minerales, regulación de iones y **hematopoyesis**."},{"tipo":"tabla","titulo":"Composición","columnas":["Componente","%","Contenido"],"filas":[["Orgánico","**35 %**","Matriz (colágeno, proteínas) y células: **osteoblastos, osteocitos, osteoclastos**"],["Inorgánico","**65 %**","Minerales (Ca, P, Na…) y agua"]]},{"tipo":"figura","pagina":7,"pie":"Estructura del hueso largo: epífisis, metáfisis, diáfisis, hueso cortical y trabecular, médula roja y amarilla, periostio.","src":"img/patologia-quirurgica-i-t4-tema-4-fracturas-generalidades-p7.jpg"},{"tipo":"tabla","titulo":"Hueso esponjoso vs cortical","columnas":["Rasgo","Esponjoso (trabecular)","Compacto (cortical)"],"filas":[["Organización","Red 3D de trabéculas","Láminas concéntricas: **osteona / sistema de Havers** con conducto central"],["Localización","Epífisis, metáfisis, huesos cortos","**Diáfisis**"],["Resistencia","**Compresión y cizallamiento**","**Eje longitudinal**"],["Otros","Médula ósea entre trabéculas; **gran actividad metabólica**","—"]]},{"tipo":"parrafo","texto":"El **crecimiento** aumenta masa y volumen (modelación hasta la madurez: longitudinal por la fisis, anchura metafisaria por el **anillo de Ranvier**); la **remodelación** (formación-reabsorción) dura **toda la vida** sin cambiar la forma. Está regulada por factores **intracelulares** (genética) y **extracelulares** sistémicos (nutrición, vitamina D, PTH, estrógenos, testosterona, calcitonina) y locales (mecánica, pH). Irrigación: arterias **nutricias, periósticas y metafisarias**."}]},{"id":"clasificacion","titulo":"Clasificación de las fracturas","bloques":[{"tipo":"tabla","titulo":"Criterios","columnas":["Criterio","Tipos"],"filas":[["Etiología","**Habituales** (fuerza superior a la que soporta el hueso sano; directa o indirecta), **patológicas o por insuficiencia** (baja energía sobre hueso enfermo), **por estrés** (cargas repetitivas), **infantiles**"],["Mecanismo","**Directo** (trazo simple o complejo) / **indirecto**: flexión, compresión (aplastamiento), tracción (arrancamiento), rotación (espiroidea), cizallamiento"],["Exposición","**Abierta** (Gustilo I–III) / cerrada"],["Desplazamiento","Desplazada (angulación, lateral, acortamiento, distracción, rotación y combinaciones) / no desplazada"],["Estabilidad","Estable / inestable"],["Localización","**Diafisaria** (tercio proximal, medio, distal), **metafisaria**, **epifisaria o intraarticular** (grave, a menudo conminuta, hemartrosis)"],["Trazo","**Incompleta**: aplastamiento, fisura, **tallo verde**, **torus/rodete**. **Completa**: transversa, con tercer fragmento (ala de mariposa), oblicua, **espiroidea**, **conminuta**, por arrancamiento, longitudinal"]]},{"tipo":"tabla","titulo":"Clasificación de Gustilo (fractura abierta)","columnas":["Tipo","Herida"],"filas":[["I","**\u003c 1 cm**, limpia"],["II","Laceración **> 1 cm** sin daño extenso de partes blandas"],["III","Brechas amplias con **daño extenso** de partes blandas"]]},{"tipo":"figura","pagina":30,"pie":"Trazos de fractura completa: transversa, con tercer fragmento, oblicua, espiroidea, conminuta, por arrancamiento y longitudinal.","src":"img/patologia-quirurgica-i-t4-tema-4-fracturas-generalidades-p30.jpg"},{"tipo":"alerta","texto":"El mecanismo de **rotación/torsión** produce fracturas **espiroideas**; el de **tracción** fracturas por **arrancamiento**; el de **compresión**, **aplastamiento**."}]},{"id":"consolidacion","titulo":"Consolidación","bloques":[{"tipo":"definicion","termino":"Consolidación","texto":"Proceso biológico de reparación del hueso fracturado; depende del **tipo de hueso** y del **grado de inmovilización**: **secundaria** (tratamiento conservador, **con callo**) o **primaria** (quirúrgico, **sin callo**)."},{"tipo":"esquema","titulo":"Consolidación secundaria del hueso cortical","mermaid":"flowchart LR\n  A[\"Lesion: necrosis y hematoma\"] --> B[\"Inflamacion 1-2 sem: granulacion, macrofagos, osteoclastos\"]\n  B --> C[\"Callo blando 4-6 sem: fibroso y cartilaginoso\"]\n  C --> D[\"Callo duro 8-12 sem: osificacion\"]\n  D --> E[\"Remodelacion meses-anos\"]","pie":"Primero actúan los osteoclastos y después los osteoblastos."},{"tipo":"tabla","titulo":"Fases de la consolidación secundaria","columnas":["Fase","Eventos","Tiempo"],"filas":[["Lesión-inflamación","Necrosis de los extremos y **hematoma**; tejido de granulación, macrófagos; **osteoclastos** reabsorben lo necrótico; el periostio se abomba","**1–2 semanas**"],["**Callo blando**","Células indiferenciadas, condroblastos y fibroblastos: granulación → fibroso → **cartílago** → osteoide; **unión elástica**","**4–6 semanas**"],["**Callo duro**","**Osteoblastos** mineralizan el callo: hueso desorganizado, más resistente","4–6 → **8–12 semanas**"],["**Remodelación**","Reabsorción del exceso de callo y sustitución por hueso organizado","**Meses-años**"]]},{"tipo":"parrafo","texto":"La **consolidación primaria** requiere **fijación rígida** (placas, enclavado endomedular acerrojado, fijador externo): se forma hueso laminar directamente entre los fragmentos, **sin callo**; la unión es **menos resistente** (punto débil). El **esponjoso** consolida **rápido** y remodela lentamente según las líneas de fuerza."},{"tipo":"alerta","texto":"Revascularización: la circulación diafisaria normal es **centrífuga**; tras la fractura desplazada **se invierte** (predomina el aporte **centrípeto**) hasta reconstruirse el sistema intramedular."},{"tipo":"lista","items":["**Factores que afectan a la consolidación**: edad y nutrición, separación del foco, tipo y características del hueso, lesión de partes blandas, tipo de fractura y **afectación intraarticular**."]}]},{"id":"diagnostico","titulo":"Manifestaciones clínicas y diagnóstico","bloques":[{"tipo":"parrafo","texto":"**Anamnesis**: cómo (mecanismo directo o indirecto), cuánto tiempo ha pasado, dónde y características del dolor. **Inspección**: posición antiálgica, impotencia funcional, lesión de partes blandas, tumefacción, hematoma, equimosis. **Palpación**: dolor selectivo **a punta de dedo**, crepitación, movilidad del foco (con precaución), movilidad activa y pasiva y función **vascular** (pulsos, color, temperatura) y **neurológica** distal."},{"tipo":"tabla","titulo":"Síntomas y signos","columnas":["Síntomas","Signos"],"filas":[["Dolor","Dolor provocado"],["Incapacidad funcional","Equimosis"],["—","Deformidad, **movilidad anómala**, **crepitación**"]]},{"tipo":"definicion","termino":"Regla del 2 de Apley","texto":"**2 proyecciones**, **2 articulaciones** (proximal y distal), **2 ocasiones** (repetir si hay dudas) y **2 miembros** (comparar), valorando alargamiento y angulación."},{"tipo":"tabla","titulo":"Pruebas complementarias","columnas":["Prueba","Uso principal"],"filas":[["**TAC**","Fracturas **complejas** o quirúrgicas, canal medular"],["**RMN**","Patología discal, hombro, rodilla, roturas musculares"],["**Ecografía**","Manguito rotador, roturas fibrilares y tendinosas (sin radiación)"],["**Gammagrafía**","**Fracturas por estrés**, metástasis óseas, infección ósea"],["Artrografía","Rx articular con contraste yodado"],["EMG/ENMG","Actividad bioeléctrica muscular"],["Densitometría","Pérdida de densidad (osteoporosis)"],["Rx funcional","Inestabilidad o integridad articular en movimiento"]]},{"tipo":"perla","texto":"En la radiografía busca alteraciones de **número, tamaño y forma, continuidad, alineación, localización y densidad**, y no confundas con diferencias **no patológicas** (edad, núcleos de osificación infantiles, variantes anatómicas)."}]},{"id":"complicaciones","titulo":"Complicaciones de las fracturas","bloques":[{"tipo":"tabla","titulo":"Complicaciones locales","columnas":["Complicación","Rasgos"],"filas":[["Infección (**osteomielitis**)","Fracturas cerradas operadas **1–4 %**; abiertas **5–20 %**: extirpación, irrigación, antibióticos, estabilización y cobertura"],["Consolidación viciosa","Consolida en **deformidad** por mala reducción"],["Refractura","Unión inadecuada o carga precoz, actividad intensa con osteosíntesis, retirada del implante"],["Fracaso del implante","Por **fatiga** si no consolida a tiempo; prevenir con tornillos suficientes y férulas"],["Cierre fisario traumático","**Angulación** (fisis parcial) o **acortamiento** (fisis completa)"],["Rigidez articular","Inmovilización prolongada, mala alineación, adherencias intraarticulares"],["Artrosis secundaria","Fractura intraarticular o deformidad"],["**Sudeck / SDRC**","Simpático hiperactivo: **alodinia**, hiperestesia, **sudoración**, inflamación, **osteoporosis en parches**; luego rigidez, atrofia, frialdad y palidez"],["**Pseudoartrosis**","Retraso o falta de callo: **hipertrófica** o **hipotrófica**; tratamiento quirúrgico"],["**Osteonecrosis**","Interrupción vascular: **cabeza femoral, cuerpo del astrágalo, polo proximal del escafoides**"]]},{"tipo":"perla","texto":"En el **Sudeck/SDRC** el tratamiento incluye **movilidad activa temprana**, control del dolor y fármacos (antidepresivos, bloqueadores simpáticos): la inmovilización lo empeora."},{"tipo":"tabla","titulo":"Complicaciones regionales","columnas":["Complicación","Rasgos"],"filas":[["**Síndrome compartimental agudo**","↑ presión en un compartimento fascial con ↓ perfusión (líquido, compresión externa, cierre quirúrgico); tensión, dolor, parestesia → anestesia; secuela: **contractura isquémica de Volkmann**"],["Vascular","Compresión, sección o desgarro arterial (24–48 h): **espacio subclavio, flexura del codo, hueco poplíteo, conducto de Hunter**"],["Nerviosa","Sección, manipulación del foco o atrapamiento por callo"],["Visceral","Traumatismos abdominales, craneales, politraumatizados: graves y de difícil diagnóstico"],["Musculotendinosa","**Miositis osificante** (más en el **codo**, se resuelve sola) y su forma neurológica; roturas tendinosas (**supraespinoso**, **extensor largo del pulgar**)"]]},{"tipo":"tabla","titulo":"Pérdidas de sangre estimadas","columnas":["Fractura","Pérdida"],"filas":[["**Pelvis**","**1.000–2.500 cc**"],["**Fémur**","**1.300–2.000 cc**"],["Columna","500–1.000 cc"],["Tibia-peroné","100–1.000 cc"],["Húmero","100–800 cc"],["Antebrazo","50–400 cc"],["Costillas","120 cc por costilla"]]},{"tipo":"parrafo","texto":"**Shock traumático** (hemorragia, ↓ volemia y gasto cardiaco, hipoxia tisular; 24–72 h): respiración rápida y superficial, palidez, extremidades frías, **pulso rápido y débil**, hipotensión, taquicardia. **Embolia grasa** (glóbulos de grasa medular a pulmón o cerebro, **antes de 72 h**): taquicardia, disnea, hipoxia, confusión, **petequias** (tórax, espalda, conjuntivas); prevención con monitorización de la O2, fluidos, ventilación y anticoagulantes. **Tromboembolismo**: TVP (dolor, calor, color) o TEP (dolor torácico, disnea, hemoptisis); prevención con elevación, compresión, **movilización precoz** y fármacos."},{"tipo":"alerta","texto":"En la diapositiva de embolia grasa figura “presión arterial de O2 no \u003c 600 mmHg”: es casi seguro una errata por **60 mmHg** (umbral habitual de hipoxemia) (complemento)."}]}],"caso_clinico":{"titulo":"Fractura de tibia en un motorista","presentacion":"Hombre de 28 años, accidente de moto. Fractura de la diáfisis tibial con herida de 3 cm sin pérdida extensa de partes blandas. A las 24 h presenta dolor desproporcionado, tensión a la palpación de la pierna y parestesias en el pie. A las 48 h aparecen disnea, confusión y petequias en el tórax.","preguntas":[{"pregunta":"¿Cómo clasificas la fractura según Gustilo?","respuesta":"Fractura **abierta tipo II** (laceración **> 1 cm** sin daño extenso de partes blandas); riesgo de infección **5–20 %**."},{"pregunta":"¿Qué complicación sugiere el cuadro de las 24 h?","respuesta":"Un **síndrome compartimental agudo** (dolor, tensión, parestesias que progresan a anestesia): urgencia por riesgo de **contractura isquémica de Volkmann**."},{"pregunta":"¿Y el de las 48 h?","respuesta":"Una **embolia grasa** (\u003c 72 h: disnea, hipoxia, confusión y **petequias**): oxigenación, fluidos y soporte ventilatorio."}]},"preguntate":[{"pregunta":"¿Cuál es la composición del tejido óseo?","respuesta":"35 % orgánico (matriz y células) y 65 % inorgánico (minerales y agua)."},{"pregunta":"Compara hueso esponjoso y cortical.","respuesta":"Esponjoso: trabéculas 3D, compresión y cizallamiento, alta actividad metabólica; cortical: osteonas de Havers en la diáfisis, resistencia longitudinal."},{"pregunta":"¿Qué es una fractura patológica y una por estrés?","respuesta":"Patológica: baja energía sobre hueso enfermo; por estrés: cargas repetitivas sobre hueso sano o patológico."},{"pregunta":"Describe la clasificación de Gustilo.","respuesta":"I: herida \u003c 1 cm limpia; II: > 1 cm sin gran daño; III: daño extenso de partes blandas."},{"pregunta":"Cita cuatro fracturas incompletas.","respuesta":"Aplastamiento, fisura, tallo verde y torus o rodete."},{"pregunta":"Diferencia consolidación primaria y secundaria.","respuesta":"Secundaria: tratamiento conservador con callo; primaria: fijación rígida quirúrgica sin callo, menos resistente."},{"pregunta":"Resume las fases del callo con sus tiempos.","respuesta":"Inflamación 1–2 semanas, callo blando 4–6, callo duro hasta 8–12 y remodelación meses o años."},{"pregunta":"Enuncia la regla del 2 de Apley.","respuesta":"Dos proyecciones, dos articulaciones, dos ocasiones y dos miembros."},{"pregunta":"¿Dónde es más frecuente la osteonecrosis postraumática?","respuesta":"Cabeza femoral, cuerpo del astrágalo y polo proximal del escafoides."},{"pregunta":"¿Cómo se manifiesta la embolia grasa?","respuesta":"Antes de 72 h con taquicardia, disnea, hipoxia, confusión y petequias en tórax, espalda y conjuntivas."}],"glosario":[{"termino":"Osteona","definicion":"Unidad del hueso cortical con conducto de Havers central."},{"termino":"Anillo de Ranvier","definicion":"Zona que permite el crecimiento en anchura de la metáfisis."},{"termino":"Fractura patológica","definicion":"Fractura de baja energía sobre hueso enfermo."},{"termino":"Gustilo","definicion":"Clasificación de las fracturas abiertas."},{"termino":"Tallo verde","definicion":"Fractura incompleta típica del hueso infantil."},{"termino":"Conminuta","definicion":"Fractura con múltiples fragmentos."},{"termino":"Callo óseo","definicion":"Tejido de reparación de la consolidación secundaria."},{"termino":"Osteosíntesis","definicion":"Fijación quirúrgica con placas, clavos o fijadores."},{"termino":"Regla de Apley","definicion":"Regla del 2 para la radiología de fracturas."},{"termino":"Pseudoartrosis","definicion":"Ausencia de consolidación de la fractura."},{"termino":"SDRC","definicion":"Síndrome de dolor regional complejo o Sudeck."},{"termino":"Contractura de Volkmann","definicion":"Secuela isquémica del síndrome compartimental."},{"termino":"Miositis osificante","definicion":"Masa cálcica en tejidos periarticulares, frecuente en el codo."},{"termino":"Embolia grasa","definicion":"Paso de grasa medular a la circulación."}],"fuentes":["Tema 4. Fracturas. Generalidades, PQRI 2026-2027 (Universidad Europea)."],"qcm":[{"pregunta":"¿Qué proporción del tejido óseo es inorgánica?","opciones":["90 %","65 %","50 %","35 %"],"correcta":1,"explicacion":"Componente orgánico 35 % (matriz y células), inorgánico 65 % (minerales y agua).","por_opcion":["❌ No.","✅ Literal.","❌ No.","❌ Es el orgánico."]},{"pregunta":"El hueso esponjoso:","opciones":["No contiene médula ósea","Resiste sobre todo el eje longitudinal en la diáfisis","Se organiza en osteonas de Havers","Resiste compresión y cizallamiento y tiene gran actividad metabólica"],"correcta":3,"explicacion":"El esponjoso forma una red trabecular 3D en epífisis y metáfisis, soporta compresión y cizallamiento y tiene gran actividad metabólica, con médula entre las trabéculas.","por_opcion":["❌ Sí la contiene.","❌ Es el cortical.","❌ Es el cortical.","✅ Literal."]},{"pregunta":"Una fractura de baja energía sobre un hueso afectado por una metástasis es:","opciones":["Fractura patológica o por insuficiencia","Fractura habitual directa","Fractura infantil","Fractura por estrés"],"correcta":0,"explicacion":"Las fracturas patológicas se producen con baja intensidad sobre un hueso patológicamente afectado.","por_opcion":["✅ Literal.","❌ Fuerza superior a la del hueso sano.","❌ No.","❌ Cargas repetitivas."]},{"pregunta":"El mecanismo de rotación o torsión produce típicamente fracturas:","opciones":["Espiroideas","Transversas","Por aplastamiento","Por arrancamiento"],"correcta":0,"explicacion":"Rotación → espiroidea; tracción → arrancamiento; compresión → aplastamiento.","por_opcion":["✅ Literal.","❌ No.","❌ Compresión.","❌ Tracción."]},{"pregunta":"Fractura abierta con herida de 0,5 cm y limpia, según Gustilo:","opciones":["No es abierta","Tipo I","Tipo III","Tipo II"],"correcta":1,"explicacion":"Tipo I: herida \u003c 1 cm limpia; II: > 1 cm sin daño extenso; III: daño extenso.","por_opcion":["❌ Hay herida comunicante.","✅ Literal.","❌ Daño extenso.","❌ > 1 cm."]},{"pregunta":"¿Cuál es una fractura INCOMPLETA?","opciones":["Con tercer fragmento en ala de mariposa","Conminuta","En tallo verde","Espiroidea"],"correcta":2,"explicacion":"Incompletas: aplastamiento, fisura, tallo verde y torus; las demás son completas.","por_opcion":["❌ Completa.","❌ Completa.","✅ Literal.","❌ Completa."]},{"pregunta":"La consolidación primaria:","opciones":["Solo ocurre en hueso esponjoso","Se produce con tratamiento conservador y forma callo","Es más resistente que la secundaria","Requiere fijación rígida y se produce sin callo"],"correcta":3,"explicacion":"Con fijación rígida se forma hueso laminar directamente entre fragmentos, sin callo; es menos resistente.","por_opcion":["❌ No.","❌ Es la secundaria.","❌ Es menos resistente.","✅ Literal."]},{"pregunta":"En la consolidación secundaria, el callo blando se forma aproximadamente en:","opciones":["6–12 meses","1–2 semanas","1–2 días","4–6 semanas"],"correcta":3,"explicacion":"Inflamación 1–2 semanas, callo blando 4–6 semanas, callo duro completo 8–12 semanas, remodelación meses-años.","por_opcion":["❌ Remodelación.","❌ Fase inflamatoria.","❌ No.","✅ Literal."]},{"pregunta":"Tras una fractura desplazada, la circulación diafisaria:","opciones":["Depende solo de las arterias metafisarias","Sigue siendo centrífuga","Desaparece de forma permanente","Se invierte y predomina el aporte centrípeto"],"correcta":3,"explicacion":"La circulación normal es centrífuga; la fractura desplazada interrumpe el sistema medular y se invierte el sentido (centrípeto).","por_opcion":["❌ No.","❌ Se invierte.","❌ Se reconstruye.","✅ Literal."]},{"pregunta":"La regla del 2 de Apley NO incluye:","opciones":["2 pruebas de imagen distintas","2 articulaciones","2 proyecciones","2 ocasiones"],"correcta":0,"explicacion":"La regla incluye 2 proyecciones, 2 articulaciones, 2 ocasiones y 2 miembros.","por_opcion":["✅ No figura.","❌ Sí la incluye.","❌ Sí la incluye.","❌ Sí la incluye."]},{"pregunta":"¿Qué prueba es de elección para detectar una fractura por estrés según el tema?","opciones":["Ecografía","Artrografía","Gammagrafía","Densitometría"],"correcta":2,"explicacion":"La gammagrafía (marcador radiactivo) se usa en fracturas por estrés, metástasis e infección ósea.","por_opcion":["❌ Partes blandas.","❌ Articulaciones.","✅ Literal.","❌ Densidad ósea."]},{"pregunta":"La osteonecrosis postraumática es especialmente frecuente en:","opciones":["Polo proximal del escafoides","Diáfisis femoral","Clavícula","Metáfisis tibial"],"correcta":0,"explicacion":"Más frecuentes: cabeza femoral, cuerpo del astrágalo y polo proximal del escafoides.","por_opcion":["✅ Literal.","❌ No.","❌ No.","❌ No."]},{"pregunta":"Alodinia, hiperestesia, aumento de sudoración y osteoporosis en parches tras una fractura sugieren:","opciones":["Pseudoartrosis","Síndrome de Sudeck / SDRC","Miositis osificante","Embolia grasa"],"correcta":1,"explicacion":"Son las primeras manifestaciones de la algodistrofia simpático-refleja (Sudeck o SDRC) por activación simpática anormal.","por_opcion":["❌ Falta de callo.","✅ Literal.","❌ Masa cálcica.","❌ Clínica respiratoria."]},{"pregunta":"¿Qué fractura produce mayor pérdida sanguínea estimada según el tema?","opciones":["Húmero","Tibia-peroné","Pelvis","Antebrazo"],"correcta":2,"explicacion":"Pelvis 1.000–2.500 cc y fémur 1.300–2.000 cc, frente a húmero 100–800 o antebrazo 50–400.","por_opcion":["❌ 100–800 cc.","❌ 100–1.000 cc.","✅ Hasta 2.500 cc.","❌ 50–400 cc."]},{"pregunta":"La embolia grasa se manifiesta típicamente:","opciones":["Después de 7 días con fiebre alta","Con alodinia y sudoración","Solo con dolor torácico y hemoptisis","Antes de 72 h con disnea, hipoxia, confusión y petequias"],"correcta":3,"explicacion":"Aparece antes de 72 h con taquicardia, disnea, hipoxia, confusión mental y petequias.","por_opcion":["❌ No.","❌ Es el SDRC.","❌ Más propio del TEP.","✅ Literal."]}],"asignatura":"Patología quirúrgica I","tema":4,"fecha":"2026-11-09"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips">${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  if(n===Q.length) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado! Marca el tema como « Maîtrisé » en Notion.':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>
