@@ -7,8 +7,10 @@ import { execFileSync } from 'node:child_process';
 import { tmpdir } from 'node:os';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
-const { NOTION_TOKEN, ANTHROPIC_API_KEY, NOTION_DB_ID } = process.env;
-const SITE_URL = (process.env.SITE_URL || '').replace(/\/?$/, '/');
+const { NOTION_TOKEN, ANTHROPIC_API_KEY } = process.env;
+const NOTION_DB_ID = process.env.NOTION_DB_ID || '1657d5f0191f4d3980d98baa0ceeb0e0';
+const SITE_URL = (process.env.SITE_URL || 'https://dsyzdfyzft-create.github.io/fichas/').replace(/\/?$/, '/');
+const SOLO_PUBLICAR = process.env.SOLO_PUBLICAR === '1'; // 1 = no genera con la API (las fichas las hace Claude Code en local)
 const MODEL = process.env.MODEL || 'claude-sonnet-5-5';
 const MAX_POR_EJECUCION = Number(process.env.MAX_POR_EJECUCION || 3);
 const DEMO = process.argv.includes('--demo');
@@ -256,7 +258,7 @@ async function rerenderTodo() {
     if (!existsSync(file)) continue;
     let f;
     try { f = await leerFicha(it.slug); } catch { continue; }
-    if (sistema && ANTHROPIC_API_KEY && completadas < MAX_COMPLETAR && (!(f.resumen || []).length || !(f.preguntate || []).length)) {
+    if (sistema && ANTHROPIC_API_KEY && !SOLO_PUBLICAR && completadas < MAX_COMPLETAR && (!(f.resumen || []).length || !(f.preguntate || []).length)) {
       try {
         const extra = await llamar(sistema, [{ type: 'text', text: `${textoFicha(f)}\n\n# Preguntas del QCM (no repetir)\n${(f.qcm || []).map(q => '- ' + q.pregunta).join('\n')}\n\nDevuelve solo el JSON.` }]);
         if (Array.isArray(extra.resumen) && extra.resumen.length) f.resumen = extra.resumen.slice(0, 5);
@@ -288,8 +290,8 @@ async function main() {
     console.log('Demo →', await publicar(f, { curso: f.asignatura || 'Demo', tema: f.tema ?? 0, fecha: new Date().toISOString().slice(0, 10) }));
     return;
   }
-  if (process.argv.includes('--rerender')) { await rerenderTodo(); return; }
-  for (const v of ['NOTION_TOKEN', 'ANTHROPIC_API_KEY', 'NOTION_DB_ID']) if (!process.env[v]) throw new Error(`Falta la variable ${v}`);
+  if (process.argv.includes('--rerender') || SOLO_PUBLICAR) { console.log(SOLO_PUBLICAR ? 'Modo SOLO_PUBLICAR: sin generación por API.' : ''); await rerenderTodo(); return; }
+  for (const v of ['NOTION_TOKEN', 'ANTHROPIC_API_KEY']) if (!process.env[v]) throw new Error(`Falta la variable ${v}`);
   const lista = await pendientes();
   console.log(`${lista.length} cours en attente`);
   for (const page of lista) {
@@ -315,4 +317,9 @@ async function main() {
   await rerenderTodo();
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+export { notion, plain, setEstado, validar, reequilibrar, publicar, crearTema, leerFicha, textoFicha, rerenderTodo, slugify, ROOT, SITE_URL, NOTION_DB_ID, COURS_DB_ID };
+
+import { pathToFileURL } from 'node:url';
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch(e => { console.error(e); process.exit(1); });
+}
