@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Tema 3. Fisiología del sistema linfático · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script src="../config.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 3. Fisiología del sistema linfático","subtitulo":"Cómo se forma la linfa, qué fuerzas de Starling gobiernan el intercambio capilar, cómo se capta y evacúa la linfa y por qué aparecen los edemas.","resumen":["El sistema linfático es un **segundo sistema de drenaje** que trabaja junto al venoso para absorber del intersticio lo que la vena no puede (proteínas grandes, ácidos grasos de cadena larga, restos celulares).","La linfa se forma en el **espacio intersticial** a partir del plasma filtrado; en condiciones normales se producen **2–3 L/día (≈120 ml/h)**.","El intercambio capilar depende de **4 presiones de Starling**: hidrostática capilar (17 mmHg), hidrostática intersticial (−6,3 mmHg), oncótica intersticial (5 mmHg) → filtración **28,3 mmHg**; frente a oncótica capilar (28 mmHg) → reabsorción; **filtración neta 0,3 mmHg**.","De **20 L/día filtrados**, el capilar venoso reabsorbe el **90 % (18 L)** y el linfático recoge el **10 % (2 L)**; la fisiología linfática tiene dos etapas: **captación** (capilares) y **evacuación** (precolectores y colectores, con el **linfangión** como motor).","El **edema** aparece por ↑ presión hidrostática capilar, ↓ presión oncótica capilar, ↑ permeabilidad, otras causas o trastorno del flujo linfático; el DLM debe aplicarse con **presiones suaves**, porque presionar fuerte aumenta el flujo sanguíneo y la filtración."],"objetivos":["Describir la composición de la linfa (carga linfática) y la distribución del agua corporal.","Explicar los mecanismos de transporte pasivo y activo a través de la membrana capilar.","Calcular el equilibrio de Starling con las cuatro presiones y su valor numérico.","Diferenciar las fases de captación y evacuación y el funcionamiento del linfangión.","Clasificar el origen de los edemas y justificar la técnica suave del DLM."],"ideas_clave":["El sistema linfático es un **segundo sistema de drenaje**, complementario del venoso.","Carga linfática: **proteínas de gran peso molecular, ácidos grasos de cadena larga, restos celulares, plasma y sustancias extrañas**.","Producción normal de linfa: **2–3 L/día (120 ml/h)**.","Fuerzas de filtración: P. hidrostática capilar **17**, P. hidrostática intersticial **−6,3**, P. oncótica intersticial **5** = **28,3 mmHg**; reabsorción: P. oncótica capilar **28 mmHg**.","Filtración neta de **0,3 mmHg**: 20 L filtrados → 18 L reabsorción venosa (90 %) + **2 L linfáticos (10 %)**.","**Captación**: al aumentar la presión tisular, los filamentos de anclaje abren las uniones intercelulares; al llenarse el capilar se cierran.","**Evacuación**: el linfangión se contrae al llenarse (4 mmHg en reposo → hasta 40 mmHg), con contracciones autónomas de ±4/min.","El DLM eficaz usa **presiones suaves**: más presión = más flujo sanguíneo = más filtración (empeora el edema)."],"secciones":[{"id":"linfa","titulo":"El sistema linfático y la linfa","bloques":[{"tipo":"parrafo","texto":"El sistema linfático constituye un **segundo sistema de drenaje**: trabaja conjuntamente con el sistema venoso para absorber sustancias procedentes del intersticio. La vena se encarga de lo pequeño; el linfático, de lo que por su tamaño no puede volver a la sangre directamente."},{"tipo":"tabla","titulo":"Equilibrio hídrico del organismo (Wittlinger)","columnas":["Compartimento","Porcentaje","Volumen"],"filas":[["Plasma sanguíneo","11 %","5 L"],["Líquido intersticial","26 %","12 L"],["Líquido celular","62 %","28 L"]]},{"tipo":"figura","pagina":3,"pie":"Distribución del componente líquido del cuerpo: el líquido celular es el mayor compartimento; el plasma, el menor. Observa que el intersticio (líquido del tejido conjuntivo) rodea al plasma.","src":"img/drenaje-linfatico-t3-tema-3-fisiologia-del-sistema-linfatico-p3.jpg"},{"tipo":"definicion","termino":"Linfa","texto":"Líquido que circula por los vasos linfáticos, de color **amarillento, blanquecino o transparente** según el lugar del organismo donde se forme. Se forma en el **espacio intersticial**, por lo que su volumen y composición dependen de lo que ocurra en ese espacio."},{"tipo":"tarjetas","items":[{"etiqueta":"Carga 1","titulo":"Proteínas","texto":"De **gran peso molecular**, que no pueden volver por el capilar venoso."},{"etiqueta":"Carga 2","titulo":"Ácidos grasos","texto":"De **cadena larga**, absorbidos en el intestino."},{"etiqueta":"Carga 3","titulo":"Restos celulares","texto":"Leucocitos, principalmente **macrófagos**."},{"etiqueta":"Carga 4","titulo":"Plasma","texto":"Agua y solutos filtrados desde el capilar sanguíneo."},{"etiqueta":"Carga 5","titulo":"Sustancias extrañas","texto":"Virus, bacterias, carbonilla o polvo de vidrio."}]},{"tipo":"dato","valor":"2–3 L/día · 120 ml/h","texto":"Producción normal de linfa en condiciones fisiológicas."},{"tipo":"tabla","titulo":"Papel de la linfa","columnas":["Papel","Funciones"],"filas":[["Metabólico","Absorbe nutrientes del intestino (ácidos grasos de cadena larga); recolección del líquido intersticial"],["Biológico","Útil en pruebas diagnósticas: biopsias de ganglios linfáticos buscando agentes patógenos"]]}]},{"id":"formacion","titulo":"Formación de la linfa","bloques":[{"tipo":"parrafo","texto":"La linfa se forma por la **dinámica entre el líquido intersticial y los capilares sanguíneos y linfáticos**. La sangre arterial nutre las células del intersticio; los productos de desecho celular se reparten según su tamaño: los de **pequeño tamaño** vuelven por el **sistema venoso** y los de **gran tamaño** por el **sistema linfático**."},{"tipo":"figura","pagina":7,"pie":"Secuencia plasma → fluido intersticial → linfa: el plasma sale del capilar sanguíneo, baña las células y es recogido por el capilar linfático junto con leucocitos y linfocitos.","src":"img/drenaje-linfatico-t3-tema-3-fisiologia-del-sistema-linfatico-p7.jpg"},{"tipo":"esquema","titulo":"Etapas de la formación y progresión de la linfa","mermaid":"flowchart LR\n  A[\"Sangre arterial\"] --> B[\"Intercambio capilar sanguíneo - intersticio\"]\n  B --> C[\"Liquido intersticial\"]\n  C -->|\"Pequeno tamano\"| D[\"Capilar venoso\"]\n  C -->|\"Gran tamano\"| E[\"Captacion: capilar linfatico\"]\n  E --> F[\"Evacuacion: precolectores y colectores\"]\n  F --> G[\"Progresion de la linfa\"]","pie":"La formación de la linfa engloba el intercambio sangre-intersticio y el intercambio intersticio-capilar linfático (captación y evacuación)."},{"tipo":"tabla","titulo":"Factores de los que dependen los intercambios sangre-linfa","columnas":["Factor","Explicación"],"filas":[["Metabolismo celular","Tejidos inundados: las células recogen todos los elementos necesarios para su metabolismo"],["Fuerza hidrostática","Unida a la presión sanguínea; suficientemente fuerte para que los líquidos atraviesen la membrana capilar"],["Fuerza oncótica","Unida a la presencia de moléculas de proteínas"]]}]},{"id":"transporte","titulo":"Transporte a través de la membrana capilar","bloques":[{"tipo":"parrafo","texto":"El intercambio entre capilares sanguíneos y líquido intersticial se hace por **transporte pasivo** (difusión, ósmosis, filtración, reabsorción) y por **transporte activo** (pinocitosis)."},{"tipo":"tabla","titulo":"Mecanismos de transporte pasivo","columnas":["Mecanismo","Definición","Clave"],"filas":[["Difusión","Mezcla de sustancias por movimiento molecular; las moléculas van hacia donde la concentración es menor","Más rápida con trayecto corto, mayor temperatura, moléculas más pequeñas y menor viscosidad"],["Ósmosis","Difusión neta en un sentido a través de una membrana semipermeable: el disolvente pasa del lado más diluido al más concentrado","La presión que contrarresta ese paso = presión osmótica"],["Filtración","Paso de líquido y moléculas de bajo peso molecular a través de la membrana, en un solo sentido","Exclusiva de los capilares sanguíneos"],["Reabsorción","Flujo de retorno de líquido y sustancias de bajo peso molecular del intersticio a la parte venosa del capilar","Ocurre en el extremo venoso"]]},{"tipo":"definicion","termino":"Ósmosis vs. óncosis","texto":"**Ósmosis**: fuerza de atracción del agua que poseen las **sales y los azúcares**. **Óncosis**: fuerza de atracción del agua de las **proteínas**."},{"tipo":"definicion","termino":"Presión oncótica o coloidosmótica","texto":"Fuerza que generan las proteínas, para las que la membrana capilar es casi impermeable. Es **mayor dentro del capilar** que en el intersticio, porque en este la concentración de proteínas es menor."},{"tipo":"parrafo","texto":"La **pinocitosis** es el transporte activo de líquidos y sustancias sólidas (proteínas de gran tamaño) mediante una vesícula que atraviesa la célula endotelial en tres pasos: **endocitosis** (la membrana se invagina en la luz del vaso y encierra la proteína en una vesícula), **transporte** a través de la célula y **exocitosis** (la vesícula libera la proteína en el líquido intersticial)."},{"tipo":"tabla","titulo":"Endocitosis frente a exocitosis","columnas":["","Endocitosis","Exocitosis"],"filas":[["Función","ATRAPAR sustancias del medio extracelular","LIBERAR sustancias al medio extracelular"],["Mecanismo","La membrana plasmática envuelve y rodea la sustancia","Vesículas intracelulares se fusionan con la membrana plasmática"],["Tipos","Fagocitosis y pinocitosis","Vías secretoras constitutivas y reguladas"],["Ejemplo","Glóbulo blanco ingiriendo una bacteria","Hormonas liberadas al torrente sanguíneo"]]},{"tipo":"alerta","texto":"La **filtración** es un transporte pasivo **exclusivo de los capilares sanguíneos** y va en un solo sentido. La **pinocitosis**, en cambio, es **activa** (vesícula) y es la vía de las proteínas grandes: no confundas pinocitosis con fagocitosis (ambas son endocitosis)."}]},{"id":"starling","titulo":"Presiones de Starling y equilibrio capilar","bloques":[{"tipo":"parrafo","texto":"El movimiento de líquido a través de la membrana del capilar sanguíneo depende de **4 factores**: presión hidrostática capilar, presión hidrostática intersticial, presión coloidosmótica capilar y presión coloidosmótica intersticial. Unas empujan el líquido hacia fuera (**filtración**) y otras hacia dentro (**reabsorción**)."},{"tipo":"figura","pagina":23,"pie":"Las cuatro presiones de Starling: fíjate en el sentido de cada flecha. La hidrostática capilar (F) y la oncótica intersticial salen del capilar; la oncótica capilar entra. Las P verdes son proteínas.","src":"img/drenaje-linfatico-t3-tema-3-fisiologia-del-sistema-linfatico-p23.jpg"},{"tipo":"tabla","titulo":"Las cuatro presiones de Starling","columnas":["Presión","Qué la genera","Sentido","Valor"],"filas":[["Hidrostática capilar","Plasma sanguíneo sobre la pared del capilar","Hacia fuera → filtración","17 mmHg (media)"],["Hidrostática intersticial","Líquido intersticial; normalmente negativa","Negativa → filtración; positiva → reabsorción","−6,3 mmHg"],["Coloidosmótica capilar","Proteínas plasmáticas (no atraviesan la membrana)","Hacia dentro → reabsorción","28 mmHg"],["Coloidosmótica intersticial","Proteínas del líquido intersticial","Hacia fuera → filtración","5 mmHg"]]},{"tipo":"esquema","titulo":"Balance de Starling","mermaid":"flowchart TD\n  subgraph F1[\"Filtracion: 28,3 mmHg\"]\n    A[\"P hidrostatica capilar 17\"]\n    B[\"P hidrostatica intersticial -6,3\"]\n    C[\"P oncotica intersticial 5\"]\n  end\n  subgraph R1[\"Reabsorcion: 28 mmHg\"]\n    D[\"P oncotica capilar 28\"]\n  end\n  F1 --> E[\"Filtracion neta 0,3 mmHg\"]\n  R1 --> E\n  E --> G[\"20 L/dia filtrados\"]\n  G -->|\"90 %\"| H[\"18 L reabsorcion venosa\"]\n  G -->|\"10 %\"| I[\"2 L sistema linfatico\"]","pie":"La presión intersticial negativa suma a la filtración (se resta un valor negativo). El pequeño exceso de filtración lo compensa el sistema linfático."},{"tipo":"dato","valor":"28,3 − 28 = 0,3 mmHg","texto":"Fuerza neta de filtración hacia fuera: 17 + 6,3 + 5 = 28,3 mmHg frente a 28 mmHg de reabsorción."},{"tipo":"dato","valor":"20 L → 18 L + 2 L","texto":"Del 100 % filtrado al día, el 90 % se reabsorbe por la región venosa del capilar y el 10 % lo recoge el sistema linfático."},{"tipo":"definicion","termino":"Equilibrio de Starling","texto":"E. H. Starling señaló que en condiciones normales existe un **estado de equilibrio** en la membrana capilar: el líquido filtrado en los extremos arteriales corresponde al devuelto por reabsorción en los extremos venosos. En la práctica queda un pequeño desequilibrio (filtración neta) que equilibra el **retorno linfático**."},{"tipo":"alerta","texto":"La **presión hidrostática intersticial** es la trampa clásica: al ser **negativa (−6,3 mmHg)** actúa como fuerza de **filtración** y se **suma** (6,3) a las fuerzas de salida. Si el líquido se acumula se acerca a cero y, si es mucho, se hace **positiva** y pasa a favorecer la **reabsorción**."},{"tipo":"alerta","texto":"El PDF da dos valores aproximados para la presión oncótica: **≈25 mmHg** en la visión general y **28 mmHg** en el cálculo de Starling; para el balance usa **28 mmHg**. Del mismo modo, la presión hidrostática desciende de **±30 mmHg** (arterial) a **±20 mmHg** (capilar venoso), con una media capilar de **17 mmHg**."},{"tipo":"parrafo","texto":"Aunque hay más proteínas **en cantidad** en el líquido intersticial que en el plasma, su **concentración es menor** por el gran volumen del intersticio; por eso la presión oncótica intersticial (5 mmHg) es muy inferior a la capilar (28 mmHg)."}]},{"id":"captacion-evacuacion","titulo":"Captación y evacuación linfática","bloques":[{"tipo":"parrafo","texto":"La fisiología linfática tiene dos etapas: **captación**, en la que los **capilares linfáticos** recogen el líquido resultante de la filtración, y **evacuación**, a cargo de **precolectores y colectores**. Los intercambios entre capilar linfático e intersticio dependen de **gradientes de presión**."},{"tipo":"esquema","titulo":"Ciclo de captación del capilar linfático","mermaid":"flowchart TD\n  A[\"Aumenta la presion tisular\"] --> B[\"Fibras de colageno tiran de los filamentos\"]\n  B --> C[\"Se abren las uniones intercelulares\"]\n  C --> D[\"Entran agua, moleculas grandes y restos celulares\"]\n  D --> E[\"Aumenta la presion dentro del capilar\"]\n  E --> F[\"Se cierran las uniones intercelulares\"]\n  F --> G[\"Disminuye la presion intersticial\"]\n  G -->|\"Nuevo acumulo\"| A","pie":"Presión tisular baja = uniones cerradas; presión tisular alta o mucha agua = uniones abiertas."},{"tipo":"figura","pagina":36,"pie":"Capilar linfático inicial (Földi): las células endoteliales en escamas se separan como válvulas de entrada cuando los filamentos de anclaje tiran por el aumento de presión tisular (Pt).","src":"img/drenaje-linfatico-t3-tema-3-fisiologia-del-sistema-linfatico-p36.jpg"},{"tipo":"tabla","titulo":"Estructuras de la evacuación","columnas":["Estructura","Características"],"filas":[["Precolectores","Menos uniones celulares abiertas que los capilares (limita la salida del líquido); células musculares en la túnica media que provocan su contracción"],["Colectores","Progresión de la linfa esencialmente activa gracias al linfangión; la distensión por la llegada de linfa provoca su contracción, longitudinal y transversal"]]},{"tipo":"definicion","termino":"Linfangión","texto":"Unidad contráctil del colector linfático. La llegada de linfa distiende su pared y desencadena la contracción, que se propaga a **2–4 linfangiones consecutivos**. Su eyección eficaz no es indefinida: se reanuda con el llenado de los capilares linfáticos."},{"tipo":"tarjetas","items":[{"etiqueta":"Tipo 1","titulo":"Contracciones autónomas","texto":"Continuas, **±4 contracciones/min**; mantienen el **trofismo** del vaso."},{"etiqueta":"Tipo 2","titulo":"Dependientes del llenado","texto":"El colector solo se contrae eficazmente si está **lleno** (presión importante)."}]},{"tipo":"dato","valor":"±4 mmHg → 40 mmHg","texto":"Presión dentro del colector en reposo frente a la que puede alcanzar en el momento del llenado."},{"tipo":"tabla","titulo":"Componentes del sistema linfático (de periferia a centro)","columnas":["Orden","Componente"],"filas":[["1","Canales prelinfáticos"],["2","Capilares linfáticos"],["3","Precolectores"],["4","Vasos linfáticos colectores"],["5","Troncos linfáticos"],["6","Conductos linfáticos"]]},{"tipo":"figura","pagina":44,"pie":"Factores que favorecen la progresión de la linfa: pulso arterial, contracción muscular, respiración y DLM. Abajo: el músculo contraído empuja la linfa hacia el corazón y, al relajarse, el vaso vuelve a llenarse.","src":"img/drenaje-linfatico-t3-tema-3-fisiologia-del-sistema-linfatico-p44.jpg"},{"tipo":"perla","texto":"Como el colector solo se contrae bien **lleno**, el DLM comienza descongestionando zonas proximales y estimulando el **llenado** del linfangión; combinarlo con **contracción muscular** y **respiración** (los otros factores de progresión) potencia el efecto."}]},{"id":"edema","titulo":"Fisiopatología: el edema","bloques":[{"tipo":"definicion","termino":"Edema","texto":"Acumulación de líquido en los tejidos del cuerpo, resultado del **desequilibrio entre el aporte** de líquido por filtración a través de los capilares sanguíneos **y el drenaje** de ese mismo líquido."},{"tipo":"tabla","titulo":"Origen de los edemas","columnas":["Mecanismo","Causas del PDF"],"filas":[["1. ↑ Presión hidrostática capilar","Insuficiencia cardiaca (derecha) descompensada; trastorno de la circulación venosa"],["2. ↓ Presión oncótica capilar","Dietas bajas en proteínas; riñón (síndrome nefrótico); hígado (↓ formación de albúmina); intestino (hiperplasia de los vasos linfáticos intestinales)"],["3. ↑ Permeabilidad capilar (inflamación)","Infección aguda; reacción alérgica; traumatismos"],["4. Otras causas","Lipedemas; embarazo; menstruación (edema cíclico idiopático)"],["5. Trastornos del flujo linfático","Edemas linfostáticos: funcional u orgánico"]]},{"tipo":"esquema","titulo":"Del desequilibrio de Starling al edema","mermaid":"flowchart TD\n  A[\"Edema\"] --> B[\"Mas filtracion\"]\n  A --> C[\"Menos drenaje\"]\n  B --> D[\"Sube P hidrostatica capilar\"]\n  B --> E[\"Baja P oncotica capilar\"]\n  B --> F[\"Sube permeabilidad\"]\n  C --> G[\"Trastorno del flujo linfatico\"]\n  D --> D1[\"IC derecha, insuficiencia venosa\"]\n  E --> E1[\"Hipoproteinemia, nefrotico, hepatopatia\"]\n  F --> F1[\"Infeccion, alergia, traumatismo\"]\n  G --> G1[\"Linfostatico funcional u organico\"]","pie":"Tres mecanismos aumentan la filtración; el linfostático reduce la evacuación."},{"tipo":"parrafo","texto":"**Variación según la posición**: en **bipedestación** aumenta la presión hidrostática y con ella la filtración; en **decúbito o con las piernas elevadas** la presión hidrostática es nula, la filtración disminuye y se favorece la recuperación del líquido filtrado."},{"tipo":"perla","texto":"Pautar **declive/elevación de los miembros** al paciente con edema tiene base fisiológica directa: anula la presión hidrostática y reduce la filtración, complementando el DLM."},{"tipo":"alerta","texto":"En el DLM **más presión no es mejor**: mayor presión → mayor flujo sanguíneo → **mayor filtración**, lo que empeora el edema. La técnica correcta usa **presiones suaves**."},{"tipo":"perla","texto":"Ante un edema, identifica el mecanismo antes de tratar: un edema por insuficiencia cardiaca derecha descompensada o por hipoproteinemia no se resuelve con DLM porque la causa es sistémica (↑ presión hidrostática o ↓ oncótica), no un fallo de evacuación."}]}],"caso_clinico":{"titulo":"Edema de miembros inferiores en paciente con hipoalbuminemia","presentacion":"Mujer de 62 años con hepatopatía crónica que presenta edema bilateral de tobillos que empeora al final del día tras estar de pie en el trabajo y mejora por la mañana. Un compañero en prácticas propone un drenaje con presiones firmes para \"vaciar\" más rápido.","preguntas":[{"pregunta":"¿Qué presión de Starling está alterada principalmente y en qué sentido?","respuesta":"La **presión oncótica capilar** está **disminuida** porque el hígado forma menos albúmina. Al bajar la fuerza de reabsorción (normalmente 28 mmHg), la filtración neta aumenta por encima de 0,3 mmHg y supera la capacidad de evacuación linfática."},{"pregunta":"¿Por qué el edema empeora al final del día y mejora por la mañana?","respuesta":"En **bipedestación** aumenta la presión hidrostática capilar y con ella la filtración; durante la noche, en **decúbito**, la presión hidrostática es prácticamente nula y se favorece la recuperación del líquido filtrado."},{"pregunta":"¿Qué responderías al compañero sobre las presiones firmes?","respuesta":"Que es contraproducente: mayor presión → mayor flujo sanguíneo → **mayor filtración**. El DLM debe aplicarse con **presiones suaves**, y además el origen del edema es sistémico (oncótico), por lo que el tratamiento médico de la causa es imprescindible."}]},"preguntate":[{"pregunta":"¿Por qué se dice que el sistema linfático es un segundo sistema de drenaje?","respuesta":"Porque trabaja con el venoso absorbiendo del intersticio las sustancias que la vena no puede recoger: proteínas de gran peso molecular, ácidos grasos de cadena larga, restos celulares y sustancias extrañas."},{"pregunta":"Enumera los componentes de la carga linfática.","respuesta":"Proteínas de gran peso molecular, ácidos grasos de cadena larga, restos celulares (sobre todo macrófagos), plasma y sustancias extrañas (virus, bacterias, carbonilla, polvo de vidrio)."},{"pregunta":"Calcula la fuerza neta de filtración con los valores del temario.","respuesta":"Fuera: 17 (hidrostática capilar) + 6,3 (hidrostática intersticial negativa) + 5 (oncótica intersticial) = 28,3 mmHg. Dentro: 28 mmHg (oncótica capilar). Neta: 0,3 mmHg hacia fuera."},{"pregunta":"¿Qué ocurre con los 20 L filtrados al día?","respuesta":"El 90 % (18 L) se reabsorbe por la región venosa del capilar y el 10 % (2 L) lo recoge el sistema linfático."},{"pregunta":"Diferencia ósmosis y óncosis.","respuesta":"La ósmosis es la atracción del agua por sales y azúcares; la óncosis, la atracción del agua por las proteínas, que genera la presión coloidosmótica."},{"pregunta":"Describe los tres pasos de la pinocitosis.","respuesta":"Endocitosis (la membrana endotelial se invagina y encierra la proteína en una vesícula), transporte de la vesícula a través de la célula y exocitosis (liberación de la proteína al intersticio)."},{"pregunta":"¿Cómo se abren y cierran las uniones del capilar linfático?","respuesta":"Al aumentar la presión tisular, las fibras de colágeno tiran de los filamentos y las uniones se abren; al llenarse el capilar aumenta su presión interna, se cierran y baja la presión intersticial."},{"pregunta":"¿Qué es el linfangión y qué dos tipos de contracción presenta?","respuesta":"Es la unidad contráctil del colector. Presenta contracciones autónomas continuas (±4/min, trofismo del vaso) y contracciones dependientes del llenado, eficaces solo si el colector está lleno."},{"pregunta":"Cita los cinco grandes orígenes de los edemas.","respuesta":"↑ presión hidrostática capilar, ↓ presión oncótica capilar, ↑ permeabilidad capilar, otras causas (lipedema, embarazo, menstruación) y trastornos del flujo linfático (linfostáticos funcional u orgánico)."},{"pregunta":"¿Por qué el DLM se aplica con presiones suaves?","respuesta":"Porque una presión mayor aumenta el flujo sanguíneo y con él la filtración capilar, lo que agravaría el edema."}],"glosario":[{"termino":"Carga linfática","definicion":"Conjunto de sustancias transportadas por la linfa: proteínas grandes, ácidos grasos de cadena larga, restos celulares, plasma y partículas extrañas."},{"termino":"Filtración","definicion":"Paso unidireccional de líquido y moléculas de bajo peso molecular a través de la membrana del capilar sanguíneo."},{"termino":"Reabsorción","definicion":"Retorno de líquido y sustancias de bajo peso molecular desde el intersticio a la parte venosa del capilar."},{"termino":"Presión osmótica","definicion":"Presión necesaria para contrarrestar el paso del disolvente a través de una membrana semipermeable."},{"termino":"Presión coloidosmótica","definicion":"Presión oncótica generada por las proteínas a ambos lados de la pared capilar."},{"termino":"Pinocitosis","definicion":"Transporte activo de líquidos y proteínas de gran tamaño mediante vesículas a través de la célula endotelial."},{"termino":"Equilibrio de Starling","definicion":"Estado de equilibrio entre filtración arterial y reabsorción venosa en la membrana capilar descrito por E. H. Starling."},{"termino":"Captación","definicion":"Etapa en la que los capilares linfáticos recogen el líquido resultante de la filtración."},{"termino":"Evacuación","definicion":"Etapa de transporte de la linfa por precolectores y colectores."},{"termino":"Linfangión","definicion":"Segmento contráctil del colector linfático que impulsa activamente la linfa."},{"termino":"Edema","definicion":"Acumulación de líquido en los tejidos por desequilibrio entre filtración y drenaje."},{"termino":"Edema linfostático","definicion":"Edema por trastorno del flujo linfático, de tipo funcional u orgánico."}],"fuentes":["Wittlinger. Ed. Panamericana (imagen del equilibrio hídrico).","Földi, M. Foundations of Manual Lymph Drainage (imágenes de captación).","Starling, E. H. (equilibrio capilar).","Universidad Europea. Drenaje linfático manual — T3: Fisiología del sistema linfático."],"qcm":[{"pregunta":"Según los valores del temario, ¿cuál es la fuerza total que tiende a desplazar el líquido hacia fuera del capilar?","opciones":["28,3 mmHg","22,0 mmHg","16,7 mmHg","28,0 mmHg"],"correcta":0,"explicacion":"Las fuerzas de filtración son la hidrostática capilar (17), la hidrostática intersticial negativa (6,3) y la oncótica intersticial (5): 17 + 6,3 + 5 = 28,3 mmHg.","por_opcion":["✅ 17 + 6,3 + 5 = 28,3 mmHg hacia fuera.","❌ Suma solo hidrostática capilar y oncótica intersticial (17 + 5), olvidando la intersticial negativa.","❌ Resulta de restar 6,3 a 17 + 5 sin tener en cuenta que la presión intersticial negativa favorece la filtración.","❌ 28 mmHg es la fuerza hacia dentro (oncótica capilar), no la de filtración."]},{"pregunta":"Un líquido intersticial se acumula en gran cantidad y su presión hidrostática se hace positiva. ¿Qué efecto tiene esa presión sobre el intercambio capilar?","opciones":["Sigue actuando como fuerza de filtración","Anula la presión oncótica capilar","Pasa a favorecer la reabsorción hacia el capilar","Aumenta la presión oncótica intersticial"],"correcta":2,"explicacion":"La presión hidrostática intersticial es normalmente negativa y entonces favorece la filtración; si se hace positiva por acumulación, desplaza el líquido hacia el interior del capilar (fuerza de reabsorción).","por_opcion":["❌ Solo es fuerza de filtración cuando es negativa.","❌ La presión oncótica capilar depende de las proteínas plasmáticas, no de la presión intersticial.","✅ Positiva = fuerza de reabsorción según el temario.","❌ La oncótica intersticial depende de la concentración proteica del intersticio, que la acumulación de agua tiende a diluir."]},{"pregunta":"¿Qué porcentaje y volumen diarios del líquido filtrado recoge el sistema linfático?","opciones":["25 %, unos 5 L/día","10 %, unos 2 L/día","90 %, unos 18 L/día","26 %, unos 12 L/día"],"correcta":1,"explicacion":"De 20 L/día filtrados, el 90 % (18 L) se reabsorbe por la región venosa del capilar y el 10 % (2 L) lo recoge el linfático.","por_opcion":["❌ 5 L corresponde al volumen de plasma sanguíneo, no a la carga linfática.","✅ 10 % del filtrado, unos 2 L/día.","❌ Es lo que reabsorbe el capilar venoso.","❌ 26 % y 12 L corresponden al líquido intersticial total del organismo."]},{"pregunta":"¿Cuál de las siguientes presiones actúa como fuerza de reabsorción en el equilibrio de Starling en condiciones normales?","opciones":["Presión hidrostática media capilar","Presión coloidosmótica intersticial","Presión coloidosmótica capilar","Presión hidrostática intersticial"],"correcta":2,"explicacion":"La presión coloidosmótica capilar (28 mmHg) la generan las proteínas plasmáticas que no atraviesan la membrana y atrae el líquido hacia el interior del capilar.","por_opcion":["❌ Empuja el líquido hacia fuera (filtración, 17 mmHg).","❌ Atrae el líquido hacia el intersticio (filtración, 5 mmHg).","✅ Es la única fuerza de reabsorción en el balance normal (28 mmHg).","❌ En condiciones normales es negativa y favorece la filtración."]},{"pregunta":"Aunque la cantidad de proteínas es mayor en el líquido intersticial que en el plasma, la presión oncótica intersticial es menor que la capilar. ¿Por qué?","opciones":["Porque el gran volumen del intersticio reduce su concentración","Porque las proteínas intersticiales son de menor peso molecular","Porque la pinocitosis devuelve las proteínas al plasma","Porque el linfático elimina las proteínas en cuanto llegan"],"correcta":0,"explicacion":"La presión oncótica depende de la concentración. El intersticio contiene más proteínas en cantidad, pero repartidas en un volumen mucho mayor, por lo que su concentración y su presión (5 mmHg) son menores.","por_opcion":["✅ Más cantidad pero en más volumen → menor concentración.","❌ El temario no lo atribuye al tamaño de las proteínas.","❌ La pinocitosis transporta proteínas del capilar al intersticio, no al revés.","❌ La evacuación linfática no es instantánea ni explica el gradiente."]},{"pregunta":"Respecto al transporte a través de la membrana capilar, ¿cuál es exclusivo de los capilares sanguíneos y se produce en un solo sentido?","opciones":["Difusión","Ósmosis","Pinocitosis","Filtración"],"correcta":3,"explicacion":"La filtración es el paso de líquido y moléculas de bajo peso molecular a través de la membrana del capilar sanguíneo en un solo sentido; el temario la define como transporte pasivo exclusivo de estos capilares.","por_opcion":["❌ La difusión iguala concentraciones en ambos sentidos según el gradiente.","❌ La ósmosis es el paso del disolvente hacia la solución más concentrada, en cualquier membrana semipermeable.","❌ Es transporte activo mediante vesículas.","✅ Transporte pasivo exclusivo del capilar sanguíneo, unidireccional."]},{"pregunta":"¿Qué condición acelera la difusión según el temario?","opciones":["Mayor viscosidad del medio","Menor temperatura","Moléculas de mayor tamaño","Trayecto más corto"],"correcta":3,"explicacion":"La difusión es más rápida con trayecto corto, mayor temperatura, moléculas más pequeñas y menor viscosidad.","por_opcion":["❌ La menor viscosidad la acelera, no la mayor.","❌ Mayor temperatura → mayor velocidad.","❌ Las moléculas más pequeñas difunden más rápido.","✅ Un trayecto corto favorece la difusión."]},{"pregunta":"En la pinocitosis endotelial, ¿qué ocurre en la fase de exocitosis?","opciones":["La vesícula libera la proteína en el líquido intersticial","La membrana se invagina en la luz del vaso y encierra la proteína","La vesícula atraviesa el citoplasma de la célula","La célula ingiere una bacteria del medio"],"correcta":0,"explicacion":"La pinocitosis consta de endocitosis (captura en la luz del vaso), transporte a través de la célula y exocitosis, en la que la vesícula se invagina del otro lado y libera la proteína en el intersticio.","por_opcion":["✅ Liberación de la proteína al intersticio.","❌ Describe la endocitosis, primer paso.","❌ Es el paso intermedio de transporte.","❌ Describe la fagocitosis (glóbulo blanco)."]},{"pregunta":"Durante la captación linfática, ¿qué mecanismo abre las uniones intercelulares del capilar linfático?","opciones":["La contracción de las células musculares de su túnica media","La tracción de los filamentos por las fibras de colágeno al aumentar la presión tisular","La disminución de la presión tisular","El aumento de la presión dentro del capilar linfático"],"correcta":1,"explicacion":"Cuando aumenta la presión tisular, las fibras de colágeno tiran de la red de filamentos y las aperturas intercelulares se abren, dejando pasar agua, moléculas grandes y restos celulares.","por_opcion":["❌ Las células musculares de la túnica media están en los precolectores, no en el capilar.","✅ Tracción de los filamentos de anclaje por aumento de presión tisular.","❌ Con presión tisular baja las uniones permanecen cerradas.","❌ El aumento de presión intraluminal cierra las uniones."]},{"pregunta":"¿Qué característica diferencia a los precolectores de los capilares linfáticos?","opciones":["Tienen más uniones celulares abiertas","Carecen de capacidad contráctil","Presentan contracciones autónomas de 40/min","Tienen menos uniones abiertas y células musculares en la túnica media"],"correcta":3,"explicacion":"En los precolectores disminuye el número de uniones abiertas (limita la salida del líquido) y su pared contiene células musculares en la túnica media que provocan su contracción.","por_opcion":["❌ Ocurre lo contrario: tienen menos uniones abiertas.","❌ Su túnica media sí les permite contraerse.","❌ Las contracciones autónomas del colector son ±4/min, y 40 es una presión en mmHg.","✅ Menos uniones abiertas y células musculares."]},{"pregunta":"¿Qué presión puede alcanzarse dentro de un colector linfático en el momento del llenado?","opciones":["Hasta 40 mmHg","17 mmHg","28 mmHg","±4 mmHg"],"correcta":0,"explicacion":"En reposo la presión del colector es de ±4 mmHg y en el llenado puede aumentar hasta 40 mmHg; el colector solo se contrae eficazmente si está lleno.","por_opcion":["✅ Valor máximo en el llenado.","❌ Es la presión hidrostática media capilar.","❌ Es la presión oncótica capilar.","❌ Es la presión en reposo."]},{"pregunta":"¿Cuál es la función de las contracciones autónomas del linfangión?","opciones":["Producir la eyección máxima de linfa","Generar la presión oncótica intersticial","Abrir las uniones del capilar inicial","Mantener el trofismo del vaso"],"correcta":3,"explicacion":"Las contracciones autónomas son continuas (±4/min) y son responsables de mantener el trofismo del vaso; la eyección eficaz depende del llenado.","por_opcion":["❌ La eyección eficaz depende de las contracciones por llenado.","❌ La oncótica intersticial depende de las proteínas, no del linfangión.","❌ La apertura de las uniones depende de la presión tisular y los filamentos.","✅ Función trófica según el temario."]},{"pregunta":"Un síndrome nefrótico provoca edema principalmente por:","opciones":["Trastorno orgánico del flujo linfático","Aumento de la permeabilidad capilar","Aumento de la presión hidrostática capilar","Disminución de la presión oncótica capilar"],"correcta":3,"explicacion":"El temario incluye el riñón (síndrome nefrótico) entre las causas de descenso de la presión oncótica capilar, junto con dietas hipoproteicas, hígado e intestino.","por_opcion":["❌ Es un edema linfostático, otra categoría.","❌ Corresponde a inflamación: infección, alergia, traumatismo.","❌ Corresponde a insuficiencia cardiaca derecha o trastorno venoso.","✅ Pérdida de proteínas → ↓ presión oncótica capilar."]},{"pregunta":"Paciente con edema de tobillos que disminuye tras pasar la noche en cama. ¿Qué explicación fisiológica da el temario?","opciones":["En decúbito aumenta la presión oncótica capilar","En decúbito se duplica la frecuencia del linfangión","En decúbito la presión hidrostática es nula y disminuye la filtración","En decúbito se abren más uniones del capilar linfático"],"correcta":2,"explicacion":"La presión hidrostática aumenta en bipedestación y es nula en decúbito o con las piernas elevadas, por lo que la filtración disminuye en beneficio de la recuperación del líquido filtrado.","por_opcion":["❌ La postura no modifica las proteínas plasmáticas.","❌ El temario no relaciona la postura con la frecuencia del linfangión.","✅ Anulación de la presión hidrostática postural.","❌ La apertura depende de la presión tisular, que en decúbito no aumenta."]},{"pregunta":"¿Por qué el DLM debe aplicarse con presiones suaves?","opciones":["Porque la presión fuerte inhibe las contracciones autónomas","Porque la presión fuerte aumenta el flujo sanguíneo y la filtración","Porque la presión fuerte colapsa definitivamente los colectores","Porque la presión fuerte reduce la presión oncótica intersticial"],"correcta":1,"explicacion":"El temario muestra la cadena mayor presión → mayor flujo sanguíneo → mayor filtración, que debe evitarse; por eso el DLM usa presiones suaves.","por_opcion":["❌ No se menciona inhibición de las contracciones autónomas.","✅ Más presión → más flujo → más filtración.","❌ El temario no describe un colapso definitivo de colectores.","❌ Una mayor filtración no reduce la oncótica intersticial por ese mecanismo."]}],"asignatura":"Drenaje linfático","tema":3,"fecha":"2026-11-10"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips"><a class="chip" href="../index.html" style="text-decoration:none">← Mis fichas</a>${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* dernière fiche ouverte + carnet d'erreurs + envoi du score vers Notion */
+const slugPag = location.pathname.split('/').pop().replace(/\.html$/, '');
+const carpeta = grande ? 'qcm' : 'fichas';
+try{ localStorage.setItem('ultima', JSON.stringify({href:`${carpeta}/${slugPag}.html`, titulo:F.titulo, t:Date.now()})); }catch(e){}
+function errorGuardar(k, fallo){
+  try{
+    const E = JSON.parse(localStorage.getItem('errores')||'{}'), id = `${slugPag}#${k}`;
+    if(fallo){ const q = Q[k]; E[id] = {id, curso:F.asignatura, tema:(F.tema ?? q.tema ?? null), titulo:F.titulo, href:`${carpeta}/${slugPag}.html`, q:{pregunta:q.pregunta, opciones:q.opciones, correcta:q.correcta, explicacion:q.explicacion, por_opcion:q.por_opcion}, n:(E[id]?.n||0)+1, t:Date.now()}; }
+    else delete E[id];
+    localStorage.setItem('errores', JSON.stringify(E));
+  }catch(e){}
+}
+async function enviarScore(ok, n){
+  const el = document.getElementById('envio'); if(!el) return;
+  if(grande || !window.FICHAS_RELAY){ el.textContent = ''; return; }
+  el.textContent = 'Enregistrement dans Notion…';
+  try{
+    const r = await fetch(window.FICHAS_RELAY, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({url:location.origin+location.pathname, score:ok, total:n})});
+    const j = await r.json();
+    el.textContent = j.ok ? '✓ Score enregistré dans Notion' + (j.proxima ? ` · prochaine révision : ${j.proxima}` : '') : 'Score non enregistré dans Notion (' + (j.error||'erreur') + ')';
+  }catch(e){ el.textContent = 'Score non enregistré dans Notion (hors ligne ?)'; }
+}
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; errorGuardar(k, !resp[k].ok); marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  const completo = n===Q.length;
+  if(completo) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado!':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p><p id="envio" style="font-size:.9rem;color:var(--suave);margin:0 auto 14px"></p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  if(completo) enviarScore(ok, n);
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>

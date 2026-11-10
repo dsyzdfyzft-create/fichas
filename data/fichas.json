@@ -130,14 +130,14 @@
     "secciones": 5
   },
   {
-    "slug": "drenaje-linfatico-t3-tema-3-fisiologia-y-fisiopatologia-del-sistema-linfatico",
-    "titulo": "Tema 3: Fisiología y fisiopatología del sistema linfático",
-    "subtitulo": "Formación de la linfa, transportes a través del capilar, fuerzas de Starling, captación y evacuación linfática, y origen de los edemas.",
+    "slug": "drenaje-linfatico-t3-tema-3-fisiologia-del-sistema-linfatico",
+    "titulo": "Tema 3. Fisiología del sistema linfático",
+    "subtitulo": "Cómo se forma la linfa, qué fuerzas de Starling gobiernan el intercambio capilar, cómo se capta y evacúa la linfa y por qué aparecen los edemas.",
     "curso": "Drenaje linfático",
     "tema": 3,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 6
   },
   {
     "slug": "drenaje-linfatico-t4-tema-4-edemas-i-linfodinamicos-linfedemas-y-flebolinfedemas",
@@ -332,12 +332,12 @@
   {
     "slug": "ortesis-t7-tema-7-ortesis-de-miembro-inferior-y-ayudas-a-la-marcha",
     "titulo": "Tema 7: Órtesis de miembro inferior y ayudas a la marcha",
-    "subtitulo": "Funciones y nomenclatura (FO, AFO, KO, KAFO, HKAFO), órtesis de pie, tobillo, rodilla y cadera, grandes aparatos de marcha, y uso correcto de bastones, muletas y andador.",
+    "subtitulo": "Funciones y nomenclatura (FO, AFO, KO, KAFO, HKAFO), órtesis de pie, tobillo, rodilla y cadera, bitutores y grandes aparatos de marcha, y uso correcto de bastones, bastones ingleses, muletas y andador.",
     "curso": "Ortesis",
     "tema": 7,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 6
+    "secciones": 7
   },
   {
     "slug": "ortesis-t8-tema-8-ortesis-y-protesis-en-el-deporte",
@@ -351,63 +351,63 @@
   },
   {
     "slug": "ortesis-t9-tema-9-amputaciones",
-    "titulo": "Tema 9: Amputaciones",
-    "subtitulo": "Concepto, etiología, escala MESS, técnicas de cierre, niveles de amputación de miembro superior e inferior, miembro fantasma y tratamiento fisioterapéutico pre, posoperatorio y protésico.",
+    "titulo": "Tema 9 · Amputaciones",
+    "subtitulo": "Etiología, niveles y técnicas de amputación, miembro fantasma y rehabilitación fisioterápica del amputado desde el preoperatorio hasta la fase protésica.",
     "curso": "Ortesis",
     "tema": 9,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 8
   },
   {
     "slug": "ortesis-t10-tema-10-exoprotesis",
-    "titulo": "Tema 10: Exoprótesis",
-    "subtitulo": "Prótesis craneofaciales y musculoesqueléticas, clasificación K-levels, osteointegración, componentes de la prótesis de miembro inferior (liner, encaje, suspensión, rodilla, pie) y exoprótesis de miembro superior con sus escalas.",
+    "titulo": "Tema 10 · Exoprótesis",
+    "subtitulo": "Prótesis craneofaciales y musculoesqueléticas, clasificación K de Medicare, osteointegración, componentes de la prótesis de miembro inferior (liner, encaje, suspensión, rodilla, pie) y prótesis de miembro superior con sus escalas.",
     "curso": "Ortesis",
     "tema": 10,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 8
   },
   {
     "slug": "patologia-quirurgica-i-t1-tema-1-introduccion-a-la-historia-clinica",
-    "titulo": "Tema 1: Introducción a la historia clínica",
-    "subtitulo": "Conceptos de salud y enfermedad, de la etiología al diagnóstico, escalas de valoración, comunicación clínica, anamnesis, apartados de la historia clínica, exploración, pruebas complementarias, diagnóstico y tratamiento.",
+    "titulo": "Tema 1. Introducción a la Historia Clínica",
+    "subtitulo": "De los conceptos de salud y enfermedad a la anamnesis estructurada, la exploración, las pruebas complementarias y el diagnóstico diferencial.",
     "curso": "Patología quirúrgica I",
     "tema": 1,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 6
+    "secciones": 8
   },
   {
     "slug": "patologia-quirurgica-i-t2-tema-2-infeccion-y-sistema-inmune",
-    "titulo": "Tema 2: Infección y sistema inmune",
-    "subtitulo": "Concepto de infección, postulados de Koch y sus limitaciones, agentes infecciosos (bacterias, hongos, virus, protozoos, metazoos), órganos y células inmunitarias, inmunidad innata y adaptativa, memoria e inmunidad activa/pasiva.",
+    "titulo": "Tema 2. Infección y sistema inmune",
+    "subtitulo": "Qué es una infección, los postulados de Koch y sus límites, los cinco tipos de agentes infecciosos y la organización de la inmunidad innata y adaptativa.",
     "curso": "Patología quirúrgica I",
     "tema": 2,
-    "fecha": "2026-11-09",
-    "preguntas": 15,
-    "secciones": 4
-  },
-  {
-    "slug": "patologia-quirurgica-i-t3-tema-3-heridas-y-quemaduras",
-    "titulo": "Tema 3: Heridas y quemaduras",
-    "subtitulo": "Fisiología de la cicatrización, factores de riesgo, clasificación de heridas, cierre por intención, evaluación, protocolo de tratamiento y tipos de cicatriz; quemaduras: grados, fisiopatología, complicaciones, regla de los 9, gravedad y tratamiento.",
-    "curso": "Patología quirúrgica I",
-    "tema": 3,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
     "secciones": 6
   },
   {
+    "slug": "patologia-quirurgica-i-t3-tema-3-heridas-y-quemaduras",
+    "titulo": "Tema 3. Heridas y Quemaduras",
+    "subtitulo": "Cicatrización, clasificación, valoración y tratamiento de las heridas, y grados, extensión, gravedad, complicaciones y manejo de las quemaduras.",
+    "curso": "Patología quirúrgica I",
+    "tema": 3,
+    "fecha": "2026-11-10",
+    "preguntas": 15,
+    "secciones": 9
+  },
+  {
     "slug": "patologia-quirurgica-i-t4-tema-4-fracturas-generalidades",
-    "titulo": "Tema 4: Fracturas – generalidades",
-    "subtitulo": "Tejido óseo, clasificación de las fracturas, consolidación primaria y secundaria, diagnóstico clínico y por imagen (regla del 2 de Apley) y complicaciones locales, regionales y generales.",
+    "titulo": "Tema 4. Fracturas. Generalidades",
+    "subtitulo": "Tejido óseo, clasificación de las fracturas, consolidación primaria y secundaria, diagnóstico clínico y por imagen, y complicaciones locales, regionales y generales.",
     "curso": "Patología quirúrgica I",
     "tema": 4,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 8
   },
   {
     "slug": "patologia-quirurgica-i-t5-tema-5-fracturas-en-adultos",
@@ -421,13 +421,13 @@
   },
   {
     "slug": "patologia-quirurgica-i-t6-tema-6-fracturas-infantiles",
-    "titulo": "Tema 6: Fracturas infantiles",
-    "subtitulo": "Características del hueso infantil (fisis, periostio, composición, epífisis no osificadas), respuesta a la fractura, epidemiología y maltrato, fracturas especiales (tallo verde, torus, deformidad plástica, epifisiólisis de Salter-Harris) y tratamiento.",
+    "titulo": "Tema 6. Fracturas infantiles",
+    "subtitulo": "Por qué el hueso del niño se rompe, consolida y remodela de forma distinta al del adulto, los tipos especiales de fractura infantil, la clasificación de Salter y Harris y los principios de tratamiento.",
     "curso": "Patología quirúrgica I",
     "tema": 6,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 6
+    "secciones": 7
   },
   {
     "slug": "patologia-quirurgica-i-t7-tema-7-asepsia-antisepsia-e-instrumentacion-quirurgica",
@@ -441,52 +441,52 @@
   },
   {
     "slug": "patologia-quirurgica-i-t8-tema-8-sindrome-compartimental-y-aplastamiento",
-    "titulo": "Tema 8: Síndrome compartimental y aplastamiento",
-    "subtitulo": "Concepto, causas (aumento del contenido o disminución del continente), isquemia-reperfusión, fisiopatología, regla de las 6 P, diagnóstico, fasciotomía, síndrome por aplastamiento con rabdomiólisis y síndrome compartimental crónico del deportista.",
+    "titulo": "Tema 8. Síndrome compartimental y aplastamiento",
+    "subtitulo": "Aumento de presión en una celda fascial cerrada que compromete la perfusión capilar: formas aguda, por aplastamiento y crónica, con su diagnóstico clínico y la fasciotomía como tratamiento.",
     "curso": "Patología quirúrgica I",
     "tema": 8,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 9
   },
   {
     "slug": "patologia-quirurgica-i-t9-tema-9-tendinopatias",
-    "titulo": "Tema 9: Tendinopatías",
-    "subtitulo": "Estructura, irrigación, inervación y función del tendón; epidemiología y factores de riesgo; mecanismos; clasificación (tendinitis, paratendinitis, tendinosis, tenosinovitis); modelo continuum de Cook; respuesta a la carga y tratamiento (isométricos, protocolos excéntricos de Curwin-Stanish y Alfredson).",
+    "titulo": "Tema 9. Tendinopatías",
+    "subtitulo": "Del tendón sano al modelo continuum: estructura, mecanismos lesionales, clasificación, patología inflamatoria de la vaina y tratamiento basado en la carga (isométricos y excéntricos).",
     "curso": "Patología quirúrgica I",
     "tema": 9,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 6
+    "secciones": 9
   },
   {
     "slug": "patologia-quirurgica-i-t10-tema-10-rodilla-y-deporte",
-    "titulo": "Tema 10: Rodilla y deporte",
-    "subtitulo": "Síndrome de la cintilla iliotibial, hiperpresión rotuliana, tendinopatía rotuliana, lesiones meniscales, pata de ganso, fracturas por sobrecarga, ligamentos laterales (LLI y LLE), tendinopatía poplítea, plica sinovial y lesión del LCP.",
+    "titulo": "Tema 10 · Rodilla y deporte",
+    "subtitulo": "Patología deportiva de la rodilla: cintilla iliotibial, hiperpresión rotuliana, tendinopatía rotuliana, meniscos, pata de ganso, fracturas por sobrecarga, ligamentos laterales, poplíteo, plica sinovial y LCP.",
     "curso": "Patología quirúrgica I",
     "tema": 10,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 7
+    "secciones": 8
   },
   {
-    "slug": "patologia-quirurgica-i-t11-tema-11-sindrome-subacromial-y-patologia-del-hombro",
-    "titulo": "Tema 11: Síndrome subacromial y patología del hombro",
-    "subtitulo": "Anatomía del hombro, síndrome de dolor subacromial, tendinopatía y rotura del manguito rotador, tendinitis calcificante, tendinopatía de la porción larga del bíceps, capsulitis adhesiva, luxación e inestabilidad glenohumeral.",
+    "slug": "patologia-quirurgica-i-t11-tema-11-sindrome-subacromial",
+    "titulo": "Tema 11. Síndrome subacromial",
+    "subtitulo": "Patología del espacio subacromial y del hombro doloroso: tendinopatía y rotura del manguito, tendinopatía calcificante, porción larga del bíceps, capsulitis adhesiva, luxación e inestabilidad glenohumeral.",
     "curso": "Patología quirúrgica I",
     "tema": 11,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 6
+    "secciones": 8
   },
   {
     "slug": "patologia-quirurgica-i-t12-tema-12-inestabilidad-glenohumeral-aguda-y-cronica",
-    "titulo": "Tema 12: Inestabilidad glenohumeral aguda y crónica",
-    "subtitulo": "Concepto y grados, epidemiología y recurrencia, estabilizadores estáticos y dinámicos, clasificaciones (Rockwood, Neer, Matsen TUBS/AMBRII), luxación anterior, posterior e inferior, exploración, lesiones asociadas (Bankart, Hill-Sachs, SLAP) y tratamiento agudo y crónico.",
+    "titulo": "Tema 12. Inestabilidad glenohumeral aguda y crónica",
+    "subtitulo": "Pérdida de la relación entre cabeza humeral y glena: estabilizadores, clasificaciones (Rockwood, Neer, Matsen), clínica de la luxación anterior, posterior e inferior, exploración, lesiones asociadas y tratamiento.",
     "curso": "Patología quirúrgica I",
     "tema": 12,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 7
+    "secciones": 8
   }
 ]

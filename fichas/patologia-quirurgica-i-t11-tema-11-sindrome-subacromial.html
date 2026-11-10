@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Tema 11. Síndrome subacromial · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script src="../config.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 11. Síndrome subacromial","subtitulo":"Patología del espacio subacromial y del hombro doloroso: tendinopatía y rotura del manguito, tendinopatía calcificante, porción larga del bíceps, capsulitis adhesiva, luxación e inestabilidad glenohumeral.","resumen":["El **síndrome subacromial** agrupa el dolor deltoideo por patología bajo el **arco coracoacromial** (borde anterior del acromion, articulación acromioclavicular y ligamento coracoacromial); ICON 2019 recomienda hablar de **dolor de hombro relacionado con el manguito**.","Clínicamente da dolor deltoideo **nocturno** y en **ABD activa de 80-120°**; **Neer y Hawkins** son **muy sensibles y poco específicos**, y con manguito íntegro se trata de forma conservadora unos **6 meses** antes de medidas agresivas.","La **rotura del manguito** afecta sobre todo al **supraespinoso** en **varones > 40 años (2:1)**; en la completa el paciente **no puede iniciar la ABD** (encoge el hombro) pero mantiene los 90° pasivos con el **deltoides**.","La **tendinopatía calcificante** (10-42 % de hombros dolorosos crónicos, 30-60 años, más en **mujeres**, **supraespinoso 80 %**) pasa por formación, inflamación y **resorción espontánea**; el **barbotaje (US-PICT)** no se indica si es asintomática o **≤ 5 mm**.","La **capsulitis adhesiva** (mujeres 50-60 años, diabetes/hipotiroidismo) evoluciona en fases **dolorosa (2-9 m), rigidez (3-12 m) y resolución (12-42 m)**; la **luxación glenohumeral** es **anterior en el 98 %** y su lesión nerviosa típica es la del **circunflejo**."],"objetivos":["Describir la anatomía funcional del complejo articular del hombro, el manguito rotador, las bolsas serosas y el arco coracoacromial.","Reconocer la clínica, la exploración y las pruebas de imagen del síndrome subacromial, la tendinopatía y la rotura del manguito.","Explicar la fisiopatología, las fases clínicas y las opciones terapéuticas (incluido el barbotaje) de la tendinopatía calcificante.","Diferenciar la patología de la porción larga del bíceps y las indicaciones de tenotomía frente a tenodesis.","Conocer las fases de la capsulitis adhesiva y el manejo de la luxación e inestabilidad glenohumeral."],"ideas_clave":["Arco coracoacromial = borde anterior del acromion + articulación acromioclavicular + ligamento coracoacromial; bajo él están el manguito, la bolsa subacromial y la porción larga del bíceps.","Zona avascular a **1,5 cm** de la inserción del supra e infraespinoso: factor vascular de la tendinopatía del manguito.","Dolor subacromial: ABD activa dolorosa entre 80° y 120°; en la tendinopatía del manguito el arco doloroso es activo y pasivo entre 60° y 120°.","Tratamiento conservador con manguito íntegro; las roturas traumáticas agudas en pacientes activos deben operarse, las degenerativas crónicas se manejan primero de forma conservadora.","Descompresión subacromial artroscópica (ASAD/acromioplastia): 3 portales y resección como máximo de la mitad anterior del acromion.","Tendinopatía calcificante: metaplasia condrocitaria; reabsorción por macrófagos y células tipo osteoclasto; > 1,5 cm se correlaciona con más síntomas.","Porción larga del bíceps: asociada a rotura del manguito hasta en el 90 %; Yergason positivo; rotura = deformidad de Popeye.","Luxación glenohumeral: 40-60 % de todas las luxaciones, anterior 98 %, hombro en charretera, Kocher (tracción-RE-ADD-RI), cabestrillo 4 semanas y reposo deportivo 3 meses."],"secciones":[{"id":"anatomia","titulo":"Recuerdo anatómico del hombro","bloques":[{"tipo":"parrafo","texto":"El complejo del hombro incluye cinco articulaciones: **escapulohumeral, subdeltoidea, escapulotorácica, acromioclavicular y esternocostoclavicular**. La cavidad glenoidea es una concavidad irregular con reborde y **superficie menor que la cabeza humeral**; el **rodete glenoideo** (fibrocartílago) acentúa la concavidad y aumenta la congruencia articular."},{"tipo":"figura","pagina":4,"pie":"Manguito rotador en vista anterior (subescapular) y posterior (supraespinoso, infraespinoso y redondo menor). Relaciona cada músculo con su acción rotadora.","src":"img/patologia-quirurgica-i-t11-tema-11-sindrome-subacromial-p4.jpg"},{"tipo":"tabla","titulo":"Músculos del manguito rotador","columnas":["Músculo","Acción principal","Función común"],"filas":[["1. Supraespinoso","Abducción","Estabiliza la cabeza humeral"],["2. Infraespinoso","Rotación externa","Estabiliza la cabeza humeral"],["3. Redondo menor","Rotación externa","Estabiliza la cabeza humeral"],["4. Subescapular","Rotación interna","Estabiliza la cabeza humeral"]]},{"tipo":"definicion","termino":"Bolsas serosas del hombro","texto":"Subacromial, subdeltoidea y subescapular: espacios **avasculares** lubricantes situados entre tendón y hueso. Las **subacromial y subdeltoidea** lubrican el manguito, el acromion y la acromioclavicular y **son las únicas dolorosas**."}]},{"id":"sindrome-subacromial","titulo":"Síndrome subacromial","bloques":[{"tipo":"definicion","termino":"Síndrome subacromial","texto":"Conjunto de síntomas presididos por **dolor en la región deltoidea** que agrupa la patología de las estructuras bajo el **arco coracoacromial**: tendinopatías del manguito, tendinopatía calcificante, lesiones de la porción larga del bíceps y roturas del manguito."},{"tipo":"alerta","texto":"Según **ICON 2019**, el tendón del manguito como fuente principal del dolor **no puede determinarse clínicamente** por la cantidad de estructuras nociceptivas vecinas. Términos recomendados: **síndrome de dolor subacromial** o **dolor de hombro relacionado con el manguito de los rotadores**."},{"tipo":"figura","pagina":15,"pie":"Arco coracoacromial: acromion, articulación acromioclavicular y ligamento coracoacromial forman el techo bajo el que se comprimen el manguito, la bolsa y el tendón del bíceps.","src":"img/patologia-quirurgica-i-t11-tema-11-sindrome-subacromial-p15.jpg"},{"tipo":"tabla","titulo":"Etiología multifactorial","columnas":["Factor","Ejemplos"],"filas":[["Intrínseco","Edad, degeneración intrínseca del tendón"],["Vascular","**Zona avascular a 1,5 cm** de la inserción del supra e infraespinoso"],["Compresión extrínseca","Bajo el arco coracoacromial; acromion curvado, *os acromiale*, osteofitos"],["Mecánico","Inestabilidad glenohumeral"]]},{"tipo":"dato","valor":"80-120°","texto":"Arco de abducción activa en el que aparece el dolor del síndrome subacromial."},{"tipo":"lista","items":["Dolor difuso en la región deltoidea y cara lateral del brazo, de **predominio nocturno**.","Dolor aumentado en **ABD + RI + antepulsión**.","Maniobras de pinzamiento: **signo de Neer** (flexión máxima mientras el explorador presiona el acromion) y **Hawkins-Kennedy** (flexión y ABD a 90° con RI pasiva).","Imagen: RX (ascenso de la cabeza humeral, esclerosis, geodas), RNM y ecografía (estudio dinámico de gran valor, con variabilidad interobservador)."]},{"tipo":"figura","pagina":17,"pie":"Signo de Neer y maniobra de Hawkins-Kennedy: maniobras de pinzamiento muy sensibles pero poco específicas.","src":"img/patologia-quirurgica-i-t11-tema-11-sindrome-subacromial-p17.jpg"},{"tipo":"alerta","texto":"Neer y Hawkins son **muy sensibles y poco específicos**: un resultado negativo ayuda a descartar, pero uno positivo no confirma por sí solo el origen tendinoso del dolor."},{"tipo":"esquema","titulo":"Decisión terapéutica en el síndrome subacromial","mermaid":"flowchart TD\n  A[\"Dolor subacromial\"] --> B{\"Estado del manguito\"}\n  B -->|\"Integro\"| C[\"Conservador: reposo relativo, analgesia, infiltracion, fisioterapia\"]\n  C --> D{\"Mejora en 6 meses\"}\n  D -->|\"No\"| E[\"Valorar cirugia: ASAD\"]\n  B -->|\"Roto\"| F{\"Tipo de rotura\"}\n  F -->|\"Traumatica aguda, paciente activo\"| G[\"Cirugia precoz\"]\n  F -->|\"Degenerativa cronica\"| H[\"Conservador inicial\"]\n  H -->|\"Dolor alto o perdida de fuerza persistentes\"| G\n  F -->|\"Mayor, asintomatico o buen rango y fuerza\"| I[\"Puede no requerir reparacion\"]","pie":"Las roturas pequeñas y medianas pueden tratarse primero con fisioterapia, con resultados similares a la reparación."},{"tipo":"parrafo","texto":"**Conservador** (manguito íntegro): modificar la actividad con reposo relativo, analgesia, infiltración de corticoides (con estudios que muestran **atrofia tendinosa e inhibición de la síntesis de colágeno**) y fisioterapia, durante **6 meses** antes de medidas más agresivas. Las **lesiones traumáticas agudas** en pacientes activos deben operarse porque desarrollan **retracción, atrofia y degeneración grasa**, y un conservador prolongado fallido empeora la reparación secundaria."},{"tipo":"perla","texto":"Ante una rotura traumática aguda en un paciente activo, **no prolongues** el tratamiento de fisioterapia esperando mejoría: deriva pronto al cirujano, porque la retracción y la infiltración grasa comprometen la reparación."}]},{"id":"cirugia-subacromial","titulo":"Tratamiento quirúrgico: artroscopia y descompresión","bloques":[{"tipo":"parrafo","texto":"La **artroscopia** obtiene resultados al menos tan buenos como la cirugía abierta y en los últimos 10 años se ha convertido en el procedimiento de elección; la **cirugía abierta** se reserva para roturas de grado importante. Antes de reparar, el cirujano hace una **exploración artroscópica sistemática** (lesiones asociadas, patrón de rotura, comprobar que el cabo alcanza la huella ósea **sin tensión**) y un **desbridamiento** de fragmentos sueltos, que también puede hacerse solo para aliviar el dolor."},{"tipo":"perla","texto":"La capacidad de regeneración del tendón es limitada y el **hueso aporta células y factores** de cicatrización: por eso se desbrida la huella de inserción y se realizan **perforaciones hasta el hueso medular**."},{"tipo":"tabla","titulo":"Descompresión subacromial artroscópica (ASAD) o acromioplastia","columnas":["Elemento","Detalle"],"filas":[["Objetivo","Disminuir la presión del acromion contra el supraespinoso"],["Posición","Silla de playa o decúbito lateral"],["Portal posterior","Visualización; se evalúa toda la articulación"],["Portal lateral","Realiza la descompresión subacromial"],["Portal anterior","Visualización o descompresión"],["Técnica","Se retira tejido de la cara inferior del acromion y con fresa acromial (*acromionizer*) **como máximo la mitad anterior** del acromion"]]},{"tipo":"dato","valor":"3 portales","texto":"Posterior (visión), lateral (descompresión) y anterior (visión o descompresión) en la ASAD."}]},{"id":"manguito","titulo":"Tendinopatía y rotura del manguito rotador","bloques":[{"tipo":"parrafo","texto":"La **tendinopatía del manguito** afecta con más frecuencia al **supraespinoso**. Causas: sobrecarga mecánica (microrroturas, pequeños desgarros), trastornos degenerativos, alteraciones sinoviales, hipervascularización de la inserción y **calcificación distrófica del supraespinoso (3 % de la población)**. Típico en **hombres > 40 años** con uso excesivo o poco habitual: dolor intenso anterolateral en la cabeza humeral, irradiado a antebrazo y cuello, **pulsátil, más nocturno y que no cede con el reposo**."},{"tipo":"tabla","titulo":"Tendinopatía frente a rotura del manguito","columnas":["Rasgo","Tendinopatía","Rotura parcial","Rotura completa"],"filas":[["Perfil","Hombre > 40 años","Hombre (2:1) > 40 años; post mortem 25 %","Varón > 60 años; 50 % gradual sin traumatismo"],["Exploración","Arco doloroso activo **y pasivo 60-120°**; leve rigidez en FLEX y RI; ABD C/R, Jobe, Hawkins","Inicia la ABD con dolor; Jobe, Hawkins, Codman","**No puede iniciar la ABD** (encoge el hombro); mantiene 90° pasivos con el deltoides"],["Imagen","RX: esclerosis del troquíter, pequeño ascenso cefálico; ECO: cambios hiperecogénicos, engrosamientos, calcificaciones; RNM","RX, ECO, RNM","RX, RNM, ECO, artroscopia"],["Tratamiento","Agudo: reposo, AINEs, fisioterapia activa, corticoides. Crónico: infiltración; si dolor incapacitante, acromioplastia y extirpación de calcificación","Corticoides, cinesiterapia; en muchos casos cirugía","Ancianos: cinesiterapia. Activos: cirugía abierta (poco satisfactoria por bordes degenerados); post-Qx reposo **3 semanas** y luego activos"]]},{"tipo":"alerta","texto":"No confundas los arcos: **80-120° activo** en el síndrome subacromial; **60-120° activo y pasivo** como signo del arco doloroso en la tendinopatía del manguito."},{"tipo":"alerta","texto":"En la rotura completa, la incapacidad es para **iniciar** la abducción: si colocas el brazo pasivamente a 90°, el paciente **sí puede mantenerlo** gracias al deltoides. No lo interpretes como manguito íntegro."},{"tipo":"perla","texto":"La tendinopatía del manguito puede asociar una **bursitis subacromial secundaria** que agrava la clínica: en fase aguda mantén la movilidad con fisioterapia activa para **prevenir la rigidez**."}]},{"id":"calcificante","titulo":"Tendinopatía (tendinitis) calcificante","bloques":[{"tipo":"parrafo","texto":"Es una de las causas más frecuentes de **dolor no traumático** del manguito, por depósitos calcificados (hidroxiapatita) en sus tendones. Se presenta entre los **30 y 60 años**, con mayor prevalencia en **mujeres** y en el **brazo dominante**. La hipótesis más aceptada es una **metaplasia condrocitaria**: la matriz alrededor de los tenocitos se vuelve cartilaginosa (fibrocartílago en zonas de compresión). El sobreuso no es el único factor: se ve en jóvenes y no se asocia al trabajo manual."},{"tipo":"dato","valor":"10-42 %","texto":"Presencia de tendinopatía calcificante en hombros dolorosos crónicos."},{"tipo":"dato","valor":"SE 80 % · IE 15 %","texto":"Localización: supraespinoso 80 %, infraespinoso 15 %; bilateral 15-20 %."},{"tipo":"esquema","titulo":"Historia natural de la calcificación","mermaid":"flowchart LR\n  A[\"Formacion: metaplasia condrocitaria\"] --> B[\"Deposito de calcio estable\"]\n  B --> C[\"Crisis inflamatoria: dolor intenso\"]\n  C --> D[\"Resorcion: macrofagos y celulas tipo osteoclasto\"]\n  D --> E[\"Curacion espontanea\"]\n  B -->|\"Mayor de 1,5 cm\"| F[\"Mas sintomas\"]","pie":"La crisis aguda dolorosa suele acompañar a la reabsorción; los factores que la desencadenan se desconocen."},{"tipo":"tabla","titulo":"Fases clínicas","columnas":["Fase","Clínica"],"filas":[["Crisis aguda","Dolor espontáneo y agudo que dificulta el sueño; **impotencia funcional total**"],["Subaguda","Dolor permanente, **predominio nocturno (reabsorción del calcio)**, irradiado al brazo; **Hawkins +++**"],["Crónica","Dolor diurno que aumenta con la sobrecarga del brazo"]]},{"tipo":"parrafo","texto":"Solo el **50 %** de los pacientes desarrolla síntomas: dolor y debilidad en ABD y rotaciones, **RE dolorosa**, menor rango activo y cuadro similar al subacromial **sin aumento reciente de carga**. Diagnóstico: **RX AP y axial** (las calcificaciones «blandas» pueden no verse) y **ecografía** (depósito hiperecoico con o sin sombra acústica posterior)."},{"tipo":"figura","pagina":62,"pie":"Calcificación del supraespinoso (flecha) en radiografía y en ecografía del mismo paciente; diámetro máximo de 7 mm. Observa el foco hiperecoico en la imagen ecográfica.","src":"img/patologia-quirurgica-i-t11-tema-11-sindrome-subacromial-p62.jpg"},{"tipo":"tabla","titulo":"Tratamiento de la tendinopatía calcificante","columnas":["Opción","Detalle"],"filas":[["Fase aguda","Reposo, analgesia, AINEs, crioterapia, infiltraciones; AINEs eficaces a corto plazo (**14 días**); corticoides prometedores a corto plazo"],["Fisioterapia + AINEs","Eficaz, con **≈28 % de fracaso** (síntomas persistentes a los 6 meses)"],["US-PICT / barbotaje","Aspiración ecoguiada con 1 o 2 agujas, lavado salino a presión intermitente y corticoide de baja solubilidad en la bursa. Consenso ESSR (Delphi): factible, seguro y eficaz. **No indicado si asintomático o ≤ 5 mm**"],["Cirugía","Fracaso del conservador **6-12 meses**; exéresis artroscópica + extracción de la bolsa subacromial; **90 % buenos resultados**; abordaje longitudinal; sin consenso sobre exéresis parcial o total"]]},{"tipo":"perla","texto":"El dolor **nocturno subagudo** con Hawkins muy positivo en una mujer de 30-60 años sin aumento de carga orienta a fase de **reabsorción** de una calcificación: es una fase dolorosa pero que tiende a la curación espontánea."}]},{"id":"biceps","titulo":"Tendinopatía de la porción larga del bíceps","bloques":[{"tipo":"parrafo","texto":"Combina **degeneración del tendón e inflamación crónica de la vaina**, típica en deportistas; causas: traumatismo, degeneración e inflamación tras sobrecarga. Se asocia a desgarros del manguito **hasta en el 90 %** y a lesiones SLAP, lo que dificulta el diagnóstico solo con la exploración. El tendón se estabiliza por la **polea del bíceps**: subescapular, supraespinoso, ligamento coracohumeral, inserción del pectoral mayor y ligamento falciforme."},{"tipo":"lista","items":["Clínica: **dolor en la corredera bicipital** (parte anterior del hombro), bien localizado; dolor, debilidad y/o sensación de inestabilidad.","**Maniobra de Yergason**: supinación contrarresistencia con el codo a 90° de flexión.","Imagen: RX (elevación de la cabeza humeral); ECO y RNM (engrosamiento tendinoso, derrame).","Rotura: hinchazón, equimosis, gran hematoma y **deformidad de Popeye**.","Inyección anestésica diagnóstica en distintas localizaciones, incluida la vaina del tendón."]},{"tipo":"tabla","titulo":"Tenotomía frente a tenodesis","columnas":["Rasgo","Tenotomía","Tenodesis"],"filas":[["Técnica","Cortar la porción larga en su origen manteniendo el labrum","Liberar el tendón y fijarlo en otro lugar: manguito, ligamento humeral transverso, surco bicipital supra o subpectoral"],["Paciente típico","Edad avanzada (la estética preocupa menos)","Jóvenes y activos (estética más importante)"],["Notas","Alivio del dolor excelente","Controversia sobre el mejor método de fijación"]]},{"tipo":"dato","valor":"Hasta 20 %","texto":"Pérdida potencial de fuerza de flexión del codo tras una rotura completa no reparada (criterio quirúrgico si el paciente no la acepta junto con el Popeye)."},{"tipo":"alerta","texto":"La literatura **no permite afirmar** que tenodesis o tenotomía sea superior: la elección depende sobre todo de la **edad, la actividad y la importancia estética** para el paciente."}]},{"id":"capsulitis","titulo":"Capsulitis adhesiva (hombro congelado)","bloques":[{"tipo":"parrafo","texto":"También llamada **hombro congelado** o **capsulitis retráctil**. Afecta a **mujeres de 50-60 años**, especialmente con **hipotiroidismo o diabetes**; incidencia **2,5 %**, bilateral en el **15-30 %**. Secuencia: cápsula → inflamación → dolor → adhesión → retracción → rigidez."},{"tipo":"tabla","titulo":"Factores etiológicos","columnas":["Intrínsecos","Extrínsecos"],"filas":[["Tendinopatía calcificante del supraespinoso","Espondilosis cervical"],["Rotura parcial del manguito","Hernia discal cervical"],["Tendinopatía bicipital","Infarto de miocardio; pleuresía basal"],["Inmovilización prolongada","Poscirugías"]]},{"tipo":"esquema","titulo":"Fases de la capsulitis adhesiva","mermaid":"flowchart LR\n  A[\"Fase dolorosa: 2-9 meses\"] --> B[\"Fase de rigidez: 3-12 meses\"]\n  B --> C[\"Fase de resolucion: 12-42 meses\"]\n  A -.-> A1[\"Dolor difuso y rigidez progresiva\"]\n  B -.-> B1[\"Menos dolor, mas rigidez, menor arco\"]\n  C -.-> C1[\"Rigidez sin dolor; limitacion de rotaciones y ABD\"]","pie":"Diagnóstico con RX, RNM y gammagrafía."},{"tipo":"tabla","titulo":"Tratamiento según la fase","columnas":["Fase","Medidas"],"filas":[["Dolorosa","**Reposo** (forzar el movimiento agrava), AINEs, analgésicos, termoterapia, infiltración, fisioterapia (US, diadinámicas, ejercicios, terapia manual)"],["Rigidez-resolución","Electroterapia, termoterapia, **cinesiterapia para estirar la cápsula** y ejercicios domiciliarios"],["Tardía sin recuperación","Artroscopia o cirugía abierta para liberar contractura y adherencias, seguida de rehabilitación"]]},{"tipo":"alerta","texto":"En la **fase dolorosa** no se fuerza la movilidad: el temario indica que forzar el movimiento **agrava** la situación. El estiramiento capsular se reserva para la fase de rigidez-resolución."}]},{"id":"luxacion-inestabilidad","titulo":"Luxación e inestabilidad glenohumeral","bloques":[{"tipo":"dato","valor":"40-60 % · 98 %","texto":"La luxación glenohumeral supone el 40-60 % de todas las luxaciones (incidencia 1-2 %) y es anterior en el 98 %."},{"tipo":"parrafo","texto":"Típica de **jóvenes (20-40 años)**. Se diagnostica por clínica y RX: **hombro en charretera** con acromion prominente, brazo en ligera ABD, codo flexionado y antebrazo en rotación interna sostenido por la otra mano. Complicaciones: **fracturas del troquíter y del cuello humeral**, roturas del manguito, **lesiones nerviosas (sobre todo del nervio circunflejo)** y, raras, lesiones vasculares."},{"tipo":"figura","pagina":109,"pie":"Luxación anterior de hombro: cabeza humeral fuera de la glena y aspecto clínico en charretera (hombro aplanado, acromion prominente, antebrazo en RI sostenido por la otra mano).","src":"img/patologia-quirurgica-i-t11-tema-11-sindrome-subacromial-p109.jpg"},{"tipo":"tabla","titulo":"Tratamiento de la luxación","columnas":["Aspecto","Detalle"],"filas":[["Reducción cerrada","Maniobras de **Kocher**, de Motes y de Hipócrates"],["Secuencia de Kocher","**Tracción → RE → ADD → RI**"],["Tras la reducción","**Cabestrillo 4 semanas** y **reposo deportivo 3 meses**"],["Cirugía","Casos irreductibles, recidivantes o con inestabilidad"]]},{"tipo":"lista","items":["**Signo del cajón anterior y posterior**: se desplaza el húmero hacia delante y atrás para detectar inestabilidad; dolor en la articulación anterior y en la fosa supraespinosa (posterior).","**Prueba de aprehensión** (Crank): decúbito supino, codo a 90°, RE hasta el bloqueo doloroso; el paciente siente que el hombro se va a luxar.","**Test de fulcro**: misma maniobra con el paciente tumbado; puede desencadenar una luxación, por lo que se realiza con cuidado."]},{"tipo":"perla","texto":"Tras reducir una luxación anterior, explora siempre la **sensibilidad del muñón del hombro y el deltoides**: la lesión del **nervio circunflejo** es la complicación nerviosa más frecuente."}]}],"caso_clinico":{"titulo":"Mujer de 45 años con dolor nocturno de hombro","presentacion":"Mujer de 45 años, administrativa diestra, sin traumatismo ni aumento de actividad, con dolor en el hombro derecho desde hace 3 semanas que la despierta por la noche y se irradia al brazo. Hawkins muy positivo, rotación externa dolorosa y disminución del rango activo. En la RX aparece una calcificación de 18 mm en el supraespinoso.","preguntas":[{"pregunta":"¿Qué diagnóstico y fase clínica sospechas?","respuesta":"**Tendinopatía calcificante del supraespinoso** (80 % de los casos, mujer de 30-60 años, brazo dominante) en **fase subaguda**: dolor permanente de predominio nocturno por reabsorción del calcio, irradiado al brazo y con Hawkins +++."},{"pregunta":"¿Qué relevancia tiene el tamaño de la calcificación?","respuesta":"Una calcificación **> 1,5 cm** se correlaciona con exacerbación de síntomas. Además supera los **5 mm**, por lo que, si es sintomática y fracasa el tratamiento inicial, sería candidata a **US-PICT (barbotaje)**."},{"pregunta":"¿Cómo plantearías el tratamiento escalonado?","respuesta":"Fase aguda: reposo relativo, AINEs a corto plazo (≈14 días), crioterapia e infiltración; fisioterapia + AINEs (≈28 % de fracaso a 6 meses). Si persiste: **barbotaje** ecoguiado; si fracasa el conservador **6-12 meses**, exéresis artroscópica con extracción de la bolsa subacromial (≈90 % buenos resultados)."}]},"preguntate":[{"pregunta":"¿Qué estructuras forman el arco coracoacromial?","respuesta":"El borde anterior del acromion, la articulación acromioclavicular y el ligamento coracoacromial."},{"pregunta":"¿Qué términos recomienda ICON 2019 y por qué?","respuesta":"Síndrome de dolor subacromial o dolor de hombro relacionado con el manguito, porque el tendón como fuente principal del dolor no puede determinarse clínicamente."},{"pregunta":"Describe la clínica típica del síndrome subacromial.","respuesta":"Dolor difuso deltoideo y lateral del brazo, de predominio nocturno, que aumenta con ABD + RI + antepulsión y en la ABD activa de 80-120°."},{"pregunta":"¿Cuándo debe operarse una rotura del manguito y cuándo no?","respuesta":"Las traumáticas agudas en pacientes activos deben operarse por el riesgo de retracción y degeneración grasa; las degenerativas crónicas se tratan primero de forma conservadora, y algunas extensas en mayores o asintomáticos con buen rango y fuerza pueden no repararse."},{"pregunta":"¿En qué consiste la descompresión subacromial artroscópica?","respuesta":"Con 3 portales (posterior, lateral y anterior) se retira tejido de la cara inferior del acromion y, con fresa, como máximo su mitad anterior, para reducir la presión sobre el supraespinoso."},{"pregunta":"¿Cómo se explora una rotura completa del manguito?","respuesta":"El paciente no puede iniciar la ABD y encoge el hombro, pero si se coloca el brazo pasivamente a 90° puede mantenerlo gracias al deltoides."},{"pregunta":"Explica la formación y reabsorción de las calcificaciones.","respuesta":"Se forman por metaplasia condrocitaria de la matriz que rodea a los tenocitos; se reabsorben, a menudo tras una crisis dolorosa, por macrófagos y células multinucleadas tipo osteoclasto acompañados de vasos."},{"pregunta":"¿Cuáles son las contraindicaciones del barbotaje?","respuesta":"Pacientes asintomáticos o calcificaciones de 5 mm o menos."},{"pregunta":"¿Cómo decides entre tenotomía y tenodesis del bíceps?","respuesta":"Tenotomía en pacientes mayores, a los que la estética preocupa menos; tenodesis en jóvenes y activos. La literatura no demuestra la superioridad de ninguna."},{"pregunta":"Enumera las fases de la capsulitis adhesiva con su duración.","respuesta":"Dolorosa (2-9 meses), de rigidez (3-12 meses) y de resolución (12-42 meses)."}],"glosario":[{"termino":"Arco coracoacromial","definicion":"Techo osteoligamentoso del espacio subacromial: acromion, articulación acromioclavicular y ligamento coracoacromial."},{"termino":"Os acromiale","definicion":"Variante morfológica del acromion no fusionado, factor de compresión subacromial."},{"termino":"ASAD","definicion":"Descompresión subacromial artroscópica o acromioplastia."},{"termino":"Desbridamiento","definicion":"Extracción de fragmentos tendinosos sueltos y restos articulares antes de la reparación."},{"termino":"Metaplasia","definicion":"Cambio reversible en el que una célula diferenciada es sustituida por otro tipo celular (aquí, condrocitos)."},{"termino":"US-PICT / barbotaje","definicion":"Irrigación percutánea ecoguiada para aspirar y lavar una calcificación del manguito."},{"termino":"Yergason","definicion":"Supinación contrarresistencia con codo a 90°, positiva en la patología de la porción larga del bíceps."},{"termino":"Deformidad de Popeye","definicion":"Abultamiento distal del vientre del bíceps tras la rotura de su porción larga."},{"termino":"Tenodesis","definicion":"Fijación de la porción larga del bíceps en otra localización tras liberarla de su origen."},{"termino":"Hombro en charretera","definicion":"Aspecto de la luxación anterior con hombro aplanado y acromion prominente."},{"termino":"Maniobra de Kocher","definicion":"Reducción de la luxación anterior mediante tracción, rotación externa, aducción y rotación interna."},{"termino":"Prueba de aprehensión","definicion":"RE con el codo a 90° en supino que provoca sensación de luxación inminente en la inestabilidad anterior."}],"fuentes":["Tema 11. Síndrome subacromial. Patología Quirúrgica I, Universidad Europea de Valencia, 2026-2027.","Consenso ICON 2019 sobre terminología del dolor de hombro relacionado con el manguito de los rotadores.","Consenso Delphi de los subcomités de Ecografía e Intervencionismo de la ESSR sobre la US-PICT."],"qcm":[{"pregunta":"¿Qué estructura NO forma parte del arco coracoacromial según el temario?","opciones":["Borde anterior del acromion","Ligamento coracoacromial","Ligamento coracohumeral","Articulación acromioclavicular"],"correcta":2,"explicacion":"El arco coracoacromial lo forman el borde anterior del acromion, la articulación acromioclavicular y el ligamento coracoacromial. El ligamento coracohumeral forma parte de la polea del bíceps.","por_opcion":["❌ El borde anterior del acromion es un componente del arco.","❌ El ligamento coracoacromial es un componente del arco.","✅ El coracohumeral pertenece a la polea bicipital, no al arco.","❌ La acromioclavicular es un componente del arco."]},{"pregunta":"¿A qué distancia de la inserción del supra e infraespinoso se sitúa la zona avascular descrita como factor etiológico?","opciones":["A 5 mm de la huella","A 1,5 cm","A 2,5 cm","A 0,5 cm"],"correcta":1,"explicacion":"El temario cita una zona avascular a 1,5 cm de la inserción de supra e infraespinoso como factor vascular del síndrome subacromial.","por_opcion":["❌ 5 mm es el umbral que contraindica el barbotaje.","✅ Zona avascular a 1,5 cm.","❌ No es la distancia citada.","❌ No es la distancia citada."]},{"pregunta":"Respecto a los signos de Neer y Hawkins en el síndrome subacromial, es correcto que:","opciones":["Son muy sensibles y poco específicos","Son muy específicos y poco sensibles","Confirman el origen tendinoso del dolor","Solo son válidos con manguito roto"],"correcta":0,"explicacion":"Las maniobras de pinzamiento de Neer y Hawkins son muy sensibles pero poco específicas; ICON 2019 recuerda que el tendón como fuente del dolor no puede determinarse clínicamente.","por_opcion":["✅ Afirmación del temario.","❌ Es al revés: alta sensibilidad, baja especificidad.","❌ Por su baja especificidad no confirman el origen tendinoso.","❌ Se usan como maniobras de pinzamiento, con o sin rotura."]},{"pregunta":"Un paciente activo sufre una rotura traumática aguda del manguito. Según el temario:","opciones":["Debe tratarse quirúrgicamente por riesgo de retracción y degeneración grasa","Debe tratarse primero 6 meses con fisioterapia","Se trata igual que una rotura degenerativa crónica","Solo precisa infiltración y reposo relativo"],"correcta":0,"explicacion":"Las lesiones traumáticas agudas deben operarse, especialmente en activos, porque desarrollan retracción, atrofia y degeneración grasa y un conservador prolongado fallido condiciona la reparación secundaria.","por_opcion":["✅ Indicación quirúrgica del temario.","❌ Los 6 meses de conservador se aplican con manguito íntegro.","❌ Las degenerativas crónicas se tratan inicialmente de forma conservadora.","❌ Insuficiente para una rotura traumática aguda en un activo."]},{"pregunta":"En la descompresión subacromial artroscópica, ¿qué portal realiza la descompresión de forma específica?","opciones":["El portal lateral","El portal posterior","El portal anterior exclusivamente","Un portal superior transacromial"],"correcta":0,"explicacion":"El portal posterior se usa para visualizar toda la articulación, el lateral realiza la descompresión y el anterior puede servir para ambas funciones.","por_opcion":["✅ El lateral realiza la descompresión.","❌ El posterior es el portal de visualización.","❌ El anterior puede usarse para ambas cosas, no exclusivamente.","❌ No se describe un portal transacromial."]},{"pregunta":"¿Cuánto acromion se reseca como máximo con la fresa acromial en la ASAD?","opciones":["El cuarto lateral","El tercio posterior","La totalidad de la cara inferior","La mitad anterior"],"correcta":3,"explicacion":"Se retira tejido de la superficie inferior del acromion y con el acromionizer como máximo la mitad anterior del acromion.","por_opcion":["❌ No es la referencia del temario.","❌ La resección es anterior, no posterior.","❌ No se reseca la totalidad.","✅ Como máximo la mitad anterior."]},{"pregunta":"Paciente de 65 años que no puede iniciar la abducción y encoge el hombro, pero mantiene el brazo a 90° si se lo colocan pasivamente. Sospechas:","opciones":["Tendinopatía calcificante en fase crónica","Luxación glenohumeral anterior","Capsulitis adhesiva en fase de rigidez","Rotura completa del manguito rotador"],"correcta":3,"explicacion":"En la rotura completa el paciente no puede iniciar la ABD y encoge el hombro, pero mantiene los 90° pasivos gracias al deltoides.","por_opcion":["❌ La fase crónica calcificante da dolor diurno con sobrecarga.","❌ La luxación cursa con hombro en charretera y deformidad.","❌ En la capsulitis la limitación es pasiva y activa por rigidez capsular.","✅ Cuadro típico de rotura completa."]},{"pregunta":"En la tendinopatía calcificante, ¿qué tendón se afecta con mayor frecuencia y en qué proporción?","opciones":["Supraespinoso, 15 %","Supraespinoso, 80 %","Infraespinoso, 80 %","Subescapular, 42 %"],"correcta":1,"explicacion":"El supraespinoso se afecta en el 80 %, el infraespinoso en el 15 % y es bilateral en el 15-20 %.","por_opcion":["❌ 15 % corresponde al infraespinoso.","✅ Supraespinoso 80 %.","❌ El infraespinoso supone el 15 %.","❌ 42 % es el límite superior de prevalencia en hombros dolorosos crónicos."]},{"pregunta":"¿Qué mecanismo explica, según la hipótesis más aceptada, la formación de las calcificaciones del manguito?","opciones":["Depósito distrófico por microrroturas repetidas del trabajo manual","Necrosis isquémica en la zona avascular","Actividad de células multinucleadas tipo osteoclasto","Metaplasia condrocitaria de la matriz pericelular"],"correcta":3,"explicacion":"La mineralización se iniciaría por metaplasia de condrocitos, de modo que la matriz alrededor de los tenocitos se vuelve cartilaginosa; no se asocia al trabajo manual.","por_opcion":["❌ El temario señala que no se asocia al trabajo manual.","❌ No es la hipótesis de formación del temario.","❌ Esas células intervienen en la reabsorción, no en la formación.","✅ Metaplasia condrocitaria."]},{"pregunta":"Dolor permanente de predominio nocturno, irradiado al brazo, con Hawkins +++ en una tendinopatía calcificante corresponde a la fase:","opciones":["De crisis aguda","De formación","Crónica","Subaguda"],"correcta":3,"explicacion":"La fase subaguda cursa con dolor permanente de predominio nocturno por la reabsorción del calcio, irradiado al brazo, y Hawkins muy positivo.","por_opcion":["❌ La crisis aguda da impotencia funcional total y dolor agudo espontáneo.","❌ La formación no se describe con esta clínica.","❌ La crónica da dolor diurno con sobrecarga.","✅ Fase subaguda."]},{"pregunta":"¿En cuál de estas situaciones NO está indicado el barbotaje (US-PICT)?","opciones":["Calcificación sintomática de 7 mm","Calcificación asintomática de 9 mm","Calcificación sintomática de 18 mm","Calcificación sintomática de 12 mm"],"correcta":1,"explicacion":"El barbotaje no está indicado en pacientes asintomáticos ni con calcificaciones de 5 mm o menos.","por_opcion":["❌ Sintomática y > 5 mm: puede indicarse.","✅ Al ser asintomática, no está indicado.","❌ Sintomática y > 5 mm: puede indicarse.","❌ Sintomática y > 5 mm: puede indicarse."]},{"pregunta":"¿Qué tasa de fracaso tiene la combinación de fisioterapia y AINEs en la tendinopatía calcificante?","opciones":["Aproximadamente el 50 %","Aproximadamente el 90 %","Aproximadamente el 10 %","Aproximadamente el 28 %"],"correcta":3,"explicacion":"Fisioterapia + AINEs es eficaz, pero con un fracaso terapéutico de ≈28 %, definido como tendinopatía sintomática persistente a los 6 meses.","por_opcion":["❌ 50 % es la proporción de calcificaciones que dan síntomas.","❌ 90 % son los buenos resultados de la cirugía.","❌ No es la cifra del temario.","✅ ≈28 %."]},{"pregunta":"¿Qué maniobra explora la porción larga del bíceps mediante supinación contrarresistencia con el codo a 90°?","opciones":["Yergason","Codman","Finkelstein","Jobe"],"correcta":0,"explicacion":"La maniobra de Yergason es la supinación del antebrazo contrarresistencia con el codo en flexión de 90°.","por_opcion":["✅ Yergason.","❌ Codman se cita en la rotura del manguito.","❌ Finkelstein es para De Quervain.","❌ Jobe explora el supraespinoso."]},{"pregunta":"Según el temario, la tenotomía del bíceps se indica preferentemente en:","opciones":["Pacientes jóvenes preocupados por la estética","Trabajadores manuales con inestabilidad","Pacientes de edad avanzada","Atletas de élite con rotura completa"],"correcta":2,"explicacion":"La tenotomía se indica en pacientes de edad avanzada, en los que la estética preocupa menos; la tenodesis en jóvenes y activos.","por_opcion":["❌ En jóvenes preocupados por la estética se prefiere la tenodesis.","❌ Son criterio de cirugía, sin preferencia por tenotomía.","✅ Indicación de la tenotomía.","❌ Los atletas de élite son candidatos quirúrgicos, típicamente a tenodesis."]},{"pregunta":"¿Cuál es la secuencia de la maniobra de Kocher para reducir una luxación anterior de hombro?","opciones":["RE, tracción, RI, ABD","Tracción, RI, ABD, RE","Tracción, RE, ADD, RI","ABD, tracción, RE, ADD"],"correcta":2,"explicacion":"Kocher: tracción, rotación externa, aducción y rotación interna; tras la reducción, cabestrillo 4 semanas y reposo deportivo 3 meses.","por_opcion":["❌ No empieza por RE.","❌ Orden y movimientos incorrectos.","✅ Secuencia de Kocher.","❌ No empieza por ABD."]}],"asignatura":"Patología quirúrgica I","tema":11,"fecha":"2026-11-10"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips"><a class="chip" href="../index.html" style="text-decoration:none">← Mis fichas</a>${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* dernière fiche ouverte + carnet d'erreurs + envoi du score vers Notion */
+const slugPag = location.pathname.split('/').pop().replace(/\.html$/, '');
+const carpeta = grande ? 'qcm' : 'fichas';
+try{ localStorage.setItem('ultima', JSON.stringify({href:`${carpeta}/${slugPag}.html`, titulo:F.titulo, t:Date.now()})); }catch(e){}
+function errorGuardar(k, fallo){
+  try{
+    const E = JSON.parse(localStorage.getItem('errores')||'{}'), id = `${slugPag}#${k}`;
+    if(fallo){ const q = Q[k]; E[id] = {id, curso:F.asignatura, tema:(F.tema ?? q.tema ?? null), titulo:F.titulo, href:`${carpeta}/${slugPag}.html`, q:{pregunta:q.pregunta, opciones:q.opciones, correcta:q.correcta, explicacion:q.explicacion, por_opcion:q.por_opcion}, n:(E[id]?.n||0)+1, t:Date.now()}; }
+    else delete E[id];
+    localStorage.setItem('errores', JSON.stringify(E));
+  }catch(e){}
+}
+async function enviarScore(ok, n){
+  const el = document.getElementById('envio'); if(!el) return;
+  if(grande || !window.FICHAS_RELAY){ el.textContent = ''; return; }
+  el.textContent = 'Enregistrement dans Notion…';
+  try{
+    const r = await fetch(window.FICHAS_RELAY, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({url:location.origin+location.pathname, score:ok, total:n})});
+    const j = await r.json();
+    el.textContent = j.ok ? '✓ Score enregistré dans Notion' + (j.proxima ? ` · prochaine révision : ${j.proxima}` : '') : 'Score non enregistré dans Notion (' + (j.error||'erreur') + ')';
+  }catch(e){ el.textContent = 'Score non enregistré dans Notion (hors ligne ?)'; }
+}
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; errorGuardar(k, !resp[k].ok); marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  const completo = n===Q.length;
+  if(completo) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado!':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p><p id="envio" style="font-size:.9rem;color:var(--suave);margin:0 auto 14px"></p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  if(completo) enviarScore(ok, n);
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>
