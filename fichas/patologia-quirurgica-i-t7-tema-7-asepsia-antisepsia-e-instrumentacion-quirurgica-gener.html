@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Tema 7: Asepsia, antisepsia e instrumentación quirúrgica general · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script src="../config.js"></script>
+<script id="datos" type="application/json">{"titulo":"Tema 7: Asepsia, antisepsia e instrumentación quirúrgica general","subtitulo":"Historia de la asepsia, cadena epidemiológica, limpieza, desinfección y esterilización (Spaulding), antisépticos, lavado de manos, vestido y enguantado estéril, preparación de la piel, campos quirúrgicos e instrumental quirúrgico.","resumen":["La infección se explica por la **cadena epidemiológica** (agente, reservorio, puerta de salida, **mecanismo de transmisión**, puerta de entrada y huésped susceptible), cuyo eslabón más importante es la **transmisión**, que se rompe con **higiene de manos, desinfección, limpieza y esterilización**.","**Spaulding (1968)** clasifica el material en **crítico** (tejido estéril o vascular → **esterilización**), **semicrítico** (mucosas o piel no intacta → **desinfección de alto nivel**) y **no crítico** (piel intacta → desinfección de bajo nivel o limpieza); la **limpieza previa** es imprescindible siempre.","La **desinfección** destruye patógenos salvo las **esporas** (glutaraldehído al 2 % es el más usado), mientras que la **esterilización** destruye toda forma de vida incluidas las esporas, por métodos físicos (**Poupinel**, **autoclave**), químicos (**óxido de etileno**, peróxido de hidrógeno/gas plasma, ácido peracético) o físico-químicos (formaldehído).","La **asepsia** busca ambientes y materiales estériles; la **antisepsia** aplica sustancias químicas sobre **piel o mucosas** (povidona yodada, **clorhexidina**, alcohol) y **nunca** se usa para desinfectar instrumentos o superficies.","El lavado de manos puede ser **higiénico (30 s)**, **antiséptico (60 s)** o **quirúrgico** (2 min + cepillado de uñas 30 s por mano + 2 min, manos por encima de los codos); el instrumental se clasifica en **diéresis, disección, prehensión, hemostasia, exposición, síntesis y especiales** y se ordena de **izquierda a derecha**."],"objetivos":["Reconocer los hitos históricos de la asepsia y la antisepsia y a sus protagonistas.","Explicar la cadena epidemiológica y cómo romperla.","Aplicar la clasificación de Spaulding y diferenciar limpieza, desinfección (alto, intermedio y bajo nivel) y esterilización.","Distinguir asepsia de antisepsia y elegir el antiséptico adecuado según sus propiedades.","Describir los tipos de lavado de manos, el vestido y enguantado estéril, la preparación de la piel, los campos y el instrumental quirúrgico."],"ideas_clave":["El eslabón más importante de la cadena epidemiológica es el **mecanismo de transmisión**.","Sin **limpieza** previa no hay desinfección ni esterilización eficaces: la materia orgánica impide la acción del agente.","Spaulding: **crítico → esterilizar**; **semicrítico → DAN**; **no crítico → DBN o limpieza**.","La desinfección **no elimina esporas**; la esterilización sí, y es un **concepto absoluto**.","Antiséptico = sobre tejido vivo (piel, mucosas, heridas); desinfectante = sobre objetos inertes. **Nunca** se intercambian.","Clorhexidina: acción rápida, efecto **6-48 h**, **no se inactiva** con materia orgánica; povidona yodada: acción gradual, efecto **4 h**, **sí se inactiva**.","Lavado higiénico **30 s**, antiséptico **60 s**, quirúrgico con **2 + 2 min** de enjabonado y cepillado de uñas; aclarado de la punta de los dedos al codo.","Mínimo **4 campos** alrededor de la incisión y **2** en el resto; un campo colocado **no se mueve**: si está mal, se descarta."],"secciones":[{"id":"historia","titulo":"Historia de la asepsia y la antisepsia","bloques":[{"tipo":"parrafo","texto":"La cirugía moderna es fruto del control del **dolor** (anestesia), de la **hemorragia** (hemostasia) y de la **infección** (asepsia y antisepsia). Los antecedentes se remontan a la Antigüedad, pero pasaron siglos antes de que los cirujanos comprendieran **por qué** había que lavar."},{"tipo":"tabla","titulo":"Protagonistas de la historia","columnas":["Personaje","Aportación"],"filas":[["Hipócrates","Presagió la asepsia: **vino o agua hervida** para lavar heridas"],["Galeno","**Hervía los instrumentos** con los que atendía a los gladiadores en Roma"],["Semmelweis (1847)","Ginecólogo húngaro: relacionó la **fiebre puerperal** con médicos que venían de la sala de **autopsias**; lavado de manos con agua jabonosa caliente y cepillo, seguido de **agua clorada** (manos, canal del parto, instrumental)"],["Pasteur","Validó la **teoría de los gérmenes**: detener su proliferación con **calor**"],["Lister","**Antisepsia química**: **ácido carbólico (fenol)** en heridas, apósitos y pulverizado en el campo; suturas absorbibles estériles. Error: creía que el cepillado producía grietas que favorecían las bacterias"],["Von Bergmann (1886)","Esterilización por calor: **autoclave**"],["MacEwen","Abandonó el ácido fénico y esterilizó gasas por **ebullición**: **precursor del método aséptico**"],["Mikulicz","Guantes **esterilizados al vapor**, que se humedecían y había que cambiar"],["Halsted (1890)","**Guantes de goma** para su instrumentista **Caroline Hampton**"],["Florence Nightingale","Madre de la enfermería moderna; teoría del **entorno**: aire puro, agua pura, drenaje eficaz, limpieza y luz"],["1979","**Comités de infecciones hospitalarias** y protocolos"]]},{"tipo":"alerta","texto":"No confundas: **Lister** = antisepsia **química** (fenol); **Von Bergmann** = esterilización por **calor (autoclave)**; **MacEwen** = precursor de la **asepsia** (ebullición). El paso histórico es de destruir gérmenes en la herida (antisepsia) a impedir que lleguen (asepsia)."}]},{"id":"infeccion","titulo":"Infección y cadena epidemiológica","bloques":[{"tipo":"definicion","termino":"Infección","texto":"**Entrada, establecimiento y multiplicación** de bacterias en la superficie o el interior del huésped, asociada a una **respuesta específica** del organismo con **manifestaciones clínicas**."},{"tipo":"esquema","titulo":"Cadena epidemiológica","mermaid":"flowchart LR\n  A[\"Agente infeccioso\"] --> B[\"Reservorio\"]\n  B --> C[\"Puerta de salida\"]\n  C --> D[\"Mecanismo de transmision\"]\n  D --> E[\"Puerta de entrada\"]\n  E --> F[\"Huesped susceptible\"]\n  G[\"Higiene de manos, desinfeccion, limpieza, esterilizacion\"] -.->|\"rompen\"| D","pie":"Seis eslabones; el más importante es el mecanismo de transmisión y es el que rompemos con las medidas de higiene."},{"tipo":"perla","texto":"En la sala de fisioterapia hospitalaria la herramienta más potente para cortar la transmisión es la **higiene de manos** entre pacientes y la limpieza/desinfección de camillas y material que toca piel (material **no crítico**)."},{"tipo":"parrafo","texto":"La **justificación** de todo el tema es conservar la **esterilidad** del material y los dispositivos mediante la **técnica aséptica** y preparar correctamente la piel o mucosas con antisépticos (**técnica antiséptica**) antes de cualquier procedimiento invasivo, para controlar las infecciones asociadas a la atención sanitaria."}]},{"id":"limpieza-desinfeccion-esterilizacion","titulo":"Limpieza, desinfección y esterilización","bloques":[{"tipo":"definicion","termino":"Limpieza","texto":"Eliminación de suciedad y materia orgánica, **imprescindible antes** de desinfectar o esterilizar; manual, con lavadoras eléctricas o por **ultrasonidos**."},{"tipo":"tabla","titulo":"Clasificación de Spaulding (1968)","columnas":["Categoría","Contacto con","Tratamiento","Ejemplos"],"filas":[["Crítico","**Tejidos estériles o sistema vascular**","**Esterilización**","Instrumental quirúrgico, implantes, agujas, catéteres, laparoscopios, artroscopios"],["Semicrítico","**Mucosas y piel no intacta**","**Desinfección de alto nivel** (o esterilización si el material lo permite)","Endoscopios, laringoscopios, broncoscopios, tubos endotraqueales, respiradores"],["No crítico","**Piel intacta**","Desinfección de **bajo nivel** o solo limpieza","Cuñas, manguitos de presión, cables de ECG"]]},{"tipo":"definicion","termino":"Desinfección","texto":"Destrucción de los microorganismos **patógenos** y de parte de la flora saprofita; destruye bacterias, virus y hongos **salvo las formas esporuladas**. El desinfectante debe eliminar los patógenos en **15-30 min** sin alterar el material."},{"tipo":"tabla","titulo":"Niveles de desinfección","columnas":["Nivel","Elimina","No elimina","Uso"],"filas":[["Alto (DAN)","Todos los microorganismos","Grandes poblaciones de **endoesporas**","Instrumentos críticos y semicríticos; **glutaraldehído**"],["Intermedio (DNI)","Bacterias vegetativas **incluidas micobacterias**, mayoría de virus y hongos","Esporas","—"],["Bajo (DBN)","Mayoría de bacterias, algunos virus y hongos","**Bacilo tuberculoso** y esporas","Instrumentos no críticos"]]},{"tipo":"tabla","titulo":"Desinfectantes del tema","columnas":["Agente","Características"],"filas":[["Glutaraldehído 2 % y glutaraldehído fenolato","Los **más empleados**; DAN"],["Amonio cuaternario (cloruro de benzalconio)","Bactericida, fungicida, viricida; atóxico, incoloro, no mancha; **acción detergente**; soluble en agua; desinfección hospitalaria"],["Alcohol","Antiséptico y desinfectante; bactericida, variable frente a hongos y virus, **no esporicida**; óptimo **70 %**; evaporable, inflamable, endurece gomas y plásticos"],["Cloro (1000-5000 ppm)","Evaporación rápida, **pierde efecto en 20 min**; el olor no implica efecto; **inactivo con materia orgánica**"],["Triclosán","Antibacteriano y antifúngico; conservante en cosmética; **disruptor endocrino**; se degrada en el medio ambiente en productos muy tóxicos"],["Ortoftaldehído, ácido peracético","Otros desinfectantes citados"]]},{"tipo":"definicion","termino":"Esterilización","texto":"Destrucción de **toda forma de vida microbiana, incluidas las esporas**. Es un **concepto absoluto**, aunque la ausencia total de gérmenes es imposible de demostrar: se considera alcanzada cuando el proceso y sus controles están validados."},{"tipo":"tabla","titulo":"Métodos de esterilización","columnas":["Tipo","Método","Equipo"],"filas":[["Físicos","Calor seco","Estufa **Poupinel**"],["Físicos","Vapor de agua a presión","**Autoclave** de vapor"],["Químicos","Óxido de etileno","Autoclave de gas"],["Químicos","Peróxido de hidrógeno","**Gas plasma**"],["Químicos","Ácido peracético","Esterilizador peracético"],["Físico-químico","Formaldehído","Esterilizador de vapor de formaldehído"]]},{"tipo":"figura","pagina":32,"pie":"Óxido de etileno: ventajas (material termosensible y cortante, gran penetración), inconvenientes (tóxico, cancerígeno, exige aireación, más lento) y condiciones de esterilización.","src":"img/patologia-quirurgica-i-t7-tema-7-asepsia-antisepsia-e-instrumentacion-quirurgica-gener-p32.jpg"},{"tipo":"dato","valor":"40-80 % · 30-60 ºC · 600-900 mg/L · 1-5 h","texto":"Condiciones de esterilización con **óxido de etileno**: humedad, temperatura, concentración y tiempo."},{"tipo":"alerta","texto":"Trampa: la **desinfección de alto nivel** no es esterilización, porque puede dejar **grandes poblaciones de endoesporas**. Y la de **bajo nivel** no elimina el **bacilo de la tuberculosis**, que sí cae con la de nivel intermedio."},{"tipo":"dato","valor":"15-30 min","texto":"Tiempo en el que un desinfectante debe eliminar los patógenos del material inerte sin dañarlo."}]},{"id":"asepsia-antisepsia","titulo":"Asepsia, antisepsia y antisépticos","bloques":[{"tipo":"tabla","titulo":"Asepsia frente a antisepsia","columnas":["","Asepsia","Antisepsia"],"filas":[["Definición","Técnicas para obtener **ambientes, superficies, instrumental y materiales estériles** (p. ej. quirófano)","Procedimientos que destruyen microorganismos patógenos aplicando **sustancias químicas sobre piel o mucosas**"],["Objetivo","Que los microorganismos **no lleguen** al cuerpo y que el profesional no contacte con fluidos infectados","Reducir o eliminar los microorganismos **presentes** en el tejido vivo"],["Cómo","Eliminar gérmenes de manos y objetos, usar material esterilizado, reducir el contacto con los no eliminados","Antisepsia **física** (succiones, drenajes), **mecánica** (baño, rasurado, exéresis de tejido desvitalizado) y **química** (bactericida o bacteriostática, inocua)"]]},{"tipo":"tarjetas","items":[{"etiqueta":"Inerte","titulo":"Desinfectante","texto":"Antimicrobiano **solo para objetos inanimados**: es un tóxico celular protoplasmático capaz de destruir materia viva."},{"etiqueta":"Vivo","titulo":"Antiséptico","texto":"Agente químico aprobado para **piel, mucosas o heridas** que inhibe el crecimiento y la reproducción de microorganismos."}]},{"tipo":"tabla","titulo":"Antisépticos principales","columnas":["Antiséptico","Inicio","Duración","Materia orgánica","Precauciones / uso"],"filas":[["Povidona yodada (Betadine)","**Gradual**","**4 h**","**Se inactiva**","Lesión cutánea; no en ojos, oídos ni mucosas; aplicar, esperar **2 min** y retirar el exceso"],["Clorhexidina (4 %)","**Rápida**","**6-48 h**","**No se inactiva**","Tóxica en oído y ojos; segura (eliminación rápida sin metabolitos); **herida abierta, niños y embarazadas**"],["Alcohol","**Muy rápida (1 min)**","Corta","—","Volátil e inflamable (lugar oscuro y sin calor); irrita y reseca; **no en heridas abiertas** (favorece coágulos donde crecen bacterias)"],["Yodo 1-3 % + alcohol 60-90 %","—","—","—","Aplicar y **dejar secar al aire**"],["Clorhexidina + cetrimida (Savlon)","—","—","—","Aplicar y retirar el exceso con gasa estéril"]]},{"tipo":"tabla","titulo":"Elegir un antiséptico","columnas":["Criterio de elección","Antiséptico ideal"],"filas":[["Espectro de actividad","**Amplio espectro**"],["Latencia (retraso de inicio)","Acción **inmediata**"],["Efecto residual","**Alta** actividad residual"],["Interferencia de materia orgánica","**Activo** en presencia de materia orgánica"],["Efectos secundarios","**Baja toxicidad** para tejidos vivos"],["Otros","Compatibilidad, solubilidad, estabilidad, **bajo coste**"]]},{"tipo":"dato","valor":"3 días · 1 mes","texto":"Los antisépticos deben emplearse hasta **3 días** una vez abiertos; el **alcohol gel y la clorhexidina, hasta 1 mes**."},{"tipo":"alerta","texto":"Los antisépticos **nunca** se usan para desinfectar instrumentos o superficies. Para no contaminarlos: no dejar gasas en remojo, verter la cantidad necesaria en una **batea estéril**, que la gasa no toque el borde del envase y **desechar la primera parte**."},{"tipo":"perla","texto":"Para una punción seca o una técnica invasiva sobre una herida abierta o en una paciente embarazada, la **clorhexidina** es la opción más coherente con el tema: rápida, persistente, no se inactiva con sangre y apta en heridas, niños y embarazo. El alcohol no se aplica sobre herida abierta."}]},{"id":"lavado-manos","titulo":"Medidas de asepsia: lavado de manos, bata y guantes","bloques":[{"tipo":"parrafo","texto":"Las medidas de asepsia se aplican **antes, durante y después** del procedimiento: lavado de manos, lavado quirúrgico, preparación del paciente, mantenimiento del campo estéril y técnicas operatorias seguras. El lavado de manos es una de las medidas **más antiguas y más eficaces** frente a la infección nosocomial."},{"tipo":"tarjetas","items":[{"etiqueta":"Residente","titulo":"Flora residente","texto":"Habitual de la piel; **no se elimina fácilmente** con la fricción."},{"etiqueta":"Transitoria","titulo":"Flora transitoria","texto":"Contaminante ocasional, de **fácil transmisión**; es la que causa **infecciones nosocomiales**."}]},{"tipo":"lista","items":["Antes y después del contacto con el paciente","Entre procedimientos si se sospecha contaminación","Antes de una tarea aséptica","Después del riesgo de exposición a fluidos corporales","Después del contacto con el entorno del paciente","Después de quitarse los guantes"]},{"tipo":"tabla","titulo":"Tipos de lavado de manos","columnas":["Tipo","Objetivo","Duración","Indicaciones"],"filas":[["Rutinario o higiénico","Elimina flora **transeúnte** y suciedad","**30 s** con jabón normal (varios minutos si mucha suciedad)","Inicio y fin de jornada; antes/después de extracciones, guantes limpios, comer, medicación; después de cuñas, WC, guantes estériles, técnicas invasivas"],["Antiséptico asistencial","Además **mata o impide el crecimiento**; algunos antisépticos actúan horas","**60 s**","Antes de **guantes estériles**, catéteres centrales/urinarios, hemocultivos, curas, aspiración bronquial; inmunodeprimidos; aislamiento"],["Quirúrgico","Impedir la proliferación en el ambiente cálido y húmedo del guante","**2 min** + cepillado de uñas **30 s/mano** + **2 min**","Procedimientos quirúrgicos y técnicas de extrema asepsia"]]},{"tipo":"figura","pagina":52,"pie":"Pasos del lavado de manos: palma con palma, entre los dedos, dorso, pulgares, detrás de los dedos, uñas, muñecas, enjuagar y secar.","src":"img/patologia-quirurgica-i-t7-tema-7-asepsia-antisepsia-e-instrumentacion-quirurgica-gener-p52.jpg"},{"tipo":"esquema","titulo":"Lavado quirúrgico paso a paso","mermaid":"flowchart TD\n  A[\"Grifo de codo: mojar manos y antebrazos\"] --> B[\"Jabon antiseptico 2 min\"]\n  B --> C[\"Cepillo esteril en unas 30 s por mano\"]\n  C --> D[\"Aclarado\"]\n  D --> E[\"Segundo enjabonado 2 min\"]\n  E --> F[\"Aclarado de la punta de los dedos al codo\"]\n  F --> G[\"Secado sin frotar, un pano por brazo\"]\n  G --> H[\"Manos por encima de los codos\"]","pie":"El agua siempre debe escurrir de los dedos hacia el codo, de la zona más limpia a la menos limpia."},{"tipo":"dato","valor":"30 s · 60 s · 2 + 2 min","texto":"Duración del enjabonado en el lavado **higiénico**, **antiséptico** y **quirúrgico**."},{"tipo":"parrafo","texto":"Para la **bata estéril** se levanta del paquete, se aleja uno de la mesa, se toma por la parte **interior** bajo el cuello y se desdobla sin tocar el exterior, deslizando ambos brazos a la altura de los hombros; la enfermera **circulante** ajusta la bata por los hombros. En el **enguantado** se toma cada guante por la **doblez del puño**, evitando tocar la muñeca descubierta, y el puño se lleva sobre la manga. Al enguantar a otro miembro se presenta la **cara palmar** hacia el cirujano con los **pulgares hacia fuera**."}]},{"id":"piel-campos","titulo":"Preparación de la piel y campos quirúrgicos","bloques":[{"tipo":"tabla","titulo":"Preparación de la piel","columnas":["Paso","Claves"],"filas":[["Ducha/baño previo","Todos los pacientes, insistiendo en la zona a intervenir"],["Rasurado","Se asocia a erupciones, lesiones exudativas y **más infecciones** → mejor **depilación química o máquina eléctrica de cabezal desechable**; guantes; **nunca cejas, pestañas ni cuero cabelludo** sin orden; evitar lunares y verrugas; comunicar lesiones"],["Lavado","Guantes estériles, toallas en la periferia, área amplia (incluir drenajes); empezar en el **sitio exacto de la incisión** en **círculos hacia fuera**; no repasar zona lavada con la misma esponja; **5 min**"],["Pintado","Antiséptico en **patrón circular** sin volver a un área ya pintada"]]},{"tipo":"tabla","titulo":"Campos quirúrgicos","columnas":["Tipo","Ventajas","Inconvenientes"],"filas":[["Tela (muselina)","Reutilizable","**No impermeable** (contaminación por traspaso) y desprende **pelusas** que transportan bacterias"],["Papel (no tejido)","**Impermeable** y desechable","**Rígido**: más propenso a contaminarse al colocarlo"]]},{"tipo":"lista","items":["Preparar y organizar los campos antes del procedimiento","Manipularlos lo menos posible y **nunca agitarlos**","Campo absorbente si se esperan muchos líquidos","Las manos enguantadas no tocan la piel preparada; proteger la mano con un bolsillo del campo","**No mover** un campo colocado: si está mal, **descartarlo**","No deben tocar el suelo; si se contaminan o perforan, descartarlos"]},{"tipo":"dato","valor":"4 / 2 campos","texto":"Mínimo de **cuatro** campos alrededor del sitio de incisión y **dos** en el resto del área."},{"tipo":"alerta","texto":"El lavado y el pintado van **del centro (incisión) hacia la periferia**, nunca al revés ni volviendo atrás: arrastrarías gérmenes de la zona no preparada al punto de incisión."}]},{"id":"instrumental","titulo":"Instrumental quirúrgico","bloques":[{"tipo":"parrafo","texto":"El instrumental es un objeto de **acero inoxidable** diseñado para el acto quirúrgico, organizado según el **tiempo quirúrgico** y la **especialidad**. Debe tener diseño preciso, ser de uso único o multiuso y **resistir desinfectantes, secreciones y esterilización**; materiales: **acero quirúrgico, cromo y vanadio**. La mesa no estéril se cubre con **doble sábana sobre paño estéril impermeable**, y gasas, compresas, agujas e instrumental se **cuentan antes y al final** con la enfermera circulante."},{"tipo":"tabla","titulo":"Clasificación del instrumental","columnas":["Grupo","Función","Ejemplos"],"filas":[["Diéresis","**Cortar**: abrir camino hacia la zona a intervenir","Bisturí (escalpelo y hojas), queratomo de Jaeger, dermatomo, pinza de Kevorkian, electrobisturí, **tijeras** (Metzenbaum, Mayo, Lister)"],["Disección","**Separar tejidos sin cortarlos** (divulsión)","Pinzas de disección, curetas"],["Prehensión","Fijar paños o estructuras anatómicas","Pinza de **Backhaus** o de campo, pinza **Duval**"],["Hemostasia","Clampear vasos por aplastamiento; rectas o curvas","**Kocher, Crile, Mosquito, Kelly**; electrocoagulador"],["Exposición","Facilitar visión y maniobrabilidad","**Separadores**"],["Síntesis","Unir tejidos","Agujas, portaagujas **Mayo-Hegar**, suturas, grapadoras, tiras adhesivas"],["Especiales","Propios de cada especialidad","Odontología, osteosíntesis (brocas, machos, guías)"]]},{"tipo":"figura","pagina":83,"pie":"Tijeras de Metzenbaum (las más delgadas, para tejidos delicados), de Mayo (más grandes y toscas, para tejidos densos) y de Lister (cortavendajes).","src":"img/patologia-quirurgica-i-t7-tema-7-asepsia-antisepsia-e-instrumentacion-quirurgica-gener-p83.jpg"},{"tipo":"figura","pagina":86,"pie":"Pinzas hemostáticas Kocher, Crile, Mosquito y Kelly: se diferencian por tamaño y estrías entre sus ramas.","src":"img/patologia-quirurgica-i-t7-tema-7-asepsia-antisepsia-e-instrumentacion-quirurgica-gener-p86.jpg"},{"tipo":"tabla","titulo":"Agujas y suturas","columnas":["Elemento","Contenido"],"filas":[["Agujas según forma","Rectas, curvas, mixtas"],["Según el ojo","Cerrado, abierto o automático"],["Según la sección","Cilíndricas, aplanadas, triangulares"],["Sutura absorbible","Ventajas: se reabsorbe, **no hace granulomas**. Inconvenientes: tiempo de cohesión limitado, hay que elegirla bien"],["Sutura no absorbible","Ventaja: **cohesión tisular permanente**. Inconvenientes: **granulomas, fibrosis, rechazo**"]]},{"tipo":"esquema","titulo":"Orden del instrumental en la mesa","mermaid":"flowchart LR\n  A[\"Dieresis\"] --> B[\"Diseccion\"]\n  B --> C[\"Hemostasia\"]\n  C --> D[\"Exposicion\"]\n  D --> E[\"Prehension\"]\n  E --> F[\"Medicion\"]\n  F --> G[\"Sintesis\"]","pie":"Orden lógico de izquierda a derecha, siguiendo los tiempos de la intervención: se abre, se diseca, se controla el sangrado, se expone y al final se sutura."},{"tipo":"figura","pagina":95,"pie":"Orden del instrumental (izquierda → derecha) y mesa de Mayo, donde se coloca el material de uso más frecuente (hemostáticas, corte, disección, portaagujas).","src":"img/patologia-quirurgica-i-t7-tema-7-asepsia-antisepsia-e-instrumentacion-quirurgica-gener-p95.jpg"},{"tipo":"perla","texto":"En el postoperatorio, el tipo de sutura condiciona la cicatriz que tratará el fisioterapeuta: la **no absorbible** puede dejar **granulomas y fibrosis**, motivo frecuente de adherencias a trabajar con terapia manual una vez cerrada la herida."},{"tipo":"alerta","texto":"Las pinzas de **disección** separan sin cortar (divulsión); las de **prehensión** (Backhaus, Duval) fijan; las de **hemostasia** (Kocher, Kelly, Mosquito, Crile) clampean vasos. Backhaus no es hemostática: sujeta los **paños de campo**."}]}],"caso_clinico":{"titulo":"Fisioterapeuta en el bloque quirúrgico de traumatología","presentacion":"Un fisioterapeuta en prácticas acompaña una cirugía de artroscopia de rodilla. Antes de entrar, la enfermera le explica el circuito de material, el lavado de manos y la preparación del paciente. Al terminar, debe aplicar un vendaje y limpiar el material de su consulta (manguito de tensión, camilla) y una cánula de aspiración reutilizable.","preguntas":[{"pregunta":"Clasifica según Spaulding el artroscopio, la cánula de aspiración endotraqueal y el manguito de tensión, y di qué tratamiento necesita cada uno.","respuesta":"El **artroscopio** entra en tejido estéril: **crítico → esterilización**. El material que contacta con **mucosas** (tubo endotraqueal) es **semicrítico → desinfección de alto nivel**. El **manguito** toca piel intacta: **no crítico → desinfección de bajo nivel o limpieza**. En todos, limpieza previa obligatoria."},{"pregunta":"¿Qué lavado de manos debe hacer si va a participar estéril en la intervención y cómo?","respuesta":"**Lavado quirúrgico**: grifo de codo, jabón antiséptico **2 min**, cepillado de uñas **30 s por mano**, aclarado, segundo enjabonado **2 min**, aclarado desde la punta de los dedos al codo, secado sin frotar con un paño por brazo y manos **por encima de los codos**."},{"pregunta":"La enfermera pinta la rodilla. ¿Qué antiséptico y técnica son correctos si la piel tiene una pequeña herida?","respuesta":"Clorhexidina: rápida, efecto 6-48 h, no se inactiva con materia orgánica y apta para herida abierta (el alcohol no). Se pinta desde el punto de incisión **en círculos hacia fuera** sin volver a una zona ya pintada; después, al menos **4 campos** alrededor de la incisión."}]},"preguntate":[{"pregunta":"¿Qué aportó Semmelweis y por qué fue revolucionario?","respuesta":"Relacionó la fiebre puerperal con médicos que venían de la sala de autopsias e impuso el lavado de manos con agua jabonosa, cepillo y agua clorada."},{"pregunta":"¿Cuáles son los eslabones de la cadena epidemiológica y cuál es el más importante?","respuesta":"Agente, reservorio, puerta de salida, mecanismo de transmisión, puerta de entrada y huésped susceptible; el más importante es el **mecanismo de transmisión**."},{"pregunta":"¿Por qué la limpieza es imprescindible antes de esterilizar?","respuesta":"Porque la suciedad y la materia orgánica impiden que el agente esterilizante o desinfectante actúe sobre el material."},{"pregunta":"Diferencia desinfección de alto nivel y esterilización.","respuesta":"La DAN elimina todos los microorganismos excepto grandes poblaciones de endoesporas; la esterilización destruye toda forma de vida, incluidas las esporas."},{"pregunta":"¿Qué diferencia un desinfectante de un antiséptico?","respuesta":"El desinfectante se usa solo sobre objetos inertes porque es tóxico para la materia viva; el antiséptico se aplica sobre piel, mucosas o heridas."},{"pregunta":"Compara povidona yodada y clorhexidina.","respuesta":"Povidona: acción gradual, 4 h, se inactiva con materia orgánica, no en mucosas. Clorhexidina: rápida, 6-48 h, no se inactiva, apta en herida abierta, niños y embarazadas, tóxica en ojo y oído."},{"pregunta":"¿Qué diferencia hay entre flora residente y transitoria?","respuesta":"La residente es habitual y difícil de eliminar con fricción; la transitoria es contaminante ocasional, se transmite fácilmente y causa infecciones nosocomiales."},{"pregunta":"¿Por qué no se recomienda el rasurado con cuchilla?","respuesta":"Porque produce erupciones, lesiones exudativas y crecimiento bacteriano que aumentan la infección postoperatoria; se prefiere depilación química o máquina con cabezal desechable."},{"pregunta":"¿Cuáles son las ventajas e inconvenientes de los campos de tela frente a los de papel?","respuesta":"Tela: no impermeable y desprende pelusas. Papel: impermeable y desechable, pero rígido y más fácil de contaminar al colocarlo."},{"pregunta":"Enumera los grupos de instrumental quirúrgico.","respuesta":"Diéresis, disección, prehensión, hemostasia, exposición, síntesis y especiales."}],"glosario":[{"termino":"Asepsia","definicion":"Conjunto de técnicas para obtener ambientes, superficies y materiales estériles y prevenir la infección."},{"termino":"Antisepsia","definicion":"Destrucción de patógenos aplicando sustancias químicas sobre piel o mucosas."},{"termino":"Spaulding","definicion":"Clasificación (1968) del material en crítico, semicrítico y no crítico según el tejido con el que contacta."},{"termino":"DAN","definicion":"Desinfección de alto nivel: elimina todo salvo grandes poblaciones de endoesporas."},{"termino":"Esterilización","definicion":"Destrucción de toda forma de vida microbiana, incluidas las esporas; concepto absoluto."},{"termino":"Poupinel","definicion":"Estufa de esterilización por calor seco."},{"termino":"Autoclave","definicion":"Equipo de esterilización por vapor de agua a presión."},{"termino":"Flora transitoria","definicion":"Microorganismos contaminantes ocasionales de la piel, causantes de infección nosocomial."},{"termino":"Diéresis","definicion":"Tiempo e instrumental de corte de los tejidos."},{"termino":"Divulsión","definicion":"Separación de tejidos sin cortarlos, propia de la disección."},{"termino":"Backhaus","definicion":"Pinza de prehensión que fija los paños de campo."},{"termino":"Mayo-Hegar","definicion":"Portaagujas de síntesis."},{"termino":"Metzenbaum","definicion":"Tijeras finas para tejidos delicados."}],"fuentes":["Tema 7. Asepsia. Antisepsia. Instrumentación quirúrgica general. Patología Quirúrgica I (PQRI 2026-2027), Universidad Europea de Valencia","Spaulding (1968)","Collins TP. Antiseptic Surgery. William Cheyne (1882), British Library"],"qcm":[{"pregunta":"Según el tema, ¿cuál es el eslabón más importante de la cadena epidemiológica?","opciones":["El mecanismo de transmisión","La susceptibilidad del huésped","La puerta de entrada","El reservorio del agente"],"correcta":0,"explicacion":"El tema señala que el eslabón más importante es el mecanismo de transmisión: rompiéndolo con higiene de manos, desinfección, limpieza y esterilización se impide que la infección pase de un huésped a otro.","por_opcion":["✅ El mecanismo de transmisión es el eslabón clave.","❌ Es el último eslabón, no el más importante según el tema.","❌ Es un eslabón, pero no el que el tema destaca.","❌ Es un eslabón, pero no el que el tema destaca como principal."]},{"pregunta":"Un laringoscopio reutilizable, según Spaulding, requiere como mínimo:","opciones":["Desinfección de alto nivel","Desinfección de bajo nivel o limpieza","Desinfección de nivel intermedio","Esterilización obligatoria en autoclave"],"correcta":0,"explicacion":"El laringoscopio contacta con mucosas: es material semicrítico y su tratamiento es la desinfección de alto nivel, aunque podría esterilizarse si el material lo permite.","por_opcion":["✅ Semicrítico → DAN.","❌ Es el tratamiento del material no crítico (piel intacta).","❌ El nivel intermedio no es el asignado al semicrítico.","❌ La esterilización es obligatoria para el material crítico; en el semicrítico es opcional."]},{"pregunta":"¿Qué diferencia la desinfección de nivel intermedio de la de bajo nivel?","opciones":["La intermedia elimina las endoesporas bacterianas","La de bajo nivel se usa en material semicrítico","La de bajo nivel elimina todos los virus","La intermedia elimina micobacterias como el bacilo tuberculoso"],"correcta":3,"explicacion":"La DNI inactiva bacterias vegetativas incluidas las micobacterias, la mayoría de virus y hongos; la DBN no elimina el bacilo de la tuberculosis ni las esporas.","por_opcion":["❌ Ninguna de las dos elimina las esporas bacterianas.","❌ La DBN se usa en instrumentos no críticos.","❌ La DBN solo elimina algunos virus.","✅ La DNI incluye micobacterias; la DBN no elimina el bacilo tuberculoso."]},{"pregunta":"¿Qué método de esterilización es químico y utiliza gas plasma?","opciones":["Ácido peracético","Formaldehído","Peróxido de hidrógeno","Óxido de etileno"],"correcta":2,"explicacion":"El peróxido de hidrógeno se aplica en forma de gas plasma. El óxido de etileno usa autoclave de gas, el ácido peracético su esterilizador propio y el formaldehído es un método físico-químico.","por_opcion":["❌ El ácido peracético usa un esterilizador peracético.","❌ El formaldehído se clasifica como método físico-químico.","✅ Peróxido de hidrógeno = gas plasma.","❌ El óxido de etileno es químico pero usa autoclave de gas."]},{"pregunta":"¿Cuál de estas condiciones corresponde a la esterilización con óxido de etileno según la figura del tema?","opciones":["Humedad 10-30 % y 30-60 ºC durante 12 h","Humedad 10-30 % y 121 ºC durante 15 min","Humedad 40-80 % y 134 ºC durante 3 min","Humedad 40-80 % y 30-60 ºC durante 1-5 h"],"correcta":3,"explicacion":"El óxido de etileno esteriliza a 40-80 % de humedad, 30-60 ºC, 600-900 mg/L de concentración y entre 1 y 5 horas; por eso es útil en material termosensible.","por_opcion":["❌ La humedad y el tiempo no coinciden con los del tema.","❌ La humedad y la temperatura no corresponden al óxido de etileno.","❌ La temperatura de 134 ºC no es la del óxido de etileno, que trabaja a baja temperatura.","✅ Condiciones recogidas en la diapositiva del tema."]},{"pregunta":"¿Qué inconveniente del óxido de etileno recoge el tema?","opciones":["Se inactiva rápidamente en presencia de humedad","Es cancerígeno y requiere airear el material","No sirve para material termosensible","No penetra en material con filo"],"correcta":1,"explicacion":"Sus inconvenientes son la toxicidad, ser cancerígeno, la necesidad de airear el material para evitar residuos y un tiempo mayor que otros métodos. Sus ventajas: esteriliza material termosensible y cortante y tiene gran penetración.","por_opcion":["❌ Necesita humedad (40-80 %) para esterilizar.","✅ Tóxico, cancerígeno y requiere aireación.","❌ Precisamente esteriliza material termosensible.","❌ Esterilizar material cortante es una de sus ventajas."]},{"pregunta":"Respecto al cloro como desinfectante, es correcto que:","opciones":["Su olor persistente garantiza que sigue siendo eficaz","Es activo aun con abundante materia orgánica","Mantiene su efecto durante 24 horas tras aplicarlo","Pierde efecto en unos 20 minutos por evaporación"],"correcta":3,"explicacion":"El cloro (1000-5000 ppm) se evapora rápidamente perdiendo su efecto en 20 minutos, el olor no implica efecto y se inactiva con materia orgánica.","por_opcion":["❌ El tema subraya que el olor no implica efecto.","❌ Se inactiva con materia orgánica.","❌ Su efecto es breve, no de 24 h.","✅ Evaporación rápida con pérdida de efecto en 20 min."]},{"pregunta":"Paciente embarazada con herida abierta a la que hay que aplicar antiséptico de efecto prolongado. ¿Cuál se ajusta mejor al tema?","opciones":["Clorhexidina","Alcohol de 70 %","Amonio cuaternario","Povidona yodada"],"correcta":0,"explicacion":"La clorhexidina tiene acción rápida, efecto de 6 a 48 horas, no se inactiva con materia orgánica, es segura y apta en herida abierta, niños y embarazadas.","por_opcion":["✅ Clorhexidina: indicada en herida abierta y embarazo, efecto 6-48 h.","❌ El alcohol no debe usarse en heridas abiertas y su efecto es breve.","❌ El amonio cuaternario es un desinfectante hospitalario, no el antiséptico indicado.","❌ La povidona dura unas 4 h, se inactiva con materia orgánica y no se aplica en mucosas."]},{"pregunta":"¿Por qué el tema desaconseja el alcohol sobre heridas abiertas?","opciones":["Porque es un disruptor endocrino de absorción cutánea","Porque favorece coágulos en los que crecen bacterias","Porque su latencia es demasiado larga para una cura","Porque se inactiva con la sangre y pierde todo efecto"],"correcta":1,"explicacion":"El alcohol tiene acción muy rápida (1 minuto) pero irrita y reseca la piel y no debe usarse en heridas abiertas porque favorece la formación de coágulos donde crecen bacterias.","por_opcion":["❌ El disruptor endocrino del tema es el triclosán.","✅ Favorece coágulos con crecimiento bacteriano.","❌ Su acción es muy rápida (1 min).","❌ No es el motivo que da el tema."]},{"pregunta":"Una vez abiertos, ¿durante cuánto tiempo pueden usarse el alcohol gel y la clorhexidina?","opciones":["Hasta 1 semana","Hasta 1 mes","Hasta 24 horas","Hasta 3 días"],"correcta":1,"explicacion":"Los antisépticos en general se emplean hasta 3 días una vez abiertos, pero el alcohol gel y la clorhexidina pueden usarse hasta 1 mes.","por_opcion":["❌ Plazo no recogido en el tema.","✅ Alcohol gel y clorhexidina: hasta 1 mes.","❌ Plazo no recogido en el tema.","❌ Es el plazo general de los antisépticos, no el del alcohol gel y la clorhexidina."]},{"pregunta":"¿Cuál es la duración del enjabonado en el lavado antiséptico asistencial?","opciones":["30 segundos","5 minutos","60 segundos","2 minutos"],"correcta":2,"explicacion":"El lavado antiséptico sigue el mismo procedimiento que el higiénico pero con 60 segundos de enjabonado; el higiénico dura 30 s y el quirúrgico incluye dos enjabonados de 2 min.","por_opcion":["❌ Corresponde al lavado higiénico.","❌ Es la duración del lavado de la piel del paciente en la preparación quirúrgica.","✅ Lavado antiséptico: 60 s.","❌ Corresponde a cada enjabonado del lavado quirúrgico."]},{"pregunta":"Durante el lavado quirúrgico, ¿cómo deben aclararse los brazos?","opciones":["Con las manos por debajo de los codos","Desde el codo hacia la punta de los dedos","Primero la palma y después el dorso","Desde la punta de los dedos hasta el codo"],"correcta":3,"explicacion":"El aclarado se hace desde la punta de los dedos hasta la altura del codo y las manos se mantienen por encima de los codos, para que el agua escurra de la zona más limpia a la menos limpia.","por_opcion":["❌ Las manos deben quedar por encima de los codos.","❌ Arrastraría agua del codo hacia las manos.","❌ No es el criterio de aclarado del tema.","✅ De los dedos al codo."]},{"pregunta":"En la preparación de la piel para la cirugía, ¿qué es correcto?","opciones":["Lavar desde la periferia hacia el sitio de incisión","Repasar con la misma esponja las zonas ya lavadas","Lavar en círculo desde la incisión hacia fuera unos 5 min","Rasurar siempre con cuchilla la víspera de la cirugía"],"correcta":2,"explicacion":"Se comienza en el sitio exacto de la incisión y se lava en forma circular hacia fuera, cambiando de esponja y sin volver a una zona ya lavada, durante 5 minutos; el rasurado se sustituye preferentemente por depilación química o máquina eléctrica.","por_opcion":["❌ La dirección es del centro a la periferia.","❌ No se vuelve a lavar una zona con la misma esponja.","✅ Lavado circular desde la incisión hacia fuera durante 5 min.","❌ El rasurado con cuchilla aumenta las infecciones."]},{"pregunta":"¿Qué inconveniente tienen los campos quirúrgicos de papel (no tejido)?","opciones":["Son rígidos y más fáciles de contaminar al colocarlos","No son impermeables","Deben reesterilizarse tras cada uso","Desprenden pelusas que transportan bacterias"],"correcta":0,"explicacion":"Los campos de papel son impermeables y desechables, pero rígidos y por ello más propensos a contaminarse durante las maniobras de colocación. La falta de impermeabilidad y las pelusas son problemas de los campos de tela.","por_opcion":["✅ Rigidez → contaminación al colocarlos.","❌ Son impermeables; es la tela la que no lo es.","❌ Son desechables.","❌ Las pelusas son un problema de la tela."]},{"pregunta":"¿Qué pinza pertenece al grupo de prehensión y no al de hemostasia?","opciones":["Backhaus","Mosquito","Kelly","Kocher"],"correcta":0,"explicacion":"La pinza de Backhaus (o de campo) es de prehensión: fija los paños de campo o estructuras anatómicas. Kocher, Kelly, Mosquito y Crile son pinzas hemostáticas que clampean vasos.","por_opcion":["✅ Backhaus fija los paños: prehensión.","❌ Mosquito es hemostática.","❌ Kelly es hemostática.","❌ Kocher es hemostática."]}],"asignatura":"Patología quirúrgica I","tema":7,"fecha":"2026-11-10"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips"><a class="chip" href="../index.html" style="text-decoration:none">← Mis fichas</a>${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* dernière fiche ouverte + carnet d'erreurs + envoi du score vers Notion */
+const slugPag = location.pathname.split('/').pop().replace(/\.html$/, '');
+const carpeta = grande ? 'qcm' : 'fichas';
+try{ localStorage.setItem('ultima', JSON.stringify({href:`${carpeta}/${slugPag}.html`, titulo:F.titulo, t:Date.now()})); }catch(e){}
+function errorGuardar(k, fallo){
+  try{
+    const E = JSON.parse(localStorage.getItem('errores')||'{}'), id = `${slugPag}#${k}`;
+    if(fallo){ const q = Q[k]; E[id] = {id, curso:F.asignatura, tema:(F.tema ?? q.tema ?? null), titulo:F.titulo, href:`${carpeta}/${slugPag}.html`, q:{pregunta:q.pregunta, opciones:q.opciones, correcta:q.correcta, explicacion:q.explicacion, por_opcion:q.por_opcion}, n:(E[id]?.n||0)+1, t:Date.now()}; }
+    else delete E[id];
+    localStorage.setItem('errores', JSON.stringify(E));
+  }catch(e){}
+}
+async function enviarScore(ok, n){
+  const el = document.getElementById('envio'); if(!el) return;
+  if(grande || !window.FICHAS_RELAY){ el.textContent = ''; return; }
+  el.textContent = 'Enregistrement dans Notion…';
+  try{
+    const r = await fetch(window.FICHAS_RELAY, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({url:location.origin+location.pathname, score:ok, total:n})});
+    const j = await r.json();
+    el.textContent = j.ok ? '✓ Score enregistré dans Notion' + (j.proxima ? ` · prochaine révision : ${j.proxima}` : '') : 'Score non enregistré dans Notion (' + (j.error||'erreur') + ')';
+  }catch(e){ el.textContent = 'Score non enregistré dans Notion (hors ligne ?)'; }
+}
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; errorGuardar(k, !resp[k].ok); marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  const completo = n===Q.length;
+  if(completo) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado!':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p><p id="envio" style="font-size:.9rem;color:var(--suave);margin:0 auto 14px"></p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  if(completo) enviarScore(ok, n);
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>

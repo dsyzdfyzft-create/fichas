@@ -342,12 +342,12 @@
   {
     "slug": "ortesis-t8-tema-8-ortesis-y-protesis-en-el-deporte",
     "titulo": "Tema 8: Órtesis y prótesis en el deporte",
-    "subtitulo": "Juegos Paralímpicos y sistemas de clasificación (ejemplo de la natación), prótesis deportivas y el estudio Brüggemann, órtesis deportivas más frecuentes y ética del dopaje tecnológico.",
+    "subtitulo": "Juegos Paralímpicos y marco normativo, deficiencias elegibles y clasificación funcional (ejemplo de la natación y del paratriatlón), prótesis deportivas y estudio Brüggemann, órtesis deportivas más frecuentes y ética del dopaje tecnológico.",
     "curso": "Ortesis",
     "tema": 8,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 6
   },
   {
     "slug": "ortesis-t9-tema-9-amputaciones",
@@ -412,12 +412,12 @@
   {
     "slug": "patologia-quirurgica-i-t5-tema-5-fracturas-en-adultos",
     "titulo": "Tema 5: Fracturas en adultos",
-    "subtitulo": "Clínica y biomecánica de la fractura, clasificación (etiología, mecanismo, patrón, partes blandas, estabilidad), radiología, fases de la reparación, complicaciones (rigidez, pseudoartrosis, Sudeck), factores de consolidación y tratamiento (las 3 R, yesos, tracción, osteosíntesis).",
+    "subtitulo": "Definición y clínica de la fractura, clasificaciones (etiología, mecanismo, trazo, foco, Gustilo-Anderson, estabilidad), diagnóstico por imagen, fases de la reparación ósea y sus complicaciones, y principios del tratamiento ortopédico y quirúrgico.",
     "curso": "Patología quirúrgica I",
     "tema": 5,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 7
+    "secciones": 8
   },
   {
     "slug": "patologia-quirurgica-i-t6-tema-6-fracturas-infantiles",
@@ -430,14 +430,14 @@
     "secciones": 7
   },
   {
-    "slug": "patologia-quirurgica-i-t7-tema-7-asepsia-antisepsia-e-instrumentacion-quirurgica",
-    "titulo": "Tema 7: Asepsia, antisepsia e instrumentación quirúrgica",
-    "subtitulo": "Historia de la asepsia, cadena epidemiológica, limpieza, desinfección (clasificación de Spaulding) y esterilización, antisépticos, lavado de manos, vestido y enguantado estéril, preparación de la piel, campos e instrumental quirúrgico.",
+    "slug": "patologia-quirurgica-i-t7-tema-7-asepsia-antisepsia-e-instrumentacion-quirurgica-gener",
+    "titulo": "Tema 7: Asepsia, antisepsia e instrumentación quirúrgica general",
+    "subtitulo": "Historia de la asepsia, cadena epidemiológica, limpieza, desinfección y esterilización (Spaulding), antisépticos, lavado de manos, vestido y enguantado estéril, preparación de la piel, campos quirúrgicos e instrumental quirúrgico.",
     "curso": "Patología quirúrgica I",
     "tema": 7,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 6
+    "secciones": 7
   },
   {
     "slug": "patologia-quirurgica-i-t8-tema-8-sindrome-compartimental-y-aplastamiento",
