@@ -162,22 +162,22 @@
   {
     "slug": "drenaje-linfatico-t4.3-tema-4-3-edemas-iii-lipedema-otros-edemas-y-fisioterapia-der",
     "titulo": "Tema 4.3: Edemas (III) – lipedema, otros edemas y fisioterapia dermatofuncional",
-    "subtitulo": "Lipedema (características, diagnóstico diferencial, tipos, estadios y tratamiento), retención de líquidos por mala circulación y fisioestética.",
+    "subtitulo": "El lipedema como trastorno doloroso y bilateral de la distribución de la grasa: cómo reconocerlo, diferenciarlo del linfedema y tratarlo; la retención de líquidos por mala circulación y la fisioterapia dermatofuncional.",
     "curso": "Drenaje linfático",
     "tema": 4.3,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 7
   },
   {
     "slug": "drenaje-linfatico-t5-tema-5-introduccion-a-la-fisioterapia-oncologica",
     "titulo": "Tema 5: Introducción a la fisioterapia oncológica",
-    "subtitulo": "Qué es el cáncer, cómo se trata y qué efectos secundarios produce, y qué hace el fisioterapeuta antes, durante y después del tratamiento oncológico.",
+    "subtitulo": "Qué es el cáncer, cómo se clasifica y se trata, qué efectos secundarios generan sus tratamientos y cómo interviene el fisioterapeuta antes, durante y después del proceso oncológico.",
     "curso": "Drenaje linfático",
     "tema": 5,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 4
+    "secciones": 7
   },
   {
     "slug": "fisioterapia-neurologica-t1-tema-1-neuroanatomia-funcional-aplicada-sistemas-de-control-",
@@ -272,12 +272,12 @@
   {
     "slug": "ortesis-t1-tema-1-ortesis-y-protesis-historia-y-generalidades",
     "titulo": "Tema 1: Ortesis y prótesis – historia y generalidades",
-    "subtitulo": "Conceptos, funciones y clasificación de prótesis y órtesis, reacciones adversas y evolución histórica desde el Antiguo Egipto hasta la biónica.",
+    "subtitulo": "Qué distingue una prótesis (sustituye lo que falta) de una órtesis (modifica lo que existe), cómo se clasifican y cómo han evolucionado desde el antiguo Egipto hasta la biónica.",
     "curso": "Ortesis",
     "tema": 1,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 4
+    "secciones": 8
   },
   {
     "slug": "ortesis-t2-tema-2-alteraciones-del-eje-de-la-columna-y-sus-ortesis",
