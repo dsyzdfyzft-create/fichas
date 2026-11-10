@@ -282,22 +282,22 @@
   {
     "slug": "ortesis-t2-tema-2-alteraciones-del-eje-de-la-columna-y-sus-ortesis",
     "titulo": "Tema 2: Alteraciones del eje de la columna y sus órtesis",
-    "subtitulo": "Ejes y planos, escoliosis, hipercifosis, hiperlordosis y rectificaciones; tratamiento conservador y quirúrgico, y órtesis para la escoliosis idiopática y la cifosis de Scheuermann.",
+    "subtitulo": "Ejes y planos anatómicos, escoliosis, hipercifosis, hiperlordosis y rectificaciones, su tratamiento y las órtesis de la escoliosis idiopática y de la cifosis de Scheuermann.",
     "curso": "Ortesis",
     "tema": 2,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 8
   },
   {
     "slug": "ortesis-t3-tema-3-patologia-ortopedica-infantil",
     "titulo": "Tema 3: Patología ortopédica infantil",
-    "subtitulo": "Deformidades craneales, tortícolis congénita, escoliosis infantil, espondilolistesis, espina bífida, rodillas valgas/varas, patología de cadera (Perthes, Meyer, sinovitis, resorte), Osgood-Schlatter, quiste de Baker, fibroma plantar y Sever, con sus órtesis.",
+    "subtitulo": "Principales patologías ortopédicas del niño y el adolescente —cráneo, cuello, columna, cadera, rodilla y pie— con su diagnóstico y su tratamiento conservador, ortésico o quirúrgico.",
     "curso": "Ortesis",
     "tema": 3,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 7
   },
   {
     "slug": "ortesis-t4-tema-4-patologia-degenerativa-osteoarticular-artrosis-artrit",
@@ -312,12 +312,12 @@
   {
     "slug": "ortesis-t5-tema-5-ortesis-en-el-raquis",
     "titulo": "Tema 5: Órtesis en el raquis",
-    "subtitulo": "Indicaciones, funciones, mecanismos y complicaciones de las órtesis vertebrales; órtesis para el dolor lumbar y cervical (SIO, LSO, CO, CTO, halo), para deformidades (Milwaukee, Boston) y para osteoporosis (PTS, Spinomed, Jewett).",
+    "subtitulo": "Funciones, mecanismos, tipos y complicaciones de las órtesis vertebrales: lumbosacras y sacroilíacas, collarines y órtesis cervicales y cervicotorácicas (Minerva, SOMI, Halo), corsés para deformidades y órtesis para la osteoporosis.",
     "curso": "Ortesis",
     "tema": 5,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 7
   },
   {
     "slug": "ortesis-t6-tema-6-ortesis-de-miembro-superior",
