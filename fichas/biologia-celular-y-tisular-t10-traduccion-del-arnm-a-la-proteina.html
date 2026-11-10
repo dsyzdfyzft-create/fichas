@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Traducción: del ARNm a la proteína · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script src="../config.js"></script>
+<script id="datos" type="application/json">{"titulo":"Traducción: del ARNm a la proteína","subtitulo":"Código genético, maquinaria y etapas de la síntesis de proteínas en procariotas y eucariotas, y tipos de mutaciones con el ejemplo de la distrofia muscular de Duchenne.","resumen":["La **expresión génica** consta de **transcripción** (síntesis de ARN a partir de ADN molde) y **traducción** (síntesis de proteínas a partir de un molde de **ARNm**), según el **Dogma Central de la Biología Molecular**.","El **código genético** se lee en **tripletes (codones)**, **sin comas ni solapamientos**, es **degenerado** (salvo la **metionina**) y **casi universal**; empieza en **AUG** y termina en **UAA, UAG o UGA**.","El ARNm se lee siempre **5'→3'** y la proteína se sintetiza **N-ter→C-ter**; el **ribosoma** es el lugar de la traducción, el **ARNt** une ARNm y aminoácidos y el ARNm determina la secuencia.","La traducción tiene **inicio, elongación y terminación**, con los sitios ribosómicos **A** (entrada del aminoacil-ARNt), **P** (cadena en crecimiento y enlace peptídico) y **E** (salida del ARNt); en eucariotas el inicio es más complejo (**12 eIF**).","Las **mutaciones** pueden ser **génicas** (sustitución: cambio de aminoácido, **sin sentido** o **silenciosa**; inserción/deleción: **cambio de pauta**), **cromosómicas** o **genómicas**; la **distrofia de Duchenne** se debe a mutaciones del gen de la **distrofina** (cromosoma X, **79 exones**)."],"objetivos":["Situar la traducción dentro del Dogma Central y definir gen, sus partes y tipos.","Enumerar y explicar las cuatro características del código genético, los codones de inicio y de terminación y sus excepciones.","Describir la maquinaria y las etapas de la traducción en procariotas, con el papel de los sitios A, P y E.","Diferenciar la traducción eucariota (maduración, eIF, polirribosomas, chaperonas, modificaciones postraduccionales).","Clasificar las mutaciones (génicas, cromosómicas, genómicas) y aplicarlo a la distrofia muscular de Duchenne y su abordaje fisioterapéutico."],"ideas_clave":["Traducción = síntesis de proteínas usando el **ARNm como molde**; ocurre en el **ribosoma**.","Código genético: **tripletes**, **sin comas ni solapamientos**, **degenerado** (excepto Met) y **casi universal** (excepciones en el ADN mitocondrial).","Inicio en **AUG = metionina**; parada en **UAA, UAG, UGA**, que no son reconocidos por ningún ARNt.","Lectura del ARNm **5'→3'**; síntesis de la proteína **N-terminal → C-terminal** mediante **enlaces peptídicos**.","Sitio **A** = entrada del aminoacil-ARNt; **P** = cadena en crecimiento y enlace peptídico; **E** = salida del ARNt sin aminoácido.","Eucariotas: traducción **tras la maduración** del ARNm y su salida al citoplasma; inicio con **12 factores eIF**; elongación y terminación similares.","**Polirribosoma**: un ARNm traducido a la vez por varios ribosomas; las **chaperonas** pliegan los polipéptidos.","Mutaciones **génicas** (secuencia de un gen), **cromosómicas** (estructura) y **genómicas** (número de cromosomas, p. ej. trisomía 21)."],"secciones":[{"id":"adn-herencia","titulo":"ADN portador de la herencia: dogma central y genes","bloques":[{"tipo":"parrafo","texto":"La función principal de los ácidos nucleicos es **almacenar, transmitir y expresar** la información genética de los seres vivos, lo que se resume en el **Dogma Central de la Biología Molecular**: ADN → ARN → proteína. La **expresión génica** es el conjunto de procesos que permiten que la información del ADN se **transcriba en ARN** y se **traduzca en proteínas**."},{"tipo":"esquema","titulo":"Dogma central y expresión génica","mermaid":"flowchart LR\n  A[\"ADN\"] -->|\"Transcripción\"| B[\"ARNm\"]\n  B -->|\"Traducción en el ribosoma\"| C[\"Polipéptido\"]\n  C -->|\"plegado y modificaciones\"| D[\"Proteína funcional\"]","pie":"Transcripción: síntesis de ARN a partir de ADN molde. Traducción: síntesis de proteínas a partir de un molde de ARNm."},{"tipo":"definicion","termino":"Gen","texto":"Fragmento de ADN con una **secuencia específica** que contiene la información para generar **una proteína concreta** (**unidad codificante**). Partes: **promotor** (donde se une la maquinaria enzimática para iniciar la transcripción), **secuencia codificante** y **región de terminación**."},{"tipo":"tarjetas","items":[{"etiqueta":"Tipo a","titulo":"Genes constitutivos","texto":"**Expresión constante** de proteínas esenciales para la célula."},{"etiqueta":"Tipo b","titulo":"Genes inducibles / reprimibles","texto":"Su expresión **se activa por la presencia de una molécula**. Ejemplo del temario: **síntesis de oxitocina**."}]},{"tipo":"parrafo","texto":"En el esquema del gen se ve que el **pre-ARNm** lleva **caperuza (cap) en 5'**, **5' UTR**, **exones** alternando con **intrones**, **3' UTR** y **cola poli(A)**; tras el **splicing** se eliminan los intrones y queda el ARNm maduro con la región codificante flanqueada por las UTR."},{"tipo":"alerta","texto":"El **promotor** no es parte de la secuencia que se traduce: es la región donde se une la maquinaria para **iniciar la transcripción**. Las mutaciones pueden afectar también a zonas **no codificantes** como promotores o intrones."}]},{"id":"codigo-genetico","titulo":"El código genético","bloques":[{"tipo":"definicion","termino":"Código genético","texto":"Relación entre la **secuencia de bases del ADN** (o de su ARNm transcrito) y la **secuencia de aminoácidos** de las proteínas."},{"tipo":"tabla","titulo":"Características del código genético","columnas":["Característica","Significado"],"filas":[["**Tripletes = codones**","Agrupaciones de **3 bases nitrogenadas**; cada triplete codifica un aminoácido concreto (1 codón = 1 aminoácido)"],["**Sin comas ni solapamientos**","La maquinaria lee **sin dejar espacios**; **cada nucleótido pertenece a un solo codón**"],["**Degenerado**","Un aminoácido puede estar determinado por **más de un codón**, **excepto la metionina (Met)**"],["**Universal**","Los codones de casi todos los organismos se traducen en los mismos aminoácidos en **procariotas y eucariotas**, aunque **existen excepciones**"]]},{"tipo":"dato","valor":"AUG","texto":"**Codón de inicio**: codifica **metionina**. La lectura se establece a partir de él."},{"tipo":"dato","valor":"UAA · UAG · UGA","texto":"Los **tres codones de terminación (STOP)**; no son reconocidos por ningún ARNt."},{"tipo":"figura","pagina":7,"pie":"Tabla del código genético: localiza AUG (Met, verde) como inicio y UAA, UAG y UGA (rojo) como codones de parada; observa cuántos codones distintos codifican Leu, Ser o Arg (degeneración).","src":"img/biologia-celular-y-tisular-t10-traduccion-del-arnm-a-la-proteina-p7.jpg"},{"tipo":"tabla","titulo":"Excepciones a la universalidad (ADN mitocondrial)","columnas":["Codón","Código nuclear","Mitocondria de mamíferos"],"filas":[["UGA","STOP","**Triptófano**"],["AGA, AGG","Arginina","**STOP**"],["AUA","Isoleucina","**Metionina**"]]},{"tipo":"alerta","texto":"Trampa: el código es **«casi» universal**, no absolutamente universal. En el ADN mitocondrial **UGA** codifica triptófano y en mamíferos **AGA/AGG** son STOP."},{"tipo":"alerta","texto":"«Sin solapamientos» significa que **cada nucleótido pertenece a un solo codón**; «degenerado» no significa que un codón dé varios aminoácidos, sino que **varios codones dan el mismo aminoácido**."},{"tipo":"parrafo","texto":"**¿Cómo se lee?** A partir del ADN se produce el ARNm (transcripción); el ARNm se traduce para producir una proteína; la lectura del ARNm es **siempre 5'→3'**, **siempre** comienza en el codón de inicio **AUG (metionina)** y continúa **sin pausas** hasta el **codón de terminación**. Cada ARNt lleva un **anticodón** complementario al codón del ARNm."}]},{"id":"traduccion-maquinaria","titulo":"Traducción: características generales y maquinaria","bloques":[{"tipo":"lista","items":["Es la **síntesis de proteínas a partir de un molde de ARNm**.","La **secuencia de nucleótidos del ARNm** determina la **secuencia de aminoácidos** de la proteína.","El ARNm molde se lee en dirección **5'→3'**.","La síntesis de proteínas es siempre **N-ter → C-ter**.","La cadena polipeptídica está formada por aminoácidos unidos por **enlace peptídico** (entre el grupo carboxilo de uno y el grupo amino del siguiente, con salida de H2O)."]},{"tipo":"tabla","titulo":"Maquinaria de la traducción","columnas":["Componente","Función"],"filas":[["**ARNm**","**Determina la secuencia** de aminoácidos de la proteína"],["**ARNt**","**Vínculo de unión entre ARNm y aminoácidos**: transporta el aminoácido y reconoce el codón con su anticodón"],["**Ribosoma**","**Lugar donde se lleva a cabo la traducción**; subunidad pequeña (une el ARNm) y grande (sitios E, P, A)"],["**Aminoácidos**","Monómeros que forman la cadena polipeptídica"]]},{"tipo":"parrafo","texto":"**Proceso**: el ribosoma va «leyendo» el ARNm; el ARNt conduce los aminoácidos al ribosoma en el orden que indica el ARNm; en el ribosoma se van uniendo por enlace peptídico. **Etapas**: **1. Inicio, 2. Elongación, 3. Terminación**."},{"tipo":"dato","valor":"5'→3' / N→C","texto":"El **ARNm** se lee **5'→3'**; la **proteína** crece del extremo **amino (N)** al **carboxilo (C)**."},{"tipo":"alerta","texto":"No mezclar direcciones: **5'→3'** se refiere al **ARNm**; **N→C** a la **proteína**. Tampoco confundir funciones: quien **determina** la secuencia es el ARNm; el ARNt solo **transporta y empareja**."}]},{"id":"traduccion-procariotas","titulo":"Traducción en procariotas: inicio, elongación y terminación","bloques":[{"tipo":"tarjetas","items":[{"etiqueta":"Sitio A","titulo":"Aminoacil","texto":"**Entrada de los aminoacil-ARNt**."},{"etiqueta":"Sitio P","titulo":"Peptidil","texto":"Contiene el ARNt que lleva la **cadena polipeptídica en crecimiento**; se produce el **enlace peptídico**."},{"etiqueta":"Sitio E","titulo":"Exit","texto":"**Salida del ARNt** tras transferir el aminoácido a la cadena."}]},{"tipo":"figura","pagina":13,"pie":"Inicio en procariotas: el ARNm se une a la subunidad pequeña, el ARNt iniciador (fMet, anticodón UAC) se coloca sobre AUG en el sitio P y se une la subunidad grande con sus sitios E, P y A.","src":"img/biologia-celular-y-tisular-t10-traduccion-del-arnm-a-la-proteina-p13.jpg"},{"tipo":"esquema","titulo":"Etapas de la traducción en procariotas","mermaid":"flowchart TD\n  subgraph I[\"1. Inicio\"]\n    I1[\"ARNm se une a subunidad pequeña\"] --> I2[\"ARNt iniciador al sitio P\"]\n    I2 --> I3[\"Se une la subunidad grande\"]\n  end\n  subgraph E[\"2. Elongación\"]\n    E1[\"Aminoacil-ARNt entra al sitio A\"] --> E2[\"Enlace peptídico en sitio P\"]\n    E2 --> E3[\"Translocación: avanza un codón\"]\n    E3 -->|\"repetición\"| E1\n  end\n  subgraph T[\"3. Terminación\"]\n    T1[\"Codón STOP en sitio A\"] --> T2[\"Factor de liberación libera la cadena\"]\n    T2 --> T3[\"Separación de subunidades\"]\n  end\n  I3 --> E1\n  E3 --> T1","pie":"El inicio está regulado por factores de inicio; en la elongación se consume GTP; la terminación la ejecuta un factor de liberación (proteína)."},{"tipo":"tabla","titulo":"Pasos de cada etapa (procariotas)","columnas":["Etapa","Pasos","Detalle a recordar"],"filas":[["**Inicio**","1) ARNm a la subunidad pequeña; 2) ARNt iniciador al **sitio P**; 3) unión de la subunidad grande","Regulado por **factores de inicio**"],["**Elongación**","1) Siguiente aminoacil-ARNt al **sitio A**; 2) enlace peptídico en el **sitio P**; 3) **translocación**: el ribosoma avanza **un codón**","Tras translocar: A vacío, P con la cadena, E libera ARNt sin aminoácido"],["**Terminación**","1) Entra en A un codón **no reconocido por ningún ARNt** (STOP); 2) el **factor de liberación** se une al sitio A y libera la cadena; 3) separación de subunidades","El factor de liberación es una **proteína**, no un ARNt"]]},{"tipo":"figura","pagina":14,"pie":"Ciclo de elongación: entrada del aminoacil-ARNt en A, formación del enlace peptídico y translocación con gasto de GTP; el ARNt descargado sale por E.","src":"img/biologia-celular-y-tisular-t10-traduccion-del-arnm-a-la-proteina-p14.jpg"},{"tipo":"alerta","texto":"El **ARNt iniciador** entra directamente en el **sitio P**, no en el A. Y el codón STOP no es leído por un ARNt sino por un **factor de liberación** proteico."},{"tipo":"perla","texto":"Truco de memoria: **A**-**P**-**E** = **A**rriba entra, **P**ega (enlace peptídico), **E**xit. El ribosoma se desplaza de 5' a 3' sobre el ARNm, un codón cada vez."}]},{"id":"traduccion-eucariotas","titulo":"Traducción en eucariotas, polirribosomas y modificaciones","bloques":[{"tipo":"tabla","titulo":"Procariotas frente a eucariotas","columnas":["Aspecto","Procariotas","Eucariotas"],"filas":[["Momento","Sobre el ARNm recién transcrito","**Tras la maduración** del ARNm, que **sale del núcleo al citoplasma**"],["Inicio","Factores de inicio; ARNt iniciador con fMet","**Más complicado**: **12 factores eIF** (eukaryotic initiation factors); subunidades 40S y 60S, cap en 5'"],["Elongación y terminación","Sitios A, P, E","**Similares a procariotas**"],["Control","—","Proceso **altamente controlado** para **no traducir ARNm dañado** (control transcripcional, de procesamiento, de transporte y de traducción)"]]},{"tipo":"dato","valor":"12 eIF","texto":"Número de **factores de inicio eucariotas** que recoge el temario."},{"tipo":"definicion","termino":"Polirribosoma","texto":"Forma en que se encuentran los ARNm que se están traduciendo: cuando un ribosoma comienza la traducción y deja espacio en el **extremo 5'**, se une **otro ribosoma** que inicia otra cadena. Así un mismo ARNm se traduce **simultáneamente por varios ribosomas**."},{"tipo":"figura","pagina":19,"pie":"Polirribosoma: varios ribosomas sobre un mismo ARNm (esquema y microfotografía MET); a la derecha, plegado, modificación covalente (fosforilación) y unión a otras subunidades hasta la proteína funcional madura.","src":"img/biologia-celular-y-tisular-t10-traduccion-del-arnm-a-la-proteina-p19.jpg"},{"tipo":"parrafo","texto":"Tras la traducción, los polipéptidos son **plegados por chaperonas** y las proteínas pueden ser **modificadas postraduccionalmente**: **fosforilaciones**, **puentes disulfuro**, **unión con otras subunidades**, etc. Solo entonces se obtiene la proteína funcional madura."},{"tipo":"perla","texto":"Para el fisioterapeuta, entender que una proteína necesita plegado y ensamblaje explica por qué una mutación puede dar una proteína presente pero **no funcional**, o directamente **ausente** (como la distrofina en Duchenne)."},{"tipo":"alerta","texto":"Según las ideas clave del tema, la traducción es **prácticamente igual** en procariotas y eucariotas: la diferencia principal está en la **iniciación**, no en la elongación ni en la terminación."}]},{"id":"mutaciones","titulo":"Alteraciones de la información: mutaciones","bloques":[{"tipo":"parrafo","texto":"Las alteraciones en el ADN o ARN se llaman **mutaciones**. Pueden ser **beneficiosas o perjudiciales**. Si afectan a **genes esenciales** pueden ser **letales**, porque impiden la síntesis de **proteínas vitales** o generan **proteínas defectuosas** que no cumplen su función."},{"tipo":"tabla","titulo":"Tipos de mutaciones","columnas":["Tipo","Qué alteran","Ejemplos"],"filas":[["**Génicas o puntuales**","La **secuencia de un gen**","Sustitución, inserción o deleción de 1–2 nucleótidos"],["**Cromosómicas**","La **estructura de un cromosoma** (largos segmentos de ADN)","Inserciones/deleciones, **duplicaciones**, **inversiones**, **traslocaciones**"],["**Genómicas**","El **número de cromosomas**","**Aneuploidía** (síndrome de Down = **trisomía 21**), poliploidía"]]},{"tipo":"tabla","titulo":"Consecuencias de una mutación génica","columnas":["Mecanismo","Resultado","Nombre"],"filas":[["Sustitución de una base","**Cambio de un aminoácido** (p. ej. Glu → Val)","Cambio de sentido (missense)"],["Sustitución de una base","Aparece un **codón de parada** (p. ej. UUA → UAA)","**Mutación sin sentido** (nonsense)"],["Sustitución de una base","**Otro codón para el mismo aminoácido** (CCC → CCA, Pro)","**Mutación silenciosa**"],["Inserción o deleción de 1–2 nucleótidos","**Cambio en la pauta de lectura**; puede aparecer un STOP y una cadena de tamaño diferente","Cambio de pauta (frameshift)"]]},{"tipo":"figura","pagina":21,"pie":"Mutaciones que afectan a un par de bases: sustituciones (missense, nonsense, silenciosa) e inserción con cambio de pauta de lectura que acaba generando un STOP.","src":"img/biologia-celular-y-tisular-t10-traduccion-del-arnm-a-la-proteina-p21.jpg"},{"tipo":"parrafo","texto":"Las mutaciones **cromosómicas** afectan a largos segmentos de ADN; según el segmento pueden alterar la expresión de **muchos genes** y tener un **amplio rango de efectos fenotípicos**. Todas las mutaciones (génicas o cromosómicas) pueden afectar también a **zonas no codificantes**, como **promotores o intrones**."},{"tipo":"esquema","titulo":"Clasificación de las mutaciones","mermaid":"flowchart TD\n  M[\"Mutación\"] --> G[\"Génica o puntual\"]\n  M --> C[\"Cromosómica\"]\n  M --> N[\"Genómica\"]\n  G --> G1[\"Sustitución de base\"]\n  G --> G2[\"Inserción o deleción: cambio de pauta\"]\n  G1 --> S1[\"Cambio de aminoácido\"]\n  G1 --> S2[\"Sin sentido: STOP\"]\n  G1 --> S3[\"Silenciosa\"]\n  C --> C1[\"Deleción, duplicación, inversión, traslocación\"]\n  N --> N1[\"Aneuploidía: trisomía 21\"]","pie":"Génica = secuencia de un gen; cromosómica = estructura; genómica = número de cromosomas."},{"tipo":"alerta","texto":"Trampa frecuente: el **síndrome de Down** es una mutación **genómica** (número de cromosomas), no cromosómica. Y la mutación **sin sentido** genera un **STOP**, mientras que la **silenciosa** no cambia el aminoácido."}]},{"id":"duchenne","titulo":"Ejemplo clínico: distrofia muscular de Duchenne","bloques":[{"tipo":"parrafo","texto":"La **distrofia muscular de Duchenne** es una enfermedad genética grave que provoca la **degeneración progresiva de los músculos**, afectando a la movilidad y, con el tiempo, a funciones vitales como la **respiración y el corazón**. Su causa es la **mutación del gen de la distrofina**, proteína que **conecta la fibra muscular con la matriz extracelular** (une la actina con el complejo de proteínas asociadas y la laminina)."},{"tipo":"parrafo","texto":"Sin distrofina, las fibras **se dañan fácilmente con cada contracción** y **no pueden repararse** adecuadamente, lo que lleva a la **pérdida progresiva de masa y fuerza muscular**."},{"tipo":"dato","valor":"Cromosoma X · 79 exones","texto":"El gen de la distrofina está en el **cromosoma X**; es uno de los **genes humanos más grandes** conocidos y, por su tamaño y complejidad, **especialmente propenso a mutaciones**."},{"tipo":"tabla","titulo":"Tipos de mutaciones en Duchenne (gráfico del temario)","columnas":["Tipo","Porcentaje aproximado"],"filas":[["**Deleciones** mayores","**72 %**"],["**Duplicaciones** mayores","**7 %**"],["Otras: mutaciones **puntuales** (sin sentido)","**20 %**"]]},{"tipo":"figura","pagina":23,"pie":"Distrofina conectando la actina con el complejo asociado y la laminina de la matriz extracelular; abajo, sin distrofina el sarcolema queda inestable.","src":""},{"tipo":"perla","texto":"Tratamiento fisioterapéutico en Duchenne: **mantener la movilidad y la función muscular**, **minimizar contracturas** y mejorar la calidad de vida con **ejercicios de bajo impacto** (natación, estiramientos suaves), **terapia respiratoria** para apoyar la función pulmonar y **órtesis** para corregir alineaciones y prevenir deformidades."},{"tipo":"alerta","texto":"En Duchenne la mutación más frecuente es la **deleción** (≈72 %), no la puntual. Y como la fibra sin distrofina se daña con cada contracción, se evitan los esfuerzos de alto impacto: el temario habla de ejercicios de **bajo impacto**."}]}],"caso_clinico":{"titulo":"Niño de 7 años con debilidad proximal progresiva","presentacion":"Niño de 7 años remitido a fisioterapia con diagnóstico genético de distrofia muscular de Duchenne. Presenta caídas frecuentes, dificultad para subir escaleras, acortamiento incipiente de tríceps sural y fatiga al esfuerzo. El informe genético describe una deleción que provoca un cambio en la pauta de lectura del gen de la distrofina.","preguntas":[{"pregunta":"¿Por qué una deleción puede impedir la síntesis de distrofina funcional?","respuesta":"Si elimina un número de nucleótidos que **altera la pauta de lectura**, los codones posteriores se leen mal y puede aparecer un **codón de parada** prematuro, dando una cadena de **tamaño diferente** y no funcional."},{"pregunta":"¿Por qué la enfermedad afecta casi siempre a varones?","respuesta":"Porque el gen de la distrofina está en el **cromosoma X**: los varones tienen un solo X y no disponen de una copia sana que compense (dato de herencia ligada a X, complemento)."},{"pregunta":"¿Qué objetivos y medios fisioterapéuticos plantearías?","respuesta":"Mantener movilidad y función, minimizar contracturas (estiramientos suaves del tríceps sural), ejercicio de **bajo impacto** como natación, **terapia respiratoria** y **órtesis** para mantener alineación y prevenir deformidades; evitar esfuerzos que dañen fibras sin distrofina."}]},"preguntate":[{"pregunta":"¿Qué es la expresión génica y qué dos procesos incluye?","respuesta":"El conjunto de procesos que permiten que la información del ADN se transcriba en ARN y se traduzca en proteínas: transcripción y traducción."},{"pregunta":"Define gen y nombra sus partes.","respuesta":"Fragmento de ADN con secuencia específica que contiene la información para una proteína concreta; partes: promotor, secuencia codificante y región de terminación."},{"pregunta":"Explica qué significa que el código genético sea degenerado y cuál es la excepción del temario.","respuesta":"Que un aminoácido puede estar codificado por más de un codón; la excepción es la metionina."},{"pregunta":"¿Qué significa que el código no tenga comas ni solapamientos?","respuesta":"Que se lee sin dejar espacios y cada nucleótido pertenece a un solo codón."},{"pregunta":"¿Por qué se dice que el código es casi universal?","respuesta":"Porque los codones se traducen igual en casi todos los organismos, pero hay excepciones, por ejemplo en el ADN mitocondrial (UGA = triptófano)."},{"pregunta":"Describe las funciones de los sitios A, P y E del ribosoma.","respuesta":"A: entrada del aminoacil-ARNt; P: ARNt con la cadena en crecimiento y formación del enlace peptídico; E: salida del ARNt sin aminoácido."},{"pregunta":"¿Cómo termina la traducción?","respuesta":"Entra en el sitio A un codón STOP que ningún ARNt reconoce; un factor de liberación proteico se une al sitio A, libera la cadena y se separan las subunidades."},{"pregunta":"Enumera las diferencias de la traducción eucariota.","respuesta":"Ocurre tras la maduración del ARNm y su salida al citoplasma, el inicio es más complejo con 12 eIF, y está muy controlada para no traducir ARNm dañado; elongación y terminación son similares."},{"pregunta":"Diferencia mutación génica, cromosómica y genómica.","respuesta":"Génica: altera la secuencia de un gen; cromosómica: la estructura de un cromosoma; genómica: el número de cromosomas (p. ej. trisomía 21)."},{"pregunta":"¿Qué función tiene la distrofina y qué ocurre sin ella?","respuesta":"Conecta la fibra muscular con la matriz extracelular; sin ella las fibras se dañan con cada contracción, no se reparan y se pierde masa y fuerza progresivamente."}],"glosario":[{"termino":"Dogma central","definicion":"Flujo de la información genética ADN → ARN → proteína."},{"termino":"Codón","definicion":"Triplete de bases del ARNm que codifica un aminoácido o una señal de parada."},{"termino":"Anticodón","definicion":"Triplete del ARNt complementario al codón del ARNm."},{"termino":"Promotor","definicion":"Región del gen donde se une la maquinaria enzimática para iniciar la transcripción."},{"termino":"Aminoacil-ARNt","definicion":"ARNt cargado con su aminoácido, que entra por el sitio A."},{"termino":"Translocación","definicion":"Avance del ribosoma un codón sobre el ARNm durante la elongación."},{"termino":"Factor de liberación","definicion":"Proteína que reconoce el codón STOP en el sitio A y libera la cadena."},{"termino":"eIF","definicion":"Factores de inicio eucariotas (12 según el temario)."},{"termino":"Polirribosoma","definicion":"ARNm traducido simultáneamente por varios ribosomas."},{"termino":"Chaperona","definicion":"Proteína que pliega los polipéptidos recién sintetizados."},{"termino":"Mutación silenciosa","definicion":"Sustitución que da otro codón para el mismo aminoácido."},{"termino":"Mutación sin sentido","definicion":"Sustitución que genera un codón de parada."},{"termino":"Cambio de pauta de lectura","definicion":"Alteración del marco de lectura por inserción o deleción de 1–2 nucleótidos."},{"termino":"Aneuploidía","definicion":"Número anormal de cromosomas (p. ej. trisomía 21)."}],"fuentes":["Tema 10. Traducción — Biología Celular y Tisular, Universidad Europea, curso 2025-2026 (Cristina Solana Manrique)","Figuras: Pearson Education 2005, 2012"],"qcm":[{"pregunta":"Un ribosoma acaba de completar la translocación durante la elongación. ¿Cuál es el estado de sus sitios?","opciones":["A con ARNt descargado, P vacío, E con la cadena","A con la cadena, P vacío, E con aminoacil-ARNt","A y P ocupados por ARNt cargados, E vacío","A vacío, P con la cadena, E con ARNt sin aminoácido"],"correcta":3,"explicacion":"Tras la translocación el ribosoma avanza un codón: el sitio A queda vacío para el siguiente aminoacil-ARNt, el P contiene la cadena polipeptídica y por el E sale el ARNt sin aminoácido.","por_opcion":["❌ El sitio E solo libera ARNt descargado.","❌ La cadena nunca está en A tras la translocación.","❌ Esa situación corresponde a antes del enlace peptídico, no tras la translocación.","✅ Estado descrito en el temario."]},{"pregunta":"¿Qué característica del código genético implica que cada nucleótido pertenece a un solo codón?","opciones":["Ausencia de solapamientos","Universalidad","Lectura en tripletes","Degeneración"],"correcta":0,"explicacion":"«Sin comas ni solapamientos»: la maquinaria lee sin dejar espacios y cada nucleótido pertenece a un único codón.","por_opcion":["✅ Definición literal del temario.","❌ Universal: mismos codones en casi todos los organismos.","❌ Los tripletes definen el tamaño del codón, no la ausencia de solapamiento.","❌ Degenerado: varios codones para un aminoácido."]},{"pregunta":"Según el temario, ¿qué aminoácido es la excepción a la degeneración del código?","opciones":["Serina","Arginina","Leucina","Metionina"],"correcta":3,"explicacion":"Un aminoácido puede estar codificado por más de un codón excepto la metionina, codificada solo por AUG, que es además el codón de inicio.","por_opcion":["❌ La serina tiene varios codones.","❌ La arginina tiene varios codones.","❌ La leucina tiene seis codones.","✅ Solo AUG."]},{"pregunta":"En el ADN mitocondrial de mamíferos, el codón UGA codifica:","opciones":["Arginina","Triptófano","Una señal de parada, igual que en el núcleo","Isoleucina"],"correcta":1,"explicacion":"Es una de las excepciones a la universalidad: UGA es STOP en el código nuclear y triptófano en el mitocondrial.","por_opcion":["❌ AGA/AGG son arginina en el núcleo y STOP en la mitocondria de mamíferos.","✅ Triptófano.","❌ Precisamente es la excepción.","❌ AUA cambia de isoleucina a metionina, no UGA."]},{"pregunta":"¿Qué ocurre exactamente en el sitio A durante la terminación?","opciones":["Entra un ARNt con anticodón para el STOP","Se une un factor de liberación proteico","Se forma el último enlace peptídico","Se une la subunidad pequeña al ARNm"],"correcta":1,"explicacion":"El codón STOP no es reconocido por ningún ARNt; un factor de liberación (proteína) se une al sitio A y libera la cadena, y después se separan las subunidades.","por_opcion":["❌ Ningún ARNt reconoce los codones STOP.","✅ Factor de liberación.","❌ Los enlaces peptídicos se forman en el sitio P.","❌ Eso ocurre en el inicio."]},{"pregunta":"En el inicio de la traducción en procariotas, el ARNt iniciador se coloca en:","opciones":["El sitio A, antes de unirse el ARNm","El sitio E, para salir después","El sitio A, tras unirse la subunidad grande","El sitio P, antes de unirse la subunidad grande"],"correcta":3,"explicacion":"Orden: ARNm a la subunidad pequeña, ARNt iniciador al sitio P y unión de la subunidad grande.","por_opcion":["❌ El primer paso es la unión del ARNm.","❌ El E es de salida.","❌ El sitio A recibe los siguientes aminoacil-ARNt.","✅ Sitio P, segundo paso del inicio."]},{"pregunta":"Una sustitución transforma el codón CCC en CCA y la proteína conserva prolina. Es una mutación:","opciones":["Sin sentido","Silenciosa","De cambio de pauta","Cromosómica"],"correcta":1,"explicacion":"Al ser degenerado el código, otro codón puede codificar el mismo aminoácido: es una mutación silenciosa.","por_opcion":["❌ Sin sentido genera un STOP.","✅ Mismo aminoácido.","❌ El cambio de pauta lo producen inserciones o deleciones.","❌ Afecta a una sola base, es génica."]},{"pregunta":"El síndrome de Down se clasifica como mutación:","opciones":["Génica por sustitución","Génica por cambio de pauta","Cromosómica por traslocación","Genómica por aneuploidía"],"correcta":3,"explicacion":"Las mutaciones genómicas alteran el número de cromosomas; la trisomía 21 es una aneuploidía.","por_opcion":["❌ No altera la secuencia de un gen.","❌ No es un cambio de pauta.","❌ Las cromosómicas afectan a la estructura, no al número.","✅ Genómica, aneuploidía."]},{"pregunta":"Respecto a la traducción en eucariotas, ¿qué afirmación es correcta?","opciones":["El inicio implica 12 factores eIF","Ocurre en el núcleo antes del splicing","No existe control sobre ARNm dañados","La elongación difiere radicalmente de la procariota"],"correcta":0,"explicacion":"En eucariotas la traducción ocurre tras la maduración del ARNm, ya en el citoplasma; el inicio es más complejo con 12 eIF; elongación y terminación son similares y el proceso está muy controlado.","por_opcion":["✅ 12 eIF.","❌ Ocurre tras la maduración y la salida al citoplasma.","❌ Está altamente controlado para no traducir ARNm dañado.","❌ Elongación y terminación son similares."]},{"pregunta":"Un polirribosoma se define como:","opciones":["Un conjunto de ARNt unidos a un ribosoma","Un ribosoma que traduce varios ARNm a la vez","Un ARNm traducido a la vez por varios ribosomas","Un ribosoma con varias subunidades grandes"],"correcta":2,"explicacion":"Cuando un ribosoma deja espacio en el extremo 5' del ARNm, se une otro que inicia otra cadena; así un mismo ARNm se traduce simultáneamente por varios ribosomas.","por_opcion":["❌ Describe la ocupación normal de los sitios.","❌ Es al revés: un ARNm, varios ribosomas.","✅ Definición del temario.","❌ Cada ribosoma tiene una subunidad grande y una pequeña."]},{"pregunta":"En la síntesis de una proteína, ¿qué par de direcciones es correcto?","opciones":["ARNm 3'→5' y proteína C→N","ARNm 5'→3' y proteína C→N","ARNm 3'→5' y proteína N→C","ARNm 5'→3' y proteína N→C"],"correcta":3,"explicacion":"El ARNm se lee siempre 5'→3' y la proteína se sintetiza siempre del extremo amino al carboxilo.","por_opcion":["❌ Ambas invertidas.","❌ La proteína crece N→C.","❌ La lectura es 5'→3'.","✅ Ambas direcciones correctas."]},{"pregunta":"La inserción de un nucleótido en la secuencia codificante suele provocar:","opciones":["Un solo aminoácido cambiado sin más efectos","La duplicación de un segmento cromosómico","Un cambio en la pauta de lectura","Ningún cambio por la degeneración del código"],"correcta":2,"explicacion":"La eliminación o inserción de uno o dos nucleótidos cambia la pauta de lectura, lo que puede dar una cadena de tamaño diferente porque la nueva pauta puede contener codones de parada.","por_opcion":["❌ Altera todos los codones posteriores.","❌ Es una mutación génica, no cromosómica.","✅ Frameshift.","❌ La degeneración no compensa un desplazamiento del marco."]},{"pregunta":"Sobre el gen de la distrofina, ¿qué dato es correcto?","opciones":["Está en el cromosoma X y tiene 79 exones","Es un gen pequeño, poco propenso a mutar","Está en el cromosoma 21 y tiene 49 exones","Está en el ADN mitocondrial"],"correcta":0,"explicacion":"El gen de la distrofina está en el cromosoma X, tiene 79 exones y es uno de los genes humanos más grandes, por lo que es especialmente propenso a mutaciones.","por_opcion":["✅ Dato del temario.","❌ Es de los más grandes y muy propenso a mutar.","❌ Cromosoma y número de exones erróneos.","❌ Es un gen nuclear."]},{"pregunta":"Según el gráfico del temario, el tipo de mutación más frecuente en Duchenne es:","opciones":["Deleciones mayores","Mutaciones puntuales sin sentido","Duplicaciones mayores","Inversiones cromosómicas"],"correcta":0,"explicacion":"El gráfico muestra aproximadamente 72 % de deleciones mayores, 7 % de duplicaciones y 20 % de otras (puntuales, sin sentido).","por_opcion":["✅ ≈72 %.","❌ ≈20 %.","❌ ≈7 %.","❌ No aparecen en el gráfico de Duchenne."]},{"pregunta":"Un gen cuya expresión se activa ante la presencia de una molécula concreta, como en la síntesis de oxitocina, es:","opciones":["Constitutivo","No codificante","Inducible","Mitocondrial"],"correcta":2,"explicacion":"Los genes inducibles/reprimibles activan su expresión por la presencia de una molécula (ejemplo del temario: oxitocina); los constitutivos se expresan de forma constante.","por_opcion":["❌ Expresión constante de proteínas esenciales.","❌ Sí codifica una proteína.","✅ Inducible/reprimible.","❌ Clasificación sin relación con la regulación descrita."]}],"asignatura":"Biología celular y tisular","tema":10,"fecha":"2026-11-10"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips"><a class="chip" href="../index.html" style="text-decoration:none">← Mis fichas</a>${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* dernière fiche ouverte + carnet d'erreurs + envoi du score vers Notion */
+const slugPag = location.pathname.split('/').pop().replace(/\.html$/, '');
+const carpeta = grande ? 'qcm' : 'fichas';
+try{ localStorage.setItem('ultima', JSON.stringify({href:`${carpeta}/${slugPag}.html`, titulo:F.titulo, t:Date.now()})); }catch(e){}
+function errorGuardar(k, fallo){
+  try{
+    const E = JSON.parse(localStorage.getItem('errores')||'{}'), id = `${slugPag}#${k}`;
+    if(fallo){ const q = Q[k]; E[id] = {id, curso:F.asignatura, tema:(F.tema ?? q.tema ?? null), titulo:F.titulo, href:`${carpeta}/${slugPag}.html`, q:{pregunta:q.pregunta, opciones:q.opciones, correcta:q.correcta, explicacion:q.explicacion, por_opcion:q.por_opcion}, n:(E[id]?.n||0)+1, t:Date.now()}; }
+    else delete E[id];
+    localStorage.setItem('errores', JSON.stringify(E));
+  }catch(e){}
+}
+async function enviarScore(ok, n){
+  const el = document.getElementById('envio'); if(!el) return;
+  if(grande || !window.FICHAS_RELAY){ el.textContent = ''; return; }
+  el.textContent = 'Enregistrement dans Notion…';
+  try{
+    const r = await fetch(window.FICHAS_RELAY, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({url:location.origin+location.pathname, score:ok, total:n})});
+    const j = await r.json();
+    el.textContent = j.ok ? '✓ Score enregistré dans Notion' + (j.proxima ? ` · prochaine révision : ${j.proxima}` : '') : 'Score non enregistré dans Notion (' + (j.error||'erreur') + ')';
+  }catch(e){ el.textContent = 'Score non enregistré dans Notion (hors ligne ?)'; }
+}
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; errorGuardar(k, !resp[k].ok); marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  const completo = n===Q.length;
+  if(completo) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado!':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p><p id="envio" style="font-size:.9rem;color:var(--suave);margin:0 auto 14px"></p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  if(completo) enviarScore(ok, n);
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>

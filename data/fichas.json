@@ -90,14 +90,14 @@
     "secciones": 8
   },
   {
-    "slug": "biologia-celular-y-tisular-t10-tema-10-traduccion",
-    "titulo": "Tema 10: Traducción",
-    "subtitulo": "Dogma central, genes y código genético, maquinaria y etapas de la traducción en procariotas y eucariotas, polirribosomas y modificaciones postraduccionales, y mutaciones (génicas, cromosómicas, genómicas) con el ejemplo de la distrofia de Duchenne.",
+    "slug": "biologia-celular-y-tisular-t10-traduccion-del-arnm-a-la-proteina",
+    "titulo": "Traducción: del ARNm a la proteína",
+    "subtitulo": "Código genético, maquinaria y etapas de la síntesis de proteínas en procariotas y eucariotas, y tipos de mutaciones con el ejemplo de la distrofia muscular de Duchenne.",
     "curso": "Biología celular y tisular",
     "tema": 10,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 7
   },
   {
     "slug": "drenaje-linfatico-t1-tema-1-introduccion-al-drenaje-linfatico-manual",
@@ -150,14 +150,14 @@
     "secciones": 6
   },
   {
-    "slug": "drenaje-linfatico-t4.2-tema-4-2-edemas-ii-linfedemas-especiales",
-    "titulo": "Tema 4.2: Edemas (II) – linfedemas especiales",
-    "subtitulo": "Linfedema genital, de mama, de cabeza-cara-cuello y linfedema secundario maligno: clasificación, clínica y secuencia de tratamiento conservador.",
+    "slug": "drenaje-linfatico-t4.2-edemas-ii-linfedemas-especiales",
+    "titulo": "Edemas (II): linfedemas especiales",
+    "subtitulo": "Linfedema genital, de la mama, de cabeza-cara-cuello y secundario maligno: características, clasificaciones y tratamiento conservador y quirúrgico con DLM.",
     "curso": "Drenaje linfático",
     "tema": 4.2,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 4
+    "secciones": 5
   },
   {
     "slug": "drenaje-linfatico-t4.3-tema-4-3-edemas-iii-lipedema-otros-edemas-y-fisioterapia-der",
@@ -260,14 +260,14 @@
     "secciones": 8
   },
   {
-    "slug": "fisioterapia-neurologica-t9-tema-9-fundamentos-basicos-del-concepto-bobath",
-    "titulo": "Tema 9: Fundamentos básicos del concepto Bobath",
-    "subtitulo": "Historia, principios y objetivos del concepto Bobath, tono postural, mecanismo de control postural, inervación recíproca, neuroplasticidad, aprendizaje motor y movimiento normal.",
+    "slug": "fisioterapia-neurologica-t9-fundamentos-basicos-del-concepto-bobath",
+    "titulo": "Fundamentos básicos del Concepto Bobath",
+    "subtitulo": "Enfoque de resolución de problemas para evaluar y tratar la función, el movimiento y el control postural tras una lesión del SNC, basado en la neuroplasticidad y el movimiento normal.",
     "curso": "Fisioterapia neurológica",
     "tema": 9,
-    "fecha": "2026-11-09",
+    "fecha": "2026-11-10",
     "preguntas": 15,
-    "secciones": 5
+    "secciones": 7
   },
   {
     "slug": "ortesis-t1-tema-1-ortesis-y-protesis-historia-y-generalidades",
