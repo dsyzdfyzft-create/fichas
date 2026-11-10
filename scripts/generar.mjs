@@ -159,9 +159,56 @@ async function extraerFiguras(ficha, pdfBuf, slug) {
   }
 }
 
-async function publicar(ficha, meta, pdfBuf) {
+// Nombre de pages du PDF et nombre de pages contenant une vraie image (pas un logo)
+function analizarPdf(pdfBuf, slug) {
+  const r = { paginas: 0, conImagen: 0 };
+  if (!pdfBuf) return r;
+  const tmp = path.join(tmpdir(), `${slug}-qa.pdf`);
+  try {
+    execFileSync('sh', ['-c', `cat > "${tmp}"`], { input: pdfBuf });
+    r.paginas = Number((execFileSync('pdfinfo', [tmp]).toString().match(/Pages:\s+(\d+)/) || [])[1] || 0);
+    const pags = new Set();
+    for (const l of execFileSync('pdfimages', ['-list', tmp], { maxBuffer: 64 * 1024 * 1024 }).toString().split('\n').slice(2)) {
+      const c = l.trim().split(/\s+/); // page num type width height ...
+      if (c.length > 4 && Number(c[3]) >= 250 && Number(c[4]) >= 250) pags.add(c[0]);
+    }
+    r.conImagen = pags.size;
+  } catch { /* poppler absent : on ne bloque pas */ }
+  return r;
+}
+
+// Contrôle qualité : refuse une fiche trop légère. Renvoie la liste des problèmes (vide = OK).
+function controlCalidad(ficha, pdf) {
+  const bl = (ficha.secciones || []).flatMap(s => s.bloques || []);
+  const n = t => bl.filter(b => b.tipo === t).length;
+  const chars = bl.reduce((a, b) => a + JSON.stringify(b).length, 0);
+  const figs = bl.filter(b => b.tipo === 'figura' && b.src).length;
+  const pg = pdf.paginas || 30;
+  const minChars = Math.max(6000, Math.min(16000, pg * 450));
+  const minSecc = pg >= 40 ? 6 : pg >= 18 ? 5 : 3;
+  const P = [];
+  if ((ficha.secciones || []).length < minSecc) P.push(`solo ${(ficha.secciones || []).length} secciones (mínimo ${minSecc} para un PDF de ${pg} páginas)`);
+  if (chars < minChars) P.push(`contenido demasiado corto (${Math.round(chars / 1000)}k caracteres, mínimo ${Math.round(minChars / 1000)}k para ${pg} páginas): desarrolla los mecanismos, añade tablas y todos los datos examinables del PDF`);
+  if (n('esquema') < 2) P.push(`solo ${n('esquema')} esquema(s) Mermaid (mínimo 2, ideal 3–4)`);
+  if (n('tabla') < 2) P.push(`solo ${n('tabla')} tabla(s) (mínimo 2)`);
+  if (n('perla') < 2) P.push(`solo ${n('perla')} perla(s) clínica(s) (mínimo 2)`);
+  if (n('alerta') < 3) P.push(`solo ${n('alerta')} alerta(s) de examen (mínimo 3)`);
+  if (n('dato') < 2) P.push(`solo ${n('dato')} bloque(s) « dato » (mínimo 2)`);
+  if (pdf.conImagen >= 3 && figs < 2) P.push(`solo ${figs} figura(s) válidas mientras que el PDF tiene ${pdf.conImagen} páginas con imágenes (mínimo 2 ; revisa los números de página)`);
+  if ((ficha.resumen || []).length !== 5) P.push('« resumen » debe tener exactamente 5 frases');
+  if ((ficha.preguntate || []).length < 8) P.push(`solo ${(ficha.preguntate || []).length} preguntas en « preguntate » (mínimo 8)`);
+  if (!ficha.caso_clinico) P.push('falta el caso clínico');
+  if ((ficha.glosario || []).length < 8) P.push(`glosario demasiado corto (${(ficha.glosario || []).length}, mínimo 8)`);
+  return P;
+}
+
+async function publicar(ficha, meta, pdfBuf, { forzar = false } = {}) {
   const slug = `${slugify(meta.curso || 'curso')}-t${meta.tema ?? 'x'}-${slugify(ficha.titulo)}`;
   await extraerFiguras(ficha, pdfBuf, slug);
+  if (pdfBuf && !forzar) {
+    const problemas = controlCalidad(ficha, analizarPdf(pdfBuf, slug));
+    if (problemas.length) throw new Error('CALIDAD INSUFICIENTE — ficha no publicada:\n- ' + problemas.join('\n- '));
+  }
   const tpl = await readFile(path.join(ROOT, 'templates/ficha.html'), 'utf8');
   const datos = JSON.stringify({ ...ficha, asignatura: meta.curso, tema: meta.tema, fecha: meta.fecha }).replace(/</g, '\\u003c');
   const html = tpl.replace('%%TITULO%%', `${ficha.titulo} · Ficha`.replace(/[<&]/g, '')).replace('%%DATOS%%', datos);
@@ -170,7 +217,10 @@ async function publicar(ficha, meta, pdfBuf) {
   const idxPath = path.join(ROOT, 'data/fichas.json');
   const idx = existsSync(idxPath) ? JSON.parse(await readFile(idxPath, 'utf8')) : [];
   const item = { slug, titulo: ficha.titulo, subtitulo: ficha.subtitulo || '', curso: meta.curso, tema: meta.tema, fecha: meta.fecha, preguntas: ficha.qcm.length, secciones: ficha.secciones.length };
-  const sin = idx.filter(x => x.slug !== slug);
+  // une seule fiche par cours + tema : l'ancienne version (autre titre) est retirée
+  const viejas = idx.filter(x => x.slug !== slug && meta.tema != null && x.curso === meta.curso && x.tema === meta.tema);
+  for (const v of viejas) { const { rm } = await import('node:fs/promises'); await rm(path.join(ROOT, 'fichas', `${v.slug}.html`), { force: true }); }
+  const sin = idx.filter(x => x.slug !== slug && !viejas.includes(x));
   sin.push(item);
   sin.sort((a, b) => (a.curso || '').localeCompare(b.curso || '') || (a.tema ?? 99) - (b.tema ?? 99));
   await writeFile(idxPath, JSON.stringify(sin, null, 2));
@@ -181,6 +231,11 @@ async function crearTema(page, ficha, tema, url) {
   const ya = await notion('POST', `/databases/${THEMES_DB_ID}/query`, { filter: { property: 'Fiche', url: { equals: url } }, page_size: 1 });
   if (ya.results.length) return;
   const rel = page.properties['Cours']?.relation || [];
+  // fiche refaite : on garde le thème existant (et son score) et on met juste le lien à jour
+  if (tema != null && rel[0]) {
+    const mismo = await notion('POST', `/databases/${THEMES_DB_ID}/query`, { filter: { and: [{ property: 'Tema', number: { equals: tema } }, { property: 'Cours', relation: { contains: rel[0].id } }] }, page_size: 1 });
+    if (mismo.results.length) { await notion('PATCH', `/pages/${mismo.results[0].id}`, { properties: { 'Fiche': { url } } }); return; }
+  }
   const titulo = ficha.titulo.match(/^tema\s*\d+/i) ? ficha.titulo : `${tema != null ? `Tema ${tema} – ` : ''}${ficha.titulo}`;
   await notion('POST', '/pages', { parent: { database_id: THEMES_DB_ID }, properties: {
     'Thème': { title: [{ text: { content: titulo.slice(0, 200) } }] },
@@ -270,6 +325,7 @@ async function rerenderTodo() {
     if (html !== await readFile(file, 'utf8')) { await writeFile(file, html); total++; }
   }
   const qdir = path.join(ROOT, 'qcm');
+  const listaQcm = [];
   if (existsSync(qdir)) {
     const { readdir } = await import('node:fs/promises');
     for (const n of (await readdir(qdir)).filter(x => x.endsWith('.html'))) {
@@ -279,8 +335,12 @@ async function rerenderTodo() {
       const d = JSON.parse(m[1].replace(/\\u003c/g, '<'));
       const html = pinta(d, d.titulo || 'Gran QCM');
       if (html !== html0) { await writeFile(file, html); total++; }
+      listaQcm.push({ slug: n.replace(/\.html$/, ''), titulo: d.titulo || 'Gran QCM', curso: d.asignatura || '', fecha: d.fecha || '', preguntas: (d.qcm || []).length });
     }
   }
+  listaQcm.sort((a, b) => (b.fecha + b.slug).localeCompare(a.fecha + a.slug));
+  const qj = JSON.stringify(listaQcm, null, 2), qp = path.join(ROOT, 'data/qcm.json');
+  if (!existsSync(qp) || qj !== await readFile(qp, 'utf8')) await writeFile(qp, qj);
   console.log(`Plantilla aplicada: ${total} página(s) actualizada(s), ${completadas} ficha(s) completada(s).`);
 }
 
@@ -303,8 +363,16 @@ async function main() {
       const pdf = await descargar(page);
       const contexto = `Asignatura: ${curso || 'desconocida'}${tema != null ? ` · Tema ${tema}` : ''}${titulo ? ` · Título dado por el alumno: ${titulo}` : ''}`;
       console.log('→', contexto);
-      const ficha = validar(await claude(pdf, contexto));
-      const url = await publicar(ficha, { curso, tema, fecha: new Date().toISOString().slice(0, 10) }, pdf.buf);
+      let ficha = validar(await claude(pdf, contexto));
+      let url;
+      const meta = { curso, tema, fecha: new Date().toISOString().slice(0, 10) };
+      try { url = await publicar(ficha, meta, pdf.buf); }
+      catch (e) {
+        if (!e.message.startsWith('CALIDAD')) throw e;
+        console.log('↻ segunda versión (calidad insuficiente)');
+        ficha = validar(await claude(pdf, `${contexto}\nTu versión anterior fue RECHAZADA por el control de calidad:\n${e.message}\nGenera una versión completa que corrija todos estos puntos.`));
+        url = await publicar(ficha, meta, pdf.buf);
+      }
       await setEstado(page.id, 'Fiche prête', { fiche: url });
       await crearTema(page, ficha, tema, url).catch(e => console.error('Thème non créé :', e.message));
       console.log('✓', url);
@@ -317,7 +385,7 @@ async function main() {
   await rerenderTodo();
 }
 
-export { notion, plain, setEstado, validar, reequilibrar, publicar, crearTema, leerFicha, textoFicha, rerenderTodo, slugify, ROOT, SITE_URL, NOTION_DB_ID, COURS_DB_ID };
+export { controlCalidad, analizarPdf, notion, plain, setEstado, validar, reequilibrar, publicar, crearTema, leerFicha, textoFicha, rerenderTodo, slugify, ROOT, SITE_URL, NOTION_DB_ID, COURS_DB_ID };
 
 import { pathToFileURL } from 'node:url';
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

@@ -6,7 +6,7 @@ on:
   workflow_dispatch:          # bouton « Run workflow »
   push:                       # republie le site quand tu (ou Cowork) envoies des fiches
     branches: [main]
-    paths: ["fichas/**", "data/**", "qcm/**", "index.html", "templates/**", "prompts/**", "widget-*.html"]
+    paths: ["fichas/**", "data/**", "qcm/**", "assets/**", "templates/**", "prompts/**", "*.html", "config.js"]
 
 permissions:
   contents: write

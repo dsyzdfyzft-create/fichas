@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Carnet d’erreurs · Fichas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+<style>:root{--h:350}.lignes .l{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--linea)}.lignes .l:first-child{border-top:0}.barre-cmd{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:28px 0 18px}</style>
+</head>
+<body>
+<header class="portada"><div class="env">
+  <a class="volver" href="index.html">← Mis fichas</a>
+  <h1>Carnet d’erreurs</h1>
+  <p>Toutes les questions ratées dans tes QCM, examens blancs et grands QCM. Une question disparaît du carnet quand tu la réussis ici.</p>
+  <div class="cifras"><div class="cifra"><b id="k1">0</b><span>erreurs à revoir</span></div><div class="cifra"><b id="k2">0</b><span>matières concernées</span></div></div>
+</div></header>
+<main class="env">
+  <div class="barre-cmd"><select id="curso" aria-label="Matière"></select><button class="bot" id="go">Retenter mes erreurs</button><button class="bot sec" id="vider">Vider le carnet</button></div>
+  <div id="zona"></div>
+</main>
+<footer class="env">Le carnet est enregistré dans ce navigateur.</footer>
+<script src="assets/comun.js"></script>
+<script>
+(function(){
+  const {esc,md,errores,quiz,barajar,icono}=FI;
+  const zona=document.getElementById('zona'), sel=document.getElementById('curso');
+  function resume(){
+    const L=errores.lista(), cursos=[...new Set(L.map(e=>e.curso||'Sans cours'))];
+    document.getElementById('k1').textContent=L.length;document.getElementById('k2').textContent=cursos.length;
+    const act=sel.value;
+    sel.innerHTML='<option value="">Toutes les matières</option>'+cursos.map(c=>`<option ${c===act?'selected':''}>${esc(c)}</option>`).join('');
+    document.getElementById('go').disabled=!L.length;
+    if(!L.length){zona.innerHTML='<div class="vacio">Aucune erreur enregistrée. Fais un QCM ou un examen blanc : les questions ratées arriveront ici.</div>';return}
+    zona.innerHTML=cursos.map(c=>{const l=L.filter(e=>(e.curso||'Sans cours')===c);return `<div class="tarjeta" style="margin-bottom:16px"><h2 style="margin-bottom:8px">${icono(c)} ${esc(c)} <span class="chip mal">${l.length}</span></h2><div class="lignes">${l.map(e=>`<div class="l"><span><span class="chip gris">Tema ${esc(e.tema??'–')}</span> ${md(e.q.pregunta)}</span><span class="chip mal">ratée ${e.n}×</span></div>`).join('')}</div></div>`}).join('');
+  }
+  document.getElementById('go').onclick=()=>{
+    const c=sel.value, items=barajar(errores.lista().filter(e=>!c||(e.curso||'Sans cours')===c));
+    if(!items.length) return;
+    zona.innerHTML='<div class="marco" id="marco"></div>';
+    quiz(document.getElementById('marco'),items,{modo:'inmediato',
+      alAcertar:it=>errores.quitar(it.id), alFallar:it=>errores.anadir(it),
+      alTerminar:res=>{const ok=res.filter(x=>x.ok).length;document.getElementById('marco').innerHTML=`<div class="resultado"><div class="gran">${ok}<small> / ${res.length}</small></div><p>${ok===res.length?'🎉 Toutes corrigées : elles sortent du carnet.':`${ok} question(s) corrigée(s) et retirée(s) du carnet. Les autres y restent.`}</p><div class="acciones" style="justify-content:center"><button class="bot" onclick="location.reload()">Revenir au carnet</button></div></div>`;}});
+  };
+  document.getElementById('vider').onclick=()=>{if(confirm('Vider tout le carnet d’erreurs ?')){errores.vaciar();resume()}};
+  resume();
+})();
+</script>
+</body>
+</html>

@@ -3,7 +3,8 @@
 // Usage (depuis le dossier du dépôt) :
 //   node scripts/local.mjs pendientes            → télécharge les cours « Nouveau » + les grands QCM demandés dans entrada/
 //   node scripts/local.mjs nuevo <pdf> <cours> [tema] → ajoute un PDF reçu dans le chat (crée la ligne Notion avec le PDF)
-//   node scripts/local.mjs publicar <id>         → publie entrada/<id>.json (fiche écrite par Claude) avec images
+//   node scripts/local.mjs rehacer "<cours>" <tema> [<tema>…] → remet des fiches déjà faites sur « Nouveau » pour les refaire
+//   node scripts/local.mjs publicar <id> [--forzar] → publie entrada/<id>.json (fiche écrite par Claude) avec images ; refuse si la qualité est insuffisante
 //   node scripts/local.mjs publicar-qcm <id>     → publie entrada/qcm-<id>.json (grand QCM écrit par Claude)
 //   node scripts/local.mjs error <id> "message"  → marque le cours en erreur dans Notion
 //   node scripts/local.mjs fin                   → applique le design, commit et push vers GitHub
@@ -29,7 +30,7 @@ async function pendientes() {
   await mkdir(ENT, { recursive: true });
   const res = await notion('POST', `/databases/${NOTION_DB_ID}/query`, {
     filter: { and: [{ property: 'Statut', status: { equals: 'Nouveau' } }, { property: 'Fichier', files: { is_not_empty: true } }] },
-    sorts: [{ timestamp: 'created_time', direction: 'ascending' }], page_size: 20,
+    sorts: [{ property: 'Tema', direction: 'ascending' }], page_size: Number(process.env.MAX_FICHAS || 3),
   });
   const lista = [];
   for (const page of res.results) {
@@ -110,7 +111,7 @@ async function publicarFicha(id) {
   const crudo = await readFile(path.join(ENT, `${id}.json`), 'utf8');
   const ficha = validar(JSON.parse(crudo.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '')));
   const pdf = await readFile(path.join(ENT, `${id}.pdf`));
-  const url = await publicar(ficha, { curso: meta.curso, tema: meta.tema, fecha: new Date().toISOString().slice(0, 10) }, pdf);
+  const url = await publicar(ficha, { curso: meta.curso, tema: meta.tema, fecha: new Date().toISOString().slice(0, 10) }, pdf, { forzar: process.argv.includes('--forzar') });
   await setEstado(meta.pageId, 'Fiche prête', { fiche: url });
   const pageFalsa = { properties: { Cours: { relation: meta.cursoId ? [{ id: meta.cursoId }] : [] } } };
   await crearTema(pageFalsa, ficha, meta.tema, url).catch(e => console.error('Thème non créé :', e.message));
@@ -138,6 +139,21 @@ async function publicarQCM(id) {
   console.log('✓', url);
 }
 
+// Remet des cours déjà faits sur « Nouveau » pour les refaire : rehacer "<cours>" <tema> [<tema> ...]
+async function rehacer(cursoBuscado, temas) {
+  const norm = s => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  const cs = await notion('POST', `/databases/${COURS_DB_ID}/query`, { page_size: 50 });
+  const c = cs.results.find(p => norm(plain(Object.values(p.properties).find(x => x.type === 'title')?.title)).includes(norm(cursoBuscado)));
+  if (!c) throw new Error(`Cours introuvable : « ${cursoBuscado} »`);
+  for (const t of temas.map(Number)) {
+    const r = await notion('POST', `/databases/${NOTION_DB_ID}/query`, { filter: { and: [{ property: 'Cours', relation: { contains: c.id } }, { property: 'Tema', number: { equals: t } }] }, page_size: 5 });
+    const conPdf = r.results.find(p => (p.properties['Fichier']?.files || []).length);
+    if (!conPdf) { console.log(`✗ tema ${t} : aucune ligne avec PDF dans « Dépôt des cours » (glisse le PDF dans Claude Code et utilise « nuevo »)`); continue; }
+    await setEstado(conPdf.id, 'Nouveau');
+    console.log(`↻ tema ${t} remis sur « Nouveau »`);
+  }
+}
+
 async function fin() {
   await rerenderTodo();
   const git = (...a) => execFileSync('git', a, { cwd: ROOT, stdio: 'inherit' });
@@ -149,8 +165,9 @@ async function fin() {
 
 if (cmd === 'pendientes') await pendientes();
 else if (cmd === 'nuevo') await nuevo(arg, resto[0] || '', resto[1]);
+else if (cmd === 'rehacer') await rehacer(arg, resto);
 else if (cmd === 'publicar') await publicarFicha(arg);
 else if (cmd === 'publicar-qcm') await publicarQCM(arg);
 else if (cmd === 'error') { const meta = JSON.parse(await readFile(path.join(ENT, `${arg}.meta.json`), 'utf8')); await setEstado(meta.pageId, 'Erreur', { message: resto.join(' ') }); }
 else if (cmd === 'fin') await fin();
-else console.log('Commandes : pendientes | nuevo <pdf> <cours> [tema] | publicar <id> | publicar-qcm <id> | error <id> "message" | fin');
+else console.log('Commandes : pendientes | nuevo <pdf> <cours> [tema] | rehacer "<cours>" <temas…> | publicar <id> [--forzar] | publicar-qcm <id> | error <id> "message" | fin');

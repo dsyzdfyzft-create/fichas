@@ -3,93 +3,106 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
 <title>Fichas · Fisioterapia</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
 <style>
-:root{--fond:#fff;--encre:#0f1115;--doux:#6b7280;--ligne:#e7e8eb;--surface:#fff;--piste:#eceef0;--lab:#55595f;--marine:#1d2538;--lime:#c6ef5c;
-  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;--sans:"Inter",-apple-system,system-ui,sans-serif;color-scheme:light;
-  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--fond:#0b0d10;--encre:#e8eaee;--doux:#8a9099;--ligne:#23272e;--surface:#121418;--piste:#22262c;--lab:#9aa0a6;color-scheme:dark}}
-:root[data-theme="dark"]{--fond:#0b0d10;--encre:#e8eaee;--doux:#8a9099;--ligne:#23272e;--surface:#121418;--piste:#22262c;--lab:#9aa0a6;color-scheme:dark}
-*,*::before,*::after{box-sizing:inherit}
-body{margin:0;background:var(--fond);color:var(--encre);font:400 15px/1.5 var(--sans);-webkit-font-smoothing:antialiased}
-.cadre{display:grid;grid-template-columns:250px 1fr;min-height:100vh}
-.lateral{background:#0e1013;color:#d7dbe2;position:sticky;top:0;height:100vh;display:flex;flex-direction:column;overflow-y:auto}
-.marque{display:flex;align-items:center;gap:12px;padding:26px 22px;border-bottom:1px solid #1d2026;font-weight:600;color:#fff;font-size:1.12rem}
-.marque span{color:#8a9099;font-weight:400}
-.logo{width:30px;height:30px;border-radius:7px;background:#2a2e35;display:grid;place-items:center;color:var(--lime);font:700 15px var(--mono)}
-.nav{padding:16px 12px;display:flex;flex-direction:column;gap:2px}
-.nav a{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 14px;border-radius:6px;color:#c3c8d0;text-decoration:none;border-left:3px solid transparent;font-size:.95rem}
-.nav a:hover{color:#fff}
-.nav a.on{background:#1f2329;color:#fff;border-left-color:var(--lime)}
-.nav a small{font:500 11px var(--mono);color:#8a9099}
-main{padding:44px 48px 80px;max-width:1200px;width:100%;min-width:0}
-.entete{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
-h1{font-size:2.3rem;letter-spacing:-.03em;margin:0;font-weight:700}
-.sync{font:400 14px var(--mono);color:var(--doux);margin-top:6px}
-input[type=search]{font:500 15px var(--sans);border:1px solid var(--ligne);border-radius:6px;padding:10px 13px;background:var(--surface);color:var(--encre);width:280px;max-width:100%}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--ligne);border-radius:6px;overflow:hidden;margin-bottom:34px}
-.kpi{padding:20px 22px;border-left:1px solid var(--ligne)}
-.kpi:first-child{border-left:0;background:var(--marine);color:#fff}
-.kpi:first-child .lab{color:var(--lime)}
-.lab{font:500 11px var(--mono);letter-spacing:.08em;color:var(--lab);text-transform:uppercase}
-.val{font:600 38px/1.1 var(--mono);letter-spacing:-.04em;margin-top:12px}
-h2{font-size:1.4rem;letter-spacing:-.02em;margin:38px 0 14px;padding-bottom:12px;border-bottom:1px solid var(--ligne);font-weight:650;display:flex;justify-content:space-between;align-items:baseline}
-h2 small{font:500 12px var(--mono);color:var(--doux)}
-.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
-.carte{display:block;text-decoration:none;color:inherit;background:var(--surface);border:1px solid var(--ligne);border-radius:6px;padding:18px 20px;transition:border-color .15s}
-.carte:hover{border-color:var(--encre)}
-.carte .t{font:500 11px var(--mono);letter-spacing:.06em;color:var(--lab);text-transform:uppercase}
-.carte h3{margin:8px 0 6px;font-size:1.08rem;letter-spacing:-.01em;line-height:1.3}
-.carte p{margin:0;color:var(--doux);font-size:.9rem}
-.carte .pied{display:flex;justify-content:space-between;margin-top:14px;font:500 12px var(--mono);color:var(--doux)}
-.score{color:var(--encre)}
-.vide{border:1px dashed var(--ligne);border-radius:6px;padding:40px;text-align:center;color:var(--doux)}
-@media (max-width:900px){.cadre{grid-template-columns:1fr}.lateral{position:static;height:auto}.nav{flex-direction:row;overflow-x:auto}.nav a{white-space:nowrap;border-left:0}main{padding:26px 16px 60px}.kpis{grid-template-columns:1fr 1fr 1fr}.val{font-size:28px}}
+.outils{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:26px}
+.outil{display:block;text-decoration:none;color:inherit;background:var(--hoja);border-radius:18px;padding:16px 18px;box-shadow:var(--sombra)}
+.outil b{display:block;font:800 1.05rem var(--display);margin-bottom:2px}
+.outil span{color:var(--suave);font-size:.9rem}
+.outil.reprise{background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff}
+.outil.reprise span{color:rgba(255,255,255,.85)}
+.filtre{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:34px 0 0}
+.filtre input{flex:1;min-width:200px}
+section.cours{margin-top:44px;--h:248}
+.cours-tete{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+.cours-tete h2{display:flex;align-items:center;gap:10px}
+.cours-tete h2 i{font-style:normal;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--acento-suave);font-size:1.2rem}
+.avance{height:8px;border-radius:4px;background:var(--linea);overflow:hidden;margin:10px 0 6px}
+.avance i{display:block;height:100%;background:linear-gradient(90deg,var(--acento),var(--acento-2))}
+.avance-txt{font-size:.85rem;color:var(--suave);margin-bottom:16px}
+.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+.fiche{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);border-top:4px solid var(--acento);transition:transform .15s}
+.fiche:hover{transform:translateY(-2px)}
+.fiche .t{font:700 .72rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta)}
+.fiche h3{line-height:1.25}
+.fiche p{margin:0;color:var(--suave);font-size:.88rem;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fiche .pied{margin-top:auto;padding-top:8px;display:flex;justify-content:space-between;align-items:center}
+.gqcm{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+@media (prefers-reduced-motion:reduce){.fiche{transition:none}}
 </style>
 </head>
 <body>
-<div class="cadre">
-  <aside class="lateral">
-    <div class="marque"><div class="logo">V</div><div>fichas<span>.fisio</span></div></div>
-    <nav class="nav" id="nav"></nav>
-  </aside>
-  <main>
-    <div class="entete"><div><h1 id="titre">Toutes les fiches</h1><div class="sync" id="sync">Chargement…</div></div>
-      <input type="search" id="q" placeholder="Chercher un thème…" aria-label="Chercher une fiche"></div>
-    <div class="kpis"><div class="kpi"><div class="lab">Fiches</div><div class="val" id="k1">–</div></div><div class="kpi"><div class="lab">QCM faits</div><div class="val" id="k2">–</div></div><div class="kpi"><div class="lab">Score moyen</div><div class="val" id="k3">–</div></div></div>
-    <div id="liste"></div>
-  </main>
-</div>
+<header class="portada"><div class="env">
+  <h1>Mis fichas</h1>
+  <p>Fisioterapia · Universidad Europea de Valencia. Tes fiches, tes QCM et tes outils de révision.</p>
+  <div class="cifras"><div class="cifra"><b id="k1">–</b><span>fiches</span></div><div class="cifra"><b id="k2">–</b><span>QCM faits</span></div><div class="cifra"><b id="k3">–</b><span>score moyen /15</span></div><div class="cifra"><b id="k4">–</b><span>erreurs à revoir</span></div></div>
+  <div class="outils" id="outils"></div>
+</div></header>
+<main class="env">
+  <div class="filtre"><input type="search" id="q" placeholder="Chercher un tema, un mot-clé…" aria-label="Chercher une fiche"></div>
+  <div id="liste"></div>
+</main>
+<footer class="env">Scores et erreurs sont enregistrés dans ce navigateur. Les scores des QCM de fiche partent aussi vers Notion si le relais est configuré.</footer>
+<script src="assets/comun.js"></script>
 <script>
 (async function(){
-  const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-  let F=[];
-  try{F=await (await fetch('data/fichas.json',{cache:'no-store'})).json();}catch(e){}
-  const score=s=>{try{const u=JSON.parse(localStorage.getItem('qcm:'+new URL('fichas/'+s+'.html',location.href).pathname)||'null');return u?u.r:null}catch(e){return null}};
+  const {esc,tono,icono,json,score,errores,leer,ficha,md}=FI;
+  const [F,Q]=await Promise.all([json('data/fichas.json'),json('data/qcm.json')]);
   const cursos=[...new Set(F.map(f=>f.curso||'Sans cours'))];
-  let sel=decodeURIComponent(location.hash.slice(1))||'';
-  function render(){
+  const sc=F.map(f=>score(f.slug)).filter(x=>x!=null);
+  document.getElementById('k1').textContent=F.length;
+  document.getElementById('k2').textContent=sc.length;
+  document.getElementById('k3').textContent=sc.length?(sc.reduce((a,b)=>a+b,0)/sc.length).toFixed(1).replace('.',','):'–';
+  const nErr=errores.lista().length;
+  document.getElementById('k4').textContent=nErr;
+  const ult=leer('ultima',null);
+  document.getElementById('outils').innerHTML=
+    (ult?`<a class="outil reprise" href="${esc(ult.href)}"><b>▶ Reprendre</b><span>${esc(ult.titulo||'')}</span></a>`:'')+
+    `<a class="outil" href="examen.html"><b>⏱ Examen blanc</b><span>Chronométré, par matière, score par tema</span></a>
+     <a class="outil" href="errores.html"><b>📕 Carnet d’erreurs</b><span>${nErr?nErr+' question'+(nErr>1?'s':'')+' à retenter':'Aucune erreur enregistrée'}</span></a>`;
+
+  function rendre(){
     const q=document.getElementById('q').value.trim().toLowerCase();
-    document.getElementById('nav').innerHTML=`<a href="#" class="${!sel?'on':''}">Toutes<small>${F.length}</small></a>`+cursos.map(c=>`<a href="#${encodeURIComponent(c)}" class="${sel===c?'on':''}">${esc(c)}<small>${F.filter(f=>(f.curso||'Sans cours')===c).length}</small></a>`).join('');
-    document.getElementById('titre').textContent=sel||'Toutes les fiches';
-    const vis=F.filter(f=>(!sel||(f.curso||'Sans cours')===sel)&&(!q||(f.titulo+' '+f.subtitulo+' '+f.curso).toLowerCase().includes(q)));
-    const sc=F.map(f=>score(f.slug)).filter(x=>x!=null);
-    document.getElementById('k1').textContent=F.length;
-    document.getElementById('k2').textContent=sc.length;
-    document.getElementById('k3').textContent=sc.length?(sc.reduce((a,b)=>a+b,0)/sc.length).toFixed(1).replace('.',','):'–';
-    document.getElementById('sync').textContent=F.length?`DERNIÈRE FICHE · ${F.map(f=>f.fecha).sort().pop()}`:'AUCUNE FICHE POUR L’INSTANT';
-    if(!F.length){document.getElementById('liste').innerHTML='<div class="vide">Dépose un PDF dans « Dépôt des cours » sur Notion : la fiche apparaîtra ici.</div>';return}
-    const groupes=(sel?[sel]:cursos).map(c=>[c,vis.filter(f=>(f.curso||'Sans cours')===c)]).filter(g=>g[1].length);
-    document.getElementById('liste').innerHTML=groupes.map(([c,l])=>`<h2>${esc(c)}<small>${l.length} FICHE${l.length>1?'S':''}</small></h2><div class="grille">${l.map(f=>{const s=score(f.slug);return `<a class="carte" href="fichas/${esc(f.slug)}.html"><div class="t">${f.tema!=null?'Tema '+esc(f.tema):'Tema'}</div><h3>${esc(f.titulo)}</h3><p>${esc(f.subtitulo)}</p><div class="pied"><span>${esc(f.fecha)}</span><span class="score">${s!=null?'QCM '+s+'/15':f.preguntas+' questions'}</span></div></a>`}).join('')}</div>`).join('')||'<div class="vide">Aucune fiche ne correspond.</div>';
+    if(!F.length){document.getElementById('liste').innerHTML='<div class="vacio" style="margin-top:34px">Dépose un PDF dans « Dépôt des cours » sur Notion : la fiche apparaîtra ici.</div>';return}
+    let html='';
+    for(const c of cursos){
+      const tous=F.filter(f=>(f.curso||'Sans cours')===c);
+      const l=tous.filter(f=>!q||(f.titulo+' '+(f.subtitulo||'')+' '+c).toLowerCase().includes(q));
+      if(!l.length) continue;
+      const faits=tous.filter(f=>score(f.slug)!=null).length, mait=tous.filter(f=>score(f.slug)>=12).length;
+      const gq=Q.filter(x=>x.curso===c);
+      html+=`<section class="cours tono" style="--h:${tono(c)}"><div class="cours-tete"><h2><i>${icono(c)}</i>${esc(c)}</h2>
+        <span style="display:flex;gap:8px;flex-wrap:wrap"><a class="bot sec peq" href="examen.html#${encodeURIComponent(c)}">⏱ Examen blanc</a><button class="bot sec peq" data-anki="${esc(c)}">🗂 Export Anki</button></span></div>
+        <div class="avance"><i style="width:${tous.length?mait/tous.length*100:0}%"></i></div>
+        <div class="avance-txt">${mait}/${tous.length} maîtrisées (≥ 12/15) · ${faits} QCM faits</div>
+        <div class="grille">${l.map(f=>{const s=score(f.slug);return `<a class="fiche" href="fichas/${esc(f.slug)}.html"><span class="t">${f.tema!=null?'Tema '+esc(f.tema):'Tema'}</span><h3>${esc(f.titulo.replace(/^tema\s*[\d.]+\s*[:.–-]\s*/i,''))}</h3><p>${esc(f.subtitulo||'')}</p><div class="pied">${s==null?'<span class="chip gris">À faire</span>':s>=12?`<span class="chip ok">✓ ${s}/15</span>`:s>=10?`<span class="chip oro">${s}/15</span>`:`<span class="chip mal">${s}/15</span>`}<span style="color:var(--suave);font-size:.8rem">${esc(f.fecha||'')}</span></div></a>`}).join('')}</div>
+        ${gq.length?`<div class="gqcm">${gq.map(x=>`<a class="bot sec peq" href="qcm/${esc(x.slug)}.html">🎯 Gran QCM · ${esc(x.fecha)} (${x.preguntas})</a>`).join('')}</div>`:''}</section>`;
+    }
+    document.getElementById('liste').innerHTML=html||'<div class="vacio" style="margin-top:34px">Aucune fiche ne correspond.</div>';
+    document.querySelectorAll('[data-anki]').forEach(b=>b.onclick=()=>anki(b.dataset.anki,b));
   }
-  window.addEventListener('hashchange',()=>{sel=decodeURIComponent(location.hash.slice(1));render()});
-  document.getElementById('q').addEventListener('input',render);
-  render();
+  // Export Anki : glossaire + Pregúntate de toutes les fiches de la matière (fichier texte à importer dans Anki)
+  async function anki(curso,btn){
+    btn.disabled=true;btn.textContent='Préparation…';
+    const net=s=>String(s||'').replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>').replace(/[\t\n]+/g,' ');
+    const lignes=['#separator:tab','#html:true','#tags column:3'];
+    for(const it of F.filter(f=>f.curso===curso)){
+      try{const f=await ficha(it.slug);const tag=(curso.replace(/\s+/g,'_')+'::Tema_'+(it.tema??'x'));
+        (f.preguntate||[]).forEach(p=>lignes.push([net(p.pregunta),net(p.respuesta),tag].join('\t')));
+        (f.glosario||[]).forEach(g=>lignes.push([net(g.termino),net(g.definicion),tag+' glosario'].join('\t')));
+      }catch(e){}
+    }
+    const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([lignes.join('\n')],{type:'text/plain'}));
+    a.download='anki-'+curso.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.txt';a.click();
+    btn.disabled=false;btn.textContent=`🗂 ${lignes.length-3} cartes exportées`;
+  }
+  document.getElementById('q').addEventListener('input',rendre);
+  rendre();
 })();
 </script>
 </body>

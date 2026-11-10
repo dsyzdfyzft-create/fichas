@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Examen blanc · Fichas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/estilo.css">
+<style>.reglages{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:28px 0 18px}.reglages label{display:grid;gap:6px;font-weight:700;font-size:.85rem;color:var(--suave)}.temas{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}.temas label{display:inline-flex;gap:6px;align-items:center;background:var(--hoja);border-radius:10px;padding:6px 10px;box-shadow:var(--sombra);font-size:.88rem}</style>
+</head>
+<body>
+<header class="portada"><div class="env">
+  <a class="volver" href="index.html">← Mis fichas</a>
+  <h1>Examen blanc</h1>
+  <p>Des questions tirées au hasard dans les QCM de la matière, chronométrées, sans correction avant la fin. Le résultat par tema montre tes points faibles ; les erreurs vont dans le carnet.</p>
+</div></header>
+<main class="env">
+  <div id="prep">
+    <div class="reglages">
+      <label>Matière<select id="curso"></select></label>
+      <label>Nombre de questions<select id="n"><option>20</option><option selected>30</option><option>40</option><option>60</option></select></label>
+      <label>Temps par question<select id="s"><option value="45">45 s (rapide)</option><option value="60" selected>1 min</option><option value="90">1 min 30</option><option value="0">Sans chrono</option></select></label>
+    </div>
+    <div class="temas" id="temas"></div>
+    <button class="bot" id="go">Commencer l’examen</button> <span id="info" style="color:var(--suave);margin-left:8px"></span>
+  </div>
+  <div id="zona" style="margin-top:28px"></div>
+</main>
+<footer class="env">Les questions viennent des QCM de tes fiches. Pour des questions inédites, demande un « Grand QCM » dans Notion.</footer>
+<script src="assets/comun.js"></script>
+<script>
+(async function(){
+  const {esc,md,json,ficha,quiz,barajar,itemsDeFicha,errores,tono,leer,escribir}=FI;
+  const F=await json('data/fichas.json'), cursos=[...new Set(F.map(f=>f.curso).filter(Boolean))];
+  const sel=document.getElementById('curso'), zona=document.getElementById('zona');
+  const pre=decodeURIComponent(location.hash.slice(1));
+  sel.innerHTML=cursos.map(c=>`<option ${c===pre?'selected':''}>${esc(c)}</option>`).join('');
+  function temas(){
+    document.documentElement.style.setProperty('--h',tono(sel.value));
+    const l=F.filter(f=>f.curso===sel.value);
+    document.getElementById('temas').innerHTML=l.map(f=>`<label><input type="checkbox" value="${esc(f.slug)}" checked> Tema ${esc(f.tema??'–')}</label>`).join('');
+    document.getElementById('info').textContent=`${l.length} fiches · ${l.reduce((a,f)=>a+(f.preguntas||15),0)} questions disponibles`;
+  }
+  sel.onchange=temas; temas();
+  document.getElementById('go').onclick=async()=>{
+    const slugs=[...document.querySelectorAll('#temas input:checked')].map(i=>i.value);
+    if(!slugs.length) return;
+    const n=+document.getElementById('n').value, s=+document.getElementById('s').value;
+    zona.innerHTML='<div class="vacio">Préparation des questions…</div>';
+    const fichas=(await Promise.all(slugs.map(async sl=>{try{return [sl,await ficha(sl)]}catch(e){return null}}))).filter(Boolean);
+    // tirage équilibré : on prend à tour de rôle dans chaque tema
+    const piles=fichas.map(([sl,f])=>barajar(itemsDeFicha(sl,f))); const items=[];
+    while(items.length<n&&piles.some(p=>p.length)) for(const p of piles){ if(p.length&&items.length<n) items.push(p.pop()); }
+    const exam=barajar(items);
+    document.getElementById('prep').hidden=true;
+    zona.innerHTML='<div class="marco" id="marco"></div>';
+    quiz(document.getElementById('marco'),exam,{modo:'examen',segundos:s*exam.length,
+      alAcertar:()=>{}, alFallar:it=>errores.anadir(it),
+      alTerminar:(res,dur)=>{
+        const ok=res.filter(x=>x.ok).length, nota=(ok/res.length*10).toFixed(1).replace('.',',');
+        const porTema={}; res.forEach(x=>{const k=x.it.tema??'–';(porTema[k]=porTema[k]||{ok:0,n:0,titulo:x.it.titulo,href:x.it.href}).n++;if(x.ok)porTema[k].ok++});
+        const filas=Object.entries(porTema).sort((a,b)=>a[1].ok/a[1].n-b[1].ok/b[1].n);
+        const hist=leer('examenes',[]);hist.unshift({curso:sel.value,ok,n:res.length,t:Date.now()});escribir('examenes',hist.slice(0,30));
+        zona.innerHTML=`<div class="marco"><div class="resultado"><div class="gran">${nota}<small> / 10</small></div><p>${ok} bonne${ok>1?'s':''} réponse${ok>1?'s':''} sur ${res.length} · ${Math.floor(dur/60)} min ${dur%60} s ${ok/res.length>=.5?'· ✅ Aprobado':'· ❌ En dessous de 5'}</p></div>
+          <h2 style="margin:18px 0 8px">Résultat par tema</h2>
+          <table><thead><tr><th>Tema</th><th class="n">Score</th><th></th></tr></thead><tbody>${filas.map(([k,v])=>{const p=v.ok/v.n;return `<tr><td><a href="${esc(v.href)}">Tema ${esc(k)}</a> · ${esc((v.titulo||'').replace(/^tema\s*[\d.]+\s*[:.–-]\s*/i,''))}</td><td class="n">${v.ok}/${v.n}</td><td>${p>=.8?'<span class="chip ok">Solide</span>':p>=.5?'<span class="chip oro">À consolider</span>':'<span class="chip mal">À revoir en priorité</span>'}</td></tr>`}).join('')}</tbody></table>
+          <h2 style="margin:26px 0 4px">Correction</h2>
+          ${res.map((x,i)=>`<details><summary>${x.ok?'✅':x.r?'❌':'⬜'} ${i+1}. ${md(x.it.q.pregunta)}</summary><p style="margin:10px 0 4px"><b>${'ABCD'[x.it.q.correcta]}. ${md(x.it.q.opciones[x.it.q.correcta])}</b>${x.r&&!x.ok?`<br><span style="color:var(--mal)">Ta réponse : ${'ABCD'[x.r.i]}. ${md(x.it.q.opciones[x.r.i])}</span>`:''}</p><p style="margin:0;color:var(--suave)">${md(x.it.q.explicacion||'')}</p></details>`).join('')}
+          <div class="acciones" style="justify-content:center;margin-top:24px"><a class="bot" href="errores.html">📕 Voir le carnet d’erreurs</a><button class="bot sec" onclick="location.reload()">Nouvel examen</button></div></div>`;
+        scrollTo({top:0});
+      }});
+  };
+})();
+</script>
+</body>
+</html>
