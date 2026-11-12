@@ -100,6 +100,16 @@
     "secciones": 7
   },
   {
+    "slug": "biologia-celular-y-tisular-t11-introduccion-a-la-histologia",
+    "titulo": "Introducción a la Histología",
+    "subtitulo": "De la célula al sistema: qué estudia la histología, qué es un tejido, cuáles son los cuatro tejidos básicos y por qué la estructura celular refleja su función.",
+    "curso": "Biología celular y tisular",
+    "tema": 11,
+    "fecha": "2026-11-12",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
     "slug": "drenaje-linfatico-t1-tema-1-introduccion-al-drenaje-linfatico-manual",
     "titulo": "Tema 1: Introducción al drenaje linfático manual",
     "subtitulo": "Historia, escuelas, principios técnicos, efectos, indicaciones y contraindicaciones del DLM, y el mapa de líneas divisorias, cuadrantes y anastomosis linfáticas.",
@@ -178,6 +188,16 @@
     "fecha": "2026-11-10",
     "preguntas": 15,
     "secciones": 7
+  },
+  {
+    "slug": "drenaje-linfatico-t6-terapia-descongestiva-compleja-tdc-y-tecnicas-complementaria",
+    "titulo": "Terapia descongestiva compleja (TDC) y técnicas complementarias",
+    "subtitulo": "Cómo se combinan el DLM, la compresión, el ejercicio, la presoterapia y las medidas higiénicas para reducir y mantener el volumen del linfedema.",
+    "curso": "Drenaje linfático",
+    "tema": 6,
+    "fecha": "2026-11-12",
+    "preguntas": 15,
+    "secciones": 8
   },
   {
     "slug": "fisioterapia-neurologica-t1-tema-1-neuroanatomia-funcional-aplicada-sistemas-de-control-",
@@ -266,6 +286,16 @@
     "curso": "Fisioterapia neurológica",
     "tema": 9,
     "fecha": "2026-11-10",
+    "preguntas": 15,
+    "secciones": 7
+  },
+  {
+    "slug": "fisioterapia-neurologica-t10-aprendizaje-motor",
+    "titulo": "Aprendizaje motor",
+    "subtitulo": "Qué es el aprendizaje motor, qué factores lo modulan y cómo se aplica en neurorrehabilitación al miembro superior, al equilibrio y a la doble tarea.",
+    "curso": "Fisioterapia neurológica",
+    "tema": 10,
+    "fecha": "2026-11-12",
     "preguntas": 15,
     "secciones": 7
   },
