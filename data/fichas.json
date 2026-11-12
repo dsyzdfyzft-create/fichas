@@ -110,6 +110,16 @@
     "secciones": 6
   },
   {
+    "slug": "biologia-celular-y-tisular-t12-tema-12-tejido-epitelial",
+    "titulo": "Tema 12. Tejido epitelial",
+    "subtitulo": "Células estrechamente unidas, polarizadas y avasculares que revisten superficies, forman glándulas y se renuevan a partir de células madre.",
+    "curso": "Biología celular y tisular",
+    "tema": 12,
+    "fecha": "2026-11-12",
+    "preguntas": 15,
+    "secciones": 8
+  },
+  {
     "slug": "drenaje-linfatico-t1-tema-1-introduccion-al-drenaje-linfatico-manual",
     "titulo": "Tema 1: Introducción al drenaje linfático manual",
     "subtitulo": "Historia, escuelas, principios técnicos, efectos, indicaciones y contraindicaciones del DLM, y el mapa de líneas divisorias, cuadrantes y anastomosis linfáticas.",
@@ -295,6 +305,16 @@
     "subtitulo": "Qué es el aprendizaje motor, qué factores lo modulan y cómo se aplica en neurorrehabilitación al miembro superior, al equilibrio y a la doble tarea.",
     "curso": "Fisioterapia neurológica",
     "tema": 10,
+    "fecha": "2026-11-12",
+    "preguntas": 15,
+    "secciones": 7
+  },
+  {
+    "slug": "fisioterapia-neurologica-t14-tema-14-alteraciones-del-tono-muscular",
+    "titulo": "Tema 14. Alteraciones del tono muscular",
+    "subtitulo": "Qué altera el tono según la lesión, cómo se distingue y se mide en la camilla y qué tratamientos sostiene la evidencia.",
+    "curso": "Fisioterapia neurológica",
+    "tema": 14,
     "fecha": "2026-11-12",
     "preguntas": 15,
     "secciones": 7
