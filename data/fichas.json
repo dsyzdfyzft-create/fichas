@@ -538,5 +538,15 @@
     "fecha": "2026-11-10",
     "preguntas": 15,
     "secciones": 8
+  },
+  {
+    "slug": "patologia-quirurgica-i-t13-sindromes-de-atrapamiento-neurologico-del-miembro-superior",
+    "titulo": "Síndromes de atrapamiento neurológico del miembro superior",
+    "subtitulo": "Fisiopatología, diagnóstico y tratamiento de las neuropatías compresivas de los nervios mediano, radial y cubital.",
+    "curso": "Patología quirúrgica I",
+    "tema": 13,
+    "fecha": "2026-11-13",
+    "preguntas": 15,
+    "secciones": 8
   }
 ]
