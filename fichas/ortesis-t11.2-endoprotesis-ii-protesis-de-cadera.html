@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Endoprótesis II: prótesis de cadera · Ficha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --h:262; /* tono de la asignatura, se ajusta por JS */
+  --papel:#fbfaf7; --hoja:#ffffff; --tinta:#1d1b26; --suave:#63606f; --linea:#ebe8f0;
+  --acento:hsl(var(--h) 62% 52%); --acento-2:hsl(calc(var(--h) + 40) 75% 60%);
+  --acento-suave:hsl(var(--h) 80% 96%); --acento-tinta:hsl(var(--h) 55% 34%);
+  --def:#2f6fed; --def-s:#eaf1ff; --cli:#1f9d61; --cli-s:#e5f6ec; --ojo:#e0453a; --ojo-s:#fdecea; --dato:#c7850f; --dato-s:#fdf3df;
+  --sombra:0 1px 2px rgba(29,27,38,.04),0 8px 24px -12px rgba(29,27,38,.12);
+  --display:"Fraunces",Georgia,serif; --texto:"Figtree",-apple-system,system-ui,sans-serif;
+  color-scheme:light;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}}
+:root[data-theme="dark"]{--papel:#14131a; --hoja:#1c1b24; --tinta:#ecebf2; --suave:#a3a0b2; --linea:#2c2a37;
+  --acento:hsl(var(--h) 75% 70%); --acento-2:hsl(calc(var(--h) + 40) 75% 66%); --acento-suave:hsl(var(--h) 30% 20%); --acento-tinta:hsl(var(--h) 80% 82%);
+  --def:#7aa6ff; --def-s:#1b2640; --cli:#5fd396; --cli-s:#16301f; --ojo:#ff8a80; --ojo-s:#3a1d1b; --dato:#f2bd55; --dato-s:#372a12;
+  --sombra:0 1px 2px rgba(0,0,0,.3),0 10px 30px -14px rgba(0,0,0,.6); color-scheme:dark;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(70px + env(safe-area-inset-top,0px))}
+body{margin:0;background:var(--papel);color:var(--tinta);font:17.5px/1.65 var(--texto);-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.1;font-variation-settings:"SOFT" 100}
+a{color:var(--acento-tinta)}
+b,strong{font-weight:700}
+:focus-visible{outline:2px solid var(--acento);outline-offset:2px}
+.env{max-width:860px;margin:0 auto;padding:0 22px}
+#lectura{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));z-index:30}
+/* portada */
+.portada{position:relative;overflow:hidden;padding:72px 0 46px;background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 90% 88% / .9),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 90% 88% / .7),transparent 70%),var(--papel)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .portada{background:radial-gradient(ellipse 60% 80% at 85% 0%,hsl(var(--h) 60% 30% / .55),transparent 70%),radial-gradient(ellipse 50% 70% at 0% 100%,hsl(calc(var(--h) + 40) 60% 28% / .45),transparent 70%),var(--papel)}}
+.portada .numero{position:absolute;right:-10px;top:10px;font:900 clamp(9rem,28vw,17rem)/1 var(--display);color:hsl(var(--h) 70% 60% / .13);pointer-events:none;letter-spacing:-.05em}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.chip{display:inline-flex;align-items:center;gap:6px;font:700 .78rem/1 var(--texto);padding:8px 12px;border-radius:999px;background:var(--hoja);box-shadow:var(--sombra);color:var(--acento-tinta)}
+.portada h1{font-size:clamp(2.2rem,5.4vw,3.7rem);font-weight:800;letter-spacing:-.03em;max-width:20ch;position:relative}
+.portada .sub{font-size:1.2rem;color:var(--suave);margin:16px 0 0;max-width:58ch;position:relative}
+.cifras{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap;position:relative}
+.cifra{background:var(--hoja);border-radius:14px;padding:10px 16px;box-shadow:var(--sombra);min-width:96px}
+.cifra b{display:block;font:800 1.6rem/1.1 var(--display)}
+.cifra span{font-size:.8rem;color:var(--suave)}
+.herram{display:flex;gap:8px;margin-top:22px;flex-wrap:wrap;position:relative}
+.bot{font:700 .9rem var(--texto);padding:10px 16px;border-radius:12px;border:0;cursor:pointer;background:var(--tinta);color:var(--papel);text-decoration:none;display:inline-flex;gap:8px;align-items:center}
+.bot.sec{background:var(--hoja);color:var(--tinta);box-shadow:var(--sombra)}
+.bot[disabled]{opacity:.35;cursor:default}
+/* navegación */
+nav.indice{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:21;background:color-mix(in srgb,var(--papel) 85%,transparent);backdrop-filter:blur(14px)}
+nav.indice .env{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-top:10px;padding-bottom:10px}
+nav.indice .env::-webkit-scrollbar{display:none}
+nav.indice a{white-space:nowrap;text-decoration:none;color:var(--suave);font:600 .86rem var(--texto);padding:7px 12px;border-radius:10px}
+nav.indice a:hover{background:var(--hoja);color:var(--tinta)}
+nav.indice a.fuerte{background:var(--acento);color:#fff}
+main section{padding:52px 0 6px}
+.kicker{display:inline-flex;align-items:center;gap:8px;font:700 .78rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--acento-tinta);margin-bottom:10px}
+.kicker i{font-style:normal;width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:var(--acento-suave);font-size:.95rem;letter-spacing:0}
+h2{font-size:clamp(1.6rem,3.5vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:18px}
+p{margin:0 0 16px;max-width:70ch}
+mark,.md b{background:linear-gradient(transparent 58%,hsl(var(--h) 90% 80% / .55) 58%);color:inherit;padding:0 1px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .md b{background:linear-gradient(transparent 58%,hsl(var(--h) 60% 45% / .45) 58%)}}
+/* código de colores */
+.leyenda{display:flex;flex-wrap:wrap;gap:8px 16px;font-size:.82rem;color:var(--suave);margin:18px 0 0}
+.leyenda span{display:inline-flex;align-items:center;gap:6px}
+.leyenda i{width:10px;height:10px;border-radius:3px;display:block}
+/* resumen 30 s */
+.flash{margin-top:34px;border-radius:22px;padding:24px 26px;background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff;box-shadow:var(--sombra)}
+.flash h3{font-size:1.35rem;margin-bottom:12px;display:flex;align-items:center;gap:10px}
+.flash ol{margin:0;padding-left:1.3em}
+.flash li{margin:6px 0;font-weight:500}
+.flash .md b{text-decoration:underline;text-decoration-color:rgba(255,255,255,.5);text-underline-offset:3px}
+.duo{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:16px;margin-top:18px;align-items:start}
+.tarjeta{background:var(--hoja);border-radius:18px;padding:20px 22px;box-shadow:var(--sombra)}
+.tarjeta h3{font-size:1.15rem;margin-bottom:10px}
+.tarjeta ul{margin:0;padding-left:1.15em}
+.tarjeta li{margin:5px 0}
+.claves{list-style:none;padding:0!important;counter-reset:k}
+.claves li{counter-increment:k;padding-left:36px;position:relative;margin:9px 0}
+.claves li::before{content:counter(k);position:absolute;left:0;top:1px;width:25px;height:25px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/25px var(--texto);text-align:center}
+/* bloques */
+ul.lista{padding-left:1.2em;margin:0 0 18px}
+ul.lista li{margin:6px 0}
+ul.lista li::marker{color:var(--acento)}
+.tw{overflow-x:auto;margin:6px 0 24px;border-radius:16px;background:var(--hoja);box-shadow:var(--sombra)}
+table{border-collapse:collapse;width:100%;font-size:.93rem;line-height:1.45}
+caption{caption-side:top;text-align:left;font:800 1rem var(--display);padding:16px 18px 6px}
+th,td{padding:11px 16px;text-align:left;vertical-align:top}
+thead th{background:var(--acento-suave);color:var(--acento-tinta);font:700 .8rem var(--texto);letter-spacing:.03em;text-transform:uppercase}
+tbody tr+tr td{border-top:1px solid var(--linea)}
+tbody td:first-child{font-weight:600}
+.cartas{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:6px 0 24px}
+.carta{background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);font-size:.95rem;line-height:1.5;border-top:4px solid var(--acento)}
+.carta:nth-child(3n+2){border-top-color:var(--acento-2)}
+.carta:nth-child(3n+3){border-top-color:hsl(calc(var(--h) - 40) 70% 60%)}
+.carta .et{font:700 .7rem var(--texto);letter-spacing:.06em;text-transform:uppercase;color:var(--suave);display:block;margin-bottom:4px}
+.carta h3{font-size:1.05rem;margin-bottom:6px}
+.nota{border-radius:16px;padding:14px 18px 14px 54px;margin:0 0 20px;position:relative;font-size:.97rem}
+.nota::before{position:absolute;left:16px;top:13px;width:28px;height:28px;border-radius:9px;display:grid;place-items:center;font-size:.95rem}
+.nota .t{font:800 .74rem var(--texto);letter-spacing:.06em;text-transform:uppercase;display:block;margin-bottom:2px}
+.nota .md b,.flash .md b{background:none}
+.n-def{background:var(--def-s)}.n-def::before{content:"📘";background:#fff8}.n-def .t{color:var(--def)}
+.n-cli{background:var(--cli-s)}.n-cli::before{content:"🩺";background:#fff8}.n-cli .t{color:var(--cli)}
+.n-ojo{background:var(--ojo-s)}.n-ojo::before{content:"⚠️";background:#fff8}.n-ojo .t{color:var(--ojo)}
+.n-dato{background:var(--dato-s)}.n-dato::before{content:"🔢";background:#fff8}.n-dato .t{color:var(--dato)}
+.n-dato .v{font:800 1.5rem/1.1 var(--display);color:var(--dato);display:block;margin:2px 0 4px}
+figure{margin:8px 0 26px;background:var(--hoja);border-radius:18px;overflow:hidden;box-shadow:var(--sombra)}
+figure img{display:block;width:100%;height:auto;max-height:640px;object-fit:contain;background:#fff}
+figure.esq .lienzo{padding:22px 16px 10px;overflow-x:auto}
+figure.esq .lienzo svg{max-width:100%;height:auto;display:block;margin:0 auto}
+figure.esq pre.mermaid{margin:0;font-size:.8rem;color:var(--suave);white-space:pre-wrap}
+figcaption{padding:12px 18px 14px;font-size:.92rem;color:var(--suave);border-top:1px solid var(--linea)}
+figcaption b{color:var(--tinta)}
+/* pregúntate */
+.preg-cab{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.marcador{font:700 .85rem var(--texto);color:var(--suave)}
+.marcador b{color:var(--cli)}
+.pregs{display:grid;gap:12px}
+.preg{background:var(--hoja);border-radius:16px;box-shadow:var(--sombra);overflow:hidden}
+.preg button.q{all:unset;box-sizing:border-box;display:flex;gap:12px;width:100%;padding:16px 18px;cursor:pointer;font-weight:600;align-items:flex-start}
+.preg button.q:focus-visible{outline:2px solid var(--acento);outline-offset:-2px}
+.preg .num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--acento-suave);color:var(--acento-tinta);font:800 .8rem/26px var(--texto);text-align:center}
+.preg .ojo{margin-left:auto;font-size:.8rem;color:var(--suave);white-space:nowrap;font-weight:500}
+.preg .r{display:none;padding:0 18px 16px 56px}
+.preg.abierta .r{display:block}
+.preg.abierta .ojo{display:none}
+.preg .auto{display:flex;gap:8px;margin-top:10px}
+.preg .auto button{border:0;border-radius:10px;padding:6px 12px;font:700 .8rem var(--texto);cursor:pointer;background:var(--papel);color:var(--tinta)}
+.preg.si{box-shadow:inset 4px 0 0 var(--cli),var(--sombra)}
+.preg.no{box-shadow:inset 4px 0 0 var(--ojo),var(--sombra)}
+/* caso clínico */
+.caso{border-radius:24px;padding:30px 30px 18px;background:linear-gradient(160deg,hsl(var(--h) 40% 22%),hsl(calc(var(--h) + 30) 45% 18%));color:#f4f2fa;box-shadow:var(--sombra)}
+.caso h2{color:#fff}
+.caso .kicker{color:hsl(var(--h) 90% 85%)}
+.caso .kicker i{background:rgba(255,255,255,.12)}
+.caso details{border-top:1px solid rgba(255,255,255,.14);padding:12px 0}
+.caso summary{cursor:pointer;font-weight:700}
+.caso details p{margin:10px 0 0;color:#e2deee}
+dl.glosario{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin:0}
+dl.glosario div{background:var(--hoja);border-radius:14px;padding:12px 16px;box-shadow:var(--sombra)}
+dl.glosario dt{font:800 1rem var(--display);color:var(--def)}
+dl.glosario dd{margin:4px 0 0;font-size:.93rem}
+.fuentes{font-size:.88rem;color:var(--suave)}
+/* QCM */
+#qcm .marco{background:var(--hoja);border-radius:24px;padding:28px;box-shadow:var(--sombra)}
+.progreso{display:flex;align-items:center;gap:14px;margin-bottom:20px;font:700 .85rem var(--texto);color:var(--suave)}
+.barra{flex:1;height:10px;border-radius:5px;background:var(--linea);overflow:hidden}
+.barra i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--acento),var(--acento-2));transition:width .35s}
+.tema-q{display:inline-block;margin-bottom:12px;font:700 .75rem var(--texto);padding:5px 10px;border-radius:999px;background:var(--dato-s);color:var(--dato)}
+.pregunta{font:700 1.3rem/1.35 var(--display);margin:0 0 20px}
+.opciones{display:grid;gap:10px}
+.op{display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;text-align:left;width:100%;padding:14px 16px;border-radius:14px;border:2px solid var(--linea);background:var(--papel);color:var(--tinta);font:inherit;font-size:1rem;line-height:1.45;cursor:pointer;transition:border-color .15s,transform .15s}
+.op:hover:not([disabled]){border-color:var(--acento);transform:translateY(-1px)}
+.op .l{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font:800 .9rem var(--texto);background:var(--hoja);box-shadow:var(--sombra)}
+.op[disabled]{cursor:default}
+.op.bien{border-color:var(--cli);background:var(--cli-s)}
+.op.bien .l{background:var(--cli);color:#fff}
+.op.mal{border-color:var(--ojo);background:var(--ojo-s)}
+.op.mal .l{background:var(--ojo);color:#fff}
+.op .ex{grid-column:2;font-size:.92rem;color:var(--suave);margin-top:6px;display:none}
+.op.visto .ex{display:block}
+.explic{margin-top:18px;padding:16px 18px;border-radius:14px;background:var(--acento-suave);font-size:.98rem;display:none}
+.explic.ver{display:block}
+.acciones{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:20px;flex-wrap:wrap}
+.resultado{text-align:center;padding:10px 0}
+.resultado .gran{font:900 4.6rem/1 var(--display);background:linear-gradient(135deg,var(--acento),var(--acento-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.resultado .gran small{font-size:1.6rem}
+.repaso{text-align:left;margin-top:24px}
+.repaso details{border-top:1px solid var(--linea);padding:12px 0}
+.repaso summary{cursor:pointer;font-weight:700}
+footer{padding:60px 0 80px;color:var(--suave);font-size:.85rem}
+@media (max-width:720px){body{font-size:16.5px}.duo{grid-template-columns:1fr}.caso{padding:24px 20px 12px}#qcm .marco{padding:20px 16px}.portada{padding-top:52px}.preg .r{padding-left:18px}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.barra i,.op{transition:none}}
+/* versión imprimible */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;font-size:10.5pt;line-height:1.45;color:#000}
+  nav.indice,#qcm,.herram,#lectura,.preg .ojo,.preg .auto,.preg-cab .bot,.portada .numero,.cifras{display:none!important}
+  .portada{padding:0 0 10px;background:none}.portada h1{font-size:22pt;max-width:none}
+  main section{padding:14px 0 0;break-inside:auto}
+  h2{font-size:15pt;margin-bottom:8px;break-after:avoid}
+  .tarjeta,.carta,.tw,figure,.preg,.nota,dl.glosario div{box-shadow:none;border:1px solid #ddd;break-inside:avoid}
+  .flash{background:none;color:#000;border:2px solid #000;box-shadow:none}
+  .preg .r{display:block!important;padding-left:56px}
+  .caso{background:none;color:#000;border:1px solid #999}.caso h2{color:#000}.caso details>*{display:block}.caso details p{color:#000}
+  details>summary{list-style:none}details{display:block}details>p{display:block!important}
+  a{color:#000;text-decoration:none}
+}
+</style>
+</head>
+<body>
+<div id="lectura"></div>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<script src="../config.js"></script>
+<script id="datos" type="application/json">{"titulo":"Endoprótesis II: prótesis de cadera","subtitulo":"Componentes, tipos (primaria/revisión, total/parcial/resurfacing, cementada/no cementada/híbrida), indicaciones, precauciones según el abordaje y complicaciones de la artroplastia de cadera.","resumen":["La prótesis de cadera tiene **vástago femoral, cotilo, cabeza (metal o cerámica) e inserto**; la combinación de los dos materiales que deslizan entre sí es el **par de fricción**.","La **prótesis total** sustituye fémur y acetábulo; la **parcial** solo el lado femoral, se reserva a **ancianos poco activos con fractura** y **nunca** a la enfermedad degenerativa; el **resurfacing** es una prótesis **total y primaria** metal-metal pensada para jóvenes activos.","Las **no cementadas** se fijan a presión y luego por **integración ósea**; las **cementadas** (PMMA) dan **estabilidad inmediata** y admiten antibiótico; la **híbrida** típica cementa el **vástago** y fija biológicamente el **cotilo**.","La indicación es el **dolor incapacitante con limitación funcional que no responde al tratamiento conservador**: una Rx alterada **sin dolor ni incapacidad no indica prótesis**.","Tras un **abordaje posterior** se evita **flexión > 90°, aducción y rotación interna**; tras uno **anterior**, **extensión excesiva y rotación externa**; la luxación (**3 %**) es precoz y la **TVP (40–70 % sin profilaxis)** obliga a profilaxis durante **35 días**."],"objetivos":["Identificar los componentes de una prótesis de cadera y el concepto de par de fricción.","Clasificar las prótesis de cadera según la cirugía, las partes sustituidas y la fijación, con sus indicaciones.","Aplicar las precauciones postoperatorias generales y específicas de cada abordaje quirúrgico.","Reconocer las complicaciones (luxación, lesión nerviosa, infección, TVP, dismetría…) con sus cifras y su manejo."],"ideas_clave":["Par de fricción = combinación de los **dos materiales que se deslizan** entre sí dentro de la prótesis.","Prótesis primaria = la que se pone por primera vez; es una **cirugía de calidad de vida** y el **paciente decide cuándo** operarse; puede durar **20–30 años**.","Prótesis de revisión: sustituye una prótesis que **falla, duele o está desgastada**; más grande y compleja, con módulos, cuñas o injerto óseo.","Parcial: vástago + cabeza que articula **directamente con el acetábulo**; solo en **mayores con baja actividad y fractura**; **no** en enfermedad degenerativa.","Resurfacing: **total y primaria**, componente femoral pequeño, conserva casi todo el cuello, par **metal-metal (MoM)** autopulimentado; peores resultados a medio-largo plazo; es **híbrida**.","Híbrida habitual: **vástago cementado** (con antibiótico) + **cotilo con fijación biológica**; el cotilo cementado se reserva a pacientes mayores.","Abordaje **posterior** (el más frecuente): evitar **flexión > 90°, aducción y RI**. Abordaje **anterior**: evitar **extensión excesiva y RE**.","Cifras: luxación **3 %**, lesión neurológica **0,7–3,5 %**, infección **1–2 %** primarias / **2–4 %** revisiones, TVP **40–70 %** y TEP mortal **25 %** sin profilaxis."],"secciones":[{"id":"componentes","titulo":"Conceptos y componentes de la prótesis de cadera","bloques":[{"tipo":"definicion","termino":"Endoprótesis","texto":"Implante interno que reemplaza total o parcialmente una articulación o segmento óseo del miembro inferior para **restaurar la función, la estabilidad y aliviar el dolor**. Se indica por artrosis avanzada, fracturas complejas, tumores óseos, necrosis avascular o malformaciones/secuelas postraumáticas."},{"tipo":"parrafo","texto":"Igual que en el resto de articulaciones, la **artroplastia** busca conservar el movimiento y exige buena calidad ósea y buen estado general, mientras que la **artrodesis** fusiona la articulación (deformidades severas, inestabilidad, prótesis no adecuada o **rescate** de una artroplastia fallida) y la **osteotomía** es un corte controlado del hueso para modificar su forma o posición."},{"tipo":"tabla","titulo":"Componentes de la prótesis de cadera","columnas":["Componente","Localización","Material habitual"],"filas":[["Vástago femoral","Canal medular del fémur","Metálico"],["Cabeza","Se acopla al vástago","**Metal o cerámica**"],["Cotilo (componente acetabular)","Acetábulo","Metálico"],["Inserto o cojinete","Encaja en el cotilo metálico","**Cerámica, polietileno** u otros"]]},{"tipo":"definicion","termino":"Par de fricción","texto":"Combinación de los **dos materiales que se deslizan entre sí** dentro de la prótesis (p. ej., cabeza de cerámica sobre inserto de polietileno; metal contra metal en el resurfacing)."},{"tipo":"figura","pagina":8,"pie":"Despiece de una prótesis total de cadera: vástago femoral, cabeza femoral, forro de plástico (inserto) y componente acetabular, y su posición final en la pelvis.","src":"img/ortesis-t11.2-endoprotesis-ii-protesis-de-cadera-p8.jpg"},{"tipo":"dato","valor":"20–30 años","texto":"Duración esperada de una prótesis de cadera, **incluso en pacientes jóvenes**; las no cementadas pueden aflojarse antes y durar menos."},{"tipo":"parrafo","texto":"Los materiales son siempre **biocompatibles**: **titanio o aleaciones de cobalto-cromo** para la estructura metálica (vástago y cotilo), **polietileno de alta densidad** para la superficie articular y **cerámica** para los componentes de fricción. La elección del par de fricción condiciona el desgaste: cuanto más activo es el paciente, más carga cíclica soporta la superficie de deslizamiento y más importa que el par se desgaste poco."}]},{"id":"tipos","titulo":"Tipos de prótesis de cadera","bloques":[{"tipo":"esquema","titulo":"Clasificación de las prótesis de cadera","mermaid":"flowchart TD\n  P[\"Prótesis de cadera\"] --> C[\"Según la cirugía\"]\n  P --> R[\"Según las partes sustituidas\"]\n  P --> F[\"Según la fijación\"]\n  C --> C1[\"Primaria\"]\n  C --> C2[\"Revisión\"]\n  R --> R1[\"Total: fémur y acetábulo\"]\n  R --> R2[\"Parcial: solo fémur\"]\n  R --> R3[\"Resurfacing: total y primaria\"]\n  F --> F1[\"No cementada: biológica\"]\n  F --> F2[\"Cementada: PMMA\"]\n  F --> F3[\"Híbrida\"]","pie":"Tres criterios independientes: una prótesis puede ser a la vez primaria, total e híbrida."},{"tipo":"tarjetas","items":[{"etiqueta":"Primera vez","titulo":"Prótesis primaria","texto":"Artrosis, desgaste, displasia u otra alteración con dolor, rigidez o mala función. **Cirugía de calidad de vida**: el médico informa de riesgos y expectativas, **el paciente decide cuándo**. Permite vida normal y casi todos los deportes."},{"etiqueta":"Recambio","titulo":"Prótesis de revisión","texto":"Sustituye una prótesis que **falla, duele o está desgastada** (aflojamiento, pérdida ósea, inestabilidad). Implantes **más grandes y complejos**, modulares, con **cuñas, injerto óseo** o a medida."}]},{"tipo":"tabla","titulo":"Según las partes de la cadera que se reemplazan","columnas":["Tipo","Qué sustituye","Indicación","Claves"],"filas":[["Total (ATC)","Fémur **y** acetábulo (elementos convexo y cóncavo)","> 65–70 años con artrosis primaria o fractura de cuello femoral; \u003c 60 años activos (necrosis avascular, artrosis secundaria, AR); patología inflamatoria sistémica","La más habitual"],["Parcial","Vástago + cabeza que articula **directamente con el hueso de la pelvis**; sin cotilo","**Mayores con baja actividad** con fractura de cadera o de fémur","Cirugía menos agresiva; **no en enfermedad degenerativa**"],["Resurfacing (recubrimiento)","Recubre la cabeza femoral; cotilo hemiesférico","**Jóvenes** con alta actividad física","**Primaria y total**, NO parcial; conserva casi todo el cuello; par **MoM**; peores resultados a 15–20 años"]]},{"tipo":"tabla","titulo":"Objetivos de la prótesis total según el perfil del paciente","columnas":["Perfil","Patología típica","Objetivo"],"filas":[["Adulto mayor (> 65–70 años)","Artrosis primaria, fractura de cuello femoral","Disminuir síntomas, **marcha independiente**, mantener la autonomía y la calidad de vida"],["Joven o activo (\u003c 60 años)","Necrosis avascular de la cabeza femoral, artrosis secundaria, artritis reumatoide","**Restablecer la biomecánica** para mantener una gran demanda funcional"],["Patología inflamatoria sistémica","—","Corregir deformidades complejas, ganar ROM y controlar el dolor crónico severo"]]},{"tipo":"figura","pagina":16,"pie":"Comparación de resurfacing (degeneración de la cabeza que afecta también al acetábulo), prótesis parcial (lesión solo en el fémur) y prótesis total (lesión en fémur y acetábulo).","src":"img/ortesis-t11.2-endoprotesis-ii-protesis-de-cadera-p16.jpg"},{"tipo":"alerta","texto":"Trampa clásica: el **resurfacing no es una prótesis parcial**, sino **total y primaria** con menos componentes. Y la **prótesis parcial no se usa en artrosis** (enfermedad degenerativa), solo en fracturas de pacientes mayores poco activos."},{"tipo":"perla","texto":"Antes de tratar a un paciente con prótesis de cadera, averigua el **tipo de implante y el abordaje**: condicionan las precauciones, la carga y los objetivos (autonomía en el anciano con parcial frente a retorno deportivo en el joven con total o resurfacing)."},{"tipo":"parrafo","texto":"La **prótesis de revisión** se considera una de las operaciones de mayor éxito de la cirugía ortopédica, con alivio del dolor y excelente función durante años. Se usa en **aflojamiento, pérdida de hueso, inestabilidad** u otra complicación. Como el hueso residual suele estar dañado, estos implantes son **más grandes y complejos**, llevan **módulos en el fémur y en la pelvis** para reconstruir defectos óseos y devolver la estabilidad y la función a la musculatura, y pueden necesitar **cuñas, injerto óseo** o sistemas especiales hechos a medida."},{"tipo":"parrafo","texto":"El **resurfacing** se diseñó porque el metal contra metal **se autopulimenta** pese a los golpes o al ejercicio, manteniendo un desgaste muy bajo en jóvenes activos; además, al resecar menos cabeza y conservar casi todo el cuello, **ahorra hueso**. Aun así, sus resultados a medio y largo plazo son **peores** que los de los modelos convencionales, contrastados a 15–20 años (ejemplo citado en el tema: Andy Murray, 2019, por artrosis precoz por sobreuso)."}]},{"id":"fijacion","titulo":"Tipos según la fijación al hueso","bloques":[{"tipo":"tabla","titulo":"Cementadas, no cementadas e híbridas","columnas":["Tipo","Mecanismo","Ventajas","Inconvenientes / uso"],"filas":[["No cementada","**Fijación mecánica** a presión y después **integración ósea** en la superficie porosa (fijación biológica)","Fijación natural, biológica","Con movimientos y fricciones puede **aflojarse antes** y durar menos de 20–30 años"],["Cementada","**Cemento óseo (polimetilmetacrilato)** que hace un encofrado entre las trabéculas; **no** es una unión biológica","**Estabilidad inmediata**; el cemento puede llevar **antibiótico**","En el acetábulo se reserva más a **pacientes mayores**"],["Híbrida","**Vástago cementado + cotilo con fijación biológica**","Vástago con cemento antibiótico: menos infección","Lo más frecuente en **mayores con artrosis o fractura de cuello femoral**; el resurfacing también es híbrido"]]},{"tipo":"figura","pagina":17,"pie":"Prótesis biológica sin cemento: el recubrimiento poroso (porous coating) entre el metal y el hueso permite que este crezca dentro de la superficie.","src":"img/ortesis-t11.2-endoprotesis-ii-protesis-de-cadera-p17.jpg"},{"tipo":"dato","valor":"PMMA","texto":"**Polimetilmetacrilato**: el cemento óseo de las prótesis cementadas; da estabilidad inmediata y se puede cargar con antibiótico."},{"tipo":"alerta","texto":"No confundas la híbrida de **cadera** (vástago **cementado**, cotilo biológico) con la híbrida de **rodilla** del tema anterior (fémur **no cementado**, resto cementado)."},{"tipo":"perla","texto":"La **estabilidad inmediata** de las cementadas es la razón por la que suelen elegirse en el anciano con fractura: permite **carga precoz** y levantar al paciente cuanto antes, evitando las complicaciones del encamamiento."}]},{"id":"indicaciones","titulo":"Indicaciones y contraindicaciones","bloques":[{"tipo":"parrafo","texto":"La indicación de una prótesis de cadera es un **trastorno articular que provoca dolor incapacitante y limitación funcional que no responden a tratamientos conservadores**. La imagen sola nunca decide: **una Rx alterada sin dolor e incapacidad no es indicación** de prótesis."},{"tipo":"tabla","titulo":"Contraindicaciones de la endoprótesis de cadera","columnas":["Contraindicación","Motivo"],"filas":[["Infección activa local o sistémica","Riesgo de infección protésica"],["Alteraciones vasculares severas","Mala cicatrización y riesgo isquémico"],["**Disfunción grave de la musculatura abductora**","La cadera queda inestable; riesgo de luxación"],["Presencia de cadera inestable","Riesgo de luxación"],["Patología médica grave","**Aumenta la mortalidad** de la operación"],["Artropatía neuropática; enfermedades neurológicas","Falta de control muscular y protección articular"]]},{"tipo":"alerta","texto":"El temario lo subraya como **IMPORTANTE**: las imágenes radiográficas, si **no se acompañan de dolor e incapacidad**, **no** son indicación para colocar una prótesis."}]},{"id":"postoperatorio","titulo":"Indicaciones postoperatorias y precauciones según el abordaje","bloques":[{"tipo":"tabla","titulo":"Postoperatorio directo","columnas":["Medida","Contenido"],"filas":[["Carga precoz","Desde el **1.er o 2.º día** con andador o muletas según tolerancia, salvo fractura compleja o mala calidad ósea severa"],["Control del rango articular","Restringir movimientos extremos **según el abordaje**"],["Movilidad activa","Evitar encamamiento; isométricos de cuádriceps y glúteos, movilización activa de tobillos (prevención de TVP), sedestación al borde de la cama en **24–48 h**"],["Prevención de TVP","Medias de compresión, compresión secuencial y anticoagulación (HBPM o anticoagulantes orales)"]]},{"tipo":"tabla","titulo":"Actividades de la vida diaria","columnas":["Situación","Recomendación"],"filas":[["Sentarse","Sillas altas o cojín firme para evitar **flexión > 90°**; **no cruzar las piernas** (rodillas ni tobillos)"],["Acostarse","Supino o de lado según el cirujano, siempre con **almohada gruesa entre las piernas** para evitar la aducción"],["Vestirse","Evitar flexión > 90° (calzador de mango largo, abrochadores); los pantalones se empiezan **por la pierna operada**"],["Baño","Realce de inodoro y barras; mejor **ducha a ras de suelo** que bañera"]]},{"tipo":"esquema","titulo":"Movimientos prohibidos según el abordaje","mermaid":"flowchart LR\n  A[\"Abordaje quirúrgico\"] --> P[\"Posterior: el más frecuente\"]\n  A --> N[\"Anterior o anterolateral\"]\n  P --> P1[\"Evitar flexión mayor de 90 grados\"]\n  P --> P2[\"Evitar aducción\"]\n  P --> P3[\"Evitar rotación interna\"]\n  N --> N1[\"Evitar extensión excesiva\"]\n  N --> N2[\"Evitar rotación externa marcada\"]","pie":"Las precauciones son opuestas: el abordaje posterior se luxa hacia atrás en flexión-aducción-RI; el anterior, hacia delante en extensión-RE."},{"tipo":"tabla","titulo":"Ejemplos de gestos de riesgo","columnas":["Abordaje","Gestos que se deben evitar"],"filas":[["Posterior","Agacharse a recoger objetos sin estirar la pierna operada hacia atrás; sentarse en sofás bajos o blandos; girar el tronco con el pie fijo hacia dentro"],["Anterior (tipo bikini) / anterolateral","Dormir en prono con la pierna estirada colgando; dar pasos muy largos hacia atrás al caminar"]]},{"tipo":"figura","pagina":26,"pie":"Cicatrices de los abordajes: posterior (cara posterolateral de la cadera) y anterior tipo bikini (pliegue inguinal).","src":"img/ortesis-t11.2-endoprotesis-ii-protesis-de-cadera-p26.jpg"},{"tipo":"dato","valor":"> 90°","texto":"Límite de **flexión de cadera** que no debe superarse tras un abordaje posterior (sillas altas, cojín, calzador largo)."},{"tipo":"perla","texto":"Al enseñar las transferencias tras un abordaje posterior, coloca la **almohada de abducción** entre las piernas y haz que el paciente se levante con el tronco erguido y la pierna operada adelantada: así evita a la vez flexión > 90°, aducción y rotación interna."},{"tipo":"alerta","texto":"No apliques automáticamente las precauciones del abordaje posterior a todos: tras un **abordaje anterior** lo peligroso es la **extensión excesiva y la rotación externa**, no la flexión."},{"tipo":"parrafo","texto":"El porqué de las precauciones (complemento): en el **abordaje posterior** se abren las estructuras posteriores de la cápsula, por lo que la combinación **flexión + aducción + rotación interna** empuja la cabeza hacia atrás, por donde se ha debilitado la contención. En el **abordaje anterior** se abre la cápsula anterior, y la **extensión con rotación externa** empuja la cabeza hacia delante. Por eso las posturas prohibidas son opuestas y dependen de la vía de entrada, no del tipo de prótesis."}]},{"id":"complicaciones","titulo":"Complicaciones de la prótesis de cadera","bloques":[{"tipo":"lista","items":["Fracturas periprotésicas acetabulares y femorales","Luxación","Lesiones neurológicas y vasculares","Hemorragia y hematomas","Dismetría (diferencia de longitud de miembros)","Aflojamiento","Infección","Complicaciones tromboembólicas","Calcificaciones heterotópicas"]},{"tipo":"tabla","titulo":"Datos clave de cada complicación","columnas":["Complicación","Cifras y datos","Manejo"],"filas":[["Fractura periprotésica acetabular","**Intraoperatoria** (implantación del vástago, revisiones: exposición, retirada de implante o cemento, preparación del canal, reducción) o **postoperatoria** por traumatismo de baja energía en ancianos","Según el caso"],["Luxación","**3 %**; la mayoría en los **primeros meses**. Causas: abordaje posterior, mala colocación de componentes, **debilidad abductora**, posturas inadecuadas, enfermedades neurológicas","Reducir **lo antes posible** (evitar contractura), Rx de control; si no hay malposición: reposo o deambulación con **ortesis** y ayudas"],["Lesión neurológica","**0,7–3,5 %**; nervios ciático, femoral, obturador y peroneo; trauma directo, separador mal colocado o tracción","Lo más frecuente es la **neuroapraxia**; **EMG** para la evolución; **ortesis** (antiequina tipo Rancho de los Amigos) para evitar deformidades fijas"],["Hemorragia/hematoma","Reserva mínima de **2 unidades** de concentrado de hematíes; drenajes aspirativos **24–48 h**","El hematoma no se trata salvo que esté **a tensión** y comprima un nervio"],["Dismetría","Muy habitual, en general **alargamiento** del miembro operado","**\u003c 2 cm**: sin repercusión clínica importante"],["Infección","**1–2 %** primarias; **2–4 %** revisiones","\u003c 4 semanas: desbridamiento conservando la prótesis; tratamiento más aceptado: **retirada, desbridamiento y nueva prótesis en 1 o 2 tiempos**"],["Tromboembolismo","Sin profilaxis: **40–70 % TVP** y **25 % TEP mortal**","Profilaxis farmacológica **35 días** + métodos físicos"]]},{"tipo":"figura","pagina":35,"pie":"Radiografía de una luxación de prótesis total de cadera: la cabeza femoral ha salido del cotilo.","src":"img/ortesis-t11.2-endoprotesis-ii-protesis-de-cadera-p35.jpg"},{"tipo":"esquema","titulo":"Actuación ante una luxación protésica","mermaid":"flowchart TD\n  A[\"Luxación de prótesis de cadera\"] --> B[\"Reducir lo antes posible\"]\n  B --> C[\"Rx de control\"]\n  C --> D{\"Malposición de componentes\"}\n  D -->|\"Sí\"| E[\"Valoración quirúrgica\"]\n  D -->|\"No y buen control muscular\"| F[\"Reposo o deambulación con ortesis y ayudas\"]","pie":"Reducir pronto evita que la contractura muscular dificulte la reducción."},{"tipo":"dato","valor":"35 días","texto":"Duración de la **profilaxis farmacológica** tromboembólica tras la prótesis de cadera (HBPM)."},{"tipo":"tabla","titulo":"Prevención y clínica del tromboembolismo","columnas":["Métodos farmacológicos","Métodos físicos","Clínica y diagnóstico"],"filas":[["Heparinas de bajo peso molecular","Evitar encamamiento, deambulación precoz, drenaje postural ortostático","Dolor en la extremidad (operada o contralateral), aumento de diámetro, edema, enrojecimiento"],["Anticoagulantes orales","Medias elásticas, compresión neumática intermitente, bomba venosa plantar","**Cordón venoso indurado** palpable"],["—","Electroestimulación muscular, cinesiterapia","**Ecografía vascular o flebografía**"]]},{"tipo":"perla","texto":"El fisioterapeuta es protagonista de la **profilaxis física** de la TVP (movilización activa de tobillos, deambulación precoz, electroestimulación) y debe vigilar en cada sesión los signos de alarma: dolor, aumento de diámetro, edema o cordón venoso indurado → derivar sin demora."},{"tipo":"alerta","texto":"La TVP puede aparecer en la pierna **contralateral**, no solo en la operada. Y aunque la profilaxis ha reducido radicalmente su incidencia, **no la ha hecho desaparecer**."},{"tipo":"tabla","titulo":"Hemorragia e infección: manejo detallado","columnas":["Aspecto","Contenido"],"filas":[["Reserva de sangre","Mínimo **2 unidades** de concentrado de hematíes por la hemorragia habitual del procedimiento"],["Recuperadores de sangre","Ahorran sangre de banco y minimizan las complicaciones de la transfusión"],["Drenajes aspirativos","**24–48 h** para evitar hematomas"],["Hematoma","Sin tratamiento salvo que esté **a tensión** y pueda comprimir un nervio"],["Infección precoz (\u003c 4 semanas)","**Desbridamiento** (limpieza) manteniendo la prótesis"],["Infección establecida","**Retirada** de la prótesis, desbridamiento y nueva prótesis en **uno o dos tiempos**; complicación terrible por su difícil gestión y urgencia"]]},{"tipo":"parrafo","texto":"Las **fracturas periprotésicas** tienen dos momentos: **intraoperatorias**, sobre todo al implantar el vástago primario y en las revisiones de vástagos femorales (exposición, retirada del implante y del cemento, preparación del canal, colocación y reducción del nuevo vástago), y **postoperatorias**, por traumatismos de **baja energía** en pacientes ancianos, lo que obliga a trabajar la **prevención de caídas** durante toda la rehabilitación."}]}],"caso_clinico":{"titulo":"Mujer de 81 años con fractura subcapital de cadera","presentacion":"Mujer de 81 años, vida sedentaria, camina con bastón dentro de casa. Sufre una caída con fractura del cuello femoral derecho. Se le implanta una prótesis parcial con vástago cementado mediante abordaje posterior. Al tercer día, mientras intenta coger las zapatillas del suelo sentada en un sillón bajo, nota un chasquido y dolor intenso con el miembro acortado y en rotación interna.","preguntas":[{"pregunta":"¿Por qué se eligió una prótesis parcial cementada?","respuesta":"La parcial se reserva a **mayores con baja actividad y fractura** (no a enfermedad degenerativa) por ser una cirugía menos agresiva; el **cemento** da **estabilidad inmediata** y permite la carga precoz, clave en una anciana."},{"pregunta":"¿Qué ha ocurrido y qué error postural lo ha favorecido?","respuesta":"Probable **luxación** (3 %, mayoría en los primeros meses). Tras un **abordaje posterior** deben evitarse la **flexión > 90°, la aducción y la rotación interna**; agacharse desde un sillón bajo combina flexión excesiva con rotación interna."},{"pregunta":"¿Cuál es la actuación y qué prevención aplicarás después?","respuesta":"**Reducción lo antes posible** para evitar la contractura y **Rx de control**; si no hay malposición, reposo o deambulación con **ortesis** y ayudas. Después: sillas altas, almohada entre las piernas, calzador largo, no cruzar las piernas y profilaxis tromboembólica hasta los **35 días**."}]},"preguntate":[{"pregunta":"¿Qué es el par de fricción de una prótesis de cadera?","respuesta":"La combinación de los dos materiales que se deslizan entre sí dentro de la prótesis, por ejemplo cabeza de cerámica sobre inserto de polietileno."},{"pregunta":"Diferencia una prótesis primaria de una de revisión.","respuesta":"La primaria se coloca por primera vez (artrosis, displasia…); la de revisión sustituye una prótesis que falla, duele o está desgastada y suele ser más grande y compleja, con módulos, cuñas o injerto óseo."},{"pregunta":"¿En qué paciente se usa una prótesis parcial y en cuál nunca?","respuesta":"En pacientes mayores con baja actividad y fractura de cadera o fémur; nunca en enfermedad degenerativa (artrosis)."},{"pregunta":"¿Por qué el resurfacing no es una prótesis parcial y para quién se diseñó?","respuesta":"Porque sustituye también el acetábulo: es total y primaria con menos componentes. Se diseñó para jóvenes muy activos, gracias al par metal-metal que se autopulimenta."},{"pregunta":"Explica cómo se fija una prótesis no cementada.","respuesta":"Primero por fijación mecánica a presión y luego por integración ósea, cuando el hueso crece dentro de la superficie porosa: es la fijación biológica."},{"pregunta":"¿Cuál es la combinación híbrida más habitual en cadera?","respuesta":"Vástago femoral cementado (idealmente con cemento con antibiótico) y cotilo con fijación biológica."},{"pregunta":"¿Una radiografía con artrosis avanzada basta para indicar una prótesis?","respuesta":"No: la indicación es el dolor incapacitante con limitación funcional que no responde al tratamiento conservador; la imagen sin dolor ni incapacidad no indica cirugía."},{"pregunta":"¿Qué movimientos se evitan tras un abordaje posterior y tras uno anterior?","respuesta":"Posterior: flexión > 90°, aducción y rotación interna. Anterior: extensión excesiva y rotación externa marcada."},{"pregunta":"¿Qué factores favorecen la luxación de una prótesis de cadera?","respuesta":"Abordaje posterior, mala colocación de los componentes, debilidad de la musculatura abductora, posturas inadecuadas y enfermedades neurológicas."},{"pregunta":"¿Cuál es el riesgo tromboembólico sin profilaxis y cuánto dura la profilaxis farmacológica?","respuesta":"40–70 % de TVP y 25 % de embolia pulmonar mortal; la profilaxis farmacológica dura 35 días."}],"glosario":[{"termino":"Vástago femoral","definicion":"Componente que se introduce en el canal medular del fémur."},{"termino":"Cotilo","definicion":"Componente acetabular de la prótesis, habitualmente metálico."},{"termino":"Inserto o cojinete","definicion":"Pieza de cerámica, polietileno u otro material que encaja en el cotilo."},{"termino":"Par de fricción","definicion":"Pareja de materiales que deslizan entre sí dentro de la prótesis."},{"termino":"Resurfacing","definicion":"Prótesis de recubrimiento: total y primaria, con par metal-metal y conservación del cuello femoral."},{"termino":"MoM","definicion":"Metal-on-metal: par de fricción metal contra metal."},{"termino":"PMMA","definicion":"Polimetilmetacrilato, cemento óseo de las prótesis cementadas."},{"termino":"Integración ósea","definicion":"Crecimiento del hueso dentro de la superficie porosa de una prótesis no cementada."},{"termino":"Prótesis de revisión","definicion":"Implante que sustituye una prótesis que falla, duele o está desgastada."},{"termino":"Neuroapraxia","definicion":"Lesión nerviosa leve y reversible; la más frecuente tras la prótesis de cadera."},{"termino":"Dismetría","definicion":"Diferencia de longitud entre miembros; \u003c 2 cm no tiene repercusión clínica importante."},{"termino":"Rancho de los Amigos","definicion":"Ortesis antiequina usada para evitar deformidades fijas tras lesión nerviosa."}],"fuentes":["Universidad Europea de Valencia. Órtesis y Prótesis. Tema 11: Endoprótesis, parte 2 (cadera)."],"qcm":[{"pregunta":"En una prótesis de cadera, ¿qué se entiende por «par de fricción»?","opciones":["El conjunto formado por el cotilo y el cemento","La relación entre la cabeza y el cuello femoral","La unión entre el vástago y el canal femoral","La combinación de materiales que deslizan entre sí"],"correcta":3,"explicacion":"El par de fricción es la combinación de los dos materiales que se deslizan entre sí dentro de la prótesis, típicamente la cabeza (metal o cerámica) y el inserto (cerámica, polietileno u otros).","por_opcion":["❌ Cotilo y cemento forman la fijación acetabular, no una superficie de deslizamiento.","❌ Cabeza y cuello son una unión fija del componente femoral, no deslizan entre sí.","❌ La unión vástago-hueso es la fijación (cementada o biológica), no el par de fricción.","✅ Es la definición literal del temario."]},{"pregunta":"¿Cuál de las siguientes afirmaciones sobre la prótesis de recubrimiento (resurfacing) es correcta?","opciones":["Es una prótesis parcial que respeta el acetábulo","Es una prótesis total y primaria con par metal-metal","Se diseñó para ancianos con fractura de cuello","Ofrece mejores resultados a 20 años que la convencional"],"correcta":1,"explicacion":"El resurfacing es una prótesis primaria y total con menos componentes; el par de fricción es metal contra metal y se diseñó para jóvenes activos. Sus resultados a medio y largo plazo son peores que los modelos convencionales.","por_opcion":["❌ No es parcial: también sustituye el acetábulo con un cotilo hemiesférico.","✅ Es total y primaria y su par de fricción es MoM.","❌ Se diseñó para pacientes jóvenes con mayor actividad física.","❌ Sus resultados a medio y largo plazo son peores que los convencionales."]},{"pregunta":"Varón de 74 años con coxartrosis avanzada, activo y autónomo. ¿Qué tipo de prótesis NO estaría indicada según el temario?","opciones":["Prótesis parcial de cadera","Prótesis total de cadera híbrida","Prótesis total no cementada","Prótesis total de cadera cementada"],"correcta":0,"explicacion":"La prótesis parcial solo se emplea en pacientes mayores con baja actividad que han sufrido una fractura y no se utiliza en casos de enfermedad degenerativa como la artrosis.","por_opcion":["✅ La parcial no se usa en enfermedad degenerativa.","❌ La híbrida es una opción frecuente en mayores con artrosis.","❌ La total no cementada es una opción posible; la duración puede ser algo menor.","❌ La prótesis total es la indicada en artrosis; la cementada da estabilidad inmediata."]},{"pregunta":"¿Cómo se consigue la fijación definitiva de una prótesis no cementada?","opciones":["Mediante tornillos acetabulares de compresión permanentes","Mediante integración del hueso en la superficie porosa","Mediante el encofrado de polimetilmetacrilato en las trabéculas","Mediante el ajuste a presión que no varía con el tiempo"],"correcta":1,"explicacion":"Las no cementadas se fijan primero a presión (fijación mecánica) y después el hueso crece dentro de la rugosidad o poro de la superficie: la integración ósea es la verdadera fijación biológica.","por_opcion":["❌ El temario no describe los tornillos como fijación definitiva.","✅ La integración ósea es la fijación biológica definitiva.","❌ El PMMA es el cemento de las prótesis cementadas.","❌ El ajuste a presión es solo la fijación mecánica inicial."]},{"pregunta":"¿Qué combinación corresponde a la cementación híbrida más habitual en la cadera?","opciones":["Ambos componentes cementados con antibiótico","Ambos componentes con recubrimiento poroso","Cotilo cementado y vástago con fijación biológica","Vástago cementado y cotilo con fijación biológica"],"correcta":3,"explicacion":"Lo más habitual es cementar el vástago femoral (idealmente con cemento con antibiótico) y usar fijación biológica para el cotilo.","por_opcion":["❌ Si ambos se cementan, la prótesis es cementada, no híbrida.","❌ Si ambos son porosos, la prótesis es no cementada.","❌ Es la combinación inversa a la descrita.","✅ Vástago cementado + cotilo biológico."]},{"pregunta":"Mujer de 63 años con artrosis radiológica grado avanzado en ambas caderas, que camina sin dolor y sin limitación. ¿Qué indica el temario?","opciones":["No hay indicación de prótesis en este momento","Resurfacing bilateral para preservar hueso","Prótesis de la cadera más afectada en la Rx","Prótesis total bilateral en un solo tiempo"],"correcta":0,"explicacion":"La indicación es un trastorno de la cadera con dolor incapacitante y limitación funcional que no responde al tratamiento conservador. Las imágenes radiográficas sin dolor ni incapacidad no son indicación de prótesis.","por_opcion":["✅ Sin dolor ni incapacidad no hay indicación.","❌ Tampoco hay indicación para un resurfacing.","❌ La gravedad radiológica no decide la indicación.","❌ La Rx sin clínica no indica cirugía."]},{"pregunta":"¿Cuál de las siguientes es una contraindicación de la endoprótesis de cadera recogida en el temario?","opciones":["Disfunción grave de la musculatura abductora","Necrosis avascular de la cabeza femoral","Fractura del cuello femoral","Edad superior a 70 años"],"correcta":0,"explicacion":"Entre las contraindicaciones están la infección, las alteraciones vasculares severas, la disfunción grave de la musculatura abductora, la cadera inestable, la patología médica grave, la artropatía neuropática y las enfermedades neurológicas.","por_opcion":["✅ La disfunción grave abductora es contraindicación.","❌ La necrosis avascular es una indicación en jóvenes.","❌ La fractura de cuello femoral es una indicación.","❌ La edad avanzada es un perfil habitual de indicación."]},{"pregunta":"Paciente intervenido por abordaje posterior. ¿Qué gesto debe evitar estrictamente?","opciones":["Dar pasos largos hacia atrás","Girar el tronco con el pie fijo hacia dentro","Dormir en decúbito supino con almohada entre las piernas","Tumbarse en prono con la pierna estirada"],"correcta":1,"explicacion":"Tras un abordaje posterior se evitan la flexión mayor de 90°, la aducción y la rotación interna; girar el tronco con el pie fijo hacia dentro provoca rotación interna de la cadera.","por_opcion":["❌ Los pasos largos hacia atrás (extensión) son un riesgo del abordaje anterior.","✅ Provoca rotación interna, prohibida tras abordaje posterior.","❌ Es precisamente la postura recomendada.","❌ El prono con la pierna estirada colgando es un riesgo del abordaje anterior."]},{"pregunta":"Tras un abordaje anterior tipo «bikini», ¿qué combinación de movimientos debe evitarse?","opciones":["Flexión mayor de 90° y aducción","Rotación interna y aducción","Abducción y flexión de cadera","Extensión excesiva y rotación externa"],"correcta":3,"explicacion":"En el abordaje anterior o anterolateral hay que evitar estrictamente la extensión excesiva de la cadera y la rotación externa marcada.","por_opcion":["❌ Son precauciones del abordaje posterior.","❌ Corresponden al abordaje posterior.","❌ La abducción no es un movimiento de riesgo.","✅ Extensión excesiva y rotación externa: abordaje anterior."]},{"pregunta":"Respecto al postoperatorio inmediato de una prótesis de cadera, ¿qué afirmación es correcta?","opciones":["Los pantalones se empiezan por la pierna no operada","Se recomienda cruzar las piernas para relajar los abductores","La carga se retrasa sistemáticamente hasta las 6 semanas","La sedestación al borde de la cama se inicia en 24–48 horas"],"correcta":3,"explicacion":"Se evita el encamamiento: isométricos de cuádriceps y glúteos, movilización de tobillos y sedestación al borde de la cama en las primeras 24–48 horas, con carga precoz desde el 1.er o 2.º día salvo indicación contraria.","por_opcion":["❌ Al vestirse se empieza siempre por la pierna operada.","❌ No se deben cruzar las piernas (aducción).","❌ La carga suele permitirse desde el primer o segundo día.","✅ Sedestación en el borde de la cama en 24–48 h."]},{"pregunta":"¿Cuál de estos factores NO figura entre las causas de luxación protésica de cadera?","opciones":["Cemento cargado con antibiótico","Debilidad de la musculatura abductora","Posturas inadecuadas en el postoperatorio","Colocación defectuosa de los componentes"],"correcta":0,"explicacion":"Las causas de luxación citadas son el abordaje posterior, la colocación defectuosa de los componentes, la debilidad abductora, las posturas inadecuadas y las enfermedades neurológicas. El cemento con antibiótico reduce la infección.","por_opcion":["✅ El cemento con antibiótico no causa luxación; reduce la infección.","❌ La debilidad abductora es causa de luxación.","❌ Las posturas inadecuadas son causa de luxación.","❌ La malposición de componentes es causa de luxación."]},{"pregunta":"Tras una prótesis de cadera, un paciente presenta pie caído. ¿Qué afirmación es coherente con el temario?","opciones":["La ortesis está contraindicada para no atrofiar la musculatura","La incidencia de lesión nerviosa supera el 10 %","Lo más frecuente es la neuroapraxia y se sigue con EMG","Lo más probable es una axonotmesis que requiere cirugía"],"correcta":2,"explicacion":"Las lesiones neurológicas (0,7–3,5 %) afectan a ciático, femoral, obturador o peroneo; lo más frecuente es la neuroapraxia, se valora la evolución con EMG y se recomienda ortesis (antiequina) para evitar deformidades fijas.","por_opcion":["❌ Se recomienda ortesis para evitar deformidades fijas.","❌ La incidencia es del 0,7–3,5 %.","✅ Neuroapraxia y seguimiento con EMG.","❌ La lesión más frecuente es la neuroapraxia, no la axonotmesis."]},{"pregunta":"¿Qué dismetría tras una prótesis de cadera se considera sin repercusión clínica importante?","opciones":["Menos de 1 cm únicamente","Menos de 4 cm","Menos de 2 cm","Cualquier acortamiento"],"correcta":2,"explicacion":"Una discreta dismetría es muy habitual, generalmente un alargamiento del miembro operado; si es menor de 2 cm no conlleva alteración clínica importante.","por_opcion":["❌ El temario tolera hasta 2 cm.","❌ El umbral del temario es 2 cm, no 4.","✅ \u003c 2 cm no tiene repercusión clínica importante.","❌ La dismetría típica es un alargamiento, y no cualquier magnitud es tolerable."]},{"pregunta":"Sobre la infección de la prótesis de cadera, ¿qué afirmación es correcta?","opciones":["Es más frecuente en primarias que en revisiones","Su incidencia en revisiones es inferior al 1 %","Si aparece antes de 4 semanas puede conservarse la prótesis con desbridamiento","El tratamiento más aceptado es solo la antibioterapia oral"],"correcta":2,"explicacion":"La infección afecta al 1–2 % de las primarias y al 2–4 % de las revisiones. En las primeras 4 semanas puede hacerse un desbridamiento manteniendo la prótesis; el tratamiento más aceptado es la retirada, desbridamiento y nueva prótesis en uno o dos tiempos.","por_opcion":["❌ Es más frecuente en revisiones (2–4 %).","❌ En revisiones es del 2–4 %.","✅ Antes de 4 semanas: desbridamiento con mantenimiento de la prótesis.","❌ El más aceptado es retirada, desbridamiento y recambio en 1 o 2 tiempos."]},{"pregunta":"En relación con la enfermedad tromboembólica tras la prótesis de cadera, ¿qué dato es correcto?","opciones":["La profilaxis ha eliminado por completo el riesgo","Sin profilaxis, la TVP aparece en el 10–15 %","La TVP solo afecta al miembro operado","La profilaxis farmacológica se mantiene 35 días"],"correcta":3,"explicacion":"Sin profilaxis la TVP aparece en el 40–70 % con un 25 % de embolismo pulmonar mortal; la profilaxis farmacológica postoperatoria dura 35 días. Ha reducido radicalmente la incidencia pero no la ha eliminado, y puede afectar a la pierna contralateral.","por_opcion":["❌ La ha reducido, pero no la ha hecho desaparecer.","❌ Sin profilaxis es del 40–70 %.","❌ Puede ser contralateral.","✅ Profilaxis farmacológica durante 35 días."]}],"asignatura":"Ortesis","tema":11.2,"fecha":"2026-11-19"}</script>
+<div id="app"></div>
+<script>
+(function(){
+const F = JSON.parse(document.getElementById('datos').textContent);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const md = s => `<span class="md">${esc(s).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>').replace(/\*(.+?)\*/g,'<i>$1</i>')}</span>`;
+const L = 'ABCD';
+const secs = F.secciones || [];
+const grande = F.tipo === 'grand-qcm';
+
+/* color de la asignatura */
+const asig = (F.asignatura||'').toLowerCase();
+const tono = /neuro/.test(asig)?285 : /biolog/.test(asig)?168 : /drenaje|linf/.test(asig)?205 : /quir|patolog/.test(asig)?350 : /ortes|prot/.test(asig)?32 : 248;
+document.documentElement.style.setProperty('--h', tono);
+const icono = /neuro/.test(asig)?'🧠':/biolog/.test(asig)?'🔬':/drenaje|linf/.test(asig)?'💧':/quir|patolog/.test(asig)?'🩺':/ortes|prot/.test(asig)?'🦿':'📘';
+const ICS = ['🧩','⚙️','🔎','🧪','📐','🧭','💡','🗂️','🫀','🦴'];
+
+function bloque(b){
+  switch(b.tipo){
+    case 'parrafo': return `<p>${md(b.texto)}</p>`;
+    case 'lista': return `<ul class="lista">${(b.items||[]).map(i=>`<li>${md(i)}</li>`).join('')}</ul>`;
+    case 'tabla': return `<div class="tw"><table>${b.titulo?`<caption>${md(b.titulo)}</caption>`:''}<thead><tr>${(b.columnas||[]).map(c=>`<th>${md(c)}</th>`).join('')}</tr></thead><tbody>${(b.filas||[]).map(f=>`<tr>${f.map(c=>`<td>${md(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    case 'tarjetas': return `<div class="cartas">${(b.items||[]).map(t=>`<div class="carta">${t.etiqueta?`<span class="et">${md(t.etiqueta)}</span>`:''}<h3>${md(t.titulo)}</h3>${md(t.texto)}</div>`).join('')}</div>`;
+    case 'definicion': return `<div class="nota n-def"><span class="t">${md(b.termino)}</span>${md(b.texto)}</div>`;
+    case 'perla': return `<div class="nota n-cli"><span class="t">Perla clínica</span>${md(b.texto)}</div>`;
+    case 'alerta': return `<div class="nota n-ojo"><span class="t">Ojo en el examen</span>${md(b.texto)}</div>`;
+    case 'dato': return `<div class="nota n-dato"><span class="t">Dato para memorizar</span>${b.valor?`<span class="v">${esc(b.valor)}</span>`:''}${md(b.texto)}</div>`;
+    case 'esquema': return b.mermaid ? `<figure class="esq"><div class="lienzo"><pre class="mermaid">${esc(b.mermaid)}</pre></div>${b.titulo||b.pie?`<figcaption>${b.titulo?`<b>${esc(b.titulo)}</b>${b.pie?' — ':''}`:''}${md(b.pie||'')}</figcaption>`:''}</figure>` : '';
+    case 'figura': return b.src ? `<figure><img src="${esc(b.src)}" alt="${esc(b.pie||'Figura del curso')}" loading="lazy">${b.pie?`<figcaption>${md(b.pie)}</figcaption>`:''}</figure>` : '';
+    default: return b.texto ? `<p>${md(b.texto)}</p>` : '';
+  }
+}
+
+const resumen = F.resumen || [];
+const preg = F.preguntate || [];
+const nav = [
+  resumen.length?'<a href="#resumen">En 30 s</a>':'',
+  ...secs.map(s=>`<a href="#${esc(s.id)}">${esc(s.titulo)}</a>`),
+  F.caso_clinico?'<a href="#caso">Caso clínico</a>':'',
+  preg.length?'<a href="#preguntate">Pregúntate</a>':'',
+  F.glosario?.length?'<a href="#glosario">Glosario</a>':'',
+  `<a class="fuerte" href="#qcm">QCM · ${(F.qcm||[]).length}</a>`].join('');
+
+document.getElementById('app').innerHTML = `
+<header class="portada">${F.tema!=null?`<div class="numero" aria-hidden="true">${esc(F.tema)}</div>`:''}<div class="env">
+  <div class="chips"><a class="chip" href="../index.html" style="text-decoration:none">← Mis fichas</a>${F.asignatura?`<span class="chip">${icono} ${esc(F.asignatura)}</span>`:''}${F.tema!=null?`<span class="chip">Tema ${esc(F.tema)}</span>`:''}${grande?'<span class="chip">🎯 Gran QCM</span>':''}</div>
+  <h1>${esc(F.titulo)}</h1>
+  ${F.subtitulo?`<p class="sub">${md(F.subtitulo)}</p>`:''}
+  <div class="cifras">${grande?`<div class="cifra"><b>${(F.fichas||[]).length}</b><span>temas</span></div>`:`<div class="cifra"><b>${secs.length}</b><span>secciones</span></div><div class="cifra"><b>${preg.length||(F.ideas_clave||[]).length}</b><span>${preg.length?'preguntas clave':'ideas clave'}</span></div>`}<div class="cifra"><b>${(F.qcm||[]).length}</b><span>preguntas QCM</span></div><div class="cifra" id="ultimo" hidden></div></div>
+  <div class="herram">${grande?'':`<button class="bot sec" onclick="window.print()">🖨️ Versión imprimible</button>`}<a class="bot" href="#qcm">✍️ Hacer el QCM</a></div>
+  ${grande?'':`<div class="leyenda"><span><i style="background:var(--def)"></i>Definición</span><span><i style="background:var(--cli)"></i>Clínica</span><span><i style="background:var(--ojo)"></i>Trampa de examen</span><span><i style="background:var(--dato)"></i>Dato a memorizar</span></div>`}
+</div></header>
+<nav class="indice" aria-label="Índice"><div class="env">${nav}</div></nav>
+<main class="env">
+  ${resumen.length?`<section id="resumen" style="padding-top:34px"><div class="flash"><h3>⚡ Todo el tema en 30 segundos</h3><ol>${resumen.map(r=>`<li>${md(r)}</li>`).join('')}</ol></div></section>`:''}
+  ${(F.objetivos||[]).length||(F.ideas_clave||[]).length?`<div class="duo">
+    ${(F.objetivos||[]).length?`<div class="tarjeta"><h3>🎯 Objetivos</h3><ul>${F.objetivos.map(o=>`<li>${md(o)}</li>`).join('')}</ul></div>`:''}
+    ${(F.ideas_clave||[]).length?`<div class="tarjeta"><h3>⭐ Lo que hay que saber</h3><ol class="claves">${F.ideas_clave.map(o=>`<li>${md(o)}</li>`).join('')}</ol></div>`:''}
+  </div>`:''}
+  ${grande&&(F.fichas||[]).length?`<div class="tarjeta" style="margin-top:34px"><h3>📚 Temas incluidos</h3><ul>${F.fichas.map(f=>`<li><a href="../fichas/${esc(f.slug)}.html">${esc(f.titulo)}</a></li>`).join('')}</ul></div>`:''}
+  ${secs.map((s,i)=>`<section id="${esc(s.id)}"><span class="kicker"><i>${ICS[i%ICS.length]}</i>Parte ${i+1}</span><h2>${md(s.titulo)}</h2>${(s.bloques||[]).map(bloque).join('')}</section>`).join('')}
+  ${F.caso_clinico?`<section id="caso"><div class="caso"><span class="kicker"><i>🧑‍⚕️</i>Caso clínico</span><h2>${md(F.caso_clinico.titulo)}</h2><p>${md(F.caso_clinico.presentacion)}</p>${(F.caso_clinico.preguntas||[]).map(q=>`<details><summary>${md(q.pregunta)}</summary><p>${md(q.respuesta)}</p></details>`).join('')}</div></section>`:''}
+  ${preg.length?`<section id="preguntate"><span class="kicker"><i>🧠</i>Recuerdo activo</span><div class="preg-cab"><h2 style="margin:0">Pregúntate</h2><span class="marcador" id="marc">Responde de memoria y destapa la respuesta</span></div>
+    <div class="pregs">${preg.map((p,i)=>`<div class="preg" data-i="${i}"><button class="q" aria-expanded="false"><span class="num">${i+1}</span><span>${md(p.pregunta)}</span><span class="ojo">Ver respuesta</span></button><div class="r">${md(p.respuesta)}<div class="auto"><button data-v="si">✓ Lo sabía</button><button data-v="no">✗ A repasar</button></div></div></div>`).join('')}</div></section>`:''}
+  ${F.glosario?.length?`<section id="glosario"><span class="kicker"><i>📖</i>Vocabulario</span><h2>Glosario</h2><dl class="glosario">${F.glosario.map(g=>`<div><dt>${md(g.termino)}</dt><dd>${md(g.definicion)}</dd></div>`).join('')}</dl></section>`:''}
+  <section id="qcm"><span class="kicker"><i>✍️</i>Autoevaluación</span><h2>QCM</h2><p>${(F.qcm||[]).length} preguntas de nivel examen. Responde sin mirar la ficha.</p><div class="marco" id="marco"></div></section>
+  ${F.fuentes?.length?`<section><h3>Fuentes</h3><ul class="lista fuentes">${F.fuentes.map(f=>`<li>${md(f)}</li>`).join('')}</ul></section>`:''}
+</main>
+<footer class="env">Ficha generada a partir del PDF del curso${F.fecha?` · ${esc(F.fecha)}`:''}. Verifica siempre con el material oficial.</footer>`;
+
+/* barra de lectura */
+const barraL=document.getElementById('lectura');
+addEventListener('scroll',()=>{const h=document.documentElement;barraL.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'},{passive:true});
+
+/* pregúntate */
+const estado={};
+function marcador(){const v=Object.values(estado);const m=document.getElementById('marc');if(m&&v.length)m.innerHTML=`<b>${v.filter(x=>x==='si').length}</b> / ${preg.length} sabidas · ${v.filter(x=>x==='no').length} a repasar`}
+document.querySelectorAll('.preg').forEach(el=>{
+  const q=el.querySelector('.q');
+  q.onclick=()=>{const a=el.classList.toggle('abierta');q.setAttribute('aria-expanded',a)};
+  el.querySelectorAll('.auto button').forEach(b=>b.onclick=()=>{estado[el.dataset.i]=b.dataset.v;el.classList.remove('si','no');el.classList.add(b.dataset.v);marcador()});
+});
+
+/* esquemas */
+(async function(){
+  const els=[...document.querySelectorAll('pre.mermaid')];
+  if(!els.length||!window.mermaid) return;
+  const oscuro=matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({startOnLoad:false,securityLevel:'strict',theme:'base',fontFamily:'Figtree, system-ui, sans-serif',
+    themeVariables:oscuro?{primaryColor:`hsl(${tono} 30% 24%)`,primaryBorderColor:`hsl(${tono} 70% 65%)`,primaryTextColor:'#ecebf2',lineColor:`hsl(${tono} 50% 70%)`,clusterBkg:'#1c1b24',clusterBorder:'#2c2a37',edgeLabelBackground:'#14131a'}
+      :{primaryColor:`hsl(${tono} 85% 95%)`,primaryBorderColor:`hsl(${tono} 60% 60%)`,primaryTextColor:'#1d1b26',lineColor:`hsl(${tono} 40% 55%)`,clusterBkg:'#fbfaf7',clusterBorder:'#ebe8f0',edgeLabelBackground:'#ffffff'},
+    flowchart:{htmlLabels:true,curve:'basis',padding:14}});
+  for(const el of els){ try{ await mermaid.parse(el.textContent); }catch(e){ el.closest('figure').remove(); } }
+  try{ await mermaid.run({querySelector:'pre.mermaid'}); }catch(e){}
+})();
+
+/* dernière fiche ouverte + carnet d'erreurs + envoi du score vers Notion */
+const slugPag = location.pathname.split('/').pop().replace(/\.html$/, '');
+const carpeta = grande ? 'qcm' : 'fichas';
+try{ localStorage.setItem('ultima', JSON.stringify({href:`${carpeta}/${slugPag}.html`, titulo:F.titulo, t:Date.now()})); }catch(e){}
+function errorGuardar(k, fallo){
+  try{
+    const E = JSON.parse(localStorage.getItem('errores')||'{}'), id = `${slugPag}#${k}`;
+    if(fallo){ const q = Q[k]; E[id] = {id, curso:F.asignatura, tema:(F.tema ?? q.tema ?? null), titulo:F.titulo, href:`${carpeta}/${slugPag}.html`, q:{pregunta:q.pregunta, opciones:q.opciones, correcta:q.correcta, explicacion:q.explicacion, por_opcion:q.por_opcion}, n:(E[id]?.n||0)+1, t:Date.now()}; }
+    else delete E[id];
+    localStorage.setItem('errores', JSON.stringify(E));
+  }catch(e){}
+}
+async function enviarScore(ok, n){
+  const el = document.getElementById('envio'); if(!el) return;
+  if(grande || !window.FICHAS_RELAY){ el.textContent = ''; return; }
+  el.textContent = 'Enregistrement dans Notion…';
+  try{
+    const r = await fetch(window.FICHAS_RELAY, {method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify({url:location.origin+location.pathname, score:ok, total:n})});
+    const j = await r.json();
+    el.textContent = j.ok ? '✓ Score enregistré dans Notion' + (j.proxima ? ` · prochaine révision : ${j.proxima}` : '') : 'Score non enregistré dans Notion (' + (j.error||'erreur') + ')';
+  }catch(e){ el.textContent = 'Score non enregistré dans Notion (hors ligne ?)'; }
+}
+
+/* QCM */
+const Q = F.qcm || [];
+const clave = 'qcm:' + location.pathname;
+let orden = Q.map((_,i)=>i), pos = 0, resp = {};
+function guardar(r){ try{ localStorage.setItem(clave, JSON.stringify({r, t:Date.now()})); }catch(e){} }
+function ultimo(){ try{ const u = JSON.parse(localStorage.getItem(clave)||'null'); if(u){ const el=document.getElementById('ultimo'); el.hidden=false; el.innerHTML = `<b>${u.r}/${Q.length}</b><span>último intento</span>`; } }catch(e){} }
+ultimo();
+const marco = document.getElementById('marco');
+function pintar(){
+  if(pos >= orden.length) return fin();
+  const k = orden[pos], q = Q[k], hecho = resp[k] != null;
+  marco.innerHTML = `
+    <div class="progreso"><span>${pos+1} / ${orden.length}</span><div class="barra"><i style="width:${pos/orden.length*100}%"></i></div><span id="okc">${Object.values(resp).filter(x=>x.ok).length} ✓</span></div>
+    ${q.tema?`<span class="tema-q">${esc(q.tema)}</span>`:''}<p class="pregunta">${md(q.pregunta)}</p>
+    <div class="opciones">${q.opciones.map((o,i)=>`<button class="op" data-i="${i}"><span class="l">${L[i]}</span><span>${md(o)}</span><span class="ex">${md(q.por_opcion?.[i]||'')}</span></button>`).join('')}</div>
+    <div class="explic">${md(q.explicacion)}</div>
+    <div class="acciones"><button class="bot sec" id="atras" ${pos===0?'disabled':''}>Anterior</button><button class="bot" id="sig" ${hecho?'':'disabled'}>${pos===orden.length-1?'Ver resultado':'Siguiente →'}</button></div>`;
+  marco.querySelectorAll('.op').forEach(b=>b.addEventListener('click',()=>elegir(k,+b.dataset.i)));
+  marco.querySelector('#sig').onclick=()=>{pos++;pintar();marco.scrollIntoView({block:'start'});};
+  marco.querySelector('#atras').onclick=()=>{pos--;pintar();};
+  if(hecho) marcar(k);
+}
+function elegir(k,i){ if(resp[k]!=null) return; resp[k]={i,ok:i===Q[k].correcta}; errorGuardar(k, !resp[k].ok); marcar(k); marco.querySelector('#sig').disabled=false; }
+function marcar(k){
+  const q=Q[k], r=resp[k];
+  marco.querySelectorAll('.op').forEach(b=>{const i=+b.dataset.i;b.disabled=true;b.classList.add('visto');if(i===q.correcta)b.classList.add('bien');else if(i===r.i)b.classList.add('mal');});
+  marco.querySelector('.explic').classList.add('ver');
+  marco.querySelector('.barra i').style.width=((pos+1)/orden.length*100)+'%';
+  marco.querySelector('#okc').textContent=Object.values(resp).filter(x=>x.ok).length+' ✓';
+}
+function fin(){
+  const ok = orden.filter(k=>resp[k]?.ok).length, n = orden.length;
+  const completo = n===Q.length;
+  if(completo) { guardar(ok); ultimo(); }
+  const fallos = orden.filter(k=>!resp[k]?.ok);
+  const msg = ok/n>=.8?'🎉 ¡Dominado!':ok/n>=.6?'💪 Bien, pero repasa las preguntas falladas.':'📖 Vuelve a la ficha antes de repetir.';
+  marco.innerHTML = `<div class="resultado"><div class="gran">${ok}<small> / ${n}</small></div><p>${msg}</p><p id="envio" style="font-size:.9rem;color:var(--suave);margin:0 auto 14px"></p>
+    <div class="acciones" style="justify-content:center"><button class="bot" id="rep">Repetir todo</button>${fallos.length?'<button class="bot sec" id="falla">Repetir solo los fallos</button>':''}</div></div>
+    ${fallos.length?`<div class="repaso"><h3>Repaso de errores</h3>${fallos.map(k=>{const q=Q[k];return `<details><summary>${md(q.pregunta)}</summary><p><b>${L[q.correcta]}. ${md(q.opciones[q.correcta])}</b></p><p>${md(q.explicacion)}</p></details>`}).join('')}</div>`:''}`;
+  if(completo) enviarScore(ok, n);
+  marco.querySelector('#rep').onclick=()=>{orden=Q.map((_,i)=>i);resp={};pos=0;pintar();};
+  const f=marco.querySelector('#falla'); if(f) f.onclick=()=>{orden=fallos;fallos.forEach(k=>delete resp[k]);pos=0;pintar();};
+}
+pintar();
+})();
+</script>
+</body>
+</html>

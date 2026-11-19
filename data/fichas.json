@@ -420,6 +420,36 @@
     "secciones": 8
   },
   {
+    "slug": "ortesis-t11.1-endoprotesis-i-conceptos-protesis-de-organos-internos-tobill",
+    "titulo": "Endoprótesis I: conceptos, prótesis de órganos internos, tobillo, pie y rodilla",
+    "subtitulo": "Qué es una endoprótesis, cuándo se elige artroplastia frente a artrodesis u osteotomía, y todo sobre las prótesis de tobillo, MTF-1 y rodilla (tipos, indicaciones, rehabilitación y complicaciones).",
+    "curso": "Ortesis",
+    "tema": 11.1,
+    "fecha": "2026-11-19",
+    "preguntas": 15,
+    "secciones": 7
+  },
+  {
+    "slug": "ortesis-t11.2-endoprotesis-ii-protesis-de-cadera",
+    "titulo": "Endoprótesis II: prótesis de cadera",
+    "subtitulo": "Componentes, tipos (primaria/revisión, total/parcial/resurfacing, cementada/no cementada/híbrida), indicaciones, precauciones según el abordaje y complicaciones de la artroplastia de cadera.",
+    "curso": "Ortesis",
+    "tema": 11.2,
+    "fecha": "2026-11-19",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
+    "slug": "ortesis-t11.3-endoprotesis-iii-miembro-superior-mano-muneca-codo-y-hombro",
+    "titulo": "Endoprótesis III: miembro superior (mano, muñeca, codo y hombro)",
+    "subtitulo": "Prótesis MCP/IFP y trapeciometacarpiana, artroplastia de muñeca y de codo, y los cuatro tipos de prótesis de hombro (anatómica, hemiartroplastia, superficie e invertida) con su elección según el manguito rotador.",
+    "curso": "Ortesis",
+    "tema": 11.3,
+    "fecha": "2026-11-19",
+    "preguntas": 15,
+    "secciones": 6
+  },
+  {
     "slug": "patologia-quirurgica-i-t1-tema-1-introduccion-a-la-historia-clinica",
     "titulo": "Tema 1. Introducción a la Historia Clínica",
     "subtitulo": "De los conceptos de salud y enfermedad a la anamnesis estructurada, la exploración, las pruebas complementarias y el diagnóstico diferencial.",
