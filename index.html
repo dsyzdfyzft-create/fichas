@@ -10,20 +10,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,500..900,100&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/estilo.css">
 <style>
+.portada{background:var(--papel)!important;border-bottom:1px solid var(--linea)}
+.portada .sur{font:600 .78rem/1 var(--texto);letter-spacing:.08em;text-transform:uppercase;color:var(--suave);margin:0 0 14px}
 .outils{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:26px}
 .outil{display:block;text-decoration:none;color:inherit;background:var(--hoja);border-radius:18px;padding:16px 18px;box-shadow:var(--sombra)}
 .outil b{display:block;font:800 1.05rem var(--display);margin-bottom:2px}
 .outil span{color:var(--suave);font-size:.9rem}
-.outil.reprise{background:linear-gradient(135deg,var(--acento),var(--acento-2));color:#fff}
-.outil.reprise span{color:rgba(255,255,255,.85)}
+.outil{border:1px solid var(--linea);box-shadow:none;transition:border-color .15s}
+.outil:hover{border-color:var(--tinta)}
+.outil.reprise{background:var(--tinta);color:var(--papel);border-color:var(--tinta)}
+.outil.reprise span{color:var(--papel);opacity:.75}
 .filtre{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:34px 0 0}
 .filtre input{flex:1;min-width:200px}
 section.cours{margin-top:44px;--h:248}
 .cours-tete{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap;margin-bottom:6px}
-.cours-tete h2{display:flex;align-items:center;gap:10px}
-.cours-tete h2 i{font-style:normal;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:var(--acento-suave);font-size:1.2rem}
+.cours-tete h2{border-left:4px solid var(--acento);padding-left:12px}
 .avance{height:8px;border-radius:4px;background:var(--linea);overflow:hidden;margin:10px 0 6px}
-.avance i{display:block;height:100%;background:linear-gradient(90deg,var(--acento),var(--acento-2))}
+.avance i{display:block;height:100%;background:var(--acento)}
 .avance-txt{font-size:.85rem;color:var(--suave);margin-bottom:16px}
 .grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 .fiche{display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit;background:var(--hoja);border-radius:16px;padding:16px 18px;box-shadow:var(--sombra);border-top:4px solid var(--acento);transition:transform .15s}
@@ -38,8 +41,9 @@ section.cours{margin-top:44px;--h:248}
 </head>
 <body>
 <header class="portada"><div class="env">
+  <p class="sur">Fisioterapia · Universidad Europea de Valencia</p>
   <h1>Mis fichas</h1>
-  <p>Fisioterapia · Universidad Europea de Valencia. Tes fiches, tes QCM et tes outils de révision.</p>
+  <p id="resume">Tes fiches, tes QCM et tes outils de révision.</p>
   <div class="cifras"><div class="cifra"><b id="k1">–</b><span>fiches</span></div><div class="cifra"><b id="k2">–</b><span>QCM faits</span></div><div class="cifra"><b id="k3">–</b><span>score moyen /15</span></div><div class="cifra"><b id="k4">–</b><span>erreurs à revoir</span></div></div>
   <div class="outils" id="outils"></div>
 </div></header>
@@ -51,20 +55,21 @@ section.cours{margin-top:44px;--h:248}
 <script src="assets/comun.js"></script>
 <script>
 (async function(){
-  const {esc,tono,icono,json,score,errores,leer,ficha,md}=FI;
+  const {esc,tono,json,score,errores,leer,ficha,md}=FI;
   const [F,Q]=await Promise.all([json('data/fichas.json'),json('data/qcm.json')]);
   const cursos=[...new Set(F.map(f=>f.curso||'Sans cours'))];
   const sc=F.map(f=>score(f.slug)).filter(x=>x!=null);
   document.getElementById('k1').textContent=F.length;
+  if(F.length) document.getElementById('resume').textContent=`${F.length} fiches dans ${cursos.length} matières. Chaque fiche finit par un QCM de 15 questions.`;
   document.getElementById('k2').textContent=sc.length;
   document.getElementById('k3').textContent=sc.length?(sc.reduce((a,b)=>a+b,0)/sc.length).toFixed(1).replace('.',','):'–';
   const nErr=errores.lista().length;
   document.getElementById('k4').textContent=nErr;
   const ult=leer('ultima',null);
   document.getElementById('outils').innerHTML=
-    (ult?`<a class="outil reprise" href="${esc(ult.href)}"><b>▶ Reprendre</b><span>${esc(ult.titulo||'')}</span></a>`:'')+
-    `<a class="outil" href="examen.html"><b>⏱ Examen blanc</b><span>Chronométré, par matière, score par tema</span></a>
-     <a class="outil" href="errores.html"><b>📕 Carnet d’erreurs</b><span>${nErr?nErr+' question'+(nErr>1?'s':'')+' à retenter':'Aucune erreur enregistrée'}</span></a>`;
+    (ult?`<a class="outil reprise" href="${esc(ult.href)}"><b>Reprendre</b><span>${esc(ult.titulo||'')}</span></a>`:'')+
+    `<a class="outil" href="examen.html"><b>Examen blanc</b><span>Chronométré, par matière, score par tema</span></a>
+     <a class="outil" href="errores.html"><b>Carnet d’erreurs</b><span>${nErr?nErr+' question'+(nErr>1?'s':'')+' à retenter':'Aucune erreur enregistrée'}</span></a>`;
 
   function rendre(){
     const q=document.getElementById('q').value.trim().toLowerCase();
@@ -76,12 +81,12 @@ section.cours{margin-top:44px;--h:248}
       if(!l.length) continue;
       const faits=tous.filter(f=>score(f.slug)!=null).length, mait=tous.filter(f=>score(f.slug)>=12).length;
       const gq=Q.filter(x=>x.curso===c);
-      html+=`<section class="cours tono" style="--h:${tono(c)}"><div class="cours-tete"><h2><i>${icono(c)}</i>${esc(c)}</h2>
-        <span style="display:flex;gap:8px;flex-wrap:wrap"><a class="bot sec peq" href="examen.html#${encodeURIComponent(c)}">⏱ Examen blanc</a><button class="bot sec peq" data-anki="${esc(c)}">🗂 Export Anki</button></span></div>
+      html+=`<section class="cours tono" style="--h:${tono(c)}"><div class="cours-tete"><h2>${esc(c)}</h2>
+        <span style="display:flex;gap:8px;flex-wrap:wrap"><a class="bot sec peq" href="examen.html#${encodeURIComponent(c)}">Examen blanc</a><button class="bot sec peq" data-anki="${esc(c)}">Télécharger pour Anki</button></span></div>
         <div class="avance"><i style="width:${tous.length?mait/tous.length*100:0}%"></i></div>
         <div class="avance-txt">${mait}/${tous.length} maîtrisées (≥ 12/15) · ${faits} QCM faits</div>
         <div class="grille">${l.map(f=>{const s=score(f.slug);return `<a class="fiche" href="fichas/${esc(f.slug)}.html"><span class="t">${f.tema!=null?'Tema '+esc(f.tema):'Tema'}</span><h3>${esc(f.titulo.replace(/^tema\s*[\d.]+\s*[:.–-]\s*/i,''))}</h3><p>${esc(f.subtitulo||'')}</p><div class="pied">${s==null?'<span class="chip gris">À faire</span>':s>=12?`<span class="chip ok">✓ ${s}/15</span>`:s>=10?`<span class="chip oro">${s}/15</span>`:`<span class="chip mal">${s}/15</span>`}<span style="color:var(--suave);font-size:.8rem">${esc(f.fecha||'')}</span></div></a>`}).join('')}</div>
-        ${gq.length?`<div class="gqcm">${gq.map(x=>`<a class="bot sec peq" href="qcm/${esc(x.slug)}.html">🎯 Gran QCM · ${esc(x.fecha)} (${x.preguntas})</a>`).join('')}</div>`:''}</section>`;
+        ${gq.length?`<div class="gqcm">${gq.map(x=>`<a class="bot sec peq" href="qcm/${esc(x.slug)}.html">Gran QCM · ${esc(x.fecha)} (${x.preguntas})</a>`).join('')}</div>`:''}</section>`;
     }
     document.getElementById('liste').innerHTML=html||'<div class="vacio" style="margin-top:34px">Aucune fiche ne correspond.</div>';
     document.querySelectorAll('[data-anki]').forEach(b=>b.onclick=()=>anki(b.dataset.anki,b));
@@ -99,7 +104,7 @@ section.cours{margin-top:44px;--h:248}
     }
     const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([lignes.join('\n')],{type:'text/plain'}));
     a.download='anki-'+curso.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-')+'.txt';a.click();
-    btn.disabled=false;btn.textContent=`🗂 ${lignes.length-3} cartes exportées`;
+    btn.disabled=false;btn.textContent=`${lignes.length-3} cartes téléchargées`;
   }
   document.getElementById('q').addEventListener('input',rendre);
   rendre();
